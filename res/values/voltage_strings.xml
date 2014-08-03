@@ -135,4 +135,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="gesture_double_tap_power_summary_disabled">Disabled by flashlight gesture</string>
     <string name="double_tap_power_for_torch_summary_disabled">Disabled by open camera gesture</string>
 
+    <!-- PIN scramble -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
 </resources>
