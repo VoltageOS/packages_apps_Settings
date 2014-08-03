@@ -156,4 +156,8 @@
     <string name="app_volume_summary">Allow to set different volume levels for each app</string>
 
 
+    <!-- Scramble pin -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+
 </resources>
