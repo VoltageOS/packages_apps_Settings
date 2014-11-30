@@ -417,4 +417,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="idle_manager_title">Idle manager</string>
     <string name="idle_manager_summary">Stop all non-essential background processes when the device is idle</string>
 
+    <!-- Wake on plug -->
+    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+
 </resources>
