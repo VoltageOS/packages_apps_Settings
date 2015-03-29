@@ -14531,4 +14531,6 @@
     <string name="max_refresh_rate_title">Maximum refresh rate</string>
     <string name="refresh_rate_placeholder" translatable="false"><xliff:g id="refresh_rate" example="60">%1$s</xliff:g> Hz</string>
 
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
 </resources>
