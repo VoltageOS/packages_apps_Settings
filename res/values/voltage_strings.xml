@@ -58,4 +58,8 @@
     <string name="voltage_version_default">Unknown</string>
     <string name="build_date">Build date</string>
 
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">Reset stats</string>
+    <string name="battery_stats_message">Battery history stats are going to be reset</string>
+
 </resources>
