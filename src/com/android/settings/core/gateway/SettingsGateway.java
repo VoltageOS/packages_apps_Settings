@@ -49,6 +49,7 @@ import com.android.settings.applications.AppDashboardFragment;
 import com.android.settings.applications.AppStorageSettings;
 import com.android.settings.applications.ProcessStatsSummary;
 import com.android.settings.applications.ProcessStatsUi;
+import com.android.settings.applications.RunningServices;
 import com.android.settings.applications.UsageAccessDetails;
 import com.android.settings.applications.appcompat.UserAspectRatioDetails;
 import com.android.settings.applications.appinfo.AlarmsAndRemindersDetails;
@@ -434,7 +435,8 @@ public class SettingsGateway {
             powerhub.class.getName(),
             ScreenRefreshRateFragment.class.getName(),
             WifiTetherClientManager.class.getName(),
-            LiveDisplaySettings.class.getName()
+            LiveDisplaySettings.class.getName(),
+            RunningServices.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -483,5 +485,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.powerhubActivity.class.getName(),
             Settings.ScreenRefreshRateActivity.class.getName(),
+            Settings.DevRunningServicesActivity.class.getName(),
     };
 }
