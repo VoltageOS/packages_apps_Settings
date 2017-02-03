@@ -376,4 +376,6 @@
     <!-- Min refresh rate -->
     <string name="min_refresh_rate_title">Minimum refresh rate</string>
 
+    <!-- Running services -->
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>
