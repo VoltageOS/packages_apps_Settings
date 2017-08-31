@@ -47,4 +47,8 @@
     <string name="battery_stats_reset">Reset stats</string>
     <string name="battery_stats_message">Battery history stats are going to be reset</string>
 
+    <!--Powerhub-->
+    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_summary">Placeholder</string>
+
 </resources>

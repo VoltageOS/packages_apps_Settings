@@ -45,6 +45,14 @@
         android:order="-130"
         android:title="@string/apps_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"/>
+		
+	<Preference
+        android:key="top_level_powerhub"
+        android:title="@string/powerhub_title"
+        android:summary="@string/powerhub_summary"
+        android:icon="@drawable/ic_powerhub"
+        android:order="-125"
+        android:fragment="com.power.hub.powerhub"/>
 
     <Preference
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"
@@ -62,7 +70,7 @@
         android:title="@string/power_usage_summary_title"
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/>
-
+		
     <Preference
         android:fragment="com.android.settings.deviceinfo.StorageDashboardFragment"
         android:icon="@drawable/ic_storage_white"
