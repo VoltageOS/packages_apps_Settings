@@ -349,4 +349,9 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 
     <string name="background_processes_settings_title">Background processes</string>
+
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Tap to sleep</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Double-tap on the status bar or lockscreen to turn off the display</string>
+
 </resources>
