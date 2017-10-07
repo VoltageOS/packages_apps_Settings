@@ -65,6 +65,14 @@
         android:fragment="com.android.settings.health.ChargingControlSettings"
         settings:controller="com.android.settings.health.ChargingControlPreferenceController" />
 
+    <!-- Battery light -->
+    <Preference
+        android:key="battery_lights"
+        android:title="@string/battery_light_title"
+        android:summary="@string/battery_light_summary"
+        android:fragment="com.android.settings.voltage.notificationlight.BatteryLightSettings"
+        settings:controller="com.android.settings.voltage.notificationlight.BatteryLightPreferenceController" />
+
     <SwitchPreference
         android:key="battery_percentage"
         android:title="@string/battery_percentage"

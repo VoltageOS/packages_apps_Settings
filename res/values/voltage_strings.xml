@@ -515,6 +515,7 @@ When the screen is off, the torch can be enabled with one of the following key c
 
     <!-- Battery light settings -->
     <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_summary">Customize battery charging light behavior</string>
     <string name="battery_light_enable_title">Enable battery light</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
@@ -528,6 +529,7 @@ When the screen is off, the torch can be enabled with one of the following key c
 
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_summary">Customize Notification light behavior</string>
     <string name="notification_light_enable_title">Enable notification light</string>
     <string name="notification_light_general_title">General</string>
     <string name="notification_light_advanced_title">Advanced</string>
