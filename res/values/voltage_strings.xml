@@ -98,4 +98,8 @@
     <string name="powerhub_title">Power Hub</string>
     <string name="powerhub_summary">The Power you need</string>
 
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
+    <string name="increasing_ring_min_volume_title">Start volume</string>
+    <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 </resources>
