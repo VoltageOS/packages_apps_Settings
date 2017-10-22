@@ -292,4 +292,8 @@
     <string name="high_touch_sensitivity_title">High touch sensitivity</string>
     <string name="high_touch_sensitivity_summary">Increase touchscreen sensitivity so it can be used while wearing gloves</string>
 
+    <!-- Charging vibration -->
+    <string name="charging_sounds_custom_title">Charging sound</string>
+    <string name="charging_vibro_title">Charging vibration</string>
+
 </resources>
