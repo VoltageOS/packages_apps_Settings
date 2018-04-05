@@ -33,4 +33,6 @@
     <string name="voltage_version_default">Unknown</string>
     <string name="build_date">Build date</string>
 
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Saved Earbuds</string>
 </resources>
