@@ -334,4 +334,10 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 
     <string name="background_processes_settings_title">Background processes</string>
+
+    <!-- Location settings screen, setting check box label if Assisted GPS should be enabled -->
+    <string name="assisted_gps">Use assisted GPS</string>
+    <!-- Location settings screen, setting summary for Assisted GPS switch -->
+    <string name="assisted_gps_summary">Download satellite assistance data from the internet which can greatly improve the GPS startup performance. For emergency calls, assisted GPS is always allowed.</string>
+
 </resources>
