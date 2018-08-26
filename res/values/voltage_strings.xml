@@ -17,4 +17,5 @@
     <!-- VoltageOS version -->
     <string name="voltage_version">VoltageOS version</string>
     <string name="voltage_version_default">Unknown</string>
+    <string name="build_date">Build date</string>
 </resources>
