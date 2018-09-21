@@ -161,6 +161,11 @@
             android:summary="@string/wake_when_plugged_or_unplugged_summary"
             android:defaultValue="true" />
 
+        <com.power.hub.preferences.SystemSettingSwitchPreference
+            android:key="home_wake_button"
+            android:title="@string/home_wake_button_title"
+            android:summary="@string/home_wake_button_summary" />
+
         <ListPreference
             android:key="display_cutout_emulation"
             android:title="@string/display_cutout_emulation"
