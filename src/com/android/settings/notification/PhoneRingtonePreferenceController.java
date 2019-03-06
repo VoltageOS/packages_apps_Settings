@@ -31,6 +31,7 @@ import com.android.settings.Utils;
 
 public class PhoneRingtonePreferenceController extends RingtonePreferenceControllerBase {
 
+    private static final int SLOT_ID = 0;
     private static final String KEY_PHONE_RINGTONE = "phone_ringtone";
 
     public PhoneRingtonePreferenceController(Context context) {
@@ -48,6 +49,7 @@ public class PhoneRingtonePreferenceController extends RingtonePreferenceControl
             DefaultRingtonePreference ringtonePreference =
                     (DefaultRingtonePreference) screen.findPreference(KEY_PHONE_RINGTONE);
             ringtonePreference.setTitle(mContext.getString(R.string.ringtone1_title));
+            ringtonePreference.setEnabled(hasCard());
         }
     }
 
@@ -68,6 +70,12 @@ public class PhoneRingtonePreferenceController extends RingtonePreferenceControl
     public int getRingtoneType() {
         return RingtoneManager.TYPE_RINGTONE;
     }
+
+    private boolean hasCard() {
+         TelephonyManager telephonyManager =
+                 (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+         return telephonyManager.hasIccCard(SLOT_ID);
+     }
 
     private boolean isRingtoneVibrationEnabled() {
         return Flags.enableRingtoneHapticsCustomization() && mContext.getResources().getBoolean(
