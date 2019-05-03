@@ -527,4 +527,7 @@ public class Settings extends SettingsActivity {
 
     // SleepMode
     public static class SleepModeActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }
