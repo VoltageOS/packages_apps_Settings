@@ -528,4 +528,7 @@ public class Settings extends SettingsActivity {
     public static class AppManagePlayIntegrityApiActivity extends SettingsActivity {}
 
     public static class ExploitProtectionActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }
