@@ -142,6 +142,7 @@ import com.android.settings.inputmethod.UserDictionarySettings;
 import com.android.settings.language.LanguageAndRegionSettings;
 import com.android.settings.language.LanguageSettings;
 import com.android.settings.localepicker.AppLocalePickerFragment;
+import com.android.settings.livedisplay.LiveDisplaySettings;
 import com.android.settings.localepicker.LocaleListEditor;
 import com.android.settings.localepicker.SystemLocalePickerFragment;
 import com.android.settings.location.LocationServices;
@@ -442,7 +443,8 @@ public class SettingsGateway {
             SafetyCenterFragment.class.getName(),
             powerhub.class.getName(),
             ScreenRefreshRateFragment.class.getName(),
-            WifiTetherClientManager.class.getName()
+            WifiTetherClientManager.class.getName(),
+            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
