@@ -519,4 +519,7 @@ public class Settings extends SettingsActivity {
     * Smart Pixels
     */
     public static class SmartPixelsActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }
