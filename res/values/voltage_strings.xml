@@ -54,4 +54,7 @@
     <string name="package_version">Package version</string>
     <string name="package_version_text"><xliff:g id="version_num">%1$s</xliff:g></string>
 
+    <!-- Cloudflare DNS Option -->
+    <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare DNS</string>
+
 </resources>
