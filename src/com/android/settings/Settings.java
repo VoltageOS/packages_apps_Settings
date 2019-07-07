@@ -670,4 +670,9 @@ public class Settings extends SettingsActivity {
 
     // SleepMode
     public static class SleepModeActivity extends SettingsActivity {}
+
+    /**
+    * Smart Pixels
+    */
+    public static class SmartPixelsActivity extends SettingsActivity {}
 }
