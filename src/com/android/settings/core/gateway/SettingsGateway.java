@@ -197,6 +197,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.power.hub.powerhub;
+import com.power.hub.fragments.SmartPixels;
 
 public class SettingsGateway {
 
@@ -383,6 +384,7 @@ public class SettingsGateway {
             UserAspectRatioDetails.class.getName(),
             powerhub.class.getName(),
             RunningServices.class.getName(),
+            SmartPixels.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -431,5 +433,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.powerhubActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
