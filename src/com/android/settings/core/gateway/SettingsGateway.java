@@ -223,6 +223,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.voltage.settings.display.refreshrate.ScreenRefreshRateFragment;
 
 import com.power.hub.powerhub;
+import com.power.hub.fragments.SmartPixels;
 
 import con.android.settings.wifi.tether.WifiTetherClientManager;
 
@@ -439,6 +440,7 @@ public class SettingsGateway {
             LiveDisplaySettings.class.getName(),
             RunningServices.class.getName(),
             SleepMode.class.getName(),
+            SmartPixels.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -488,6 +490,7 @@ public class SettingsGateway {
             Settings.powerhubActivity.class.getName(),
             Settings.ScreenRefreshRateActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
-            Settings.SleepModeActivity.class.getName()
+            Settings.SleepModeActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
