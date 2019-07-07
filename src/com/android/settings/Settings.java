@@ -531,4 +531,9 @@ public class Settings extends SettingsActivity {
     public static class OneHandedSettingsActivity extends SettingsActivity { /* empty */ }
 
     public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
+
+    /**
+    * Smart Pixels
+    */
+    public static class SmartPixelsActivity extends SettingsActivity {}
 }
