@@ -123,4 +123,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="gesture_double_tap_power_summary_disabled">Disabled by flashlight gesture</string>
     <string name="double_tap_power_for_torch_summary_disabled">Disabled by open camera gesture</string>
 
+    <!-- Hotspot extras -->
+    <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPNs</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Permit hotspot clients to use this device\u2019s VPN connections for upstream connectivity</string>
+
 </resources>
