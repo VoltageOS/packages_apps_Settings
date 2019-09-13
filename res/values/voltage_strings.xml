@@ -13,4 +13,8 @@
     <string name="selinux_status_disabled">Disabled</string>
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
+
+    <!-- VoltageOS version -->
+    <string name="voltage_version">VoltageOS version</string>
+    <string name="voltage_version_default">Unknown</string>
 </resources>
