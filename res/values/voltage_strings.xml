@@ -81,4 +81,7 @@
     <!-- Quad9 DNS Option -->
     <string name="private_dns_mode_quad9" translatable="false">Quad9 DNS</string>
 
+    <!-- Battery temperature -->
+    <string name="battery_temperature">Battery temperature</string>
+
 </resources>
