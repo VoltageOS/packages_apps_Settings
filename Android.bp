@@ -66,6 +66,7 @@ android_library {
         "res-export", // for external usage
         "res-product",
         "Powerhub/res",
+        "TouchGestures/res"
     ],
     optional_uses_libs: ["com.android.extensions.appfunctions"],
     static_libs: [
