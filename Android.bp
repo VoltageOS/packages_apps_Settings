@@ -64,6 +64,7 @@ android_library {
         "res-export", // for external usage
         "res-product",
         "Powerhub/res",
+        "TouchGestures/res"
     ],
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
