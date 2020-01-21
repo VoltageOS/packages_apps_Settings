@@ -42,6 +42,12 @@
             settings:textStart="@string/thin_label"
             settings:textEnd="@string/thick_label"/>
 
+        <com.power.hub.preferences.SecureSettingSwitchPreference
+            android:key="show_back_arrow_gesture"
+            android:title="@string/back_gesture_arrow_message"
+            android:summary="@string/back_gesture_arrow_summary"
+            android:defaultValue="true" />
+
         <com.android.settings.widget.LabeledSeekBarPreference
             android:key="gesture_back_height"
             android:title="@string/back_height_message"
