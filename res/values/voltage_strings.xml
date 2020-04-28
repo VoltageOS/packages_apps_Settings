@@ -427,6 +427,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="action_app_action">Application</string>
     <string name="action_ringer_modes">Ringer modes</string>
     <string name="kill_app">Kill foreground app</string>
+    <string name="recent_app_toggle">Switch recent app</string>
 
     <!-- Long swipe gestures -->
     <string name="navbar_gesture_tweaks_pref_title">Advanced gestures options</string>
