@@ -48,4 +48,7 @@
     <string name="fingerprint_enroll_touch_dialog_message_side" product="device">Touch the sensor on the side of your device.</string>
     <string name="fingerprint_enroll_touch_dialog_message_side" product="default">Touch the sensor on the side of your phone.</string>
 
+    <!-- VoltageOS maintainer -->
+    <string name="maintainer">Maintainer</string>
+
 </resources>
