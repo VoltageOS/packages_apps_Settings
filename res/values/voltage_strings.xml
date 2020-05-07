@@ -9,4 +9,6 @@
     <string name="backup_transport_setting_label">Change backup provider</string>
     <string name="backup_transport_title">Select backup provider</string>
 
+    <!-- VoltageOS maintainer -->
+    <string name="maintainer">Maintainer</string>
 </resources>
