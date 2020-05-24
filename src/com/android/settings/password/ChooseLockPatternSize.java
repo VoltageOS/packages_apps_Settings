@@ -37,8 +37,6 @@ import com.android.settings.utils.SettingsDividerItemDecoration;
 
 import com.google.android.setupdesign.GlifPreferenceLayout;
 
-import org.lineageos.internal.logging.LineageMetricsLogger;
-
 public class ChooseLockPatternSize extends SettingsActivity {
 
     @Override
