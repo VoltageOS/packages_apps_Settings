@@ -63,4 +63,8 @@
     <string name="charging_sounds_custom_title">Charging sound</string>
     <string name="charging_vibro_title">Charging vibration</string>
 
+    <!-- Black theme for dark mode -->
+    <string name="berry_black_theme_title">Pure black</string>
+    <string name="berry_black_theme_summary">Pure black background for dark theme</string>
+
 </resources>
