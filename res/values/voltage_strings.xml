@@ -353,4 +353,7 @@
     <string name="vibration_intensity_medium">Medium</string>
     <string name="vibration_intensity_high">High</string>
 
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">Allow network access</string>
+    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
 </resources>
