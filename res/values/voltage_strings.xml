@@ -32,5 +32,6 @@
 
     <!-- VoltageOS maintainer -->
     <string name="maintainer">Maintainer</string>
+    <string name="voltage_maintainer">Unofficial Maintainer</string>
 
 </resources>
