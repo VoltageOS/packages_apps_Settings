@@ -18,4 +18,7 @@
     <!-- Whether to show min / max refresh rate preference in display settings -->
     <bool name="config_show_refresh_rate_switch">false</bool>
 
+    <string-array name="config_ignored_backup_transports" translatable="false">
+        <item>com.android.localtransport/.LocalTransport</item>
+    </string-array>
 </resources>
