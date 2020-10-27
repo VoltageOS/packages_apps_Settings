@@ -65,7 +65,7 @@ public class OverlayCategoryPreferenceController extends DeveloperOptionsPrefere
     @VisibleForTesting
     static final String PACKAGE_DEVICE_DEFAULT = "package_device_default";
     private static final Comparator<OverlayInfo> OVERLAY_INFO_COMPARATOR =
-            Comparator.comparingInt(a -> a.priority);
+            Comparator.comparing(OverlayInfo::getPackageName);
     private final IOverlayManager mOverlayManager;
     private final boolean mAvailable;
     private final boolean mIsFonts;
