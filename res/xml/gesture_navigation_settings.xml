@@ -37,6 +37,8 @@
 
     </PreferenceCategory>
 
+
+
     <PreferenceCategory
         android:key="back_sensitivity_category"
         android:persistent="false"
@@ -55,6 +57,11 @@
             android:max="2"
             settings:textStart="@string/low_label"
             settings:textEnd="@string/high_label"/>
+
+        <SwitchPreference
+            android:key="immersive_navigation"
+            android:title="@string/immersive_navigation_title"
+            android:summary="@string/immersive_navigation_summary" />
     </PreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
