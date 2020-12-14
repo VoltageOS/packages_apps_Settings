@@ -386,8 +386,9 @@
     <string name="background_processes_settings_title">Background processes</string>
 
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats</string>
-    <string name="battery_stats_message">Battery history stats are going to be reset</string>
+    <string name="battery_stats_reset">Clear usage data?</string>
+    <string name="battery_stats_message">Battery usage data will be lost\n(This has no effect on the pixel stats)</string>
+    <string name="battery_stats_clear">@string/proxy_clear_text</string>
 
     <!-- Notification sound timeout -->
     <string name="app_notification_sound_timeout_title">Minimum time between notification sounds</string>
