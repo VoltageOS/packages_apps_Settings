@@ -19,6 +19,6 @@
          but a dedicated one, i.e. not embedded in the power button. -->
     <bool name="config_is_side_fps" translatable="false">false</bool>
 
-    <!-- Whether to show min refresh rate in display settings -->
-    <bool name="config_show_min_refresh_rate_switch">false</bool>
+    <!-- Whether to show min/max refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">false</bool>
 </resources>
