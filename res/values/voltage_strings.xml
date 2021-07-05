@@ -277,6 +277,10 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="private_dns_mode_twnic" translatable="false">TW.NIC (TW)</string>
     <string name="private_dns_mode_uncensoreddns" translatable="false">UncensoredDNS (DK)</string>
 
+    <!-- High touch polling rate -->
+    <string name="high_touch_polling_rate_title">High touch polling rate</string>
+    <string name="high_touch_polling_rate_summary">Increase touchscreen polling rate</string>
+
     <!-- High touch sensitivity -->
     <string name="high_touch_sensitivity_title">High touch sensitivity</string>
     <string name="high_touch_sensitivity_summary">Increase touchscreen sensitivity so it can be used while wearing gloves</string>
