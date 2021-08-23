@@ -45,10 +45,12 @@ import android.util.EventLog;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -97,6 +99,10 @@ import com.android.wifi.flags.Flags;
 import com.android.wifitrackerlib.WifiEntry;
 import com.android.wifitrackerlib.WifiEntry.ConnectCallback;
 import com.android.wifitrackerlib.WifiPickerTracker;
+
+import com.google.android.setupcompat.template.FooterButtonStyleUtils;
+import com.google.android.setupcompat.util.WizardManagerHelper;
+import com.google.android.setupdesign.GlifPreferenceLayout;
 
 import java.util.List;
 import java.util.Optional;
@@ -168,6 +174,8 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
     // Enable the Next button when a Wi-Fi network is connected.
     private boolean mEnableNextOnConnection;
+
+    private boolean mIsInSetupWizard;
 
     // This string extra specifies a network to open the connect dialog on, so the user can enter
     // network credentials.  This is used by quick settings for secured networks, among other
@@ -277,6 +285,18 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
             return;
         }
 
+        if (mIsInSetupWizard) {
+            GlifPreferenceLayout layout = (GlifPreferenceLayout) view;
+            layout.setDividerInsets(Integer.MAX_VALUE, 0);
+
+            layout.setIcon(getContext().getDrawable(R.drawable.ic_network_setup));
+            layout.setHeaderText(R.string.provider_internet_settings);
+            FooterButtonStyleUtils.applyPrimaryButtonPartnerResource(activity, getNextButton(),
+                    true);
+
+            return;
+        }
+
         setPinnedHeaderView(com.android.settingslib.widget.progressbar.R.layout.progress_header);
         setProgressBarVisible(false);
 
@@ -354,6 +374,8 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
                 fixConnectivityItem.setVisible(!mIsGuest && (!isAirplaneModeOn || isWifiEnabled));
             }
         };
+        final Intent intent = this.getIntent();
+        mIsInSetupWizard = WizardManagerHelper.isAnySetupWizard(intent);
     }
 
     private void updateUserType() {
@@ -367,6 +389,17 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
     protected String getLogTag() {
         return TAG;
     }
+
+    @Override
+     public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
+             Bundle savedInstanceState) {
+         if (mIsInSetupWizard) {
+             GlifPreferenceLayout layout = (GlifPreferenceLayout) parent;
+             return layout.onCreateRecyclerView(inflater, parent, savedInstanceState);
+         } else {
+             return super.onCreateRecyclerView(inflater, parent, savedInstanceState);
+         }
+     }
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -485,6 +518,11 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
                 }
             }
         };
+
+        if (mIsInSetupWizard) {
+            mConfigureWifiSettingsPreference.setVisible(false);
+            mDataUsagePreference.setVisible(false);
+        }
 
         if (savedInstanceState != null) {
             mDialogMode = savedInstanceState.getInt(SAVE_DIALOG_MODE);
@@ -1015,7 +1053,9 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
                 if (mClickedConnect) {
                     mClickedConnect = false;
-                    scrollToPreference(connectedWifiPreferenceCategory);
+                    if (!mIsInSetupWizard) {
+                        scrollToPreference(connectedWifiPreferenceCategory);
+                    }
                 }
             }
         } else {
@@ -1140,10 +1180,12 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
     @VisibleForTesting
     void setAdditionalSettingsSummaries() {
-        mConfigureWifiSettingsPreference.setSummary(getString(
-                isWifiWakeupEnabled()
-                        ? R.string.wifi_configure_settings_preference_summary_wakeup_on
-                        : R.string.wifi_configure_settings_preference_summary_wakeup_off));
+        if (!mIsInSetupWizard) {
+            mConfigureWifiSettingsPreference.setSummary(getString(
+                    isWifiWakeupEnabled()
+                            ? R.string.wifi_configure_settings_preference_summary_wakeup_on
+                            : R.string.wifi_configure_settings_preference_summary_wakeup_off));
+        }
 
         final int numSavedNetworks = mWifiPickerTracker == null ? 0 :
                 mWifiPickerTracker.getNumSavedNetworks();
@@ -1191,7 +1233,9 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
     }
 
     protected void setProgressBarVisible(boolean visible) {
-        showPinnedHeader(visible);
+        if (!mIsInSetupWizard) {
+            showPinnedHeader(visible);
+        }
     }
 
     @VisibleForTesting
