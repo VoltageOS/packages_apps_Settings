@@ -14262,4 +14262,7 @@
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+
+    <string name="connectivity_check_title">Internet connectivity check</string>
+    <string name="connectivity_check_summary">HTTP endpoints to use for performing internet connectivity checks.</string>
 </resources>
