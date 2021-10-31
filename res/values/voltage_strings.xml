@@ -49,7 +49,7 @@
 
     <!--Powerhub-->
     <string name="powerhub_title">Power Hub</string>
-    <string name="powerhub_summary">Placeholder</string>
+    <string name="powerhub_summary">The Power you need</string>
 
     <!-- Wake on plug -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
