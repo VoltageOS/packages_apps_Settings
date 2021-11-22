@@ -227,4 +227,15 @@
     <string name="prevent_ringing_option_cycle">Cycle through modes</string>
     <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
 
+    <!-- Custom vibration intensity -->
+    <string name="vibration_intensity_title">Vibration Intensity</string>
+    <string name="vibration_intensity_summary">Control vibration intensity for different streams</string>
+    <string name="notification_vibration_intensity_title">Notifications</string>
+    <string name="ring_vibration_intensity_title">Ring</string>
+    <string name="haptic_feedback_intensity_title">Haptic Feedback</string>
+    <string name="vibration_intensity_off">Disabled</string>
+    <string name="vibration_intensity_low">Low</string>
+    <string name="vibration_intensity_medium">Medium</string>
+    <string name="vibration_intensity_high">High</string>
+
 </resources>
