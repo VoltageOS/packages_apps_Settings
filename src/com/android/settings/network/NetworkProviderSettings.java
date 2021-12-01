@@ -272,6 +272,7 @@ public class NetworkProviderSettings extends RestrictedSettingsFragment
         if (activity == null) {
             return;
         }
+        mWifiManager = activity.getSystemService(WifiManager.class);
 
         mWifiManager = activity.getSystemService(WifiManager.class);
 
