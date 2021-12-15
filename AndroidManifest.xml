@@ -3917,6 +3917,13 @@
                 android:value="com.power.hub.powerhub" />
         </activity>
 
+        <activity android:name=".preferences.game.GamingModeSettings"
+            android:label="@string/gaming_title"
+            android:exported="true">
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>

@@ -176,4 +176,17 @@
     <attr name="ic_menu_moreoverflow" format="reference" />
     <attr name="side_margin" format="reference|dimension" />
     <attr name="wifi_signal_color" format="reference" />
+
+    <declare-styleable name="exthm_SelfRemovingPreference">
+        <attr name="requiresPackage" format="string" />
+        <attr name="requiresFeature" format="string" />
+        <attr name="requiresConfig" format="string" />
+        <attr name="requiresConfigMask" format="integer" />
+        <attr name="requiresProperty" format="string" />
+        <attr name="requiresOwner" format="boolean" />
+        <attr name="requiresAction" format="string" />
+        <attr name="replacesKey" format="string" />
+        <attr name="minSummaryLines" format="integer" />
+    </declare-styleable>
+
 </resources>

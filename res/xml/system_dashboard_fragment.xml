@@ -34,6 +34,14 @@
         android:order="-250"
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+    
+    <!-- Gaming mode -->
+    <Preference
+        android:key="gaming_category"
+        android:title="@string/gaming_title"
+        android:order="-200" 
+        android:fragment="com.android.settings.preferences.game.GamingModeSettings"
+        android:icon="@drawable/ic_settings_gaming"/>
 
     <Preference
         android:key="date_time_settings"
