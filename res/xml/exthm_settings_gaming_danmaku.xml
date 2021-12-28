@@ -65,7 +65,7 @@
         settings:units="px/s"
         android:dependency="gaming_mode_show_danmaku" />
 
-    <com.power.hub.preferences.PackageListPreference
+    <com.android.settings.preferences.PackageListPreference
         android:title="@string/gaming_mode_danmaku_blacklist"
         android:key="gaming_mode_danmaku_app_blacklist"
         android:dependency="gaming_mode_show_danmaku" />
