@@ -60,6 +60,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     private static final String NAVIGATION_BAR_HINT_KEY = "navigation_bar_hint";
     private static final String GESTURE_NAVBAR_LENGTH_KEY = "gesture_navbar_length_preference";
     private static final String GESTURE_BACK_HEIGHT_KEY = "gesture_back_height";
+    private static final String GESTURE_NAVBAR_HEIGHT_MODE_KEY = "gesture_navbar_height_preference";
 
     private WindowManager mWindowManager;
     private BackGestureIndicatorView mIndicatorView;
@@ -97,6 +98,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         initSliderPreference(GESTURE_BACK_HEIGHT_KEY);
         initTutorialButton();
         initGestureNavbarLengthPreference();
+        initGestureNavbarHeightPreference();
     }
 
     @Override
@@ -266,6 +268,23 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         pref.setOnPreferenceChangeListener((p, v) -> {
             Settings.System.putIntForUser(resolver, Settings.System.GESTURE_NAVBAR_LENGTH_MODE,
                 (Integer) v, UserHandle.USER_CURRENT);
+            return true;
+        });
+    }
+
+    private void initGestureNavbarHeightPreference() {
+        final ContentResolver resolver = getContext().getContentResolver();
+        final SliderPreference pref =
+            getPreferenceScreen().findPreference(GESTURE_NAVBAR_HEIGHT_MODE_KEY);
+        pref.setUpdatesContinuously(true);
+        pref.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        pref.setSliderIncrement(1);
+        pref.setTickVisible(true);
+        pref.setValue(Settings.System.getIntForUser(resolver,
+            Settings.System.GESTURE_NAVBAR_HEIGHT_MODE, 3, UserHandle.USER_CURRENT));
+        pref.setOnPreferenceChangeListener((p, v) -> {
+            Settings.System.putIntForUser(resolver,
+                Settings.System.GESTURE_NAVBAR_HEIGHT_MODE, (Integer) v, UserHandle.USER_CURRENT);
             return true;
         });
     }
