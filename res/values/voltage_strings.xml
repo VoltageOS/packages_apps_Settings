@@ -81,4 +81,9 @@
     <string name="navigation_bar_inverse_title">Inverse Layout</string>
     <string name="navigation_bar_inverse_summary">Swipe positions between back and recents</string>
 
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="thin_label">Thin</string>
+    <string name="thick_label">Thick</string>
+
 </resources>
