@@ -19,4 +19,6 @@
     <!-- Whether to show the GPG UID (name/email) or just the key fingerprint -->
     <bool name="config_show_gpg_uid">false</bool>
 
+    <!-- Fingerprint -->
+    <bool name="config_is_front_facing_fps" translatable="false">false</bool>
 </resources>
