@@ -222,4 +222,9 @@
     <string name="volume_dialog_timeout_title">Volume panel timeout</string>
     <string name="volume_dialog_timeout_summary">The time it takes for volume panel to fade</string>
 
+    <!-- Per-app volume control -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Per-app volume control</string>
+    <string name="app_volume_summary">Allow to set different volume levels for each app</string>
+
 </resources>
