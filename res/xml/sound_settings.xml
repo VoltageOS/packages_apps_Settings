@@ -97,6 +97,14 @@
         android:defaultValue="true"
         android:order="-138" />
 
+    <!-- Per-app volume control -->
+    <SwitchPreference
+        android:key="app_volume"
+        android:title="@string/app_volume_title"
+        android:summary="@string/app_volume_summary"
+        android:order="-137"
+        android:defaultValue="true" />
+
     <!-- Increasing ring -->
     <com.power.hub.preferences.SystemSettingSwitchPreference
         android:key="increasing_ring"
