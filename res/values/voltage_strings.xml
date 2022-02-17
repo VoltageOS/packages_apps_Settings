@@ -165,4 +165,9 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
 
+    <!-- [CHAR LIMIT=NONE] Settings label. This setting lets the user's apps share intents function between their profiles. The adjective 'Cross-profile' is referring to the work and personal profiles a user has on their phone. -->
+    <string name="cross_profile_sharing_title">Cross-profile sharing</string>
+    <!-- [CHAR LIMIT=NONE] Setting description. If the user turns on this setting, they can share content across their personal and work profiles. -->
+    <string name="cross_profile_sharing_summary">Enable in-app share buttons to work across your personal and work profile</string>
+
 </resources>
