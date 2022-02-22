@@ -313,6 +313,7 @@
           Heads up notifications will be automatically disabled.
      </string>
     <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
     <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
 	
 	<!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
@@ -327,7 +328,7 @@
     <string name="security_settings_face_unlock_redo_face_scan_title">Redo face scan</string>
     <string name="face_redo_confirm_btn">Redo</string>
     <string name="face_redo_warning_msg">Do you want to remove the existing face scan and create a new one?</string>
-	<string name="face_unlock_method_title">Allow face unlock on lock screen</string>
+    <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
     <string name="face_unlock_method_default">When the screen is turned on</string>
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
 
@@ -335,5 +336,6 @@
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
     <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+
 
 </resources>
