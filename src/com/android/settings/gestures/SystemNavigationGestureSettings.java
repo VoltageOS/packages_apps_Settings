@@ -75,6 +75,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment i
     @VisibleForTesting
     static final String KEY_SYSTEM_NAV_GESTURAL = "system_nav_gestural";
 
+    static final String KEY_SYSTEM_NAV = "system_nav_key";
+
     public static final String PREF_KEY_SUGGESTION_COMPLETE =
             "pref_system_navigation_suggestion_complete";
 
@@ -193,10 +195,13 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment i
                 // Don't add the settings button if that page will be blank.
                 && !PreferenceControllerListHelper.areAllPreferencesUnavailable(
                         getContext(), getPreferenceManager(), R.xml.button_navigation_settings)) {
+                Bundle arguments = new Bundle();
+                arguments.putString(KEY_SYSTEM_NAV, info.getKey());
             pref.setExtraWidgetOnClickListener((v) ->
                     new SubSettingLauncher(getContext())
                             .setDestination(ButtonNavigationSettingsFragment.class.getName())
                             .setSourceMetricsCategory(SettingsEnums.SETTINGS_GESTURE_SWIPE_UP)
+                            .setArguments(arguments)
                             .launch());
         }
     }
