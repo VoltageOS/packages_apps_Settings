@@ -34,8 +34,13 @@
         android:key="assistant_long_press_home_gesture"
         android:title="@string/assistant_long_press_home_gesture_title"
         android:summary="@string/assistant_long_press_home_gesture_summary"
-        settings:controller="com.android.settings.gestures.ButtonNavigationSettingsAssistController"
-    />
+        settings:controller="com.android.settings.gestures.ButtonNavigationSettingsAssistController"    />
+
+    <com.power.hub.preferences.SecureSettingSwitchPreference
+        android:key="sysui_nav_bar_inverse"
+        android:title="@string/navigation_bar_inverse_title"
+        android:summary="@string/navigation_bar_inverse_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
 
