@@ -42,5 +42,11 @@
         android:summary="@string/navigation_bar_inverse_summary"
         android:defaultValue="false" />
 
+    <com.power.hub.preferences.SystemSettingSwitchPreference
+            android:key="navigation_bar_compact_layout"
+            android:title="@string/navbar_compact_layout_title"
+            android:summary="@string/navbar_compact_layout_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
 
