@@ -4981,6 +4981,8 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.power.hub.powerhub" />
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_powerhub"/>
         </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->

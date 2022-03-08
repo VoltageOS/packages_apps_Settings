@@ -73,6 +73,7 @@
         android:key="top_level_powerhub"
         android:title="@string/powerhub_title"
         android:summary="@string/powerhub_summary"
+        settings:highlightableMenuKey="@string/menu_key_powerhub"
         android:icon="@drawable/ic_powerhub"
         android:order="-125"
         android:fragment="com.power.hub.powerhub"/>
