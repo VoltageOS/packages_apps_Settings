@@ -27,6 +27,9 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+import com.android.settings.R;
+
+import androidx.annotation.VisibleForTesting;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
@@ -101,5 +104,10 @@ public class DoubleTapPowerPreferenceController extends BasePreferenceController
             return mContext.getString(R.string.double_tap_power_summary, onString, actionString);
         }
         return mContext.getText(com.android.settings.R.string.gesture_setting_off);
+    }
+
+    @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_system;
     }
 }
