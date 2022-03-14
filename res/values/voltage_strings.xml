@@ -72,4 +72,8 @@
     <string name="fingerprint_enroll_touch_dialog_message_rear">Touch the sensor on the back of your phone.</string>
     <string name="fingerprint_enroll_touch_dialog_message_side">Touch the sensor on the side of your phone.</string>
 
+    <!--Powerhub-->
+    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_summary">Placeholder</string>
+
 </resources>

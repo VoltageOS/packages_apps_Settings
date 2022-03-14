@@ -52,9 +52,9 @@ android_library {
         "SpaPrivilegedLib-defaults",
     ],
 
-    srcs: [
-        "src/**/*.java",
-        "src/**/*.kt",
+    srcs: ["src/**/*.java", "src/**/*.kt",
+           "Powerhub/src/**/*.java",
+           "Powerhub/src/**/*.kt",
     ],
     exclude_srcs: [
         "src/com/android/settings/biometrics/fingerprint2/lib/**/*.kt",
@@ -65,6 +65,7 @@ android_library {
         "res",
         "res-export", // for external usage
         "res-product",
+        "Powerhub/res",
     ],
     optional_uses_libs: ["com.android.extensions.appfunctions"],
     static_libs: [
@@ -126,6 +127,11 @@ android_library {
         "com.android.extensions.appfunctions.impl",
         "device-state-schema",
         "VendorSupport-preference",
+        "androidx.navigation_navigation-common-ktx",
+        "androidx.navigation_navigation-fragment-ktx",
+        "androidx.navigation_navigation-runtime-ktx",
+        "androidx.navigation_navigation-ui-ktx",
+        "kotlin-stdlib",
     ],
 
     plugins: [
