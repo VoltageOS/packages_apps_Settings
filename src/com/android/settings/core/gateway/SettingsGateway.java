@@ -195,6 +195,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.power.hub.powerhub;
 import com.power.hub.fragments.SmartPixels;
+import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
 
 public class SettingsGateway {
 
@@ -378,7 +379,8 @@ public class SettingsGateway {
             RegionalPreferencesEntriesFragment.class.getName(),
             powerhub.class.getName(),
             RunningServices.class.getName(),
-            SmartPixels.class.getName()
+            SmartPixels.class.getName(),
+            WifiTetherClientManager.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
