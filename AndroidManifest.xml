@@ -5476,8 +5476,6 @@
                        android:value="true" />
         </activity>
 
-        <!-- This is the longest AndroidManifest.xml ever. -->
-
         <activity android:name=".backup.transport.TransportActivity"
                   android:label="@string/backup_transport_title"
                   android:icon="@drawable/ic_settings_backup"
@@ -5506,5 +5504,20 @@
                 android:value="@string/menu_key_apps"/>
         </activity>
 
+	<!-- Powerhub -->
+         <activity android:name=".Settings$PowerhubActivity"
+             android:label="@string/powerhub_title"
+             android:icon="@drawable/ic_homepage_powerhub"
+             android:parentActivityName="com.android.settings"
+             android:exported="true">
+             <intent-filter android:priority="69">
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="com.android.settings.SHORTCUT" />
+             </intent-filter>
+             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                 android:value="com.power.hub.powerhub" />
+         </activity>
+ 
+         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
