@@ -68,6 +68,14 @@
         android:summary="@string/notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_notifications"/>
 
+    <com.android.settings.widget.HomepagePreference
+        android:key="top_level_powerhub"
+        android:title="@string/powerhub_title"
+        android:summary="@string/powerhub_summary"
+        android:icon="@drawable/ic_powerhub"
+        android:order="-125"
+        android:fragment="com.power.hub.powerhub"/>
+
     <com.android.settings.widget.RestrictedHomepagePreference
         android:fragment="com.android.settings.notification.modes.ZenModesListFragment"
         android:icon="@*android:drawable/ic_zen_priority_modes"
