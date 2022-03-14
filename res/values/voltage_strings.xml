@@ -58,4 +58,8 @@
     <!-- Density category -->
     <string name="density_category">Density options</string>
 
+    <!--Powerhub-->
+    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_summary">Placeholder</string>
+
 </resources>
