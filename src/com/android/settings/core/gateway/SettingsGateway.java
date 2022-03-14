@@ -214,6 +214,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.power.hub.powerhub;
 
+import con.android.settings.wifi.tether.WifiTetherClientManager;
+
 public class SettingsGateway {
 
     /**
@@ -416,7 +418,8 @@ public class SettingsGateway {
             ZenModesListFragment.class.getName(),
             ZenModeFragment.class.getName(),
             ContactsStorageSettings.class.getName(),
-            powerhub.class.getName()
+            powerhub.class.getName(),
+            WifiTetherClientManager.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
