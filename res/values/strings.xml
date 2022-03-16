@@ -14557,6 +14557,9 @@
     <!-- [CHAR LIMIT=NONE] Hint for QR code process failure -->
     <string name="bt_le_audio_qr_code_is_not_valid_format">QR code isn\u0027t a valid format</string>
 
+    <string name="user_settings_send_censored_notifications_to_current">Send notifications to current user</string>
+    <string name="user_settings_send_censored_notifications_to_current_summary">Your lock screen notifications will be forwarded to the current user if you are active in the background. Only the user\'s name, the app\'s name, and the time received will be shown.</string>
+
     <string name="sandboxed_google_play">Sandboxed Google Play</string>
     <string name="sandboxed_google_play_work_profile">Sandboxed Google Play (work profile)</string>
 </resources>
