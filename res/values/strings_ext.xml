@@ -20,4 +20,7 @@
     <string name="supl_disabled">Disabled</string>
     <string name="supl_disabled_summary">Will make acquiring location lock significantly slower, especially if PSDS is disabled too</string>
 
+    <string name="privileged_euicc_management_title">Enable privileged eSIM management</string>
+    <string name="privileged_euicc_management_summary">Requires sandboxed Google Play installation</string>
+
 </resources>
