@@ -44,8 +44,11 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt",
-           "Powerhub/src/**/*.java",
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+        "Powerhub/src/**/*.java",
+        "Powerhub/src/**/*.kt",
     ],
 
     aaptflags: ["--extra-packages com.power.hub"],
@@ -62,7 +65,9 @@ android_library {
         "androidx.core_core",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
+        "androidx.fragment_fragment",
         "androidx.preference_preference",
+        "androidx.preference_preference-ktx",
         "androidx.recyclerview_recyclerview",
         "androidx.window_window",
         "com.google.android.material_material",
@@ -86,6 +91,8 @@ android_library {
         "lottie",
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
+        "kotlinx_coroutines_android",
+        "kotlinx_coroutines",
     ],
 
     libs: [
