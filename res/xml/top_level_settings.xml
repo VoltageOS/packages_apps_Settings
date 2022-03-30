@@ -69,7 +69,7 @@
         android:summary="@string/notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_notifications"/>
 
-	<Preference
+    <com.android.settings.widget.HomepagePreference
         android:key="top_level_powerhub"
         android:title="@string/powerhub_title"
         android:summary="@string/powerhub_summary"
