@@ -333,5 +333,8 @@ public class Settings extends SettingsActivity {
      * Running services
      */
     public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
+
     public static class SmartPixelsActivity extends SettingsActivity {}
+
+    public static class SleepModeActivity extends SettingsActivity {}
 }
