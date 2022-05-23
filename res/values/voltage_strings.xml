@@ -60,4 +60,7 @@
     <!-- AdGuard DNS Option -->
     <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
 
+    <!-- Quad9 DNS Option -->
+    <string name="private_dns_mode_quad9" translatable="false">Quad9 DNS</string>
+
 </resources>
