@@ -104,6 +104,7 @@ android_library {
         "kotlinx_coroutines_android",
         "kotlinx_coroutines",
         "faceunlock_framework",
+        "vendor.lineage.touch-V1.0-java",
     ],
 
     libs: [
