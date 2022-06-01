@@ -99,6 +99,7 @@ android_library {
         "Settings-change-ids",
         "SystemUIUnfoldLib",
         "faceunlock_framework",
+        "vendor.lineage.touch-V1.0-java",
     ],
 
     libs: [
