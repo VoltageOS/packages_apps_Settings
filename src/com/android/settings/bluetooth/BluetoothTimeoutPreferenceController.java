@@ -106,9 +106,9 @@ public class BluetoothTimeoutPreferenceController extends BasePreferenceControll
         String summary = "";
         if (timeoutDescription != null) {
             if (currentTimeout != 0)
-                summary = mContext.getString(R.string.bluetooth_timeout_summary_auto, timeoutDescription);
+                summary = mContext.getString(R.string.bluetooth_timeout_summary, timeoutDescription);
             else
-                summary = mContext.getString(R.string.bluetooth_timeout_summary);
+                summary = mContext.getString(R.string.bluetooth_timeout_summary2);
         }
         preference.setSummary(summary);
     }
