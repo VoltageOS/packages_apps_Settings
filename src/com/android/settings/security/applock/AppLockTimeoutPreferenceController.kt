@@ -32,7 +32,7 @@ class AppLockTimeoutPreferenceController(
 
     private val appLockManager = context.getSystemService(AppLockManager::class.java)
 
-    override fun getAvailabilityStatus() = AVAILABLE
+    override fun getAvailabilityStatus() = AVAILABLE_UNSEARCHABLE
 
     override fun updateState(preference: Preference) {
         (preference as ListPreference).value = appLockManager.timeout.takeIf {

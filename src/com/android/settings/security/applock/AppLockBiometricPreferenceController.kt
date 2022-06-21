@@ -39,7 +39,7 @@ class AppLockBiometricPreferenceController(
         val biometricsAllowed = biometricManager.canAuthenticate(
             Authenticators.BIOMETRIC_STRONG) == BiometricManager.BIOMETRIC_SUCCESS
         return if (biometricsAllowed)
-            AVAILABLE
+            AVAILABLE_UNSEARCHABLE
         else
             UNSUPPORTED_ON_DEVICE
     }

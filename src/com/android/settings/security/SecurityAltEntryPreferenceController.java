@@ -32,7 +32,7 @@ public class SecurityAltEntryPreferenceController extends BasePreferenceControll
 
     @Override
     public int getAvailabilityStatus() {
-        return AVAILABLE;
+        return AVAILABLE_UNSEARCHABLE;
     }
 
     @Override
