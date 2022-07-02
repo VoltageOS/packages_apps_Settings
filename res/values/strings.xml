@@ -14451,4 +14451,6 @@
 
     <string name="privileged_euicc_management_title">Enable privileged eSIM management</string>
     <string name="privileged_euicc_management_summary">Requires Sandboxed Google Play installation</string>
+
+    <string name="storage_scopes">Storage Scopes</string>
 </resources>
