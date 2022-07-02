@@ -3667,7 +3667,7 @@
             android:exported="true"
             android:label="@string/manage_external_storage_title">
             <intent-filter android:priority="1">
-                <action android:name="android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION" />
+                <action android:name="android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION_INNER" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="package" />
             </intent-filter>
@@ -3698,7 +3698,7 @@
             android:exported="true"
             android:label="@string/media_management_apps_title">
             <intent-filter android:priority="1">
-                <action android:name="android.settings.REQUEST_MANAGE_MEDIA" />
+                <action android:name="android.settings.REQUEST_MANAGE_MEDIA_INNER" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="package" />
             </intent-filter>
