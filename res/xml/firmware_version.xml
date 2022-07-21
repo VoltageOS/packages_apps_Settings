@@ -43,6 +43,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.VoltageVersionPreferenceController"/>
 
+    <!-- VoltageOS Device -->
+    <Preference
+        android:key="about_device_name"
+        android:title="@string/about_device_name"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
+
     <!-- VoltageOS maintainer -->
     <Preference
         android:key="maintainer"
@@ -58,6 +66,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
+    <!-- Kernel -->
+    <Preference
+        android:key="kernel_version"
+        android:title="@string/kernel_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
+
     <!-- Baseband -->
     <Preference
         android:key="base_band"
@@ -66,14 +82,6 @@
         android:selectable="false"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
-
-    <!-- Kernel -->
-    <Preference
-        android:key="kernel_version"
-        android:title="@string/kernel_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
 
     <!-- SELinux -->
     <Preference
