@@ -124,10 +124,4 @@ public class VoltageVersionPreferenceController extends BasePreferenceController
         mFunDisallowedBySystem = RestrictedLockUtilsInternal.hasBaseUserRestriction(
                 mContext, UserManager.DISALLOW_FUN, UserHandle.myUserId());
     }
-
-    @Override
-    public void copy() {
-        Sliceable.setCopyContent(mContext, getSummary(),
-                mContext.getText(R.string.voltage_version));
-    }
 }
