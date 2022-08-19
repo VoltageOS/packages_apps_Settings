@@ -144,7 +144,7 @@ public class EnabledNetworkModePreferenceController extends
     @Override
     public int getAvailabilityStatus() {
         return getNetworkModePreferenceType(mContext, mSubId)
-                == NetworkModePreferenceType.EnabledNetworkMode
+                != NetworkModePreferenceType.PreferredNetworkMode
                 ? AVAILABLE : CONDITIONALLY_UNAVAILABLE;
     }
 
@@ -385,6 +385,7 @@ public class EnabledNetworkModePreferenceController extends
         }
 
         void setPreferenceEntries() {
+            boolean lteOnlyUnsupported = false;
             mTelephonyManager = mTelephonyManager.createForSubscriptionId(mSubId);
 
             clearAllEntries();
@@ -400,6 +401,7 @@ public class EnabledNetworkModePreferenceController extends
                             .addFormat(UiOptions.PresentFormat.addGlobalEntry);
                     break;
                 case ENABLED_NETWORKS_CDMA_NO_LTE_CHOICES:
+                    lteOnlyUnsupported = true;
                     uiOptions = uiOptions
                             .setChoices(R.array.enabled_networks_cdma_no_lte_values)
                             .addFormat(UiOptions.PresentFormat.add3gEntry)
@@ -419,6 +421,7 @@ public class EnabledNetworkModePreferenceController extends
                             .addFormat(UiOptions.PresentFormat.add2gEntry);
                     break;
                 case ENABLED_NETWORKS_EXCEPT_GSM_LTE_CHOICES:
+                    lteOnlyUnsupported = true;
                     uiOptions = uiOptions
                             .setChoices(R.array.enabled_networks_except_gsm_lte_values)
                             .addFormat(UiOptions.PresentFormat.add3gEntry);
@@ -436,6 +439,7 @@ public class EnabledNetworkModePreferenceController extends
                             .addFormat(UiOptions.PresentFormat.add3gEntry);
                     break;
                 case ENABLED_NETWORKS_EXCEPT_LTE_CHOICES:
+                    lteOnlyUnsupported = true;
                     uiOptions = uiOptions
                             .setChoices(R.array.enabled_networks_except_lte_values)
                             .addFormat(UiOptions.PresentFormat.add3gEntry)
@@ -484,6 +488,11 @@ public class EnabledNetworkModePreferenceController extends
                 throw new IllegalArgumentException(
                         uiOptions.getType().name() + " index error.");
             }
+
+            if (!lteOnlyUnsupported) {
+                addLteOnlyEntry();
+            }
+
             // Compose options based on given values and formats.
             IntStream.range(0, formatList.size()).forEach(entryIndex -> {
                 switch (formatList.get(entryIndex)) {
@@ -667,6 +676,9 @@ public class EnabledNetworkModePreferenceController extends
                         break;
                     }
                 case TelephonyManager.NETWORK_MODE_LTE_ONLY:
+                    setSummary(mShow4gForLTE
+                            ? R.string.network_4G_only : R.string.network_lte_only);
+                    break;
                 case TelephonyManager.NETWORK_MODE_LTE_WCDMA:
                     if (!mIsGlobalCdma) {
                         setSelectedEntry(TelephonyManager.NETWORK_MODE_LTE_GSM_WCDMA);
@@ -856,6 +868,16 @@ public class EnabledNetworkModePreferenceController extends
         private void add1xEntry(int value) {
             mEntries.add(getResourcesForSubId().getString(R.string.network_1x));
             mEntriesValue.add(value);
+        }
+
+        private void addLteOnlyEntry() {
+            if (mShow4gForLTE) {
+                mEntries.add(mContext.getString(R.string.network_4G_only));
+                mEntriesValue.add(TelephonyManager.NETWORK_MODE_LTE_ONLY);
+            } else {
+                mEntries.add(mContext.getString(R.string.network_lte_only));
+                mEntriesValue.add(TelephonyManager.NETWORK_MODE_LTE_ONLY);
+            }
         }
 
         private void addCustomEntry(String name, int value) {
