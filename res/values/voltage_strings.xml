@@ -86,4 +86,8 @@
     <string name="short_label">Short</string>
     <string name="long_label">Long</string>
 
+    <!-- 3-Button navigation settings -->
+    <string name="navigation_bar_inverse_title">Inverse Layout</string>
+    <string name="navigation_bar_inverse_summary">Swipe positions between back and recents</string>
+
 </resources>
