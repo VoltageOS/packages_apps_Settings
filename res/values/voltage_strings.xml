@@ -63,4 +63,8 @@
     <!-- Quad9 DNS Option -->
     <string name="private_dns_mode_quad9" translatable="false">Quad9 DNS</string>
 
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use Black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
+
 </resources>
