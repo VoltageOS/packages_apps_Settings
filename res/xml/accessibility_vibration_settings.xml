@@ -91,6 +91,12 @@
             android:title="@string/qs_brightness_slider_haptic_feedback_title"
             android:defaultValue="false" />
 
+        <!-- QS Tiles haptic -->
+        <com.power.hub.preferences.SystemSettingSwitchPreference
+            android:key="qs_tiles_haptic_feedback"
+            android:title="@string/qs_tiles_haptic_feedback_title"
+            android:defaultValue="false" />
+
         <!-- Volume slider haptic -->
         <com.power.hub.preferences.SystemSettingSwitchPreference
             android:key="volume_slider_haptic_feedback"
