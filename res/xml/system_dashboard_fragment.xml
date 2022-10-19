@@ -153,4 +153,11 @@
         android:key="developer_options"
         android:order="100"
         settings:controller="com.android.settings.system.DeveloperOptionsController"/>
+
+    <Preference
+        android:key="other_settings"
+        android:title="@string/other_settings"
+        android:icon="@drawable/ic_settings_other"
+        android:order="90"
+        android:fragment="com.android.settings.other.OtherFragment"/>
 </PreferenceScreen>
