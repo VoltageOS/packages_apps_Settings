@@ -18,21 +18,20 @@ package com.android.settings.gestures;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 import android.content.Context;
 import android.content.res.Resources;
 
-import androidx.test.core.app.ApplicationProvider;
-
-import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.RuntimeEnvironment;
 
 @RunWith(RobolectricTestRunner.class)
 public class PowerMenuPreferenceControllerTest {
@@ -42,75 +41,35 @@ public class PowerMenuPreferenceControllerTest {
 
     private static final String KEY_GESTURE_POWER_MENU = "gesture_power_menu";
 
+
     @Before
     public void setUp() {
-        mContext = spy(ApplicationProvider.getApplicationContext());
-        mResources = spy(mContext.getResources());
-        mController = new PowerMenuPreferenceController(mContext, KEY_GESTURE_POWER_MENU);
-
+        mContext = spy(RuntimeEnvironment.application);
+        mResources = mock(Resources.class);
+        when(mResources.getBoolean(
+            com.android.internal.R.bool.config_longPressOnPowerForAssistantSettingAvailable))
+                .thenReturn(true);
         when(mContext.getResources()).thenReturn(mResources);
+        mController = new PowerMenuPreferenceController(mContext, KEY_GESTURE_POWER_MENU);
+    }
+
+    @Test
+    public void getAvailabilityStatus_assistAvailable_available() {
         when(mResources.getBoolean(
-                        com.android.internal.R.bool
-                                .config_longPressOnPowerForAssistantSettingAvailable))
-                .thenReturn(true);
-        when(mResources.getInteger(com.android.internal.R.integer.config_longPressOnPowerBehavior))
-                .thenReturn(1); // Default to power menu
+                com.android.internal.R.bool.config_longPressOnPowerForAssistantSettingAvailable))
+                    .thenReturn(true);
+
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(
+                BasePreferenceController.AVAILABLE);
     }
 
     @Test
-    public void getAvailabilityStatus_settingsAvailable_returnsAvailable() {
+    public void getAvailabilityStatus_assistUnavailable_unavailable() {
         when(mResources.getBoolean(
-                        com.android.internal.R.bool
-                                .config_longPressOnPowerForAssistantSettingAvailable))
-                .thenReturn(true);
-        when(mResources.getInteger(com.android.internal.R.integer.config_longPressOnPowerBehavior))
-                .thenReturn(1); // Default to power menu
+                com.android.internal.R.bool.config_longPressOnPowerForAssistantSettingAvailable))
+                    .thenReturn(false);
 
-        assertThat(mController.getAvailabilityStatus())
-                .isEqualTo(BasePreferenceController.AVAILABLE);
-    }
-
-    @Test
-    public void getAvailabilityStatus_settingsNotAvailable_returnsNotAvailable() {
-        when(mResources.getBoolean(
-                        com.android.internal.R.bool
-                                .config_longPressOnPowerForAssistantSettingAvailable))
-                .thenReturn(false);
-        when(mResources.getInteger(com.android.internal.R.integer.config_longPressOnPowerBehavior))
-                .thenReturn(1); // Default to power menu
-
-        assertThat(mController.getAvailabilityStatus())
-                .isEqualTo(BasePreferenceController.UNSUPPORTED_ON_DEVICE);
-    }
-
-    @Test
-    public void getAvailabilityStatus_longPressPowerSettingNotAvailable_returnsNotAvailable() {
-        when(mResources.getBoolean(
-                        com.android.internal.R.bool
-                                .config_longPressOnPowerForAssistantSettingAvailable))
-                .thenReturn(true);
-        when(mResources.getInteger(com.android.internal.R.integer.config_longPressOnPowerBehavior))
-                .thenReturn(3); // Default to power off (unsupported setup)
-
-        assertThat(mController.getAvailabilityStatus())
-                .isEqualTo(BasePreferenceController.UNSUPPORTED_ON_DEVICE);
-    }
-
-    @Test
-    public void getSummary_longPressPowerToAssistant_returnsNotAvailable() {
-        PowerMenuSettingsUtils.setLongPressPowerForAssistant(mContext);
-
-        assertThat(mController.getSummary().toString())
-                .isEqualTo(
-                        mContext.getString(R.string.power_menu_summary_long_press_for_assistant));
-    }
-
-    @Test
-    public void getSummary_longPressPowerToPowerMenu_returnsNotAvailable() {
-        PowerMenuSettingsUtils.setLongPressPowerForPowerMenu(mContext);
-
-        assertThat(mController.getSummary().toString())
-                .isEqualTo(
-                        mContext.getString(R.string.power_menu_summary_long_press_for_power_menu));
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(
+                BasePreferenceController.UNSUPPORTED_ON_DEVICE);
     }
 }
