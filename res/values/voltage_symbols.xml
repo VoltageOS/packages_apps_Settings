@@ -7,4 +7,6 @@
 
     <java-symbol type="bool" name="config_show_gpg_uid" />
 
+    <!-- TouchGestures -->
+    <java-symbol type="bool" name="config_supportsTouchGestures" />
 </resources>
