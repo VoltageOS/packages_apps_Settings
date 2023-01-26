@@ -11,7 +11,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- Fingerprint -->
     <bool name="config_is_front_facing_fps" translatable="false">false</bool>
 
@@ -26,4 +25,7 @@
     <string-array name="config_ignored_backup_transports" translatable="false">
         <item>com.android.localtransport/.LocalTransport</item>
     </string-array>
+
+    <!-- Whether to show TouchGestures preference -->
+    <bool name="config_supportsTouchGestures">false</bool>
 </resources>
