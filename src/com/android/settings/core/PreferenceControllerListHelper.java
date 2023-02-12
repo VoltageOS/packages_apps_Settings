@@ -31,6 +31,7 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 
 import com.android.settings.core.PreferenceXmlParserUtils.MetadataFlag;
+import com.android.settings.ext.BoolSettingPrefController;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -59,6 +60,7 @@ public class PreferenceControllerListHelper {
         try {
             preferenceMetadata = PreferenceXmlParserUtils.extractMetadata(context, xmlResId,
                     MetadataFlag.FLAG_NEED_KEY | MetadataFlag.FLAG_NEED_PREF_CONTROLLER
+                            | MetadataFlag.FLAG_NEED_BOOL_SETTING_FIELD
                             | MetadataFlag.FLAG_INCLUDE_PREF_SCREEN  | MetadataFlag.FLAG_FOR_WORK);
         } catch (IOException | XmlPullParserException e) {
             Log.e(TAG, "Failed to parse preference xml for getting controllers", e);
@@ -68,6 +70,7 @@ public class PreferenceControllerListHelper {
         for (Bundle metadata : preferenceMetadata) {
             final String controllerName = metadata.getString(METADATA_CONTROLLER);
             if (TextUtils.isEmpty(controllerName)) {
+                BoolSettingPrefController.maybeAdd(context, metadata, controllers);
                 continue;
             }
             BasePreferenceController controller;
