@@ -62,8 +62,7 @@ public abstract class RadioButtonPickerFragment extends SettingsPreferenceFragme
         SelectorWithWidgetPreference.OnClickListener {
 
     @VisibleForTesting
-    static final String EXTRA_FOR_WORK = "for_work";
-
+    protected static final String EXTRA_FOR_WORK = "for_work";
     private static final String TAG = "RadioButtonPckrFrgmt";
     private static final String KEY_CATEGORY_PREFERENCE = "radio_button_picker_category";
     @VisibleForTesting
@@ -182,6 +181,12 @@ public abstract class RadioButtonPickerFragment extends SettingsPreferenceFragme
         return new RestrictedSelectorWithWidgetPreference(getPrefContext());
     }
 
+    protected void addPrefsBeforeList(PreferenceScreen screen) {
+        if (!mAppendStaticPreferences) {
+            addStaticPreferences(screen);
+        }
+    }
+
     public void updateCandidates() {
         mCandidates.clear();
         final List<? extends CandidateInfo> candidateList = getCandidates();
@@ -197,9 +202,7 @@ public abstract class RadioButtonPickerFragment extends SettingsPreferenceFragme
         if (mIllustrationId != 0) {
             addIllustration(screen);
         }
-        if (!mAppendStaticPreferences) {
-            addStaticPreferences(screen);
-        }
+        addPrefsBeforeList(screen);
         PreferenceGroup radioButtonsGroup = screen;
         if (mCategoryTitleId != 0) {
             Context context = getPrefContext();
@@ -235,6 +238,10 @@ public abstract class RadioButtonPickerFragment extends SettingsPreferenceFragme
             }
         }
         mayCheckOnlyRadioButton();
+        addPrefsAfterList(screen);
+    }
+
+    protected void addPrefsAfterList(PreferenceScreen screen) {
         if (mAppendStaticPreferences) {
             addStaticPreferences(screen);
         }
