@@ -68,4 +68,7 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
     <!-- Title of preference to enable running in background [CHAR LIMIT=40] -->
     <string name="user_run_in_background">Allow running in background</string>
 
+    <string name="auto_reboot_title">Auto reboot</string>
+    <string name="auto_reboot_footer">Automatically reboot the device if it hasn\'t been unlocked within the selected duration of time.</string>
+
 </resources>
