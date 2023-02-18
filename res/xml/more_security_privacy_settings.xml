@@ -104,6 +104,12 @@
             android:summaryOff="@string/auto_grant_OTHER_SENSORS_permission_summary_off"
             settings:boolSettingField="android.ext.settings.ExtSettings AUTO_GRANT_OTHER_SENSORS_PERMISSION"/>
 
+        <SwitchPreferenceCompat
+            android:key="privacy_screenshot_timestamp_exif"
+            android:title="@string/screenshot_timestamp_exif_title"
+            android:summary="@string/screenshot_timestamp_exif_summary"
+            settings:boolSettingField="android.ext.settings.ExtSettings SCREENSHOT_TIMESTAMP_EXIF"/>
+
         <!-- Allow software fallback for camera extensions -->
         <SwitchPreferenceCompat
             android:key="privacy_camera_extensions_fallback"
