@@ -185,4 +185,12 @@ This method can be particularly useful when GNSS is unavailable or unreliable, s
     <string name="geocoder_enabled_nominatim_server">Nominatim server</string>
     <string name="geocoder_disabled">Off</string>
 
+    <string name="pref_gnss_supl_title">Secure User Plane Location (SUPL)</string>
+    <string name="pref_gnss_supl_footer">A-GNSS (assisted satellite geolocation) based on nearby cell towers.</string>
+
+    <string name="supl_enabled_grapheneos_proxy">GrapheneOS proxy</string>
+    <string name="supl_enabled_standard_server">Standard server</string>
+    <string name="supl_disabled">Off</string>
+    <string name="supl_disabled_summary">Will make acquiring location lock significantly slower, especially if PSDS is turned off too</string>
+
 </resources>

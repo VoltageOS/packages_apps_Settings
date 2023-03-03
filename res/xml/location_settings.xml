@@ -50,6 +50,11 @@
         android:summary="@string/assisted_gps_summary"
         settings:controller="com.android.settings.location.AgpsPreferenceController"/>
 
+        <Preference
+            android:key="gnss_supl"
+            android:title="@string/pref_gnss_supl_title"
+            settings:controller="com.android.settings.location.GnssSuplPrefController"/>
+
     <com.android.settingslib.widget.UntitledPreferenceCategory
         android:key="location_advanced_settings">
 
