@@ -126,4 +126,10 @@
         android:summary="@string/cellular_security_summary"
         android:order="30"
         settings:controller="com.android.settings.network.CellularSecurityPreferenceController"/>
+
+    <Preference
+        android:key="remote_provisioning_settings"
+        android:title="@string/remote_provisioning_title"
+        android:order="35"
+        settings:controller="com.android.settings.network.RemoteProvisioningPrefController" />
 </PreferenceScreen>
