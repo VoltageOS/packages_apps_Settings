@@ -61,6 +61,15 @@
             android:key="pointer_speed"
             android:title="@string/pointer_speed"
             android:dialogTitle="@string/pointer_speed" />
+
+        <com.voltage.support.preferences.SystemSettingListPreference
+            android:key="prevent_pointer_acceleration"
+            android:title="@string/prevent_pointer_acceleration_title"
+            android:summary="%s"
+            android:dialogTitle="@string/prevent_pointer_acceleration_title"
+            android:entries="@array/prevent_pointer_acceleration_entries"
+            android:entryValues="@array/prevent_pointer_acceleration_values"
+            android:defaultValue="0" />
     </PreferenceCategory>
 
     <SwitchPreferenceCompat
