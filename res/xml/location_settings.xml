@@ -55,6 +55,11 @@
             android:title="@string/pref_gnss_supl_title"
             settings:controller="com.android.settings.location.GnssSuplPrefController"/>
 
+        <Preference
+            android:key="gnss_psds"
+            android:title="@string/pref_gnss_psds_title"
+            settings:controller="com.android.settings.location.GnssPsdsPrefController"/>
+
     <com.android.settingslib.widget.UntitledPreferenceCategory
         android:key="location_advanced_settings">
 
