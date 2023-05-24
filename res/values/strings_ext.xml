@@ -48,4 +48,14 @@ Device will be automatically restarted."
     <string name="remote_provisioning_enabled_google_server">Google server</string>
     <string name="remote_provisioning_disabled">Off</string>
 
+    <string name="conn_checks_grapheneos_server">GrapheneOS server</string>
+    <string name="conn_checks_google_server">Standard (Google) server</string>
+    <string name="conn_checks_disabled">Off</string>
+
+    <string name="conn_checks_title">Internet connectivity checks</string>
+    <string name="conn_checks_footer">
+"Connectivity check is a special empty server request that is made to find out whether the current network has internet connection.
+There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
+    </string>
+
 </resources>
