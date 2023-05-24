@@ -138,4 +138,10 @@
         android:summary="@string/summary_placeholder"
         android:order="25"
         settings:controller="com.android.settings.network.AdaptiveConnectivityPreferenceController"/>
+    <Preference
+        android:key="connectivity_checks"
+        android:title="@string/conn_checks_title"
+        android:order="30"
+        settings:controller="com.android.settings.network.ConnectivityChecksPrefController"/>
+
 </PreferenceScreen>
