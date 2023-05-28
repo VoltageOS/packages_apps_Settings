@@ -187,6 +187,11 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
         // Bundled keyboard, needed for text input in Direct Boot mode if the selected 3rd party
         // keyboard doesn't support it
         keepEnabledPackages.add("com.android.inputmethod.latin");
+
+        // Disabling GmsCompat app breaks the gmscompat layer
+        keepEnabledPackages.add(com.android.internal.gmscompat.GmsCompatApp.PKG_NAME);
+        // Disabling GmsCompatConfig breaks updates through Apps app
+        keepEnabledPackages.add(com.android.internal.gmscompat.GmsCompatApp.PKG_NAME + ".config");
         return keepEnabledPackages;
     }
 
