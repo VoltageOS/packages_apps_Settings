@@ -187,6 +187,9 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
         // Bundled keyboard, needed for text input in Direct Boot mode if the selected 3rd party
         // keyboard doesn't support it
         keepEnabledPackages.add("com.android.inputmethod.latin");
+
+        // Only bundled camera can handle some of camera intents
+        keepEnabledPackages.add("app.grapheneos.camera");
         return keepEnabledPackages;
     }
 
