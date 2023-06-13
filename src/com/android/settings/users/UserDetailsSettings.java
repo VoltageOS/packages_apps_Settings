@@ -43,6 +43,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.TwoStatePreference;
 
 import com.android.settings.R;
@@ -80,6 +81,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
     private static final String KEY_APP_COPYING = "app_copying";
 
     private static final String KEY_APP_INSTALLS = "app_installs";
+    private static final String KEY_RUN_IN_BACKGROUND = "allow_run_in_background";
 
     /** Integer extra containing the userId to manage */
     static final String EXTRA_USER_ID = "user_id";
@@ -117,6 +119,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
     @VisibleForTesting
     TwoStatePreference mGrantAdminPref;
     Preference mAppsInstallsPref;
+    private SwitchPreferenceCompat mRunInBackgroundPref;
 
     @VisibleForTesting
     /** The user being studied (not the user doing the studying). */
@@ -225,7 +228,11 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
                 showDialog(DIALOG_CONFIRM_GRANT_ADMIN);
             }
             return false;
+        } else if (preference == mRunInBackgroundPref) {
+            userRestrictions.set(UserManager.DISALLOW_RUN_IN_BACKGROUND, !((boolean) newValue));
+            return true;
         }
+
         return true;
     }
 
@@ -385,6 +392,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
 
         mGrantAdminPref.setChecked(mUserInfo.isAdmin());
         mAppsInstallsPref = findPreference(KEY_APP_INSTALLS);
+        mRunInBackgroundPref = findPreference(KEY_RUN_IN_BACKGROUND);
 
         mSwitchUserPref.setVisible(mUserCaps.mUserSwitchingUiEnabled
                 && UserHandle.myUserId() != mUserInfo.id);
@@ -442,6 +450,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
             removePreference(KEY_APP_AND_CONTENT_ACCESS);
             removePreference(KEY_APP_COPYING);
             removePreference(KEY_APP_INSTALLS);
+            removePreference(KEY_RUN_IN_BACKGROUND);
         } else {
             if (!Utils.isVoiceCapable(context)) { // no telephony
                 removePreference(KEY_ENABLE_TELEPHONY_CALLING);
@@ -465,9 +474,12 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
                 if (!SHOW_APP_COPYING_PREF) {
                     removePreference(KEY_APP_COPYING);
                 }
+                removePreference(KEY_RUN_IN_BACKGROUND);
             } else {
                 mPhonePref.setChecked(!mUserManager.hasUserRestriction(
                         UserManager.DISALLOW_OUTGOING_CALLS, new UserHandle(userId)));
+                mRunInBackgroundPref.setChecked(!userRestrictions.isSet(
+                        UserManager.DISALLOW_RUN_IN_BACKGROUND));
             }
 
             // Remove preference KEY_REMOVE_USER if DISALLOW_REMOVE_USER restriction is set
@@ -481,6 +493,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
             mGrantAdminPref.setOnPreferenceChangeListener(this);
             mAppAndContentAccessPref.setOnPreferenceClickListener(this);
             mAppCopyingPref.setOnPreferenceClickListener(this);
+            mRunInBackgroundPref.setOnPreferenceChangeListener(this);
         }
     }
 
