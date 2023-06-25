@@ -452,4 +452,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title">Misc Haptics</string>
 
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Vibrate on brightness slider changes</string>
+
 </resources>
