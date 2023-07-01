@@ -57,19 +57,7 @@ public class AddUserWhenLockedPreferenceController extends TogglePreferenceContr
 
     @Override
     public int getAvailabilityStatus() {
-        if (!mUserCaps.isAdmin()) {
-            return DISABLED_FOR_USER;
-        } else if (android.multiuser.Flags.newMultiuserSettingsUx()) {
-            if (mUserCaps.mDisallowAddUser && !mUserCaps.mDisallowAddUserSetByAdmin) {
-                return DISABLED_FOR_USER;
-            } else {
-                return AVAILABLE;
-            }
-        } else if (mUserCaps.disallowAddUser() || mUserCaps.disallowAddUserSetByAdmin()) {
-            return DISABLED_FOR_USER;
-        } else {
-            return mUserCaps.mUserSwitcherEnabled ? AVAILABLE : CONDITIONALLY_UNAVAILABLE;
-        }
+        return UNSUPPORTED_ON_DEVICE;
     }
 
     @Override
