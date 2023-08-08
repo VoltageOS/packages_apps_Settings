@@ -461,4 +461,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <!-- QS Tiles haptic -->
     <string name="qs_tiles_haptic_feedback_title">Vibrate on touching QS tiles</string>
 
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Vibrate on scroll flings</string>
+    <string name="scroll_fling_haptic_feedback_summary">Vibrate on reaching edges when scrolling with fling gesture</string>
+
 </resources>
