@@ -63,14 +63,6 @@ final class PowerMenuSettingsUtils {
         return getPowerButtonSettingValue(context) == LONG_PRESS_POWER_ASSISTANT_VALUE;
     }
 
-    /**
-     * @return true if long press power for torch is currently enabled.
-     */
-    public static boolean isLongPressPowerForTorchEnabled(Context context) {
-        return Settings.Secure.getInt(context.getContentResolver(),
-                Settings.Secure.TORCH_LONG_PRESS_POWER, 0) == 1;
-    }
-
     private PowerMenuSettingsUtils() {
     }
 }

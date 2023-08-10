@@ -26,11 +26,6 @@
         settings:lottie_rawRes="@raw/lottie_power_menu"/>
 
     <SwitchPreference
-        android:key="torch_long_press_power"
-        android:title="@string/power_menu_long_press_for_torch"
-        settings:controller="com.android.settings.gestures.LongPressPowerButtonTorchPreferenceController" />
-
-    <SwitchPreference
         android:key="gesture_power_menu_long_press_for_assist"
         android:title="@string/power_menu_long_press_for_assist"
         android:summary="@string/power_menu_long_press_for_assist_summary"
@@ -45,12 +40,6 @@
         settings:textEnd="@string/power_menu_long_press_for_assist_sensitivity_high_label"
         settings:controller="com.android.settings.gestures.LongPressPowerSensitivityPreferenceController"
     />
-
-    <com.android.settingslib.widget.FooterPreference
-        android:key="torch_long_press_power_footer"
-        android:title="@string/torch_long_press_power_text"
-        android:selectable="false"
-        settings:searchable="false" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="power_menu_power_volume_up_hint"

@@ -62,9 +62,6 @@ public class LongPressPowerSensitivityPreferenceController extends
         mContext.getContentResolver().registerContentObserver(
                 Settings.Global.getUriFor(PowerMenuSettingsUtils.POWER_BUTTON_LONG_PRESS_SETTING),
                 false, mPowerButtonObserver);
-        mContext.getContentResolver().registerContentObserver(
-                Settings.Secure.getUriFor(Settings.Secure.TORCH_LONG_PRESS_POWER),
-                false, mPowerButtonObserver);
     }
 
     @Override
@@ -89,7 +86,8 @@ public class LongPressPowerSensitivityPreferenceController extends
     public void updateState(Preference preference) {
         super.updateState(preference);
         final LabeledSeekBarPreference pref = (LabeledSeekBarPreference) preference;
-        pref.setEnabled(getAvailabilityStatus() == AVAILABLE);
+        pref.setEnabled(
+                isAvailable() && PowerMenuSettingsUtils.isLongPressPowerForAssistEnabled(mContext));
         pref.setProgress(getSliderPosition());
     }
 
@@ -99,8 +97,7 @@ public class LongPressPowerSensitivityPreferenceController extends
             return UNSUPPORTED_ON_DEVICE;
         }
 
-        if (!PowerMenuSettingsUtils.isLongPressPowerForAssistEnabled(mContext)
-                && !PowerMenuSettingsUtils.isLongPressPowerForTorchEnabled(mContext)) {
+        if (!PowerMenuSettingsUtils.isLongPressPowerForAssistEnabled(mContext)) {
             return DISABLED_DEPENDENT_SETTING;
         }
 
