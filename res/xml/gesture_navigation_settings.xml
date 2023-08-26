@@ -49,12 +49,11 @@
             settings:textStart="@string/thin_label"
             settings:textEnd="@string/thick_label"/>
 
-	<!--
         <com.power.hub.preferences.SecureSettingSwitchPreference
             android:key="show_back_arrow_gesture"
             android:title="@string/back_gesture_arrow_message"
             android:summary="@string/back_gesture_arrow_summary"
-            android:defaultValue="true" /> -->
+            android:defaultValue="true" />
 
         <com.android.settings.widget.LabeledSeekBarPreference
             android:key="gesture_back_height"
@@ -106,11 +105,11 @@
             settings:textEnd="@string/high_label"/>
     </PreferenceCategory>
 
-    <!-- <com.power.hub.preferences.SystemSettingSwitchPreference
+    <com.power.hub.preferences.SystemSettingSwitchPreference
         android:key="back_gesture_haptic"
         android:title="@string/back_gesture_haptic_title"
         android:summary="@string/back_gesture_haptic_summary"
-        android:defaultValue="false" /> -->
+        android:defaultValue="false" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="gesture_navigation_settings_footer"
