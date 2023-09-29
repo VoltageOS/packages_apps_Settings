@@ -84,6 +84,8 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
     <!-- Title of preference to enable running in background [CHAR LIMIT=40] -->
     <string name="user_run_in_background">Allow running in background</string>
 
+    <string name="app_exploit_protection_default_value_warning">"Warning: enabling this setting might cause some apps to stop working.</string>
+
     <string name="allow_access_to_obb_directory_title">Allow access to Android/obb folder</string>
     <string name="allow_access_to_obb_directory_summary">Required for installation of some large apps (mostly games) that use OBB expansion files</string>
 </resources>
