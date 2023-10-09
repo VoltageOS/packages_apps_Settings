@@ -149,6 +149,7 @@ public class TetherSettings extends RestrictedSettingsFragment
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setIfOnlyAvailableForAdmins(true);
+        addPreferencesFromResource(R.xml.tether_prefs);
         if (isUiRestricted()) {
             return;
         }
