@@ -18,13 +18,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-<PreferenceScreen
-    android:layout="@layout/voltage_logo_layout"
-    android:key="voltage_logo"
-    android:selectable="false"/>
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/voltage_logo_layout"
+        android:key="voltage_logo"
+        android:selectable="false"/>
 
     <!-- Android version -->
     <Preference
