@@ -188,6 +188,20 @@ class PackageInfoPresenter(
         }
     }
 
+    /** Hides this package. */
+    fun hide() {
+        coroutineScope.launch(Dispatchers.IO) {
+            userPackageManager.setApplicationHiddenSettingAsUser(packageName, true, userHandle)
+        }
+    }
+
+    /** Unhides this package. */
+    fun unhide() {
+        coroutineScope.launch(Dispatchers.IO) {
+            userPackageManager.setApplicationHiddenSettingAsUser(packageName, false, userHandle)
+        }
+    }
+
     /* stops application without durable effects of the full-scale "forec stop" */
     fun stopPackage() {
         requireAuthAndExecute {

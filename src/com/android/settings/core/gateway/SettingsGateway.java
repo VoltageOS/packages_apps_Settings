@@ -488,10 +488,6 @@ public class SettingsGateway {
             Settings.powerhubActivity.class.getName(),
             Settings.ScreenRefreshRateActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
-<<<<<<< HEAD
-=======
-            Settings.SmartPixelsActivity.class.getName(),
             Settings.SleepModeActivity.class.getName()
->>>>>>> cfa80c4f488 (Settings: Introduce automated Sleep Mode [2/2])
     };
 }
