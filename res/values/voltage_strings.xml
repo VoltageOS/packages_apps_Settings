@@ -525,4 +525,9 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
     <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
 
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads-up</string>
+    <string name="heads_up_summary">Display priority notifications in a small floating window</string>
+    <string name="heads_up_off">Heads-up is disabled globally</string>
+
 </resources>
