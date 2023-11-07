@@ -439,7 +439,8 @@ public class ChooseLockPattern extends SettingsActivity {
         protected boolean mForFace;
         protected boolean mForBiometrics;
 
-        private static final String KEY_UI_STAGE = "uiStage";
+        @VisibleForTesting
+        static final String KEY_UI_STAGE = "uiStage";
         private static final String KEY_PATTERN_CHOICE = "chosenPattern";
         private static final String KEY_CURRENT_PATTERN = "currentPattern";
 
@@ -730,10 +731,6 @@ public class ChooseLockPattern extends SettingsActivity {
             final GlifLayout layout = getActivity().findViewById(R.id.setup_wizard_layout);
             mUiStage = stage;
 
-            if (stage == Stage.Introduction) {
-                layout.setDescriptionText(stage.headerMessage);
-            }
-
             // header text, footer text, visibility and
             // enabled state all known from the stage
             if (stage == Stage.ChoiceTooShort) {
@@ -756,16 +753,13 @@ public class ChooseLockPattern extends SettingsActivity {
                 Theme theme = getActivity().getTheme();
                 theme.resolveAttribute(R.attr.colorError, typedValue, true);
                 mHeaderText.setTextColor(typedValue.data);
+            } else if (mDefaultHeaderColorList != null) {
+                mHeaderText.setTextColor(mDefaultHeaderColorList);
+            }
 
-            } else {
-                if (mDefaultHeaderColorList != null) {
-                    mHeaderText.setTextColor(mDefaultHeaderColorList);
-                }
 
-                if (stage == Stage.NeedToConfirm) {
-                    mHeaderText.setText(stage.headerMessage);
-                    layout.setHeaderText(R.string.lockpassword_draw_your_pattern_again_header);
-                }
+            if (stage == Stage.ConfirmWrong || stage == Stage.NeedToConfirm) {
+                layout.setHeaderText(R.string.lockpassword_draw_your_pattern_again_header);
             }
 
             updateFooterLeftButton(stage);

@@ -148,13 +148,14 @@ public class TetherSettings extends RestrictedSettingsFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        // Even when the UI is restricted, addPreferencesFromResource cannot be omitted.
+        addPreferencesFromResource(R.xml.tether_prefs);
         setIfOnlyAvailableForAdmins(true);
         addPreferencesFromResource(R.xml.tether_prefs);
         if (isUiRestricted()) {
             return;
         }
 
-        addPreferencesFromResource(R.xml.tether_prefs);
         mContext = getContext();
         mDataSaverBackend = new DataSaverBackend(mContext);
         mDataSaverEnabled = mDataSaverBackend.isDataSaverEnabled();

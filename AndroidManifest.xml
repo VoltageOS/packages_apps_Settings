@@ -659,7 +659,6 @@
         <activity android:name="Settings$FaceSettingsActivity"
             android:label="@string/security_settings_face_preference_title"
             android:exported="true"
-            android:configChanges="orientation|screenSize"
             android:icon="@drawable/ic_face_header">
             <intent-filter>
                 <action android:name="android.settings.FACE_SETTINGS" />
@@ -675,7 +674,6 @@
                   android:label="@string/security_settings_face_preference_title"
                   android:exported="false"
                   android:icon="@drawable/ic_face_header"
-                  android:configChanges="orientation|screenSize"
                   android:taskAffinity="com.android.settings.root">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.biometrics.face.FaceSettings" />
@@ -865,6 +863,7 @@
 
         <activity
             android:name="Settings$LongBackgroundTasksActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/long_background_tasks_label">
             <intent-filter android:priority="1">
@@ -1546,6 +1545,7 @@
 
         <activity
             android:name="Settings$ManageApplicationsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/applications_settings">
             <intent-filter android:priority="1">
@@ -1608,6 +1608,7 @@
 
         <activity
             android:name="Settings$HighPowerApplicationsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/high_power_apps">
             <intent-filter android:priority="1">
@@ -1666,6 +1667,7 @@
              This is for compatibility with old shortcuts. -->
         <activity-alias android:name=".RunningServices"
                 android:label="@string/runningservices_settings_title"
+                android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
                 android:exported="true"
                 android:targetActivity="Settings$ManageApplicationsActivity">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -1678,6 +1680,7 @@
              This is for compatibility with old shortcuts. -->
         <activity-alias android:name=".applications.StorageUse"
                 android:label="@string/storageuse_settings_title"
+                android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
                 android:exported="true"
                 android:targetActivity="Settings$ManageApplicationsActivity">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -1744,6 +1747,7 @@
         <!-- Provide direct entry into manage apps showing running services. -->
         <activity android:name="Settings$RunningServicesActivity"
                 android:exported="true"
+                android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
                 android:label="@string/runningservices_settings_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -1762,6 +1766,7 @@
         <!-- Provide direct entry into manage apps showing storage usage of apps. -->
         <activity
             android:name="Settings$StorageUseActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/storageuse_settings_title">
             <intent-filter android:priority="1">
@@ -2107,6 +2112,7 @@
 
         <activity
             android:name="Settings$UsageAccessSettingsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/usage_access_title">
             <intent-filter android:priority="1">
@@ -3489,6 +3495,7 @@
         <activity
             android:name="Settings$TurnScreenOnSettingsActivity"
             android:exported="true"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:label="@string/turn_screen_on_title">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.TURN_SCREEN_ON_SETTINGS" />
@@ -3668,6 +3675,7 @@
         <activity android:name="Settings$NotificationAppListActivity"
                   android:label="@string/app_notifications_title"
                   android:icon="@drawable/ic_notifications"
+                  android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
                   android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.ALL_APPS_NOTIFICATION_SETTINGS" />
@@ -3682,6 +3690,7 @@
         <!-- Displays a list of apps available for cloning on the device -->
         <activity android:name=".Settings$ClonedAppsListActivity"
                   android:label="@string/cloned_apps_dashboard_title"
+                  android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
                   android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.MANAGE_CLONED_APPS_SETTINGS" />
@@ -3754,6 +3763,7 @@
         <!-- Show regulatory info (from settings item or dialing "*#07#") -->
         <activity
             android:name="RegulatoryInfoDisplayActivity"
+            android:theme="@style/Theme.AlertDialog"
             android:label="@string/regulatory_labels"
             android:exported="true"
             android:enabled="@bool/config_show_regulatory_info">
@@ -3947,6 +3957,7 @@
 
         <activity
             android:name="Settings$OverlaySettingsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/draw_overlay">
             <intent-filter android:priority="1">
@@ -3984,6 +3995,7 @@
 
         <activity
             android:name="Settings$WriteSettingsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/write_settings_title">
             <intent-filter android:priority="1">
@@ -4017,6 +4029,7 @@
         <activity
             android:name="Settings$AlarmsAndRemindersActivity"
             android:exported="true"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:label="@string/alarms_and_reminders_label">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.REQUEST_SCHEDULE_EXACT_ALARM" />
@@ -4047,6 +4060,7 @@
 
         <activity
             android:name="Settings$ManageExternalSourcesActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/install_other_apps">
             <intent-filter android:priority="1">
@@ -4101,6 +4115,7 @@
 
         <activity
             android:name="Settings$ManageExternalStorageActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/manage_external_storage_title">
             <intent-filter android:priority="1">
@@ -4132,6 +4147,7 @@
 
         <activity
             android:name="Settings$MediaManagementAppsActivity"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="true"
             android:label="@string/media_management_apps_title">
             <intent-filter android:priority="1">
@@ -4891,6 +4907,7 @@
         <activity
             android:name=".spa.SpaActivity"
             android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize"
+            android:knownActivityEmbeddingCerts="@array/config_known_host_certs"
             android:exported="false" />
         <activity android:name=".spa.SpaBridgeActivity" android:exported="false"/>
         <activity android:name=".spa.SpaAppBridgeActivity" android:exported="false"/>
