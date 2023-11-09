@@ -55,10 +55,6 @@
     <string name="system_black_theme_title">Use black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
 
-    <!-- Immersive Navigation -->
-    <string name="immersive_navigation_title">Immersive Navigation</string>
-    <string name="immersive_navigation_summary">Hide the gesture pill and navigation bar padding</string>
-
     <!-- Per-app volume control -->
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
