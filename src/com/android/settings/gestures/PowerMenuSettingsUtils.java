@@ -143,7 +143,7 @@ final class PowerMenuSettingsUtils {
      */
     public static boolean isLongPressPowerForTorchEnabled(Context context) {
         return Settings.Secure.getInt(context.getContentResolver(),
-                Settings.Secure.TORCH_LONG_PRESS_POWER, 1) == 1;
+                Settings.Secure.TORCH_LONG_PRESS_POWER, 0) == 1;
     }
 
     /**
