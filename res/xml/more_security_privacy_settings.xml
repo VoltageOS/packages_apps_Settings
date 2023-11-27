@@ -237,6 +237,14 @@
         settings:keywords="@string/keywords_app_pinning"
         settings:controller="com.android.settings.security.ScreenPinningPreferenceController" />
 
+    <SwitchPreferenceCompat
+        android:order="281"
+        android:key="show_system_process_crash_notifs"
+        android:title="@string/show_system_process_crash_notifs_title"
+        android:summary="@string/show_system_process_crash_notifs_summary"
+        settings:boolSettingField=
+            "android.ext.settings.ExtSettings SHOW_SYSTEM_PROCESS_CRASH_NOTIFICATIONS" />
+
     <com.android.settingslib.RestrictedPreference
         android:order="300"
         android:id="@+id/memtag_page"
