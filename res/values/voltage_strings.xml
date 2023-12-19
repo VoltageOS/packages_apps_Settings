@@ -243,4 +243,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="night_display_activation_on_custom">Turn on until <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
     <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
     <string name="night_display_activation_off_custom">Turn off until <xliff:g name="time" example="10 PM">%1$s</xliff:g></string>
+
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
+
 </resources>
