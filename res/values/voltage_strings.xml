@@ -147,4 +147,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="private_dns_mode_uncensoreddns" translatable="false">UncensoredDNS (DK)</string>
     <string name="private_dns_mode_provider_failure">Couldn\'t connect</string>
 
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
+
 </resources>
