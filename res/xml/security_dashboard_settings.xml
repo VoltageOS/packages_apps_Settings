@@ -54,12 +54,6 @@
             android:title="@string/auto_reboot_title"
             settings:controller="com.android.settings.security.AutoRebootPrefController" />
 
-        <SwitchPreference
-            android:key="keyguard_camera"
-            android:title="@string/keyguard_camera_title"
-            settings:boolSettingField=
-                "android.ext.settings.ExtSettings ALLOW_KEYGUARD_CAMERA" />
-
         <com.android.settingslib.RestrictedPreference
             android:key="biometric_settings"
             android:title="@string/security_settings_biometric_preference_title"
