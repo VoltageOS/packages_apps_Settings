@@ -147,4 +147,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPNs</string>
     <string name="tethering_allow_vpn_upstreams_summary">Permit hotspot clients to use this device\u2019s VPN connections for upstream connectivity</string>
 
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Disable for VPN</string>
+    <string name="vpn_enforce_dns_summary">Disable the private DNS when connected to a VPN\nWill restore upon disconnecting</string>
+
 </resources>
