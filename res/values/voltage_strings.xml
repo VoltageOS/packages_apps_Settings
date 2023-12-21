@@ -348,4 +348,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="auto_brightness_one_shot_title">One shot auto-brightness</string>
     <string name="auto_brightness_one_shot_summary">Brightness adjustment will only occur at the moment the screen is turned on</string>
 
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Disable for VPN</string>
+    <string name="vpn_enforce_dns_summary">Disbale the private DNS when connected to a VPN\nWill restore upon disconnecting</string>
+
 </resources>
