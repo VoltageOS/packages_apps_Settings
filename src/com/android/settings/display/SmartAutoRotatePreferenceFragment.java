@@ -120,7 +120,7 @@ public class SmartAutoRotatePreferenceFragment extends DashboardFragment {
         boolean configEnableLockRotation = getResources().
                         getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation);
         boolean lockScreenRotationEnabled = Settings.System.getInt(getContentResolver(),
-                        Settings.System.LOCKSCREEN_ROTATION, configEnableLockRotation ? 1 : 0) != 0;
+                        Settings.System.LOCKSCREEN_ROTATION, configEnableLockRotation ? 0 : 0) != 0;
 
         mLockScreenRotationPref.setChecked(lockScreenRotationEnabled);
         mRotation0Pref.setChecked((mode & ROTATION_0_MODE) != 0);
