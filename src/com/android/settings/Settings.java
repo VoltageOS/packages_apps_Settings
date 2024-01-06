@@ -543,4 +543,5 @@ public class Settings extends SettingsActivity {
     public static class AppManagePlayIntegrityApiActivity extends SettingsActivity {}
 
     public static class ExploitProtectionActivity extends SettingsActivity {}
+    public static class ScreenRefreshRateActivity extends SettingsActivity {}
 }
