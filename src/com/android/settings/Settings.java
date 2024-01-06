@@ -660,4 +660,6 @@ public class Settings extends SettingsActivity {
         }
     }
     public static class SafetyCenterActivity extends SettingsActivity { }
+
+    public static class ScreenRefreshRateActivity extends SettingsActivity {}
 }
