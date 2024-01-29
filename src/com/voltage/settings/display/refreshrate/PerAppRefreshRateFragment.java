@@ -16,9 +16,9 @@ import java.util.List;
 
 import com.voltage.display.RefreshRateManager;
 
-import com.voltage.settings.fragment.PerAppConfigFragment;
+import com.voltage.settings.fragment.PerAppListConfigFragment;
 
-public class PerAppRefreshRateFragment extends PerAppConfigFragment {
+public class PerAppRefreshRateFragment extends PerAppListConfigFragment {
 
     private DisplayRefreshRateHelper mHelper;
     private RefreshRateManager mRefreshRateManager;
