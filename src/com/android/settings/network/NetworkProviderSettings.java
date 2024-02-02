@@ -69,6 +69,7 @@ import com.android.settings.dashboard.RestrictedDashboardFragment;
 import com.android.settings.datausage.DataUsagePreference;
 import com.android.settings.datausage.DataUsageUtils;
 import com.android.settings.location.WifiScanningFragment;
+import com.android.settings.network.MobileDataEnabledListener;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.wifi.AddNetworkFragment;
 import com.android.settings.wifi.AddWifiNetworkPreference;
@@ -107,7 +108,8 @@ import java.util.Optional;
 public class NetworkProviderSettings extends RestrictedDashboardFragment
         implements Indexable, WifiPickerTracker.WifiPickerTrackerCallback,
         WifiDialog2.WifiDialog2Listener, DialogInterface.OnDismissListener,
-        AirplaneModeEnabler.OnAirplaneModeChangedListener, InternetUpdater.InternetChangeListener {
+        AirplaneModeEnabler.OnAirplaneModeChangedListener, InternetUpdater.InternetChangeListener,
+        MobileDataEnabledListener.Client {
 
     private static final String TAG = "NetworkProviderSettings";
     // IDs of context menu
@@ -198,6 +200,9 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
     protected WifiManager mWifiManager;
     private WifiManager.ActionListener mSaveListener;
 
+    int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+    MobileDataEnabledListener mDataStateListener;
+
     protected InternetResetHelper mInternetResetHelper;
 
     /**
@@ -261,6 +266,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
     public NetworkProviderSettings() {
         super(DISALLOW_CONFIG_WIFI);
+        mSubId = SubscriptionManager.getActiveDataSubscriptionId();
     }
 
     @Override
@@ -300,6 +306,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
             return;
         }
         mAirplaneModeEnabler = new AirplaneModeEnabler(getContext(), this);
+        mDataStateListener = new MobileDataEnabledListener(getContext(), this);
 
         // TODO(b/37429702): Add animations and preference comparator back after initial screen is
         // loaded (ODR).
@@ -514,6 +521,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
             return;
         }
         mAirplaneModeEnabler.start();
+        mDataStateListener.start(mSubId);
     }
 
     private void restrictUi() {
@@ -542,7 +550,8 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         }
 
         changeNextButtonState(mWifiPickerTracker != null
-                && mWifiPickerTracker.getConnectedWifiEntry() != null);
+                && mWifiPickerTracker.getConnectedWifiEntry() != null
+                || getDataEnabled());
     }
 
     @Override
@@ -551,6 +560,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         getView().removeCallbacks(mUpdateWifiEntryPreferencesRunnable);
         getView().removeCallbacks(mHideProgressBarRunnable);
         mAirplaneModeEnabler.stop();
+        mDataStateListener.stop();
         super.onStop();
     }
 
@@ -929,7 +939,8 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
             setProgressBarVisible(false);
         }
         changeNextButtonState(mWifiPickerTracker != null
-                && mWifiPickerTracker.getConnectedWifiEntry() != null);
+                && mWifiPickerTracker.getConnectedWifiEntry() != null
+                || getDataEnabled());
 
         // Edit the Wi-Fi network of specified SSID.
         if (mOpenSsid != null && mWifiPickerTracker != null) {
@@ -1214,7 +1225,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
      * Renames/replaces "Next" button when appropriate. "Next" button usually exists in
      * Wi-Fi setup screens, not in usual wifi settings screen.
      *
-     * @param enabled true when the device is connected to a wifi network.
+     * @param enabled true when the device is connected to a mobile or wifi network.
      */
     @VisibleForTesting
     void changeNextButtonState(boolean enabled) {
@@ -1493,6 +1504,17 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
             // update the menu item
             requireActivity().invalidateMenu();
         }
+    }
+
+    /**
+     * Implementation of {@code MobileDataEnabledListener.Client}
+     */
+    public void onMobileDataEnabledChange() {
+        changeNextButtonState(getDataEnabled());
+    }
+
+    boolean getDataEnabled() {
+        return getContext().getSystemService(TelephonyManager.class).getDataEnabled(mSubId);
     }
 
     /**
