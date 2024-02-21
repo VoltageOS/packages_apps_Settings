@@ -99,4 +99,36 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
 
     <string name="view_logs">View logs</string>
 
+    <string name="usbc_port_title">USB-C port</string>
+    <string name="usbc_port_off_title">Off</string>
+    <string name="usbc_port_off_summary">Turns off the USB-C port.
+        Doesn’t impact the separate charging mode, which is activated by turning off the device and plugging it in to a charger.
+    </string>
+    <string name="usbc_port_charging_only_title">Charging-only</string>
+    <string name="usbc_port_charging_only_summary">Turns off all non-charging USB-C port functionality.</string>
+    <string name="usbc_port_charging_only_when_locked_title">Charging-only when locked</string>
+    <string name="usbc_port_charging_only_when_locked_summary">Enables the charging-only mode when the
+        device is locked and disables it when the device becomes unlocked. If the port is already
+        plugged-in at the time when the device becomes locked, then the activation of charging-only
+        mode will be delayed until the port is disconnected.</string>
+    <string name="usbc_port_charging_only_when_locked_afu_title">Charging-only when locked, except before first unlock</string>
+    <string name="usbc_port_charging_only_when_locked_afu_summary">This mode has the same behavior
+        as the “%1$s” mode, except for an additional exemption for before-first-unlock connections.
+    </string>
+    <string name="usbc_port_on_title">On</string>
+    <string name="usbc_port_on_summary">Does not add any restrictions.</string>
+
+    <string name="usbc_port_and_pogo_pins_title">USB-C port and pogo pins</string>
+    <string name="usbc_port_and_pogo_pins_off_title">USB-C port off, pogo pins used only for charging</string>
+    <string name="usbc_port_and_pogo_pins_off_summary">Turns off the USB-C port and turns off all
+        non-charging pogo pins functionality. Doesn’t impact the separate charging mode, which is
+        activated by turning off the device and plugging it in to a charger.
+    </string>
+    <string name="usbc_port_and_pogo_pins_charging_only_summary">Turns off all non-charging USB-C port and pogo pins functionality.</string>
+    <string name="usbc_port_and_pogo_pins_charging_only_when_locked_summary">Enables the charging-only mode when the
+        device is locked and disables it when the device becomes unlocked. If the port is already
+        plugged-in at the time when the device becomes locked, then the activation of charging-only
+        mode will be delayed until the port is disconnected. The same behavior applies to pogo pins.
+    </string>
+
 </resources>
