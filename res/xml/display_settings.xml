@@ -237,6 +237,16 @@
             android:fragment="com.android.settings.display.DisplayCutoutForceFullscreenSettings"
             settings:controller="com.android.settings.display.DisplayCutoutForceFullscreenPreferenceController" />
 
+       <!-- Lid event behavior-->
+        <ListPreference
+            android:key="lid_behavior"
+            android:title="@string/lid_behavior_title"
+            android:summary="@string/lid_behavior_summary"
+            android:entries="@array/lid_behavior_entries"
+            android:entryValues="@array/lid_behavior_values"
+            android:dialogTitle="@string/lid_behavior_title"
+            settings:controller="com.android.settings.display.LidBehaviorPreferenceController" />
+
         <com.voltage.support.preferences.SystemSettingSwitchPreference
             android:key="high_touch_polling_rate_enable"
             android:title="@string/high_touch_polling_rate_title"
