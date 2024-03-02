@@ -49,6 +49,8 @@ Device will be automatically restarted."
     <string name="remote_provisioning_enabled_google_server">Google server</string>
     <string name="remote_provisioning_disabled">Off</string>
 
+    <string name="contact_scopes">Contact Scopes</string>
+
     <string name="storage_scopes">Storage Scopes</string>
 
     <string name="conn_checks_grapheneos_server">GrapheneOS server</string>
