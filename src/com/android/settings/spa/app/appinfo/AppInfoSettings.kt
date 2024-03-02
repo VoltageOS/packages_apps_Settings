@@ -178,6 +178,9 @@ private fun AppInfoSettings(packageInfoPresenter: PackageInfoPresenter) {
             Enable16KbAppCompatPreference(app)
         }
 
+        Category(title = stringResource(R.string.exploit_protection_category_title)) {
+        }
+
         Category(title = stringResource(R.string.app_install_details_group_title)) {
             AppInstallerInfoPreference(app)
         }
