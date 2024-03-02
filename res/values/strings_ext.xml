@@ -49,6 +49,8 @@ Device will be automatically restarted."
     <string name="remote_provisioning_enabled_google_server">Google server</string>
     <string name="remote_provisioning_disabled">Off</string>
 
+    <string name="storage_scopes">Storage Scopes</string>
+
     <string name="conn_checks_grapheneos_server">GrapheneOS server</string>
     <string name="conn_checks_google_server">Standard (Google) server</string>
     <string name="conn_checks_disabled">Off</string>
@@ -79,5 +81,4 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
     <string name="user_app_install_disabled_desc">Disable app installs and updates</string>
     <!-- Title of preference to enable running in background [CHAR LIMIT=40] -->
     <string name="user_run_in_background">Allow running in background</string>
-
 </resources>
