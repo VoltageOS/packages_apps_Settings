@@ -45,7 +45,6 @@ import com.android.settings.Utils;
 import com.android.settings.applications.AppInfoBase;
 import com.android.settings.datausage.lib.AppDataUsageDetailsRepository;
 import com.android.settings.datausage.lib.NetworkTemplates;
-import com.android.settings.fuelgauge.datasaver.DynamicDenylistManager;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.AppItem;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
@@ -309,8 +308,7 @@ public class AppDataUsage extends DataUsageBaseFragment implements OnPreferenceC
     private boolean getAppRestrictBackground() {
         final int uid = mAppItem.key;
         final int uidPolicy = services.mPolicyManager.getUidPolicy(uid);
-        return (uidPolicy & POLICY_REJECT_METERED_BACKGROUND) != 0
-                && DynamicDenylistManager.getInstance(mContext).isInManualDenylist(uid);
+        return (uidPolicy & POLICY_REJECT_METERED_BACKGROUND) != 0;
     }
 
     private boolean getUnrestrictData() {

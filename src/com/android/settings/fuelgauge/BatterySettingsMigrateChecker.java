@@ -27,7 +27,6 @@ import android.util.Log;
 import androidx.annotation.VisibleForTesting;
 
 import com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleRadioButtonsController;
-import com.android.settings.fuelgauge.datasaver.DynamicDenylistManager;
 import com.android.settingslib.fuelgauge.BatterySaverUtils;
 
 import java.util.List;
@@ -52,8 +51,6 @@ public final class BatterySettingsMigrateChecker extends BroadcastReceiver {
         final Context applicationContext = context.getApplicationContext();
         verifySaverConfiguration(applicationContext);
         verifyBatteryOptimizeModes(applicationContext);
-        AsyncTask.execute(() ->
-                DynamicDenylistManager.getInstance(applicationContext).onBootComplete());
     }
 
     /** Avoid users set important apps into the unexpected battery optimize modes */
