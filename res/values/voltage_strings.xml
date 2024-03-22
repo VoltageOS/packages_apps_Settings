@@ -510,7 +510,6 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="kill_app">Kill foreground app</string>
     <string name="recent_app_toggle">Switch recent app</string>
     <string name="show_powermenu">Show Power menu</string>
-    <string name="partial_screenshot">Partial screenshot</string>
     <string name="action_forward">Go forward</string>
 
     <!-- Long swipe gestures -->
