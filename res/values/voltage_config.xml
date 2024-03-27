@@ -36,4 +36,7 @@
     <!-- 5g only toggle -->
     <bool name="config_supportsVONR">true</bool>
 
+    <!-- Show battery cycle count -->
+    <bool name="config_show_battery_cycle_count" translatable="false">false</bool>
+
 </resources>
