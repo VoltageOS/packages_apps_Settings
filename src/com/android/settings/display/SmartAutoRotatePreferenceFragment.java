@@ -28,7 +28,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import android.provider.Settings;
 
 import com.android.settings.R;
@@ -65,11 +65,11 @@ public class SmartAutoRotatePreferenceFragment extends DashboardFragment {
     private static final String ROTATION_180_PREF = "display_rotation_180";
     private static final String ROTATION_270_PREF = "display_rotation_270";
 
-    private SwitchPreference mLockScreenRotationPref;
-    private SwitchPreference mRotation0Pref;
-    private SwitchPreference mRotation90Pref;
-    private SwitchPreference mRotation180Pref;
-    private SwitchPreference mRotation270Pref;
+    private SwitchPreferenceCompat mLockScreenRotationPref;
+    private SwitchPreferenceCompat mRotation0Pref;
+    private SwitchPreferenceCompat mRotation90Pref;
+    private SwitchPreferenceCompat mRotation180Pref;
+    private SwitchPreferenceCompat mRotation270Pref;
 
     public static final int ROTATION_0_MODE = 1;
     public static final int ROTATION_90_MODE = 2;
