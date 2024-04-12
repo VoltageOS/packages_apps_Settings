@@ -55,7 +55,7 @@
         android:title="@string/auto_rotate_switch_face_based"
         settings:controller="com.android.settings.display.SmartAutoRotateController" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="lockscreen_rotation"
         android:title="@string/display_lockscreen_rotation_title"
         android:dependency="auto_rotate_switch" />
