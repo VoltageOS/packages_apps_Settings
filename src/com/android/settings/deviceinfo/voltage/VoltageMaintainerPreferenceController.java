@@ -28,8 +28,8 @@ import com.android.settings.core.BasePreferenceController;
 
 public class VoltageMaintainerPreferenceController extends BasePreferenceController {
 
-    private static final String KEY_VOLTAGE_BUILD_STATUS_PROP = "ro.voltage.build.status";
     private static final String TAG = "VoltageMaintainerPreferenceController";
+    private static final String KEY_VOLTAGE_BUILD_STATUS_PROP = "ro.voltage.build.status";
 
     public VoltageMaintainerPreferenceController(Context context, String key) {
         super(context, key);
@@ -41,28 +41,37 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
 
     @Override
     public CharSequence getSummary() {
-        String maintainer = mContext.getResources().getString(R.string.voltage_maintainer);
         String buildStatus = getBuildStatus();
+        String maintainer = mContext.getResources().getString(R.string.voltage_maintainer);
+
         if (!TextUtils.isEmpty(buildStatus) && !buildStatus.equals(mContext.getString(R.string.unknown))) {
-             return buildStatus + " by " + maintainer;        }
- 
-         return mContext.getString(R.string.unknown);
-     }
+            return buildStatus + " by " + maintainer;        }
+
+        return mContext.getString(R.string.unknown);
+    }
 
     @Override
-     public void updateState(Preference preference) {
-         super.updateState(preference);
+    public void updateState(Preference preference) {
+        super.updateState(preference);
 
         String buildStatus = getBuildStatus();
+
+        if ("OFFICIAL".equalsIgnoreCase(buildStatus)) {
+            preference.setIcon(R.drawable.maintainer_official);
+        } else if ("UNOFFICIAL".equalsIgnoreCase(buildStatus)) {
+            preference.setIcon(R.drawable.maintainer_unofficial);
+        } else {
+            preference.setIcon(R.drawable.maintainer_unofficial);
+        }
     }
 
     private String getBuildStatus() {
-         String buildStatus = SystemProperties.get(KEY_VOLTAGE_BUILD_STATUS_PROP, null);
- 
-         if ("OFFICIAL".equalsIgnoreCase(buildStatus) || "UNOFFICIAL".equalsIgnoreCase(buildStatus)) {
-             return buildStatus;
-         }
- 
-         return mContext.getString(R.string.unknown);
-     }
+        String buildStatus = SystemProperties.get(KEY_VOLTAGE_BUILD_STATUS_PROP, null);
+
+        if ("OFFICIAL".equalsIgnoreCase(buildStatus) || "UNOFFICIAL".equalsIgnoreCase(buildStatus)) {
+            return buildStatus;
+        }
+
+        return mContext.getString(R.string.unknown);
+    }
 }
