@@ -6,4 +6,13 @@
 <resources>
     <!-- Fingerprint -->
     <dimen name="fingerprint_find_sensor_padding_top">16dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="voltage_dashboard_padding">16dp</dimen>
+    <dimen name="voltage_top_icn">42dp</dimen>
+    <dimen name="voltage_top_icn_max">52.5dp</dimen>
+    <dimen name="voltage_dashboard_margin_list">16dip</dimen>
+    <dimen name="voltage_pref_vert">5.5dp</dimen>
+    <dimen name="voltage_card_radius">32dp</dimen>
+
 </resources>
