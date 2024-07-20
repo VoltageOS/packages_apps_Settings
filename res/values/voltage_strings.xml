@@ -423,4 +423,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="prevent_pointer_acceleration_pointer">Pointer only</string>
     <string name="prevent_pointer_acceleration_none">None</string>
 
+    <!-- Desktop Mode Settings -->
+    <string name="desktop_mode_pc_title">Desktop Mode</string>
+    <string name="desktop_mode_pc_summary">Emulate device to PC or external display</string>
+
 </resources>

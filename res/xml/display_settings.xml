@@ -151,6 +151,16 @@
             settings:keywords="@string/keywords_auto_rotate" />
 
         <Preference
+            android:key="desktop_mode_pc"
+            android:title="@string/desktop_mode_pc_title"
+            android:summary="@string/desktop_mode_pc_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.libremobileos.desktopmode"
+                android:targetClass="com.libremobileos.desktopmode.SettingsActivity" />
+        </Preference>
+
+        <Preference
             android:key="screen_resolution"
             android:title="@string/screen_resolution_title"
             android:fragment="com.android.settings.display.ScreenResolutionFragment"
