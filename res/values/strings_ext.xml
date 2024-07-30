@@ -5,4 +5,9 @@
     <string name="bool_setting_enabled">Enabled</string>
     <string name="bool_setting_disabled">Disabled</string>
 
+    <string name="exploit_protection_settings">Exploit protection</string>
+
+    <string name="app_exploit_protection_category">App exploit protection</string>
+
+
 </resources>

@@ -43,6 +43,7 @@ import com.android.settings.notification.ConfigureNotificationSettings;
 import com.android.settings.notification.SoundSettings;
 import com.android.settings.notification.zen.ZenModeSettings;
 import com.android.settings.privacy.PrivacyDashboardFragment;
+import com.android.settings.safetycenter.ExploitProtectionFragment;
 import com.android.settings.safetycenter.MoreSecurityPrivacyFragment;
 import com.android.settings.security.LockscreenDashboardFragment;
 import com.android.settings.security.SecurityAdvancedSettings;
@@ -71,6 +72,8 @@ public class DashboardFragmentRegistry {
 
     static {
         PARENT_TO_CATEGORY_KEY_MAP = new ArrayMap<>();
+        PARENT_TO_CATEGORY_KEY_MAP.put(ExploitProtectionFragment.class.getName(),
+                CategoryKey.CATEGORY_EXPLOIT_PROTECTION_SETTINGS);
         PARENT_TO_CATEGORY_KEY_MAP.put(TopLevelSettings.class.getName(),
                 CategoryKey.CATEGORY_HOMEPAGE);
         PARENT_TO_CATEGORY_KEY_MAP.put(
