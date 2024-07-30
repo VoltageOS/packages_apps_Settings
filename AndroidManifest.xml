@@ -2407,6 +2407,23 @@
                        android:value="@string/menu_key_safety_center"/>
         </activity>
 
+        <activity
+            android:name=".Settings$ExploitProtectionActivity"
+            android:label="@string/exploit_protection_settings"
+            android:permission="android.permission.MANAGE_SAFETY_CENTER"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.android.settings.EXPLOIT_PROTECTION_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.safetycenter.ExploitProtectionFragment" />
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_safety_center"/>
+        </activity>
+
         <activity android:name="MonitoringCertInfoActivity"
                 android:label=""
                 android:theme="@style/Transparent"
