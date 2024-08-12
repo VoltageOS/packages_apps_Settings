@@ -56,6 +56,11 @@
             settings:controller="com.android.settings.privatespace.HidePrivateSpaceSummaryController"
             settings:searchable="false" />
 
+        <Preference
+            android:key="sandboxed_google_play_private_space"
+            android:title="@string/sandboxed_google_play"
+            settings:controller="com.android.settings.applications.GmsCompatAppController"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
