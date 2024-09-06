@@ -98,8 +98,7 @@ public class UserTimeoutReceiver extends BroadcastReceiver {
                 } else if (userManager.isManagedProfile()) {
                     userManager.requestQuietModeEnabled(true, context.getUser());
                 } else {
-                    context.getSystemService(ActivityManager.class).stopUser(context.getUserId(),
-                            true);
+                    context.getSystemService(ActivityManager.class).stopUser(context.getUserId());
                 }
             }
         }
