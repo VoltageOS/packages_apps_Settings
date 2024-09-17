@@ -116,6 +116,7 @@ android_library {
         "keyboard_flags_lib",
         "com_android_systemui_flags_lib",
         "settings_connectivity_flags_lib",
+        "VendorSupport-preference",
     ],
 
     plugins: [
