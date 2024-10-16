@@ -34,30 +34,4 @@
         android:selectable="false"
         settings:searchable="false" />
 
-    <PreferenceCategory
-        android:title="@string/private_space_access_header">
-
-        <Preference
-        android:key="search_when_locked_footer"
-        android:icon="@drawable/counter_1_24dp"
-        android:title="@string/private_space_search_description"
-        android:selectable="false"
-        settings:searchable="false" />
-
-        <Preference
-            android:key="tap_tile_footer"
-            android:icon="@drawable/counter_2_24dp"
-            android:title="@string/private_space_tap_tile_description"
-            android:selectable="false"
-            settings:searchable="false" />
-
-        <Preference
-            android:key="unlock_profile_footer"
-            android:icon="@drawable/counter_3_24dp"
-            android:title="@string/private_space_unlock_description"
-            android:selectable="false"
-            settings:searchable="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
