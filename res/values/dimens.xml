@@ -76,8 +76,8 @@
     <dimen name="preference_icon_foreground_image_inset">12dp</dimen>
 
     <!-- Search bar -->
-    <dimen name="search_bar_margin">16dp</dimen>
-    <dimen name="search_bar_height">52dp</dimen>
+    <dimen name="search_bar_margin">28dp</dimen>
+    <dimen name="search_bar_height">48dp</dimen>
     <dimen name="search_bar_text_size">20sp</dimen>
     <dimen name="search_bar_corner_radius">28dp</dimen>
     <dimen name="search_bar_content_inset">56dp</dimen>
