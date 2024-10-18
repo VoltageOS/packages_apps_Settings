@@ -313,6 +313,13 @@ public class WifiConfigController2 implements TextWatcher,
             mPrivacySettingsSpinner = mView.findViewById(R.id.privacy_settings);
             if (Flags.androidVWifiApi()) {
                 mDhcpSettingsSpinner = mView.findViewById(R.id.dhcp_settings);
+                if (mDhcpSettingsSpinner != null) {
+                    int selection = 1;
+                    if (WifiPrivacyPreferenceController.Companion.translatePrefValueToSendDhcpHostnameEnabled(selection)) {
+                        throw new IllegalStateException("unexpected order of DHCP hostname setting entries");
+                    }
+                    mDhcpSettingsSpinner.setSelection(selection);
+                }
             }
             mView.findViewById(R.id.privacy_settings_fields).setVisibility(View.VISIBLE);
         }
