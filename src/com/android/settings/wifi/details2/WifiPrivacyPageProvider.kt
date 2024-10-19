@@ -25,6 +25,7 @@ import android.os.HandlerThread
 import android.os.Looper
 import android.os.Process
 import android.os.SimpleClock
+import android.util.Base64
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
@@ -57,20 +58,21 @@ import com.android.wifitrackerlib.WifiEntry
 import java.time.Clock
 import java.time.ZoneOffset
 
-const val WIFI_ENTRY_KEY = "wifiEntryKey"
+private const val WIFI_ENTRY_KEY_BASE64 = "wifiEntryKeyBase64"
 
 object WifiPrivacyPageProvider : SettingsPageProvider {
     override val name = "WifiPrivacy"
     const val TAG = "WifiPrivacyPageProvider"
 
     override val parameter = listOf(
-        navArgument(WIFI_ENTRY_KEY) { type = NavType.StringType },
+        navArgument(WIFI_ENTRY_KEY_BASE64) { type = NavType.StringType },
     )
 
     @Composable
     override fun Page(arguments: Bundle?) {
-        val wifiEntryKey = arguments!!.getString(WIFI_ENTRY_KEY)
-        if (wifiEntryKey != null) {
+        val wifiEntryKeyBase64 = arguments!!.getString(WIFI_ENTRY_KEY_BASE64)
+        if (wifiEntryKeyBase64 != null) {
+            val wifiEntryKey = String(Base64.decode(wifiEntryKeyBase64, Base64.DEFAULT))
             val context = LocalContext.current
             val lifecycle = LocalLifecycleOwner.current.lifecycle
             val wifiEntry = remember {
@@ -82,7 +84,10 @@ object WifiPrivacyPageProvider : SettingsPageProvider {
 
     fun getRoute(
         wifiEntryKey: String,
-    ): String = "${name}/$wifiEntryKey"
+    ): String {
+        // wifiEntryKey can have '/' in its name or other special characters
+        return "${name}/${Base64.encodeToString(wifiEntryKey.toByteArray(), Base64.DEFAULT)}"
+    }
 }
 
 @Composable
