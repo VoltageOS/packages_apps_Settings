@@ -244,6 +244,14 @@
             android:defaultValue="false"
             settings:controller="com.android.settings.custom.touch.HighTouchSensitivitySettingsPreferenceController" />
 
+        <!-- show touches -->
+        <com.voltage.support.preferences.SystemSettingSwitchPreference
+            android:key="show_touches"
+            android:title="@string/show_touches"
+            android:summary="@string/show_touches_summary"
+            android:defaultValue="false"
+            />
+
         <ListPreference
             android:key="theme"
             android:title="@string/device_theme"
