@@ -200,6 +200,9 @@ public class AppCopyFragment extends SettingsPreferenceFragment {
             if (app.packageName == null) continue;
 
             final AppSwitchPreference p = new AppSwitchPreference(getPrefContext());
+            if (AppCopyFragmentHelperExt.maybeSkipOrModifyAppSwitchPref(this, app, p)) {
+                continue;
+            }
             p.setIcon(app.icon != null ? app.icon.mutate() : null);
             p.setChecked(false);
             p.setTitle(app.appName);
