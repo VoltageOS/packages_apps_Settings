@@ -9,6 +9,7 @@ import com.android.settings.R
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spaprivileged.model.app.installed
+import com.android.settingslib.spaprivileged.model.app.userHandle
 
 @Composable
 fun AppLogcatPreference(app: ApplicationInfo) {
@@ -22,7 +23,7 @@ fun AppLogcatPreference(app: ApplicationInfo) {
         override val title = stringResource(R.string.view_logs)
         override val onClick = {
             val intent = LogViewerApp.getPackageLogcatIntent(app.packageName)
-            context.startActivity(intent)
+            context.startActivityAsUser(intent, app.userHandle)
         }
     })
 }
