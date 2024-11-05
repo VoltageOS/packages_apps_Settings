@@ -34,4 +34,10 @@
             android:title="@string/location_scanning_bluetooth_always_scanning_title"
             settings:controller="com.android.settings.location.LocationServicesBluetoothScanningPreferenceController"/>
 
+        <com.android.settingslib.RestrictedPreference
+            android:order="1002"
+            android:key="location_services_network_location"
+            android:title="@string/network_location_title"
+            settings:controller="com.android.settings.location.LocationServicesNetworkLocationPreferenceController"/>
+
 </PreferenceScreen>
