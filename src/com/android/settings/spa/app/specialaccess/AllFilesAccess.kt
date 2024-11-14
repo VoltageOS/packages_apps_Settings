@@ -30,6 +30,7 @@ import com.android.settings.overlay.FeatureFactory.Companion.featureFactory
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spaprivileged.model.app.AppOps
+import com.android.settingslib.spaprivileged.model.app.userHandle
 import com.android.settingslib.spaprivileged.template.app.AppOpPermissionListModel
 import com.android.settingslib.spaprivileged.template.app.AppOpPermissionRecord
 import com.android.settingslib.spaprivileged.template.app.TogglePermissionAppListProvider
@@ -69,8 +70,9 @@ class AllFilesAccessListModel(context: Context) : AppOpPermissionListModel(conte
         Preference(object : PreferenceModel {
             override val title = stringResource(R.string.storage_scopes)
             override val onClick = {
-                val i = StorageScope.createConfigActivityIntent(pkgInfo.packageName)
-                context.startActivity(i)
+                val app = record.app
+                val i = StorageScope.createConfigActivityIntent(app.packageName)
+                context.startActivityAsUser(i, app.userHandle)
             }
         })
     }
