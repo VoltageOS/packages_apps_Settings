@@ -55,11 +55,11 @@ data class InstallUnknownAppsRecord(
     val isObbFlagSet = mutableStateOf(isObbFlagSet())
 
     fun isObbFlagSet(): Boolean {
-        return GosPackageState.get(app.packageName)?.hasFlag(GosPackageState.FLAG_ALLOW_ACCESS_TO_OBB_DIRECTORY) == true
+        return GosPackageState.get(app.packageName, app.userId)?.hasFlag(GosPackageState.FLAG_ALLOW_ACCESS_TO_OBB_DIRECTORY) == true
     }
 
     fun setObbFlagState(state: Boolean): Boolean {
-        GosPackageState.edit(app.packageName).run {
+        GosPackageState.edit(app.packageName, app.userId).run {
             setFlagsState(GosPackageState.FLAG_ALLOW_ACCESS_TO_OBB_DIRECTORY, state)
             killUidAfterApply()
             if (apply()) {
