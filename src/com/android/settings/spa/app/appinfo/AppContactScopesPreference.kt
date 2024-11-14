@@ -9,11 +9,13 @@ import androidx.compose.ui.res.stringResource
 import com.android.settings.R
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
+import com.android.settingslib.spaprivileged.model.app.userHandle
+import com.android.settingslib.spaprivileged.model.app.userId
 
 @Composable
 fun AppContactScopesPreference(app: ApplicationInfo) {
     val pkgName = app.packageName
-    if (GosPackageState.get(pkgName)?.hasFlags(GosPackageState.FLAG_CONTACT_SCOPES_ENABLED) != true) {
+    if (GosPackageState.get(pkgName, app.userId)?.hasFlags(GosPackageState.FLAG_CONTACT_SCOPES_ENABLED) != true) {
         return
     }
 
@@ -23,7 +25,7 @@ fun AppContactScopesPreference(app: ApplicationInfo) {
         override val title = stringResource(R.string.contact_scopes)
         override val onClick = {
             val intent = ContactScopesApi.createConfigActivityIntent(pkgName)
-            context.startActivity(intent)
+            context.startActivityAsUser(intent, app.userHandle)
         }
     })
 }
