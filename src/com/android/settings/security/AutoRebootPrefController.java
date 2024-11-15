@@ -28,7 +28,7 @@ public class AutoRebootPrefController extends IntSettingPrefController {
     @Override
     protected void getEntries(Entries entries) {
         entries.add(R.string.switch_off_text, 0);
-        entries.add(3, DAYS); // default
+        entries.add(3, DAYS);
         entries.add(2, DAYS);
         entries.add(36, HOURS);
         entries.add(1, DAYS);
