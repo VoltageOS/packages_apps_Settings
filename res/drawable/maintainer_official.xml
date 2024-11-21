@@ -22,6 +22,6 @@
         android:width="@dimen/dashboard_tile_foreground_image_size"
         android:height="@dimen/dashboard_tile_foreground_image_size"
         android:gravity="center"
-        android:drawable="@drawable/maintainer"
+        android:drawable="@drawable/verified"
         android:tint="@color/homepage_subicon_bg"/>
 </layer-list>

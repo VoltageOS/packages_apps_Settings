@@ -50,13 +50,13 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
 
-    <!-- VoltageOS maintainer -->
+    <!-- VoltageOS maintainer
     <Preference
         android:key="maintainer"
         android:title="@string/maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"/> -->
 
     <!-- Security patch -->
     <Preference

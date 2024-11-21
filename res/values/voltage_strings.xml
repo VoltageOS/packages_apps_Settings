@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- VoltageOS maintainer -->
+    <string name="voltage_maintainer_title">Build status</string>
     <string name="maintainer">Maintainer</string>
     <string name="voltage_maintainer">Unofficial Maintainer</string>
     
