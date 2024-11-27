@@ -229,12 +229,7 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
             case BluetoothDevice.ACCESS_ALLOWED:
                 return true;
             case BluetoothDevice.ACCESS_REJECTED:
-                return false;
             case BluetoothDevice.ACCESS_UNKNOWN:
-                if (BluetoothUtils.isDeviceClassMatched(
-                        mDevice, BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE)) {
-                    return BluetoothDevice.EXTRA_PAIRING_INITIATOR_FOREGROUND == mInitiator;
-                }
                 return false;
             default:
                 throw new IllegalStateException("getPhonebookAccessPermission returned " + permission);
