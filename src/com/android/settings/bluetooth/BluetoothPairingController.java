@@ -261,10 +261,7 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
      */
      public void setContactSharingState() {
          final int permission = mDevice.getPhonebookAccessPermission();
-         if (permission == BluetoothDevice.ACCESS_ALLOWED
-                 || (permission == BluetoothDevice.ACCESS_UNKNOWN
-                 && BluetoothUtils.isDeviceClassMatched(mDevice,
-                 BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE))) {
+         if (permission == BluetoothDevice.ACCESS_ALLOWED) {
              onCheckedChanged(null, true);
          } else {
              onCheckedChanged(null, false);
