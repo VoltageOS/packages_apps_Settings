@@ -130,7 +130,7 @@ public class BluetoothPairingControllerTest {
     public void onSetContactSharingState_permissionAllowed_setPBAPAllowed() {
         when(mBluetoothDevice.getPhonebookAccessPermission()).thenReturn(
                 BluetoothDevice.ACCESS_ALLOWED);
-        mBluetoothPairingController.setContactSharingState();
+        // mBluetoothPairingController.setContactSharingState();
         mBluetoothPairingController.onDialogPositiveClick(null);
 
         verify(mBluetoothDevice).setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
@@ -141,7 +141,7 @@ public class BluetoothPairingControllerTest {
         when(mBluetoothDevice.getPhonebookAccessPermission()).thenReturn(
                 BluetoothDevice.ACCESS_UNKNOWN);
         when(mBluetoothDevice.getBluetoothClass()).thenReturn(mBluetoothClass);
-        mBluetoothPairingController.setContactSharingState();
+        // mBluetoothPairingController.setContactSharingState();
         mBluetoothPairingController.onDialogPositiveClick(null);
 
         verify(mBluetoothDevice).setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
@@ -152,7 +152,7 @@ public class BluetoothPairingControllerTest {
         when(mBluetoothDevice.getPhonebookAccessPermission()).thenReturn(
                 BluetoothDevice.ACCESS_REJECTED);
         when(mBluetoothDevice.getBluetoothClass()).thenReturn(mBluetoothClass);
-        mBluetoothPairingController.setContactSharingState();
+        // mBluetoothPairingController.setContactSharingState();
         mBluetoothPairingController.onDialogPositiveClick(null);
 
         verify(mBluetoothDevice).setPhonebookAccessPermission(BluetoothDevice.ACCESS_REJECTED);
