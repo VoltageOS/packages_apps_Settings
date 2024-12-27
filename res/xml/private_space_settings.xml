@@ -73,6 +73,13 @@
             settings:searchable="false" />
 
         <Preference
+            android:key="private_space_ext_app_copying"
+            android:title="@string/user_copy_apps_menu_title"
+            settings:controller="com.android.settings.privatespace.users.PrivateSpaceAppCopyPrefController"
+            settings:fragment="com.android.settings.users.AppCopyFragment"
+            settings:searchable="false" />
+
+        <Preference
             android:key="private_space_delete"
             android:title="@string/private_space_delete_title"
             settings:controller="com.android.settings.privatespace.delete.DeletePrivateSpaceController"
