@@ -102,6 +102,10 @@ public abstract class AswAppInfoFragment<T extends AppSwitch>
                                 s.toString(), getSettingPath(R.string.safety_center_title,
                                                   R.string.more_security_privacy_settings));
                     }
+                    case AppSwitch.DVR_APP_IS_CLIENT_OF_GMSCORE -> {
+                        var s = defaultValue ? adapter.getOnTitle(ctx) : adapter.getOffTitle(ctx);
+                        yield getString(R.string.aep_dvr_app_is_client_of_gmscore, s.toString());
+                    }
                     default -> null;
                 };
             }
