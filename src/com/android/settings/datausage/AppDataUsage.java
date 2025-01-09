@@ -155,6 +155,7 @@ public class AppDataUsage extends DataUsageBaseFragment implements OnPreferenceC
                 final UidDetail uidDetail = uidDetailProvider.getUidDetail(mAppItem.key, true);
                 mIcon = uidDetail.icon;
                 mLabel = uidDetail.label;
+                removePreference(KEY_DATURA_FIREWALL);
                 removePreference(KEY_UNRESTRICTED_DATA);
                 removePreference(KEY_RESTRICT_BACKGROUND);
             } else {
@@ -185,6 +186,7 @@ public class AppDataUsage extends DataUsageBaseFragment implements OnPreferenceC
             mLabel = uidDetail.label;
             mPackageName = context.getPackageName();
 
+            removePreference(KEY_DATURA_FIREWALL);
             removePreference(KEY_UNRESTRICTED_DATA);
             removePreference(KEY_RESTRICT_BACKGROUND);
         }
