@@ -3,6 +3,7 @@ package com.android.settings.spa.app.appinfo
 import android.app.StorageScope
 import android.content.pm.ApplicationInfo
 import android.content.pm.GosPackageState
+import android.content.pm.GosPackageStateFlag
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -15,7 +16,7 @@ import com.android.settingslib.spaprivileged.model.app.userId
 @Composable
 fun AppStorageScopesPreference(app: ApplicationInfo) {
     val pkgName = app.packageName
-    if (GosPackageState.get(pkgName, app.userId)?.hasFlags(GosPackageState.FLAG_STORAGE_SCOPES_ENABLED) != true) {
+    if (!GosPackageState.get(pkgName, app.userId).hasFlag(GosPackageStateFlag.STORAGE_SCOPES_ENABLED)) {
         return
     }
 
