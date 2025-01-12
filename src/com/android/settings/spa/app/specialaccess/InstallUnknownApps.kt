@@ -23,6 +23,7 @@ import android.app.AppOpsManager.MODE_DEFAULT
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.GosPackageState
+import android.content.pm.GosPackageStateFlag
 import android.content.pm.PackageInfo
 import android.os.UserManager
 import androidx.compose.runtime.Composable
@@ -55,12 +56,12 @@ data class InstallUnknownAppsRecord(
     val isObbFlagSet = mutableStateOf(isObbFlagSet())
 
     fun isObbFlagSet(): Boolean {
-        return GosPackageState.get(app.packageName, app.userId)?.hasFlag(GosPackageState.FLAG_ALLOW_ACCESS_TO_OBB_DIRECTORY) == true
+        return GosPackageState.get(app.packageName, app.userId).hasFlag(GosPackageStateFlag.ALLOW_ACCESS_TO_OBB_DIRECTORY)
     }
 
     fun setObbFlagState(state: Boolean): Boolean {
         GosPackageState.edit(app.packageName, app.userId).run {
-            setFlagsState(GosPackageState.FLAG_ALLOW_ACCESS_TO_OBB_DIRECTORY, state)
+            setFlagState(GosPackageStateFlag.ALLOW_ACCESS_TO_OBB_DIRECTORY, state)
             killUidAfterApply()
             if (apply()) {
                 isObbFlagSet.value = state
