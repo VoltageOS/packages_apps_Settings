@@ -2,6 +2,7 @@ package com.android.settings.spa.app.appinfo
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.GosPackageState
+import android.content.pm.GosPackageStateFlag
 import android.ext.cscopes.ContactScopesApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -15,7 +16,7 @@ import com.android.settingslib.spaprivileged.model.app.userId
 @Composable
 fun AppContactScopesPreference(app: ApplicationInfo) {
     val pkgName = app.packageName
-    if (GosPackageState.get(pkgName, app.userId)?.hasFlags(GosPackageState.FLAG_CONTACT_SCOPES_ENABLED) != true) {
+    if (!GosPackageState.get(pkgName, app.userId).hasFlag(GosPackageStateFlag.CONTACT_SCOPES_ENABLED)) {
         return
     }
 
