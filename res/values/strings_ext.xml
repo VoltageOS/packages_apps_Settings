@@ -125,4 +125,21 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
         mode will be delayed until the port is disconnected. The same behavior applies to pogo pins.
     </string>
 
+    <string name="app_play_integrity_api">Play Integrity API</string>
+    <string name="app_play_integrity_top_intro">Play Integrity API provides a way to check that a
+        device meets certain standards, mainly that it runs the stock OS on a device licensing
+        Google Mobile Services which means the device is considered certified by Google. Some apps
+        use it without enforcing certification but the other functionality it provides doesn’t work
+        well without checking for it since it provides no other way to verify the device and OS.
+    </string>
+    <string name="app_play_integrity_contact_app_developer">Contact app developer</string>
+    <string name="app_play_integrity_show_usage_notifications">Show usage notifications</string>
+    <string name="app_play_integrity_block_usage_attempts">Block usage attempts</string>
+    <string name="app_play_integrity_block_usage_attempts_summary_on">
+        Play Integrity API usage attempts will fail with the “API is not available” error code
+    </string>
+    <string name="app_play_integrity_api_blocked">Blocked</string>
+    <string name="app_play_integrity_api_not_blocked">Not blocked</string>
+    <string name="app_play_integrity_see_all_apps">Show apps that used the Play Integrity API</string>
+
 </resources>
