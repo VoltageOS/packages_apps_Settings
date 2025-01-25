@@ -131,4 +131,16 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
         mode will be delayed until the port is disconnected. The same behavior applies to pogo pins.
     </string>
 
+    <string name="app_play_integrity_api">Play Integrity API</string>
+    <string name="app_play_integrity_top_intro">The Play Integrity API allows services to verify properties of a device through their app. Most services check for the device or strong integrity level which requires having the unmodified stock OS on a device licensing Google Mobile Services. Not every app using it will ban using GrapheneOS. GrapheneOS passes the basic integrity level and the miscellaneous checks for licensing, Play Protect, etc. work fine. We recommend leaving feedback for apps using it to ban GrapheneOS asking them to stop banning using a much more secure OS. Apps can use the standard Android hardware attestation API to verify the hardware, OS and app with GrapheneOS.</string>
+    <string name="app_play_integrity_contact_app_developer">Contact app developer</string>
+    <string name="app_play_integrity_show_usage_notifications">Show usage notifications</string>
+    <string name="app_play_integrity_block_usage_attempts">Block usage attempts</string>
+    <string name="app_play_integrity_block_usage_attempts_summary_on">
+        Play Integrity API usage attempts will fail with the “API is not available” error code
+    </string>
+    <string name="app_play_integrity_api_blocked">Blocked</string>
+    <string name="app_play_integrity_api_not_blocked">Not blocked</string>
+    <string name="app_play_integrity_see_all_apps">Show apps that used the Play Integrity API</string>
+
 </resources>
