@@ -66,6 +66,8 @@ abstract class AswAdapter<T : AppSwitch> {
 
     fun getAppListPageProviderName() = this::class.simpleName!!
 
+    open fun shouldIncludeInAppListPage(app: ApplicationInfo, gosPs: GosPackageState) = true
+
     fun openAppListPage(ctx: Context) {
         ctx.startSpaActivity(getAppListPageProviderName())
     }

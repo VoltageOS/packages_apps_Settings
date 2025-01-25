@@ -62,8 +62,13 @@ class AswAppListModel(val ctx: Context, val adapter: AswAdapter<*>) : AppListMod
     ): Flow<List<AppRecordImpl>> {
         return userIdFlow.combine(appListFlow) { userId, appList ->
             appList.asyncMap { app ->
-                AppRecordImpl(app, GosPackageState.get(app.packageName, userId))
-            }
+                val gosPs = GosPackageState.get(app.packageName, userId)
+                if (adapter.shouldIncludeInAppListPage(app, gosPs)) {
+                    AppRecordImpl(app, GosPackageState.get(app.packageName, userId))
+                } else {
+                    null
+                }
+            }.filterNotNull()
         }
     }
 
