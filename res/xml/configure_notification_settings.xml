@@ -223,10 +223,18 @@
         <!-- Heads up -->
         <SwitchPreferenceCompat
             android:key="heads_up_notifications_enabled"
-            android:order="27"
+            android:order="28"
             android:title="@string/heads_up_title"
             android:summary="@string/heads_up_summary"
             android:defaultValue="true" />
+
+        <com.voltage.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.compact_heads_up_notification.always_show"
+            android:order="29"
+            android:title="@string/compact_heads_up_notifications_enabled_title"
+            android:summary="@string/compact_heads_up_notifications_enabled_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
 
     </PreferenceCategory>
 </PreferenceScreen>
