@@ -530,4 +530,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="heads_up_summary">Display priority notifications in a small floating window</string>
     <string name="heads_up_off">Heads-up is disabled globally</string>
 
+    <!-- Heads-up -->
+    <string name="compact_heads_up_notifications_enabled_title">Compact heads-up</string>
+    <string name="compact_heads_up_notifications_enabled_summary">Display notifications in compact size</string>
+
 </resources>
