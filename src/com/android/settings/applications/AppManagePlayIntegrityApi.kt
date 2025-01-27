@@ -103,26 +103,32 @@ class AppManagePlayIntegrityApiFragment : AppInfoWithHeader() {
     }
 
     override fun refreshUi(): Boolean {
+        val appInfo = getAppInfo(mPackageName) ?: return false
         val gosPs = GosPackageState.get(mPackageName, mUserId)
 
         showUsageNotifsSwitch.isChecked = AswBlockPlayIntegrityApi.I.isNotificationEnabled(gosPs)
 
         blockUsageAttemptsSwitch.isChecked = AswBlockPlayIntegrityApi.I
-                .get(requireContext(), mUserId, mPackageInfo.applicationInfo!!, gosPs)
+                .get(requireContext(), mUserId, appInfo, gosPs)
 
         return true
     }
 
     private fun isPlayStoreAvailable(): Boolean {
-        val pkgManager = requireContext().packageManager
-        val appInfo = try {
-            pkgManager.getApplicationInfoAsUser(PackageId.PLAY_STORE_NAME, 0, mUserId)
-        } catch (e: NameNotFoundException) { return false }
-
+        val appInfo = getAppInfo(PackageId.PLAY_STORE_NAME) ?: return false
         if (!appInfo.enabled) {
             return false
         }
         return appInfo.ext().packageId == PackageId.PLAY_STORE
+    }
+
+    private fun getAppInfo(pkgName: String): ApplicationInfo? {
+        val pkgManager = requireContext().packageManager
+        try {
+            return pkgManager.getApplicationInfoAsUser(pkgName, 0, mUserId)
+        } catch (e: NameNotFoundException) {
+            return null
+        }
     }
 
     override fun createDialog(id: Int, errorCode: Int): AlertDialog? = null
