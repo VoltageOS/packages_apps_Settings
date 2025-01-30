@@ -16,11 +16,13 @@
 
 package com.voltage.widget;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import androidx.preference.Preference;
@@ -89,7 +91,13 @@ public class ShrinkablePreference extends Preference {
 
                         if (event.getAction() == MotionEvent.ACTION_UP) {
                             Intent intent = new Intent("android.settings.SYSTEM_UPDATE_SETTINGS");
-                            getContext().startActivity(intent);
+                            try {
+                                getContext().startActivity(intent);
+                            } catch (ActivityNotFoundException e) {
+                                Toast.makeText(getContext(), 
+                                    "Apply for official to get updates",
+                                    Toast.LENGTH_SHORT).show();
+                            }
                         }
                         break;
                 }
