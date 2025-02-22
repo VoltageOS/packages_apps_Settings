@@ -218,5 +218,12 @@
             android:defaultValue="false"
             android:dependency="heads_up_notifications_enabled" />
 
+        <com.voltage.support.preferences.SystemSettingSwitchPreference
+            android:key="ongoing_action_chip"
+            android:order="30"
+            android:title="@string/ongoing_action_chip_title"
+            android:summary="@string/ongoing_action_chip_summary"
+            android:defaultValue="true" /> 
+
     </PreferenceCategory>
 </PreferenceScreen>
