@@ -215,6 +215,7 @@ public class EnabledNetworkModePreferenceController extends
         private boolean mDisplay2gOptions;
         private boolean mDisplay3gOptions;
         private boolean mLteEnabled;
+        private boolean isNrSaAvailable; // Nr-Sa (5G standalone)
         private int mSelectedEntry;
         private int mSubId;
         private String mSummary;
@@ -278,6 +279,14 @@ public class EnabledNetworkModePreferenceController extends
                 }
 
                 mLteEnabled = carrierConfig.getBoolean(CarrierConfigManager.KEY_LTE_ENABLED_BOOL);
+                int[] supported5gOptions = carrierConfig.getIntArray(
+                        CarrierConfigManager.KEY_CARRIER_NR_AVAILABILITIES_INT_ARRAY);
+                isNrSaAvailable = supported5gOptions != null && com.google.common.primitives.Ints.contains(
+                        supported5gOptions,
+                        CarrierConfigManager.CARRIER_NR_AVAILABILITY_SA
+                ) && (mTelephonyManager.getAllowedNetworkTypesForReason(TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER)
+                        & TelephonyManager.NETWORK_TYPE_BITMASK_NR
+                ) > 0;
             }
             Log.d(LOG_TAG, "PreferenceEntriesBuilder: subId" + mSubId
                     + " ,Supported5gRadioAccessFamily :" + mSupported5gRadioAccessFamily
@@ -460,7 +469,9 @@ public class EnabledNetworkModePreferenceController extends
 
             if (!lteOnlyUnsupported && is5GSupported.get()) {
                 addNrOrLteOnlyEntry();
-                addNrOnlyEntry();
+                if (isNrSaAvailable) {
+                    addNrOnlyEntry();
+                }
             }
         }
 
