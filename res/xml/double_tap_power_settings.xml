@@ -19,11 +19,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/double_tap_power_title">
-    <com.android.settingslib.widget.IllustrationPreference
-        android:key="gesture_double_tap_power_video"
-        settings:searchable="false"
-        settings:lottie_rawRes="@drawable/quickly_open_camera"
-        settings:controller="com.android.settings.gestures.DoubleTapPowerIllustrationPreferenceController"/>
 
     <com.android.settingslib.widget.MainSwitchPreference
         android:key="gesture_double_tap_power_enabled_main_switch"
