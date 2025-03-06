@@ -688,7 +688,7 @@ public class FingerprintSettings extends SubSettings {
             // |mRequireScreenOnToAuthPreferenceController.isChecked| is always checking the primary
             // user instead of the user with |mUserId|.
             if ((!isUdfps() && mFingerprintWakeAndUnlock) ||
-                    (screenOffUnlockUdfps() && isUltrasnoicUdfps())) {
+                    (screenOffUnlockUdfps() && isUdfps())) {
                 scrollToPreference(fpPrefKey);
                 addFingerprintUnlockCategory();
             }
@@ -755,7 +755,7 @@ public class FingerprintSettings extends SubSettings {
                             restToUnlockPreference.getOnPreferenceChangeListener());
                 }
                 setupFingerprintUnlockCategoryPreferencesForScreenOnToAuth();
-            } else if (screenOffUnlockUdfps() && isUltrasnoicUdfps()) {
+            } else if (screenOffUnlockUdfps() && isUdfps()) {
                 setupFingerprintUnlockCategoryPreferencesForScreenOffUnlock();
             }
             if (mFingerprintUnlockCategoryPreferenceController != null) {
@@ -806,7 +806,7 @@ public class FingerprintSettings extends SubSettings {
         private void updatePreferencesAfterFingerprintRemoved() {
             updateAddPreference();
             if ((!isUdfps() && mFingerprintWakeAndUnlock) ||
-                    (screenOffUnlockUdfps() && isUltrasnoicUdfps())) {
+                    (screenOffUnlockUdfps() && isUdfps())) {
                 updateFingerprintUnlockCategoryVisibility();
             }
             updatePreferences();
@@ -1051,7 +1051,7 @@ public class FingerprintSettings extends SubSettings {
                     }
 
                 }
-            } else if (screenOffUnlockUdfps() && isUltrasnoicUdfps()) {
+            } else if (screenOffUnlockUdfps() && isUdfps()) {
                 for (AbstractPreferenceController controller : controllers) {
                     if (controller.getPreferenceKey() == KEY_FINGERPRINT_UNLOCK_CATEGORY) {
                         mFingerprintUnlockCategoryPreferenceController =
