@@ -141,6 +141,12 @@
         settings:controller="com.android.settings.system.DeviceDiagnosticsPreferenceController"/>
 
     <Preference
+        android:key="linux_terminal"
+        android:title="@string/enable_linux_terminal_title"
+        android:summary="@string/enable_linux_terminal_summary"
+        android:fragment="com.android.settings.development.linuxterminal.LinuxTerminalDashboardFragment" />
+
+    <Preference
         android:key="reset_dashboard"
         android:title="@string/reset_dashboard_title"
         android:icon="@drawable/ic_restore"

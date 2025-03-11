@@ -18,11 +18,13 @@ package com.android.settings.development.linuxterminal;
 
 import static android.system.virtualmachine.VirtualMachineManager.CAPABILITY_NON_PROTECTED_VM;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Process;
 import android.os.storage.StorageManager;
 import android.system.virtualmachine.VirtualMachineManager;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DataUnit;
 
@@ -70,13 +72,23 @@ public class LinuxTerminalPreferenceController extends DeveloperOptionsPreferenc
                                 != 0);
     }
 
+    public boolean mIsInSystemSettings;
+
     // Avoid lazy initialization because this may be called before displayPreference().
     @Override
     public boolean isAvailable() {
         // Check build flag RELEASE_AVF_SUPPORT_CUSTOM_VM_WITH_PARAVIRTUALIZED_DEVICES indirectly
         // by checking whether the terminal app is installed.
         // TODO(b/343795511): Add explicitly check for the flag when it's accessible from Java code.
-        return mTerminalPackageName != null && mIsDeviceCapable;
+        boolean res = mTerminalPackageName != null && mIsDeviceCapable;
+
+        if (res && mIsInSystemSettings) {
+            ContentResolver cr = mContext.getContentResolver();
+            String key = Settings.Global.DEVELOPMENT_SETTINGS_ENABLED;
+            res = Settings.Global.getInt(cr, key, 0) == 1;
+        }
+
+        return res;
     }
 
     @Override
