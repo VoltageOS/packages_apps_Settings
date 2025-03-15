@@ -63,6 +63,9 @@ Device will be automatically restarted."
 There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
     </string>
 
+    <string name="nfc_auto_off_title">Turn off NFC automatically</string>
+    <string name="nfc_auto_off_footer">If NFC is not used, it will be turned off after the selected timeout.</string>
+
     <string name="wifi_auto_off_title">Turn off Wi-Fi automatically</string>
     <string name="wifi_auto_off_footer">If Wi-Fi is disconnected, it will be turned off after the selected timeout.</string>
 
