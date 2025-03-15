@@ -744,6 +744,8 @@
             android:title="@string/force_allow_on_external"
             android:summary="@string/force_allow_on_external_summary" />
 
+        <!-- GRAPHENE REBASE: Look at this again. they removed the prefs -->
+
         <SwitchPreferenceCompat
             android:key="back_navigation_animation"
             android:title="@string/back_navigation_animation"
@@ -782,7 +784,7 @@
 
         <SwitchPreferenceCompat
             android:key="override_desktop_mode_features"
-            android:title="@string/enable_desktop_mode" />
+            android:title="Enable desktop mode" />
 
         <SwitchPreferenceCompat
             android:key="enable_freeform_support"
