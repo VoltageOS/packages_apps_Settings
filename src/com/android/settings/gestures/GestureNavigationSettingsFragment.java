@@ -31,8 +31,6 @@ import com.android.settings.widget.LabeledSeekBarPreference;
 import com.android.settings.widget.SeekBarPreference;
 import com.android.settingslib.search.SearchIndexable;
 
-import static com.android.systemui.shared.recents.utilities.Utilities.isLargeScreen;
-
 /**
  * A fragment to include all the settings related to Gesture Navigation mode.
  */
@@ -79,13 +77,6 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         initSeekBarPreference(LEFT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(RIGHT_EDGE_SEEKBAR_KEY);
-
-        boolean isTaskbarEnabled = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.ENABLE_TASKBAR, isLargeScreen(getContext()) ? 1 : 0) == 1;
-        if (isTaskbarEnabled) {
-            getPreferenceScreen().removePreference(
-                    getPreferenceScreen().findPreference(NAVIGATION_BAR_HINT_KEY));
-        }
     }
 
     @Override
