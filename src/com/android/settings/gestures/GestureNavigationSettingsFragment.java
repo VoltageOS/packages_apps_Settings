@@ -36,8 +36,6 @@ import com.android.settingslib.widget.SliderPreference;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import static com.android.systemui.shared.recents.utilities.Utilities.isLargeScreen;
-
 /**
  * A fragment to include all the settings related to Gesture Navigation mode.
  */
@@ -91,12 +89,6 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         initSliderPreference(RIGHT_EDGE_SEEKBAR_KEY);
         initTutorialButton();
 
-        boolean isTaskbarEnabled = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.ENABLE_TASKBAR, isLargeScreen(getContext()) ? 1 : 0) == 1;
-        if (isTaskbarEnabled) {
-            getPreferenceScreen().removePreference(
-                    getPreferenceScreen().findPreference(NAVIGATION_BAR_HINT_KEY));
-        }
     }
 
     @Override
