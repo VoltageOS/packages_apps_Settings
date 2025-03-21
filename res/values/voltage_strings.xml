@@ -480,4 +480,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="navigation_bar_inverse_title">Inverse Layout</string>
     <string name="navigation_bar_inverse_summary">Swipe positions between back and recents</string>
 
+    <!-- Navigation bar taskbar -->
+    <string name="navigation_bar_enable_taskbar_title">Taskbar</string>
+    <string name="navigation_bar_enable_taskbar_summary">Show taskbar with selected navigation mode</string>
+
 </resources>
