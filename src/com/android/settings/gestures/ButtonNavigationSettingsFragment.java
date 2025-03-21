@@ -21,6 +21,7 @@ import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVE
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.ContentResolver;
 
 import android.os.Bundle;
 
@@ -30,6 +31,8 @@ import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+
+import static com.android.systemui.shared.recents.utilities.Utilities.isLargeScreen;
 
 /**
  * A fragment that includes settings for 2- and 3-button navigation modes.
@@ -44,11 +47,20 @@ public class ButtonNavigationSettingsFragment extends DashboardFragment {
 
     private static final String KEY_NAVBAR_INVERT = "navigation_bar_inverse";
 
+    private static final String KEY_ENABLE_TASKBAR = "enable_taskbar";
+
     private SwitchPreference mNavbarInvertPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final ContentResolver resolver = getContext().getContentResolver();
+
+        if (!isLargeScreen(getContext())) {
+             getPreferenceScreen().removePreference(
+                     getPreferenceScreen().findPreference(KEY_ENABLE_TASKBAR));
+         }
 
         SwitchPreference navbarInvertPref = (SwitchPreference) findPreference(KEY_NAVBAR_INVERT);
         final Bundle arguments = getArguments();
