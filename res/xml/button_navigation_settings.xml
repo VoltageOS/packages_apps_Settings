@@ -38,5 +38,8 @@
         settings:controller="com.android.settings.gestures.ButtonNavigationSettingsAssistController"
     />
 
+    <com.voltage.support.preferences.SystemSettingSwitchPreference
+         android:key="enable_taskbar"
+         android:title="@string/navigation_bar_enable_taskbar_title"
+         android:summary="@string/navigation_bar_enable_taskbar_summary" />
 </PreferenceScreen>
-

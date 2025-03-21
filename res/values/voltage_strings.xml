@@ -565,4 +565,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="per_app_rotation_global_switch_title">Force app rotation control</string>
     <string name="per_app_rotation_global_switch_summary">Force this device to respect per-app rotation settings. Required on tablets and large-screen devices.</string>
 
+    <!-- Navigation bar taskbar -->
+    <string name="navigation_bar_enable_taskbar_title">Taskbar</string>
+    <string name="navigation_bar_enable_taskbar_summary">Show taskbar with selected navigation mode</string>
+
 </resources>

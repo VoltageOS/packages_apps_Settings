@@ -22,6 +22,7 @@ import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVE
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.ContentResolver;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +31,8 @@ import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+
+import static com.android.systemui.shared.recents.utilities.Utilities.isLargeScreen;
 
 /**
  * A fragment that includes settings for 2- and 3-button navigation modes.
@@ -42,6 +45,20 @@ public class ButtonNavigationSettingsFragment extends DashboardFragment {
     public static final String BUTTON_NAVIGATION_SETTINGS =
             "com.android.settings.BUTTON_NAVIGATION_SETTINGS";
 
+    private static final String KEY_ENABLE_TASKBAR = "enable_taskbar";
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        final ContentResolver resolver = getContext().getContentResolver();
+
+        if (!isLargeScreen(getContext())) {
+             getPreferenceScreen().removePreference(
+                     getPreferenceScreen().findPreference(KEY_ENABLE_TASKBAR));
+         }
+
+    }
 
     @Override
     public int getMetricsCategory() {
