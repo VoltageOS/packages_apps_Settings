@@ -67,6 +67,12 @@
         android:title="@string/private_space_category_system">
 
         <Preference
+            android:key="private_space_cross_profile_clipboard_access_title"
+            android:title="@string/cross_profile_clipboard_access_title"
+            settings:controller="com.android.settings.privatespace.users.PsCrossProfileClipboardAccessPrefCtrl"
+            settings:searchable="false" />
+
+        <Preference
             android:key="private_space_delete"
             android:title="@string/private_space_delete_title"
             settings:controller="com.android.settings.privatespace.delete.DeletePrivateSpaceController"
