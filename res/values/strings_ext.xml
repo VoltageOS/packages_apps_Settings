@@ -153,4 +153,21 @@ This method can be particularly useful when GNSS is unavailable or unreliable, s
     <string name="network_location_enabled_apple_server">Apple server</string>
     <string name="network_location_disabled">Off</string>
 
+    <string name="cross_profile_clipboard_access_title">Cross-profile shared clipboard</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_title">Follow defaults</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_summary">Allow system defaults sharing the clipboard from and to the parent user and its other child profiles.</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_title">Follow import defaults</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_summary">Allow system defaults sharing the clipboard from the parent user and its other child profiles.</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_title">Follow export defaults</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_summary">Allow system defaults sharing the clipboard to the parent user and its other child profiles.</string>
+    <string name="cross_profile_clipboard_access_disallow_title">Disallowed</string>
+    <string name="cross_profile_clipboard_access_disallow_summary">Disallow sharing the clipboard from and to the parent user and its other child profiles.</string>
+    <string name="cross_profile_clipboard_access_footer">This setting provides an option for users
+        to allow or disallow sharing clipboard to and from other profiles of the same parent user including itself.
+        Once disallowed, future clipboard content updates between user profiles of the same parent user,
+        such as between private space profile and parent user, or between private space profile and work profile,
+        will not be accessible. Clipboard contents shared with other profiles prior to selecting a
+        stricter option remain accessible until clipboard contents have been updated.
+    </string>
+
 </resources>
