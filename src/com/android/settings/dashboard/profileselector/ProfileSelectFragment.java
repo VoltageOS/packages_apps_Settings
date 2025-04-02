@@ -238,7 +238,14 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
             if (mainUser == null) {
                 mainUser = UserHandle.SYSTEM;
             }
-            final int userId = bundle.getInt(EXTRA_USER_ID, mainUser.getIdentifier());
+            UserHandle activityUser = activity.getUser();
+            final int userIdFallback;
+            if (mainUser.getIdentifier() != activityUser.getIdentifier()) {
+                userIdFallback = activityUser.getIdentifier();
+            } else {
+                userIdFallback = mainUser.getIdentifier();
+            }
+            final int userId = bundle.getInt(EXTRA_USER_ID, userIdFallback);
             final boolean isWorkProfile = UserManager.get(activity).isManagedProfile(userId);
             if (isWorkProfile) {
                 return WORK_TAB;
@@ -354,6 +361,18 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
                                         userInfo.id,
                                         bundle != null ? bundle.deepCopy() : new Bundle(),
                                         privateFragmentConstructor));
+                        UserInfo parentUserInfo = userInfos.stream()
+                                .filter(info -> info.id == UserHandle.myUserId())
+                                .toList().get(0);
+                        if (!parentUserInfo.isMain() && parentUserInfo.canHaveProfileOfType(
+                                UserManager.USER_TYPE_PROFILE_PRIVATE)) {
+                            fragments.add(0,
+                                    createAndGetFragment(
+                                            ProfileType.PERSONAL,
+                                            parentUserInfo.id,
+                                            bundle != null ? bundle.deepCopy() : new Bundle(),
+                                            personalFragmentConstructor));
+                        }
                     }
                 } else {
                     Log.d(TAG, "Not showing tab for unsupported user " + userInfo);
