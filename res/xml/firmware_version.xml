@@ -52,8 +52,8 @@
 
     <!-- VoltageOS maintainer -->
     <Preference
-        android:key="maintainer"
-        android:title="@string/maintainer"
+        android:key="voltage_maintainer"
+        android:title="@string/voltage_maintainer_title"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"/>

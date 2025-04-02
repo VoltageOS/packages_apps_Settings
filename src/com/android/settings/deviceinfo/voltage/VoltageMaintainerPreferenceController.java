@@ -17,6 +17,7 @@
 package com.android.settings.deviceinfo.voltage;
 
 import android.content.Context;
+import android.os.SystemProperties;
 import android.content.res.Resources;
 import android.text.TextUtils;
 
@@ -27,6 +28,7 @@ import com.android.settings.core.BasePreferenceController;
 
 public class VoltageMaintainerPreferenceController extends BasePreferenceController {
 
+    private static final String KEY_VOLTAGE_BUILD_STATUS_PROP = "ro.voltage.build.status";
     private static final String TAG = "VoltageMaintainerPreferenceController";
 
     public VoltageMaintainerPreferenceController(Context context, String key) {
@@ -37,8 +39,30 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
         return AVAILABLE;
     }
 
+    @Override
     public CharSequence getSummary() {
         String maintainer = mContext.getResources().getString(R.string.voltage_maintainer);
-        return maintainer;
+        String buildStatus = getBuildStatus();
+        if (!TextUtils.isEmpty(buildStatus) && !buildStatus.equals(mContext.getString(R.string.unknown))) {
+             return buildStatus + " by " + maintainer;        }
+ 
+         return mContext.getString(R.string.unknown);
+     }
+
+    @Override
+     public void updateState(Preference preference) {
+         super.updateState(preference);
+
+        String buildStatus = getBuildStatus();
     }
+
+    private String getBuildStatus() {
+         String buildStatus = SystemProperties.get(KEY_VOLTAGE_BUILD_STATUS_PROP, null);
+ 
+         if ("OFFICIAL".equalsIgnoreCase(buildStatus) || "UNOFFICIAL".equalsIgnoreCase(buildStatus)) {
+             return buildStatus;
+         }
+ 
+         return mContext.getString(R.string.unknown);
+     }
 }

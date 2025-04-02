@@ -10,6 +10,7 @@
     <string name="backup_transport_title">Select backup provider</string>
 
     <!-- VoltageOS maintainer -->
+    <string name="voltage_maintainer_title">Build status</string>
     <string name="maintainer">Maintainer</string>
     <string name="voltage_maintainer">Unofficial Maintainer</string>
     
