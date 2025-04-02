@@ -56,10 +56,12 @@ public final class PrivateSpaceSafetySource {
             }
         }
 
-        // Check the profile type - we don't want to show this for anything other than primary
-        // user.
-        if (userManager != null && !userManager.isMainUser()) {
-            Log.i(TAG, "setSafetySourceData not main user");
+        // Check the profile type - we don't want to show this for anything other than
+        // primary user and other users that can have private profiles
+        if (userManager != null && !userManager.isMainUser()
+                && !userManager.canHaveProfileOfType(UserManager.USER_TYPE_PROFILE_PRIVATE)) {
+            Log.i(TAG, "setSafetySourceData not main user," +
+                    " or user that can have private profiles");
             return;
         }
 
