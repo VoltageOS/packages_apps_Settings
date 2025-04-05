@@ -38,6 +38,14 @@
         settings:controller="com.android.settings.gestures.ButtonNavigationSettingsAssistController"
     />
 
+    <com.voltage.support.preferences.SecureSettingListPreference
+        android:key="navbar_layout_mode"
+        android:title="@string/navbar_layout_title"
+        android:summary="%s"
+        android:entries="@array/navbar_layout_entries"
+        android:entryValues="@array/navbar_layout_values"
+        android:defaultValue="0" />
+
     <com.voltage.support.preferences.SystemSettingSwitchPreference
          android:key="enable_taskbar"
          android:title="@string/navigation_bar_enable_taskbar_title"
