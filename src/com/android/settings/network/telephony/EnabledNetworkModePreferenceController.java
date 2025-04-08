@@ -354,10 +354,12 @@ public class EnabledNetworkModePreferenceController extends
                 mLteEnabled = carrierConfig.getBoolean(CarrierConfigManager.KEY_LTE_ENABLED_BOOL);
                 int[] supported5gOptions = carrierConfig.getIntArray(
                         CarrierConfigManager.KEY_CARRIER_NR_AVAILABILITIES_INT_ARRAY);
+		boolean supportsVONR = EnabledNetworkModePreferenceController.this.mContext.getResources()
+        		.getBoolean(R.bool.config_supportsVONR);
                 isNrSaAvailable = supported5gOptions != null && com.google.common.primitives.Ints.contains(
                         supported5gOptions,
                         CarrierConfigManager.CARRIER_NR_AVAILABILITY_SA
-                ) && (mTelephonyManager.getAllowedNetworkTypesForReason(TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER)
+                ) && supportsVONR && (mTelephonyManager.getAllowedNetworkTypesForReason(TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER)
                         & TelephonyManager.NETWORK_TYPE_BITMASK_NR
                 ) > 0;
             }
