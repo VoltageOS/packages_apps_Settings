@@ -32,4 +32,8 @@
 
     <!-- Whether to show TouchGestures preference -->
     <bool name="config_supportsTouchGestures">false</bool>
+
+    <!-- 5g only toggle -->
+    <bool name="config_supportsVONR">true</bool>
+
 </resources>
