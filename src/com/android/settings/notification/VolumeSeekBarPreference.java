@@ -189,6 +189,7 @@ public class VolumeSeekBarPreference extends SeekBarPreference {
         }
         mVolumizer.start();
         mVolumizer.setSeekBar(mSeekBar);
+        setContinuousUpdates(true);
         updateIconView();
         updateSuppressionText();
         if (mListener != null) {

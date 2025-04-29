@@ -39,6 +39,6 @@ public class SeekBarVolumizerFactory {
      * @return a SeekBarVolumizer.
      */
     public SeekBarVolumizer create(int streamType, Uri defaultUri, SeekBarVolumizer.Callback sbvc) {
-        return new SeekBarVolumizer(mContext, streamType, defaultUri, sbvc);
+        return new SettingsSeekBarVolumizer(mContext, streamType, defaultUri, sbvc);
     }
 }
