@@ -39,17 +39,37 @@ public class AutoLockPreferenceController extends BasePreferenceController {
 
     @Override
     public int getAvailabilityStatus() {
+        // TODO: Add proper support for auto locking for other eligible full users
+        //       that can have private profiles, such as full secondary users, by Android 16.
+        if (getImmutableValue() != null) {
+            return DISABLED_DEPENDENT_SETTING;
+        }
+
         return AVAILABLE;
     }
 
     @NonNull
     @Override
     public CharSequence getSummary() {
+        Integer immutableSettingValue = getImmutableValue();
+        if (immutableSettingValue != null) {
+            return mAutoLockRadioOptions[immutableSettingValue];
+        }
         try {
             return mAutoLockRadioOptions[mPrivateSpaceMaintainer.getPrivateSpaceAutoLockSetting()];
         } catch (ArrayIndexOutOfBoundsException exception) {
             Log.e(TAG, "Invalid private space auto lock setting value" + exception.getMessage());
         }
         return mAutoLockRadioOptions[PrivateSpaceMaintainer.PRIVATE_SPACE_AUTO_LOCK_DEFAULT_VAL];
+    }
+
+    @android.provider.Settings.Secure.PrivateSpaceAutoLockOption
+    public Integer getImmutableValue() {
+        // Only disable it being immutable to system user, which is also the main user.
+        if (mContext.getUser().isSystem()) {
+            return null;
+        }
+
+        return android.provider.Settings.Secure.PRIVATE_SPACE_AUTO_LOCK_AFTER_DEVICE_RESTART;
     }
 }
