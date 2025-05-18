@@ -19,6 +19,10 @@ package com.android.settings.privatespace;
 import static com.android.settings.privatespace.PrivateSpaceAuthenticationActivity.EXTRA_SHOW_PRIVATE_SPACE_UNLOCKED;
 
 import android.app.settings.SettingsEnums;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +34,21 @@ import com.android.settings.dashboard.DashboardFragment;
 /** Fragment representing the Private Space dashboard in Settings. */
 public class PrivateSpaceDashboardFragment extends DashboardFragment {
     private static final String TAG = "PSDashboardFragment";
+
+    private final BroadcastReceiver mBroadcastReceiver =
+            new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    if (intent == null) {
+                        return;
+                    }
+                    String action = intent.getAction();
+                    if (Intent.ACTION_PROFILE_INACCESSIBLE.equals(action)
+                            || Intent.ACTION_PROFILE_UNAVAILABLE.equals(action)) {
+                        finishAndRemoveTaskIfLocked();
+                    }
+                }
+            };
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -52,6 +71,25 @@ public class PrivateSpaceDashboardFragment extends DashboardFragment {
     @Override
     public void onStart() {
         super.onStart();
+        finishAndRemoveTaskIfLocked();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().unregisterReceiver(mBroadcastReceiver);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        final IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_PROFILE_UNAVAILABLE);
+        intentFilter.addAction(Intent.ACTION_PROFILE_INACCESSIBLE);
+        getActivity().registerReceiver(mBroadcastReceiver, intentFilter);
+    }
+
+    private void finishAndRemoveTaskIfLocked() {
         if (PrivateSpaceMaintainer.getInstance(getContext()).isPrivateSpaceLocked()) {
             // To make sure the task is removed if it is the last activity in that stack.
             getActivity().finishAndRemoveTask();
