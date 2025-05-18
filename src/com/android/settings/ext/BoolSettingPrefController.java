@@ -8,6 +8,7 @@ package com.android.settings.ext;
 import android.content.Context;
 import android.ext.settings.BoolSetting;
 import android.os.Bundle;
+import android.os.UserHandle;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;
@@ -24,12 +25,19 @@ import static com.android.settings.core.PreferenceXmlParserUtils.METADATA_KEY;
 public class BoolSettingPrefController extends AbstractTogglePrefController
         implements ExtSettingPrefController<BoolSetting> {
     private final BoolSetting setting;
+    private final UserHandle user;
     private final ExtSettingControllerHelper<BoolSetting> helper;
 
     protected BoolSettingPrefController(Context ctx, String key, BoolSetting setting) {
+        this(ctx, key, setting, ctx.getUser());
+    }
+
+    protected BoolSettingPrefController(Context ctx, String key, BoolSetting setting, UserHandle user) {
         super(ctx, key);
-        helper = new ExtSettingControllerHelper(ctx, setting);
         this.setting = setting;
+        this.user = user;
+        Context ctxForUser = ctx.getUser().equals(user) ? ctx : ctx.createContextAsUser(user, 0);
+        helper = new ExtSettingControllerHelper<>(ctxForUser, setting);
     }
 
     @Override
@@ -39,11 +47,18 @@ public class BoolSettingPrefController extends AbstractTogglePrefController
 
     @Override
     public final boolean isChecked() {
+        if (!mContext.getUser().equals(user)) {
+            return setting.get(mContext, user.getIdentifier());
+        }
         return setting.get(mContext);
     }
 
     @Override
     public boolean setChecked(boolean isChecked) {
+        if (!mContext.getUser().equals(user)) {
+            Context ctxForUser = mContext.createContextAsUser(user, 0);
+            return setting.put(ctxForUser, isChecked);
+        }
         return setting.put(mContext, isChecked);
     }
 
