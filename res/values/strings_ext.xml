@@ -173,4 +173,11 @@ This method can be particularly useful when GNSS is unavailable or unreliable, s
         stricter option remain accessible until clipboard contents have been updated.
     </string>
 
+    <string name="ps_disallow_delayed_locking_title">End session immediately on lock</string>
+    <string name="ps_disallow_delayed_locking_description">
+        Disallow delayed locking of storage when stopping or locking the current private profile.
+        This allows locking to work like end session to full secondary users
+        where strong authentication is required to unlock the storage.
+    </string>
+
 </resources>
