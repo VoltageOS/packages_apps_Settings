@@ -23,6 +23,24 @@
     android:title="@string/gesture_settings_activity_title"
     settings:keywords="@string/keywords_gesture_navigation_settings">
 
+    <PreferenceCategory
+        android:persistent="false">
+
+        <com.android.settingslib.widget.ButtonPreference
+            android:key="assistant_gesture_navigation_tutorial"
+            android:title="@string/gesture_navigation_tutorial_title"
+            android:icon="@drawable/tile_icon_show_taps"
+            settings:buttonPreferenceSize="normal"
+            settings:buttonPreferenceType="filled" />
+    </PreferenceCategory>
+
+    <!-- Show IME Space -->
+    <com.voltage.support.preferences.SecureSettingSwitchPreference
+        android:key="sysui_show_nav_bar_ime"
+        android:title="@string/show_ime_space_title"
+        android:summary="@string/show_ime_space_summary"
+        android:defaultValue="true" />
+
     <com.voltage.support.preferences.SystemSettingSwitchPreference
         android:key="enable_taskbar"
         android:title="@string/navigation_bar_enable_taskbar_title"
@@ -72,17 +90,6 @@
         android:title="@string/back_gesture_haptic_title"
         android:summary="@string/back_gesture_haptic_summary"
         android:defaultValue="true" />
-
-    <PreferenceCategory
-        android:persistent="false">
-
-        <com.android.settingslib.widget.ButtonPreference
-            android:key="assistant_gesture_navigation_tutorial"
-            android:title="@string/gesture_navigation_tutorial_title"
-            android:icon="@drawable/tile_icon_show_taps"
-            settings:buttonPreferenceSize="normal"
-            settings:buttonPreferenceType="filled" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="assistant_gesture_category"
