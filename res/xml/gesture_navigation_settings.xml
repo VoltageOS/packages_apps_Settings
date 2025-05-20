@@ -29,6 +29,13 @@
         android:summary="@string/navbar_gesture_tweaks_pref_summary"
         android:fragment="com.android.settings.gestures.GestureTweaksSettings" />
 
+    <!-- Show IME Space -->
+    <com.voltage.support.preferences.SecureSettingSwitchPreference
+        android:key="sysui_show_nav_bar_ime"
+        android:title="@string/show_ime_space_title"
+        android:summary="@string/show_ime_space_summary"
+        android:defaultValue="true" />
+
     <com.voltage.support.preferences.SystemSettingSwitchPreference
         android:key="enable_taskbar"
         android:title="@string/navigation_bar_enable_taskbar_title"
