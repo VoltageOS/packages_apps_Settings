@@ -434,8 +434,6 @@ When the screen is off, the torch can be enabled with one of the following key c
     <!-- Navigation bar hint -->
     <string name="show_navbar_hint_title">Navigation hint</string>
     <string name="show_navbar_hint_summary">Show navigation hint bar at the bottom of the screen</string>
-    <string name="keyboard_no_navigation_title">Keyboard IME space</string>
-    <string name="keyboard_no_navigation_summary">Show space below keyboard when using gesture navigation</string>
 
     <!-- Gesture navbar length -->
      <string name="gesture_navbar_length_title">Pill length</string>
