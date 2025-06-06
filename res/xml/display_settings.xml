@@ -186,6 +186,12 @@
             settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController"/>
         -->
 
+        <SwitchPreferenceCompat
+            android:key="hdr_display"
+            android:title="@string/hdr_display_title"
+            android:summary="@string/hdr_display_summary"
+            settings:controller="com.android.settings.display.HdrDisplayPreferenceController"/>  
+
         <ListPreference
             android:key="min_refresh_rate"
             android:title="@string/min_refresh_rate_title"
