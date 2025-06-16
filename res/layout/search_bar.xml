@@ -33,7 +33,6 @@
             android:layout_height="@dimen/search_bar_height"
             android:paddingStart="@dimen/search_bar_padding_start"
             android:paddingEnd="@dimen/search_bar_padding_end"
-            android:background="@drawable/search_bar_selected_background"
             android:touchscreenBlocksFocus="false"
             android:nextFocusForward="@+id/homepage_container"
             android:contentInsetStartWithNavigation="@dimen/search_bar_content_inset"
