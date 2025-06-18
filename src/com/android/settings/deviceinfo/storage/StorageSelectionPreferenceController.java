@@ -123,20 +123,28 @@ public class StorageSelectionPreferenceController extends BasePreferenceControll
 
         @Override
         public View getView(int position, View view, ViewGroup parent) {
-            final View v = super.getView(position, view, parent);
-            final TextView textView = v.findViewById(android.R.id.text1);
+            if (view == null) {
+                view = getDefaultView(position, view, parent);
+            }
+
+            TextView textView = null;
+            
+            // Check if the view is directly a TextView
+            if (view instanceof TextView) {
+                textView = (TextView) view;
+            } else {
+                // Look for the standard Android TextView ID
+                textView = view.findViewById(android.R.id.text1);
+            }
+            
+            if (textView == null) {
+                throw new IllegalStateException("Could not find TextView in regular view");
+            }
+            
             textView.setText(getItem(position).getDescription());
-            return v;
+            return view;
         }
 
-        @Override
-        public View getDropDownView(int position, View view, ViewGroup parent) {
-            final View v = super.getDropDownView(position, view, parent);
-            final TextView textView = v.findViewById(android.R.id.text1);
-            textView.setText(getItem(position).getDescription());
-            return v;
-        }
-    }
         @Override
         public View getDropDownView(int position, View view, ViewGroup parent) {
             if (view == null) {
@@ -144,14 +152,21 @@ public class StorageSelectionPreferenceController extends BasePreferenceControll
             }
 
             TextView textView = null;
-            try {
+            
+            // Check if the view is directly a TextView
+            if (view instanceof TextView) {
                 textView = (TextView) view;
-            } catch (ClassCastException e) {
-                throw new IllegalStateException("Default drop down view should be a TextView, ", e);
+            } else {
+                // Look for the standard Android TextView ID
+                textView = view.findViewById(android.R.id.text1);
             }
+            
+            if (textView == null) {
+                throw new IllegalStateException("Could not find TextView in dropdown view");
+            }
+            
             textView.setText(getItem(position).getDescription());
-            return textView;
+            return view;
         }
     }
 }
-
