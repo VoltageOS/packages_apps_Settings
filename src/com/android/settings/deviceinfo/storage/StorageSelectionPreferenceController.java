@@ -123,20 +123,20 @@ public class StorageSelectionPreferenceController extends BasePreferenceControll
 
         @Override
         public View getView(int position, View view, ViewGroup parent) {
-            if (view == null) {
-                view = getDefaultView(position, view, parent);
-            }
-
-            TextView textView = null;
-            try {
-                textView = (TextView) view;
-            } catch (ClassCastException e) {
-                throw new IllegalStateException("Default view should be a TextView, ", e);
-            }
+            final View v = super.getView(position, view, parent);
+            final TextView textView = v.findViewById(android.R.id.text1);
             textView.setText(getItem(position).getDescription());
-            return textView;
+            return v;
         }
 
+        @Override
+        public View getDropDownView(int position, View view, ViewGroup parent) {
+            final View v = super.getDropDownView(position, view, parent);
+            final TextView textView = v.findViewById(android.R.id.text1);
+            textView.setText(getItem(position).getDescription());
+            return v;
+        }
+    }
         @Override
         public View getDropDownView(int position, View view, ViewGroup parent) {
             if (view == null) {
