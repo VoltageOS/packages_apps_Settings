@@ -20,7 +20,7 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.settings.R
 import com.android.settings.spa.app.appinfo.AswPreference
 import com.android.settingslib.spaprivileged.model.app.userId
-import com.android.settingslib.widget.TopIntroPreference
+import com.android.settingslib.widget.FooterPreference
 
 object AswAdapterManagePlayIntegrityApi : AswAdapter<AswBlockPlayIntegrityApi>() {
     override fun getAppSwitch() = AswBlockPlayIntegrityApi.I
@@ -56,7 +56,8 @@ class AppManagePlayIntegrityApiFragment : AppInfoWithHeader() {
         val prefCtx = prefContext
         val screen: PreferenceScreen = preferenceManager.createPreferenceScreen(prefCtx)
 
-        TopIntroPreference(prefCtx).apply {
+        FooterPreference(prefCtx).apply {
+            setOrder(-100)
             setTitle(R.string.app_play_integrity_top_intro)
             screen.addPreference(this)
         }
