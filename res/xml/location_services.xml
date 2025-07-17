@@ -40,4 +40,10 @@
             android:title="@string/network_location_title"
             settings:controller="com.android.settings.location.LocationServicesNetworkLocationPreferenceController"/>
 
+        <com.android.settingslib.RestrictedPreference
+            android:key="location_services_geocoder"
+            android:order="1003"
+            android:title="@string/geocoder_title"
+            settings:controller="com.android.settings.location.LocationServicesGeocoderPreferenceController" />
+
 </PreferenceScreen>
