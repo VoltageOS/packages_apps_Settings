@@ -148,7 +148,7 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
 
     <string name="network_location_title">Network location</string>
     <string name="network_location_footer">
-"Network location is a method of determining your device’s location by using various nearby signals, such as Wi-Fi networks, Bluetooth devices, and cell towers. Your device scans for these signals and sends their identifiers to a server, which then provides positioning data that your device uses to estimate its location. Currently, only Wi-Fi networks are used.
+"Network location is a method of determining your device’s location by using various nearby signals, such as Wi-Fi networks, Bluetooth devices, and cell towers. Your device scans for these signals and sends their identifiers to a server, which then provides positioning data that your device uses to estimate its location. Currently, Wi-Fi networks and cell towers are used.
 
 This method can be particularly useful when GNSS is unavailable or unreliable, such as indoors or in areas with poor satellite reception. Network location provides a quicker way to determine your location before a GNSS lock is acquired or when GNSS signals are weak."
     </string>
