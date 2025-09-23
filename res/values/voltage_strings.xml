@@ -73,7 +73,7 @@
     <string name="fingerprint_enroll_touch_dialog_message_side">Touch the sensor on the side of your phone.</string>
 
     <!--Powerhub-->
-    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_title">Powerhub</string>
     <string name="powerhub_summary">The Power you need</string>
 
 </resources>
