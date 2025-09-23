@@ -61,7 +61,7 @@
     <string name="charging_vibro_title">Charging vibration</string>
 
     <!--Powerhub-->
-    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_title">Powerhub</string>
     <string name="powerhub_summary">The Power you need</string>
 
     <!-- Double tap to sleep on status bar or lockscreen -->
