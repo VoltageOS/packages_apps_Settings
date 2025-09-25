@@ -27,6 +27,7 @@ import com.android.settings.biometrics.BiometricEnrollBase.RESULT_FINISHED
 import com.android.settings.biometrics.BiometricEnrollBase.RESULT_SKIP
 import com.android.settings.biometrics.BiometricEnrollBase.RESULT_TIMEOUT
 import com.android.settings.biometrics.BiometricsOnboardingProto
+import com.android.settings.biometrics.MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE
 import com.android.settings.biometrics.combination.CombinedBiometricStatusUtils
 import com.android.settings.biometrics.metrics.BiometricsLogger
 import com.android.settings.biometrics.metrics.OnboardingEvent
@@ -75,6 +76,7 @@ class FaceEnroll: AppCompatActivity() {
 
             // drop extras that are not allowed from external packages before launching
             if (launchedFromProvider() != packageName) {
+                nextIntent.removeExtra(EXTRA_ENROLL_AFTER_FACE)
                 nextIntent.removeExtra(Intent.EXTRA_USER_ID)
             }
             startActivityForResult(nextIntent, 0)
