@@ -7,7 +7,7 @@
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
+ * Unless required by applicable law of agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
@@ -27,7 +27,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.UserInfo;
 import android.net.VpnManager;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -50,10 +49,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.overlay.FeatureFactory;
-import com.android.settingslib.RestrictedLockUtils;
-import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
-import com.android.settingslib.RestrictedPreference;
-import com.android.settingslib.RestrictedSwitchPreference;
 
 import java.util.List;
 
@@ -66,13 +61,11 @@ public class AppManagementFragment extends SettingsPreferenceFragment
     private static final String ARG_PACKAGE_NAME = "package";
 
     private static final String KEY_VERSION = "version";
-    private static final String KEY_GLOBAL_VPN = "global_vpn";
     private static final String KEY_ALWAYS_ON_VPN = "always_on_vpn";
     private static final String KEY_LOCKDOWN_VPN = "lockdown_vpn";
     private static final String KEY_FORGET_VPN = "forget_vpn";
 
     private PackageManager mPackageManager;
-    private DevicePolicyManager mDevicePolicyManager;
     private VpnManager mVpnManager;
     private AdvancedVpnFeatureProvider mFeatureProvider;
 
@@ -84,10 +77,9 @@ public class AppManagementFragment extends SettingsPreferenceFragment
 
     // UI preference
     private Preference mPreferenceVersion;
-    private SwitchPreference mPreferenceGlobal;
-    private RestrictedSwitchPreference mPreferenceAlwaysOn;
-    private RestrictedSwitchPreference mPreferenceLockdown;
-    private RestrictedPreference mPreferenceForget;
+    private SwitchPreference mPreferenceAlwaysOn;
+    private SwitchPreference mPreferenceLockdown;
+    private Preference mPreferenceForget;
 
     // Listener
     private final AppDialogFragment.Listener mForgetVpnDialogFragmentListener =
@@ -126,21 +118,14 @@ public class AppManagementFragment extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.vpn_app_management);
 
         mPackageManager = getContext().getPackageManager();
-        mDevicePolicyManager = getContext().getSystemService(DevicePolicyManager.class);
         mVpnManager = getContext().getSystemService(VpnManager.class);
         mFeatureProvider = FeatureFactory.getFeatureFactory().getAdvancedVpnFeatureProvider();
 
         mPreferenceVersion = findPreference(KEY_VERSION);
-        mPreferenceGlobal = (SwitchPreference) findPreference(KEY_GLOBAL_VPN);
-        mPreferenceAlwaysOn = (RestrictedSwitchPreference) findPreference(KEY_ALWAYS_ON_VPN);
-        mPreferenceLockdown = (RestrictedSwitchPreference) findPreference(KEY_LOCKDOWN_VPN);
-        mPreferenceForget = (RestrictedPreference) findPreference(KEY_FORGET_VPN);
+        mPreferenceAlwaysOn = (SwitchPreference) findPreference(KEY_ALWAYS_ON_VPN);
+        mPreferenceLockdown = (SwitchPreference) findPreference(KEY_LOCKDOWN_VPN);
+        mPreferenceForget = (Preference) findPreference(KEY_FORGET_VPN);
 
-        if (mUserId != UserHandle.USER_SYSTEM) {
-            removePreference(KEY_GLOBAL_VPN);
-        }
-
-        mPreferenceGlobal.setOnPreferenceChangeListener(this);
         mPreferenceAlwaysOn.setOnPreferenceChangeListener(this);
         mPreferenceLockdown.setOnPreferenceChangeListener(this);
         mPreferenceForget.setOnPreferenceClickListener(this);
@@ -174,8 +159,6 @@ public class AppManagementFragment extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         switch (preference.getKey()) {
-            case KEY_GLOBAL_VPN:
-                return onGlobalVpnClick((Boolean) newValue);
             case KEY_ALWAYS_ON_VPN:
                 return onAlwaysOnVpnClick((Boolean) newValue, mPreferenceLockdown.isChecked());
             case KEY_LOCKDOWN_VPN:
@@ -215,21 +198,12 @@ public class AppManagementFragment extends SettingsPreferenceFragment
         return setAlwaysOnVpnByUI(alwaysOnSetting, lockdown);
     }
 
-    private boolean onGlobalVpnClick(final boolean global) {
-        return Settings.Global.putString(getContext().getContentResolver(),
-                Settings.Global.GLOBAL_VPN_APP, global ? mPackageName : "");
-    }
-
     @Override
     public void onConfirmLockdown(Bundle options, boolean isEnabled, boolean isLockdown) {
         setAlwaysOnVpnByUI(isEnabled, isLockdown);
     }
 
     private boolean setAlwaysOnVpnByUI(boolean isEnabled, boolean isLockdown) {
-        updateRestrictedViews();
-        if (!mPreferenceAlwaysOn.isEnabled()) {
-            return false;
-        }
         // Only clear legacy lockdown vpn in system user.
         if (mUserId == UserHandle.USER_SYSTEM) {
             VpnUtils.clearLockdownVpn(getContext());
@@ -244,8 +218,18 @@ public class AppManagementFragment extends SettingsPreferenceFragment
     }
 
     private boolean setAlwaysOnVpn(boolean isEnabled, boolean isLockdown) {
-        return mVpnManager.setAlwaysOnVpnPackageForUser(mUserId,
-                isEnabled ? mPackageName : null, isLockdown, /* lockdownAllowlist */ null);
+        final String vpnPackage = isEnabled ? mPackageName : null;
+        Settings.Secure.putStringForUser(
+                getContext().getContentResolver(),
+                "always_on_vpn_package",
+                vpnPackage,
+                mUserId);
+        Settings.Secure.putIntForUser(
+                getContext().getContentResolver(),
+                "always_on_vpn_lockdown",
+                isLockdown ? 1 : 0,
+                mUserId);
+        return true;
     }
 
     private void updateUI() {
@@ -253,18 +237,7 @@ public class AppManagementFragment extends SettingsPreferenceFragment
             final boolean alwaysOn = isVpnAlwaysOn();
             final boolean lockdown = alwaysOn
                     && VpnUtils.isAnyLockdownActive(getActivity());
-            final boolean anyVpnActive = isAnyVpnActive();
-            final boolean globalVpn = isGlobalVpn();
 
-            mPreferenceGlobal.setEnabled(!anyVpnActive);
-            mPreferenceGlobal.setChecked(globalVpn);
-            if (globalVpn) {
-                mPreferenceGlobal.setSummary(R.string.global_vpn_summary_on);
-            } else if (anyVpnActive) {
-                mPreferenceGlobal.setSummary(R.string.global_vpn_summary_any_vpn_active);
-            } else {
-                mPreferenceGlobal.setSummary(R.string.global_vpn_summary);
-            }
             mPreferenceAlwaysOn.setChecked(alwaysOn);
             mPreferenceLockdown.setChecked(lockdown);
             updateRestrictedViews();
@@ -281,39 +254,14 @@ public class AppManagementFragment extends SettingsPreferenceFragment
             mPreferenceForget.setVisible(true);
         }
 
-        if (isAdded()) {
-            mPreferenceAlwaysOn.checkRestrictionAndSetDisabled(UserManager.DISALLOW_CONFIG_VPN,
-                    mUserId);
-            mPreferenceLockdown.checkRestrictionAndSetDisabled(UserManager.DISALLOW_CONFIG_VPN,
-                    mUserId);
-            mPreferenceForget.checkRestrictionAndSetDisabled(UserManager.DISALLOW_CONFIG_VPN,
-                    mUserId);
-
-            if (mPackageName.equals(mDevicePolicyManager.getAlwaysOnVpnPackage())) {
-                EnforcedAdmin admin = RestrictedLockUtils.getProfileOrDeviceOwner(
-                        getContext(), UserHandle.of(mUserId));
-                mPreferenceAlwaysOn.setDisabledByAdmin(admin);
-                mPreferenceForget.setDisabledByAdmin(admin);
-                if (mDevicePolicyManager.isAlwaysOnVpnLockdownEnabled()) {
-                    mPreferenceLockdown.setDisabledByAdmin(admin);
-                }
-            }
-            if (mVpnManager.isAlwaysOnVpnPackageSupportedForUser(mUserId, mPackageName)) {
-                // setSummary doesn't override the admin message when user restriction is applied
-                mPreferenceAlwaysOn.setSummary(R.string.vpn_always_on_summary);
-                // setEnabled is not required here, as checkRestrictionAndSetDisabled
-                // should have refreshed the enable state.
-            } else {
-                mPreferenceAlwaysOn.setEnabled(false);
-                mPreferenceLockdown.setEnabled(false);
-                mPreferenceAlwaysOn.setSummary(R.string.vpn_always_on_summary_not_supported);
-            }
-        }
+        mPreferenceAlwaysOn.setEnabled(true);
+        mPreferenceLockdown.setEnabled(true);
+        mPreferenceForget.setEnabled(true);
     }
 
     @VisibleForTesting
     void init(String packageName, AdvancedVpnFeatureProvider featureProvider,
-            RestrictedPreference preference) {
+            Preference preference) {
         mPackageName = packageName;
         mFeatureProvider = featureProvider;
         mPreferenceForget = preference;
@@ -324,12 +272,11 @@ public class AppManagementFragment extends SettingsPreferenceFragment
     }
 
     private boolean isVpnAlwaysOn() {
-        return mPackageName.equals(getAlwaysOnVpnPackage());
-    }
-
-    private boolean isGlobalVpn() {
-        return mPackageName.equals(Settings.Global.getString(
-                getContext().getContentResolver(), Settings.Global.GLOBAL_VPN_APP));
+    return mPackageName.equals(
+            Settings.Secure.getStringForUser(
+                    getContext().getContentResolver(),
+                    "always_on_vpn_package",
+                    mUserId));
     }
 
     /**
@@ -384,18 +331,6 @@ public class AppManagementFragment extends SettingsPreferenceFragment
     private boolean isAnotherVpnActive() {
         final VpnConfig config = mVpnManager.getVpnConfig(mUserId);
         return config != null && !TextUtils.equals(config.user, mPackageName);
-    }
-
-    /**
-     * @return {@code true} if any VPN (VpnService or legacy) is connected or set as always-on.
-     */
-    private boolean isAnyVpnActive() {
-        for (UserInfo userInfo : UserManager.get(getContext()).getUsers()) {
-            if (mVpnManager.getVpnConfig(userInfo.id) != null) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public static class CannotConnectFragment extends InstrumentedDialogFragment {
