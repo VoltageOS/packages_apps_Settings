@@ -111,6 +111,20 @@
             android:summary="@string/doze_on_charge_summary"
             android:defaultValue="false" />
 
+        <com.voltage.support.preferences.SystemSettingListPreference
+            android:key="ambient_show_settings"
+            android:title="@string/ambient_bottom_title"
+            android:entries="@array/ambient_bottom_entries"
+            android:entryValues="@array/ambient_bottom_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
+        <com.voltage.support.preferences.SystemSettingSwitchPreference
+            android:key="ambient_show_settings_icons"
+            android:title="@string/display_icon_title"
+            android:summary="@string/display_icon_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="ambient_display_tap"
             android:title="@string/ambient_display_tap_screen_title"
