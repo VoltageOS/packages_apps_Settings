@@ -152,6 +152,28 @@
             android:summary="@string/doze_summary"
             settings:controller="com.android.settings.display.AmbientDisplayNotificationsPreferenceController" />
 
+        <com.voltage.support.preferences.SystemSettingSeekBarPreference
+            android:key="doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false"
+            settings:controller="com.android.settings.security.DozeBrightnessPreferenceController" />
+
+        <com.voltage.support.preferences.SystemSettingSeekBarPreference
+            android:key="pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false"
+            settings:controller="com.android.settings.security.DozeBrightnessPreferenceController" />
+
+        <com.voltage.support.preferences.SystemSettingSwitchPreference
+            android:key="doze_brightness_force"
+            android:title="@string/doze_brightness_force_title"
+            android:summary="@string/doze_brightness_force_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <!-- Work profile settings are at the bottom with high order value to avoid users thinking that
