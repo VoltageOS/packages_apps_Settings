@@ -15,4 +15,5 @@
     <dimen name="voltage_pref_vert">5.5dp</dimen>
     <dimen name="voltage_card_radius">32dp</dimen>
 
+    <dimen name="toast_y_offset">100dp</dimen>
 </resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2025 VoltageOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,16 @@ package com.android.settings.deviceinfo.voltage;
 
 import android.content.Context;
 import android.os.SystemProperties;
-import android.content.res.Resources;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.preference.Preference;
+
+import java.util.Random;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
@@ -31,10 +37,15 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
     private static final String TAG = "VoltageMaintainerPreferenceController";
     private static final String KEY_VOLTAGE_BUILD_STATUS_PROP = "ro.voltage.build.status";
 
+    private final Random mRandom = new Random();
+    private int mLastToastIndex = -1;
+    private Toast mToast = null;
+
     public VoltageMaintainerPreferenceController(Context context, String key) {
         super(context, key);
     }
 
+    @Override
     public int getAvailabilityStatus() {
         return AVAILABLE;
     }
@@ -45,7 +56,8 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
         String maintainer = mContext.getResources().getString(R.string.voltage_maintainer);
 
         if (!TextUtils.isEmpty(buildStatus) && !buildStatus.equals(mContext.getString(R.string.unknown))) {
-            return buildStatus + " by " + maintainer;        }
+            return buildStatus + " by " + maintainer;
+        }
 
         return mContext.getString(R.string.unknown);
     }
@@ -58,11 +70,57 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
 
         if ("OFFICIAL".equalsIgnoreCase(buildStatus)) {
             preference.setIcon(R.drawable.maintainer_official);
-        } else if ("UNOFFICIAL".equalsIgnoreCase(buildStatus)) {
-            preference.setIcon(R.drawable.maintainer_unofficial);
         } else {
             preference.setIcon(R.drawable.maintainer_unofficial);
         }
+    }
+
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
+            return false;
+        }
+
+        if (mToast != null && mToast.getView() != null && mToast.getView().isShown()) {
+            return true;
+        }
+
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+
+        final String buildStatus = getBuildStatus();
+        final String[] toasts;
+        if ("OFFICIAL".equalsIgnoreCase(buildStatus)) {
+            toasts = mContext.getResources().getStringArray(R.array.voltage_official_build_toast);
+        } else {
+            toasts = mContext.getResources().getStringArray(R.array.voltage_unofficial_build_toast);
+        }
+
+        if (toasts.length > 0) {
+            int randomIndex;
+            if (toasts.length > 1) {
+                do {
+                    randomIndex = mRandom.nextInt(toasts.length);
+                } while (randomIndex == mLastToastIndex);
+            } else {
+                randomIndex = 0;
+            }
+            mLastToastIndex = randomIndex;
+
+            String message = toasts[randomIndex];
+
+            TextView text = layout.findViewById(R.id.toast_text);
+            text.setText(message);
+
+            final int yOffset = mContext.getResources().getDimensionPixelSize(R.dimen.toast_y_offset);
+
+            mToast = new Toast(mContext);
+            mToast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, yOffset);
+            mToast.setDuration(Toast.LENGTH_LONG);
+            mToast.setView(layout);
+            mToast.show();
+        }
+        return true;
     }
 
     private String getBuildStatus() {
