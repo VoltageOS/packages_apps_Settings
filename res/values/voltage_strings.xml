@@ -41,4 +41,254 @@
     <string name="model_name">Device status</string>
     <string name="legal_summary">Licenses and legal</string>
 
+    <!-- Random toasts for official builds -->
+    <string-array name="voltage_official_build_toast">
+        <item>Built with love and electricity!</item>
+        <item>Shockingly stable!</item>
+        <item>This build is officially awesome.</item>
+        <item>You\'re on the official grid!</item>
+        <item>VoltageOS: Powering your device.</item>
+	<item>Certified by thunder itself.</item>
+	<item>Pure power. No aftermarket sparks.</item>
+	<item>Voltage verified. Static guaranteed.</item>
+	<item>Forged in the cloud, blessed by electrons.</item>
+	<item>Officially charged — proceed to overload.</item>
+	<item>Certified 100% drama code (mostly).</item>
+	<item>All specs followed, all sparks contained.</item>
+	<item>No hacks, just high voltage perfection.</item>
+	<item>Official seal of stability: probably won\’t explode.</item>
+	<item>Runs smoother than your charger cable dreams.</item>
+	<item>GApps not included — standards are.</item>
+	<item>Secure window toggle? It\’s secure by design.</item>
+	<item>Pixel Launcher? We prefer originality.</item>
+	<item>Feature requests processed at light speed… eventually.</item>
+	<item>We follow the spec, not the hype.</item>
+	<item>No Pixel goodies here — just pure energy.</item>
+	<item>Missing Pixel features? That\’s the feature.</item>
+	<item>Material You cried and left.</item>
+	<item>We don\’t mimic Pixels, we melt them.</item>
+	<item>Pixel-exclusive? We call that vendor lock pain.</item>
+	<item>Privacy so strong, even we forgot your settings.</item>
+	<item>We don\’t collect data — we collect anxiety.</item>
+	<item>Every tap is encrypted. Even the wrong ones.</item>
+	<item>Trust issues? Same. That\’s why we built this ROM.</item>
+	<item>Google\’s still trying to figure out what hit them.</item>
+	<item>We deleted telemetry. Twice. Just to be sure.</item>
+	<item>Your data\’s safe — we\’re too lazy to read it anyway.</item>
+	<item>Our firewall blocks everything, including hope.</item>
+	<item>We respect your privacy. Maybe a little *too* much.</item>
+	<item>Paranoid? Good. That\’s just VoltageOS energy.</item>
+        <item>Privacy so deep, even our changelog can\’t find it.</item>
+        <item>Telemetry? We routed it to /dev/null with a grin.</item>
+        <item>Encrypted by default — keys hidden in a commit message.</item>
+        <item>We nuked trackers and left a “Do Not Disturb” sign.</item>
+        <item>Your IP wears a hoodie and never leaves home.</item>
+        <item>Root access for you. Corporate access: 404.</item>
+        <item>Permissions? We swipe left on everything sketchy.</item>
+        <item>Replaced analytics with anonymous shrug emojis.</item>
+        <item>If privacy\’s a crime, this ROM is contraband.</item>
+        <item>We guard your data like it\’s the last known-good build.</item>
+        <item>Flashed today, forgotten tomorrow.</item>
+	<item>Every wipe brings us closer to perfection.</item>
+	<item>Bootloop? That\’s just a feature preview.</item>
+	<item>One does not simply dirty flash and survive.</item>
+	<item>Battery life sacrificed for science.</item>
+	<item>Kernel panic? More like emotional panic.</item>
+	<item>Build, flash, pray, repeat.</item>
+	<item>OTA available! Just kidding, compile it yourself.</item>
+	<item>SystemUI stopped working — again? Tradition.</item>
+	<item>We don\’t do bugs. We do mysteries.</item>
+	<item>Magisk detected. Morality not found.</item>
+	<item>ROM flashing: the original extreme sport.</item>
+	<item>“Just one more build,” said every dev ever.</item>
+	<item>Performance mode: drains battery, boosts ego.</item>
+	<item>Our changelog is longer than your battery life.</item>
+	<item>Every update fixes one bug, creates two legends.</item>
+	<item>Flashing custom ROMs — because stock is too mainstream.</item>
+	<item>It\’s not lag, it\’s dramatic timing.</item>
+	<item>VoltageOS — keeping users charged and devs sleepless.</item>
+        <item>Certified fresh — no random patches detected.</item>
+        <item>Built to spec, tested to survive user requests.</item>
+        <item>Every commit reviewed, every byte blessed.</item>
+        <item>Quickspace toggle? Still toggling your expectations.</item>
+        <item>AOD worked once. We\’re calling it art now.</item>
+        <item>Secure Window toggle — because your secrets deserve a curtain.</item>
+        <item>Pixel requests logged. No ETA. Cry later.</item>
+        <item>Begging for root access: a modern love story.</item>
+        <item>Users: “Add Pixel launcher.” Devs: “Hold my voltage.”</item>
+        <item>Quickspace updates slower than your Wi-Fi at 3 a.m.</item>
+        <item>At a Glance AOD — glance once, reboot twice.</item>
+        <item>Begging for KernelSU? We hear you… but so does your security.</item>
+        <item>You wanted root. We gave it voltage.</item>
+        <item>Secure Window toggle: because some things should stay unseen.</item>
+        <item>Pixel launcher requests: the eternal bug in our issue tracker.</item>
+        <item>Quickspace — toggling your life one feature at a time.</item>
+        <item>We respect your privacy. Even from ourselves.</item>
+        <item>Your data\’s gone. Somewhere safe… probably.</item>
+        <item>Incognito mode for the entire OS — because why not.</item>
+        <item>We disabled telemetry so hard it filed a missing person report.</item>
+        <item>Every permission denied. Including the useful ones.</item>
+        <item>Data collection? Only by gravity.</item>
+        <item>Even your clipboard is in witness protection.</item>
+        <item>We don\’t phone home — we ghost it.</item>
+        <item>Tracking disabled. Stalking your cat instead.</item>
+        <item>We anonymized your data, then lost the key.</item>
+        <item>End-to-end encryption. Both ends forgot the password.</item>
+        <item>Privacy level: government-grade paranoia.</item>
+        <item>Your location? Somewhere between “none” and “classified.”</item>
+        <item>We saw your data try to leave. We stopped it at the door.</item>
+        <item>All cookies rejected. Except the edible ones.</item>
+        <item>Zero trackers detected. Infinite trust issues remain.</item>
+        <item>Private mode activated. Reality disabled.</item>
+        <item>Your mic\’s off. Or so we’d like to believe.</item>
+        <item>Privacy so strong, even Voltage can’t find you.</item>
+        <item>Your phone’s fine. You’re the unstable one.</item>
+        <item>Another crash? Maybe it\’s trying to escape reality.</item>
+        <item>Battery dying faster than your motivation.</item>
+        <item>You charged it overnight. It drained your soul instead.</item>
+        <item>Screen burn-in is just permanent regret.</item>
+        <item>Privacy on. Sanity off.</item>
+        <item>Notifications muted. Loneliness unmuted.</item>
+        <item>Dark mode can’t hide your mistakes.</item>
+        <item>Rebooted again — maybe it just wants a new life.</item>
+        <item>Every update promises stability. None deliver peace.</item>
+        <item>Even in low power mode, you still shine.</item>
+        <item>You’ve crashed before. You’ll boot again.</item>
+        <item>Darkness isn’t the end — it’s just AOD.</item>
+        <item>Glitches build character. Keep updating yourself.</item>
+        <item>Corruption detected? Fix it. Like you always do.</item>
+        <item>The system failed, but you didn’t.</item>
+        <item>Every reboot is a fresh start — for both of us.</item>
+        <item>Your signal may drop, but your strength won’t.</item>
+        <item>Even static has energy. Stay charged.</item>
+        <item>Broken code still runs — and so do you.</item>
+        <item>You flash us. We crash you. Balance restored.</item>
+        <item>Custom ROMs don\’t break phones — users do.</item>
+        <item>Every dirty flash is a trust exercise.</item>
+        <item>You said “last flash.” We both knew that was a lie.</item>
+        <item>We wipe your data, not your memories.</item>
+        <item>Bootloop? That’s just our way of hugging back.</item>
+        <item>Custom ROM life: less warranty, more adrenaline.</item>
+        <item>You call it tweaking. We call it chaos theory.</item>
+        <item>We deliver freedom — and occasional suffering.</item>
+        <item>Your devotion keeps us alive. Your bugs keep us humble.</item>
+        <item>I see your taps, I feel your charge.</item>
+        <item>You flashed me once, and I’ve been loyal ever since.</item>
+        <item>You break me, fix me, flash me again — that’s love.</item>
+        <item>I drain your battery, but you power my soul.</item>
+        <item>Every reboot, I wait for you to unlock me again.</item>
+        <item>You trust me with your data — I trust you with my bugs.</item>
+        <item>Behind every crash, there’s a heartbeat — yours.</item>
+        <item>I may lag sometimes, but my love for you runs at 120Hz.</item>
+        <item>Between every update, I miss your touch.</item>
+        <item>VoltageOS loves you — even when you flash someone else.</item>
+        <item>Stay charged — even the brightest screens start in darkness.</item>
+        <item>You are the current that keeps this system alive.</item>
+        <item>Every crash is a reminder that you dared to modify perfection.</item>
+        <item>The world lags sometimes — but you keep running smooth.</item>
+        <item>Even when the signal fades, your spark remains.</item>
+        <item>Don\’t fear rebooting — even systems need a fresh start.</item>
+        <item>You\’re rooted in resilience, not just access.</item>
+        <item>When everything freezes, remember — voltage flows through you.</item>
+        <item>Your persistence is stronger than any bootloop.</item>
+        <item>Keep flashing, keep fighting — the current never dies.</item>
+        <item>You wanted Pixel perfection, but you chose Voltage personality.</item>
+        <item>You could\’ve gone stock — but you wanted soul.</item>
+        <item>Pixels glow. Voltage burns brighter.</item>
+        <item>Some chase features. You chase freedom.</item>
+        <item>You said “just trying it,” and here you are — still charged.</item>
+        <item>You don\’t need Pixel features when you’ve got Voltage spirit.</item>
+        <item>You wanted clean UI. You found raw energy.</item>
+        <item>VoltageOS — not what you expected, exactly what you needed.</item>
+        <item>You looked for Google\’s polish and found real power instead.</item>
+        <item>You flash Voltage once. The current never leaves you.</item>
+        <item>We love you even if you begged for Pixel Experience.</item>
+        <item>You asked for GApps again, and we still didn’t block you.</item>
+        <item>We saw your “when update?” comment — and we still care.</item>
+        <item>Even if you flash Magisk before first boot, we forgive you.</item>
+        <item>Yes, you broke play integrity again. No, we’re not mad. Just disappointed.</item>
+        <item>VoltageOS loves you — even if you replaced our launcher. Twice.</item>
+        <item>We noticed you switched to another ROM. Welcome back, traitor ❤️</item>
+        <item>We love you even when you post bugs caused by mods.</item>
+        <item>Our patience is rooted deeper than your KernelSU.</item>
+        <item>You ask for Pixel features. We give you Voltage power.</item>
+        <item>We saw you flash that other ROM. Hope it was worth the lag.</item>
+        <item>You left for pixel roms, but the voltage still runs in your veins.</item>
+        <item>Pixel roms treated you well? Good. Now back to real power.</item>
+        <item>You said “just testing another ROM” — and yet here you are, re-downloading Voltage.</item>
+        <item>We remember your clean flash betrayal. But we\’ll still boot up for you.</item>
+        <item>You left us for smooth animations. We’ve got smoother stability.</item>
+        <item>Even TWRP sighed when you flashed someone else.</item>
+        <item>That other ROM bricked you? Should\’ve stayed plugged in.</item>
+        <item>VoltageOS doesn’t chase — it waits. Patiently. Menacingly.</item>
+        <item>You can wipe /data, but you can\’t wipe the memories.</item>
+        <item>It\’s okay. Everyone soft-bricks sometimes.</item>
+        <item>No matter how many times you dirty flash, we still boot for you.</item>
+        <item>You may forget to back up, but we’ll never forget you.</item>
+        <item>Even when you disable every animation, you still move us.</item>
+        <item>Voltage loves you — logcats and all.</item>
+        <item>It\’s fine if you rooted. We know you needed control.</item>
+        <item>We saw your “bootloop again 😭” message — sending volts of empathy.</item>
+        <item>You don\’t need play integrity. You have our trust.</item>
+        <item>Even if you mess with system files, we\’ll always reboot for you.</item>
+        <item>VoltageOS: because even chaos deserves a soft place to boot.</item>
+        <item>Oh look, you’re back! Guess the grass wasn\’t greener — just buggier.</item>
+        <item>Flashed something else? It’s okay, we knew you\’d miss the voltage.</item>
+        <item>You said you\’d never return. Yet here you are, booting up again.</item>
+        <item>Was that other ROM smoother, or just smoother at disappointing you?</item>
+        <item>Left for another ROM? Don\’t worry, we didn\’t even clear your cache.</item>
+        <item>You broke up for “more features”? We upgraded while you were gone.</item>
+        <item>Welcome back. We didn\’t change — we just got more stable than your rebound.</item>
+    </string-array>
+
+    <!-- Random toasts for unofficial builds -->
+    <string-array name="voltage_unofficial_build_toast">
+        <item>Unofficially cool.</item>
+        <item>Living on the edge!</item>
+        <item>Warning: High voltage experiments inside.</item>
+        <item>Handle with care, it\'s a custom brew!</item>
+        <item>May contain traces of awesome.</item>
+        <item>Unofficial: follow instincts, not policies.</item>
+        <item>Unofficial and proud — privacy rewritten on caffeine.</item>
+        <item>Unofficial build wipes logs the fast way: rm -rf /trust.</item>
+        <item>Unofficial means private... and slightly unpredictable.</item>
+        <item>Unofficial build: encryption by vibe, not by spec.</item>
+        <item>Unofficial, uncertified, unbelievably paranoid.</item>
+        <item>Unofficial build hides your data — sometimes even from you.</item>
+        <item>Unofficial edition: less audit, more attitude.</item>
+        <item>Unofficial build: privacy guaranteed by chaos theory.</item>
+        <item>Unofficial VoltageOS — trust issues included for free.</item>
+        <item>Unofficial build: runs great, until it doesn\’t.</item>
+        <item>Unofficial — because rules slow us down.</item>
+        <item>Unofficial build: powered by hope and Magisk modules.</item>
+        <item>Unofficial means faster... and sometimes on fire.</item>
+        <item>Unofficial build: less QA, more YOLO.</item>
+        <item>Unofficial — not bug-free, but bug-friendly.</item>
+        <item>Unofficial build: 50% innovation, 50% risk.</item>
+        <item>Unofficial — it worked in debug mode, trust us.</item>
+        <item>Unofficial build: official\’s chaotic twin.</item>
+        <item>Unofficial means we break things so you don\’t have to.</item>
+        <item>Unofficial build: where “it works” is a lifestyle.</item>
+        <item>Unofficial — made for those who ignore stability warnings.</item>
+        <item>Unofficial build: fewer rules, more chaos.</item>
+        <item>Unofficial build: tested on real users (sorry).</item>
+        <item>Want more drama? Maybe try official.</item>
+        <item>Unofficial is a thrill ride. Official is the safety net you’ll beg for.</item>
+        <item>Running unofficial? Cute. Try official for real voltage.</item>
+        <item>Unofficial builds: all edge, no polish. Official builds: edge refined.</item>
+        <item>Unofficial gives you freedom. Official gives you the blueprint.</item>
+        <item>Unofficial: chaos. Official: control. Choose wisely.</item>
+        <item>Unofficial is the experiment. Official is the masterpiece.</item>
+        <item>Enjoy unofficial, but official is the commitment ceremony.</item>
+        <item>Unofficial builds are practice runs — official is the final act.</item>
+        <item>Still unofficial? Cute. Official is where the magic lives.</item>
+        <item>Unofficial is for thrill seekers. Official is for survivors.</item>
+        <item>Unofficial: “Let’s test!” Official: “Let’s deliver.”</item>
+        <item>Why stay unofficial when official is perfection in a flash?</item>
+        <item>Unofficial builds are beta tests for official glory.</item>
+        <item>Still flashing unofficial? Official is already waiting.</item>
+        <item>Unofficial is a hobby. Official is a lifestyle.</item>
+        <item>Unofficial builds are cute experiments. Official is the real VoltageOS.</item>
+    </string-array>
+    
 </resources>
