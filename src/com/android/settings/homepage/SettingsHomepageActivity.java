@@ -43,6 +43,7 @@ import android.util.ArraySet;
 import android.util.FeatureFlagUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -110,6 +111,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     private TopLevelSettings mMainFragment;
     private View mHomepageView;
     private View mSuggestionView;
+    private HomepageToastManager mHomepageToastManager;
     private CategoryMixin mCategoryMixin;
     private Set<HomepageLoadedListener> mLoadedListeners;
     private boolean mIsEmbeddingActivityEnabled;
@@ -159,7 +161,13 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         if (mAllowUpdateSuggestion) {
             Log.i(TAG, "showHomepageWithSuggestion: " + showSuggestion);
             mAllowUpdateSuggestion = false;
-            mSuggestionView.setVisibility(showSuggestion ? View.VISIBLE : View.GONE);
+            
+            if (!updateHomepageToastState(showSuggestion)) {
+                 // Toast is disabled, handle suggestion visibility normally
+                 if (mSuggestionView != null) {
+                     mSuggestionView.setVisibility(showSuggestion ? View.VISIBLE : View.GONE);
+                 }
+            }
         }
 
         if (mHomepageView == null) {
@@ -254,6 +262,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         mIsTwoPane = ActivityEmbeddingUtils.isAlreadyEmbedded(this);
 
         initHomepageContainer();
+        mHomepageToastManager = new HomepageToastManager(this, findViewById(R.id.homepage_container));
         updateHomepageBackground();
         mLoadedListeners = new ArraySet<>();
 
@@ -264,18 +273,17 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         getLifecycle().addObserver(mCategoryMixin);
 
         final String highlightMenuKey = getHighlightMenuKey();
-        // Only allow features on high ram devices.
-        if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
-            final boolean scrollNeeded = mIsEmbeddingActivityEnabled
-                    && !TextUtils.equals(getString(DEFAULT_HIGHLIGHT_MENU_KEY), highlightMenuKey);
-            showSuggestionFragment(scrollNeeded);
-            if (!Flags.updatedSuggestionCardAosp()
-                    && FeatureFlagUtils.isEnabled(this, FeatureFlags.CONTEXTUAL_HOME)) {
-                showFragment(() -> new ContextualCardsFragment(), R.id.contextual_cards_content);
-                ((FrameLayout) findViewById(R.id.main_content))
-                        .getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
-            }
+
+        final boolean scrollNeeded = mIsEmbeddingActivityEnabled
+                && !TextUtils.equals(getString(DEFAULT_HIGHLIGHT_MENU_KEY), highlightMenuKey);
+        showSuggestionFragment(scrollNeeded);
+        if (!Flags.updatedSuggestionCardAosp()
+                && FeatureFlagUtils.isEnabled(this, FeatureFlags.CONTEXTUAL_HOME)) {
+            showFragment(() -> new ContextualCardsFragment(), R.id.contextual_cards_content);
+            ((FrameLayout) findViewById(R.id.main_content))
+                    .getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         }
+
         mMainFragment = showFragment(() -> {
             final TopLevelSettings fragment = new TopLevelSettings();
             fragment.getArguments().putString(SettingsActivity.EXTRA_FRAGMENT_ARG_KEY,
@@ -303,6 +311,23 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     @VisibleForTesting
     void initSplitPairRules() {
         new ActivityEmbeddingRulesController(getApplicationContext()).initRules();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mAllowUpdateSuggestion = true;
+        if (mHomepageToastManager != null) {
+            updateHomepageToastState(true);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mHomepageToastManager != null) {
+            mHomepageToastManager.stopAutoRefresh();
+        }
     }
 
     @Override
@@ -455,6 +480,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         // Schedule a timer to show the homepage and hide the suggestion on timeout.
         mHomepageView.postDelayed(() -> showHomepageWithSuggestion(false),
                 HOMEPAGE_LOADING_TIMEOUT_MS);
+        
         showFragment(new SuggestionFragCreator(fragmentClass, true),
                 R.id.suggestion_content);
     }
@@ -726,6 +752,24 @@ public class SettingsHomepageActivity extends FragmentActivity implements
                 scrollableContainer.setScrollCaptureHint(
                         View.SCROLL_CAPTURE_HINT_EXCLUDE_DESCENDANTS);
             }
+        }
+    }
+
+    private boolean updateHomepageToastState(boolean suggestionsAllowed) {
+        if (mHomepageToastManager != null && mHomepageToastManager.isEnabled()) {
+            if (mSuggestionView != null) mSuggestionView.setVisibility(View.GONE);
+            View cards = findViewById(R.id.contextual_cards_content);
+            if (cards != null) cards.setVisibility(View.GONE);
+            mHomepageToastManager.showToastCard();
+            return true;
+        } else {
+            if (mHomepageToastManager != null) mHomepageToastManager.hideToastCard();
+            if (mSuggestionView != null) {
+                mSuggestionView.setVisibility(suggestionsAllowed ? View.VISIBLE : View.GONE);
+            }
+            View cards = findViewById(R.id.contextual_cards_content);
+            if (cards != null) cards.setVisibility(View.VISIBLE);
+            return false;
         }
     }
 
