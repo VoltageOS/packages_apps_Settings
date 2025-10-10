@@ -29,7 +29,7 @@
                 android:defaultValue="false"
                 android:summary="@string/global_vpn_summary" />
 
-	<SwitchPreference
+        <com.android.settingslib.RestrictedSwitchPreference
                 android:key="always_on_vpn"
                 android:title="@string/vpn_menu_lockdown"
                 android:defaultValue="false"
@@ -38,7 +38,7 @@
                 settings:useAdditionalSummary="true"
                 settings:restrictedSwitchSummary="@string/disabled_by_admin_summary_text" />
 
-        <SwitchPreference
+        <com.android.settingslib.RestrictedSwitchPreference
                 android:key="lockdown_vpn"
                 android:title="@string/vpn_require_connection"
                 android:defaultValue="false"
@@ -47,7 +47,7 @@
                 settings:useAdditionalSummary="true"
                 settings:restrictedSwitchSummary="@string/disabled_by_admin_summary_text" />
 
-	<Preference
+        <com.android.settingslib.RestrictedPreference
                 android:key="forget_vpn"
                 android:title="@string/vpn_forget_long"
                 android:icon="@drawable/ic_delete"
