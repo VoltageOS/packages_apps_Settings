@@ -75,11 +75,20 @@
             app:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"
             app:layout="@layout/voltage_card_mid_abt"/>
 
+        <Preference
+            android:key="voltage_maintainer_gpg"
+            android:icon="@drawable/gpg_key"
+            android:order="8"
+            android:title="@string/voltage_gpg_key_title"
+            android:summary="@string/summary_placeholder"
+            app:controller="com.android.settings.deviceinfo.voltage.VoltageGpgPreferenceController"
+            app:layout="@layout/voltage_card_mid_abt"/>
+
         <!-- Model & hardware -->
         <Preference
             android:key="device_model"
             android:icon="@drawable/settings_system_dashboard_acc"
-            android:order="10"
+            android:order="11"
             android:title="@string/model_name"
             android:summary="@string/model_summary"
             android:fragment="com.android.settings.deviceinfo.hardwareinfo.HardwareInfoFragment"
@@ -92,7 +101,7 @@
         <Preference
             android:icon="@drawable/uptime"
             android:key="up_time"
-            android:order="8"
+            android:order="9"
             android:title="@string/status_up_time"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -102,7 +111,7 @@
         <Preference
             android:icon="@drawable/build_acc"
             android:key="build_number"
-            android:order="9"
+            android:order="10"
             android:title="@string/build_number"
             android:summary="@string/summary_placeholder"
             app:enableCopying="true"
