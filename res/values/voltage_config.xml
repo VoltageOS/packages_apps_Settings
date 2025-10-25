@@ -41,4 +41,8 @@
 
     <!-- Whether to show double tap ambient settings -->
     <bool name="config_supports_double_tap_ambient" translatable="false">false</bool>
+
+    <!-- Whether to show the GPG UID (name/email) or just the key fingerprint -->
+    <bool name="config_show_gpg_uid">false</bool>
+
 </resources>

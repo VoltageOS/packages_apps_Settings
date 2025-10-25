@@ -6,4 +6,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- TouchGestures -->
     <java-symbol type="bool" name="config_supportsTouchGestures" />
+
+    <java-symbol type="bool" name="config_show_gpg_uid" />
+
 </resources>
