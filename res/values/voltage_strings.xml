@@ -553,4 +553,14 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="display_icon_title">Icons</string>
     <string name="display_icon_summary">Display icons along with level &amp; temperature</string>
 
+    <!-- Per-app rotation -->
+    <string name="per_app_rotation_title">Per-app rotation</string>
+    <string name="per_app_rotation_summary">Control rotation for individual apps</string>
+    <string name="per_app_rotation_entry_default">Default</string>
+    <string name="per_app_rotation_entry_portrait">Portrait</string>
+    <string name="per_app_rotation_entry_landscape">Landscape</string>
+    <string name="per_app_rotation_entry_auto_180">Auto (180°)</string>
+    <string name="search_menu">Search apps</string>
+    <string name="show_system_apps">Show system apps</string>
+
 </resources>

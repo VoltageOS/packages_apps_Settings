@@ -182,4 +182,19 @@
         <item>3</item>
     </string-array>
 
+    <!-- Per-app rotation -->
+    <string-array name="per_app_rotation_entries" translatable="false">
+        <item>@string/per_app_rotation_entry_default</item>
+        <item>@string/per_app_rotation_entry_portrait</item>
+        <item>@string/per_app_rotation_entry_landscape</item>
+        <item>@string/per_app_rotation_entry_auto_180</item>
+    </string-array>
+
+    <string-array name="per_app_rotation_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>
