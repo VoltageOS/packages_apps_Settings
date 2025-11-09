@@ -614,5 +614,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="per_app_rotation_entry_auto_180">Auto (180°)</string>
     <string name="search_menu">Search apps</string>
     <string name="show_system_apps">Show system apps</string>
+    <string name="per_app_rotation_global_switch_title">Force app rotation control</string>
+    <string name="per_app_rotation_global_switch_summary">Force this device to respect per-app rotation settings. Required on tablets and large-screen devices.</string>
 
 </resources>
