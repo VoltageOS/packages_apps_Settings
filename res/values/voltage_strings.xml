@@ -338,6 +338,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="charging_control_target_time_title">Target time to full charge</string>
     <string name="charging_control_target_time_summary">Battery will be fully charged by %s</string>
     <string name="charging_control_limit_title">Limit</string>
+    <string name="charging_control_limit_summary">Current limit: %d%%</string>
 
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Always on when charging</string>
