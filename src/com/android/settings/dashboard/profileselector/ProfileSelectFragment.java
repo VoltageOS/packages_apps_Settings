@@ -350,7 +350,7 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
                         UserInfo parentUserInfo = userInfos.stream()
                                 .filter(info -> info.id == UserHandle.myUserId())
                                 .toList().get(0);
-                        if (!parentUserInfo.isMain() && parentUserInfo.canHaveProfileOfType(
+                        if (!parentUserInfo.isMain() && parentUserInfo.canHaveProfile(
                                 UserManager.USER_TYPE_PROFILE_PRIVATE)) {
                             fragments.add(0,
                                     createAndGetFragment(
