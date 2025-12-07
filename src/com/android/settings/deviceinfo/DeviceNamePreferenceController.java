@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.SpannedString;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
@@ -39,7 +38,6 @@ import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnCreate;
 import com.android.settingslib.core.lifecycle.events.OnSaveInstanceState;
 
-// LINT.IfChange
 public class DeviceNamePreferenceController extends BasePreferenceController
         implements ValidatedEditTextPreference.Validator,
         Preference.OnPreferenceChangeListener,
@@ -152,8 +150,7 @@ public class DeviceNamePreferenceController extends BasePreferenceController
      * Using a UTF8ByteLengthFilter, we can filter a string to be compliant with the Bluetooth spec.
      * For more information, see {@link com.android.settings.bluetooth.BluetoothNameDialogFragment}.
      */
-    @NonNull
-    public static final String getFilteredBluetoothString(@NonNull final String deviceName) {
+    private static final String getFilteredBluetoothString(final String deviceName) {
         CharSequence filteredSequence = new BluetoothLengthDeviceNameFilter().filter(deviceName, 0,
                 deviceName.length(),
                 new SpannedString(""),
@@ -188,4 +185,3 @@ public class DeviceNamePreferenceController extends BasePreferenceController
         void showDeviceNameWarningDialog(String deviceName);
     }
 }
-// LINT.ThenChange(DeviceNamePreference.kt)
