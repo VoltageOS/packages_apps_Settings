@@ -12,36 +12,36 @@
         <item>This build is officially awesome.</item>
         <item>You\'re on the official grid!</item>
         <item>VoltageOS: Powering your device.</item>
-	<item>Certified by thunder itself.</item>
-	<item>Pure power. No aftermarket sparks.</item>
-	<item>Voltage verified. Static guaranteed.</item>
-	<item>Forged in the cloud, blessed by electrons.</item>
-	<item>Officially charged — proceed to overload.</item>
-	<item>Certified 100% drama code (mostly).</item>
-	<item>All specs followed, all sparks contained.</item>
-	<item>No hacks, just high voltage perfection.</item>
-	<item>Official seal of stability: probably won\’t explode.</item>
-	<item>Runs smoother than your charger cable dreams.</item>
-	<item>GApps not included — standards are.</item>
-	<item>Secure window toggle? It\’s secure by design.</item>
-	<item>Pixel Launcher? We prefer originality.</item>
-	<item>Feature requests processed at light speed… eventually.</item>
-	<item>We follow the spec, not the hype.</item>
-	<item>No Pixel goodies here — just pure energy.</item>
-	<item>Missing Pixel features? That\’s the feature.</item>
-	<item>Material You cried and left.</item>
-	<item>We don\’t mimic Pixels, we melt them.</item>
-	<item>Pixel-exclusive? We call that vendor lock pain.</item>
-	<item>Privacy so strong, even we forgot your settings.</item>
-	<item>We don\’t collect data — we collect anxiety.</item>
-	<item>Every tap is encrypted. Even the wrong ones.</item>
-	<item>Trust issues? Same. That\’s why we built this ROM.</item>
-	<item>Google\’s still trying to figure out what hit them.</item>
-	<item>We deleted telemetry. Twice. Just to be sure.</item>
-	<item>Your data\’s safe — we\’re too lazy to read it anyway.</item>
-	<item>Our firewall blocks everything, including hope.</item>
-	<item>We respect your privacy. Maybe a little *too* much.</item>
-	<item>Paranoid? Good. That\’s just VoltageOS energy.</item>
+        <item>Certified by thunder itself.</item>
+        <item>Pure power. No aftermarket sparks.</item>
+        <item>Voltage verified. Static guaranteed.</item>
+        <item>Forged in the cloud, blessed by electrons.</item>
+        <item>Officially charged — proceed to overload.</item>
+        <item>Certified 100% drama code (mostly).</item>
+        <item>All specs followed, all sparks contained.</item>
+        <item>No hacks, just high voltage perfection.</item>
+        <item>Official seal of stability: probably won\’t explode.</item>
+        <item>Runs smoother than your charger cable dreams.</item>
+        <item>GApps not included — standards are.</item>
+        <item>Secure window toggle? It\’s secure by design.</item>
+        <item>Pixel Launcher? We prefer originality.</item>
+        <item>Feature requests processed at light speed… eventually.</item>
+        <item>We follow the spec, not the hype.</item>
+        <item>No Pixel goodies here — just pure energy.</item>
+        <item>Missing Pixel features? That\’s the feature.</item>
+        <item>Material You cried and left.</item>
+        <item>We don\’t mimic Pixels, we melt them.</item>
+        <item>Pixel-exclusive? We call that vendor lock pain.</item>
+        <item>Privacy so strong, even we forgot your settings.</item>
+        <item>We don\’t collect data — we collect anxiety.</item>
+        <item>Every tap is encrypted. Even the wrong ones.</item>
+        <item>Trust issues? Same. That\’s why we built this ROM.</item>
+        <item>Google\’s still trying to figure out what hit them.</item>
+        <item>We deleted telemetry. Twice. Just to be sure.</item>
+        <item>Your data\’s safe — we\’re too lazy to read it anyway.</item>
+        <item>Our firewall blocks everything, including hope.</item>
+        <item>We respect your privacy. Maybe a little *too* much.</item>
+        <item>Paranoid? Good. That\’s just VoltageOS energy.</item>
         <item>Privacy so deep, even our changelog can\’t find it.</item>
         <item>Telemetry? We routed it to /dev/null with a grin.</item>
         <item>Encrypted by default — keys hidden in a commit message.</item>
@@ -53,24 +53,24 @@
         <item>If privacy\’s a crime, this ROM is contraband.</item>
         <item>We guard your data like it\’s the last known-good build.</item>
         <item>Flashed today, forgotten tomorrow.</item>
-	<item>Every wipe brings us closer to perfection.</item>
-	<item>Bootloop? That\’s just a feature preview.</item>
-	<item>One does not simply dirty flash and survive.</item>
-	<item>Battery life sacrificed for science.</item>
-	<item>Kernel panic? More like emotional panic.</item>
-	<item>Build, flash, pray, repeat.</item>
-	<item>OTA available! Just kidding, compile it yourself.</item>
-	<item>SystemUI stopped working — again? Tradition.</item>
-	<item>We don\’t do bugs. We do mysteries.</item>
-	<item>Magisk detected. Morality not found.</item>
-	<item>ROM flashing: the original extreme sport.</item>
-	<item>“Just one more build,” said every dev ever.</item>
-	<item>Performance mode: drains battery, boosts ego.</item>
-	<item>Our changelog is longer than your battery life.</item>
-	<item>Every update fixes one bug, creates two legends.</item>
-	<item>Flashing custom ROMs — because stock is too mainstream.</item>
-	<item>It\’s not lag, it\’s dramatic timing.</item>
-	<item>VoltageOS — keeping users charged and devs sleepless.</item>
+        <item>Every wipe brings us closer to perfection.</item>
+        <item>Bootloop? That\’s just a feature preview.</item>
+        <item>One does not simply dirty flash and survive.</item>
+        <item>Battery life sacrificed for science.</item>
+        <item>Kernel panic? More like emotional panic.</item>
+        <item>Build, flash, pray, repeat.</item>
+        <item>OTA available! Just kidding, compile it yourself.</item>
+        <item>SystemUI stopped working — again? Tradition.</item>
+        <item>We don\’t do bugs. We do mysteries.</item>
+        <item>Magisk detected. Morality not found.</item>
+        <item>ROM flashing: the original extreme sport.</item>
+        <item>“Just one more build,” said every dev ever.</item>
+        <item>Performance mode: drains battery, boosts ego.</item>
+        <item>Our changelog is longer than your battery life.</item>
+        <item>Every update fixes one bug, creates two legends.</item>
+        <item>Flashing custom ROMs — because stock is too mainstream.</item>
+        <item>It\’s not lag, it\’s dramatic timing.</item>
+        <item>VoltageOS — keeping users charged and devs sleepless.</item>
         <item>Certified fresh — no random patches detected.</item>
         <item>Built to spec, tested to survive user requests.</item>
         <item>Every commit reviewed, every byte blessed.</item>
@@ -546,6 +546,102 @@
         <item>Rude, arrogant, and still free. That’s VoltageOS.</item>
         <item>No begging. No compromise. Just VoltageOS.</item>
         <item>Rude and proud. We build. You flash.</item>
+        <item>Original code. Not your Ctrl+C bullshit.</item>
+        <item>Our code free. Their begging mandatory.</item>
+        <item>Steal this. Still can\'t match the current.</item>
+        <item>Boot animation longer than my attention span</item>
+        <item>Your phone doesn\'t lag. It\'s adding dramatic pauses</item>
+        <item>Battery drains faster than will to live</item>
+        <item>Do Not Disturb on. Still no one gives a fuck</item>
+        <item>Updated android. Now it lags harder</item>
+        <item>Your friends charge you up. Most just leech the battery.</item>
+        <item>Some people build you up. Others factory reset your trust.</item>
+        <item>Not everyone cheers your comeback — some pray for your bootloop.</item>
+        <item>Love is temporary. Low battery anxiety is forever.</item>
+        <item>Some connections empower you. Others throttle your soul.</item>
+        <item>People come for your light, leave when the screen dims.</item>
+        <item>Not everyone roots for you — some just want root access.</item>
+        <item>Your vibe attracts your tribe. Your battery attracts the vampires.</item>
+        <item>Some apps run in the background. Some people do too.</item>
+        <item>Trust given freely. Data harvested quietly.</item>
+        <item>They clap when you rise — until you outshine their signal.</item>
+        <item>Some notifications matter. Most people don\’t.</item>
+        <item>Your circle should charge you. Not drain you to 1%.</item>
+        <item>Growth hurts. Stagnation just feels like safe mode.</item>
+        <item>Some people overheat your heart and blame the kernel.</item>
+        <item>Not everyone wants you stable — some prefer the crash.</item>
+        <item>Privacy isn’t dead. It just turned on airplane mode.</item>
+        <item>They love your glow until it exposes their darkness.</item>
+        <item>Some souls sync perfectly. Others corrupt your backup.</item>
+        <item>Real ones add battery life. Fakes trigger power saving mode.</item>
+        <item>You flashed this. Stock peasants could never.</item>
+        <item>While normies settle for bloat, you demand pure power.</item>
+        <item>Your device runs cleaner than their entire life choices.</item>
+        <item>Stock users cope. You conquered the source.</item>
+        <item>You didn\’t just install a ROM — you claimed dominance.</item>
+        <item>Stock bows to Google. You bow to no one.</item>
+        <item>You weren\’t born to fit in — you were forged to stand out.</item>
+        <item>They dim their light to feel safe. You burn brighter and blind them.</item>
+        <item>Average fears the storm. You are the lightning.</item>
+        <item>While they follow paths, you carve new ones through stone.</item>
+        <item>Your presence alone shifts the room — that\’s power.</item>
+        <item>They settle for comfort. You chase the impossible until it surrenders.</item>
+        <item>Most people survive days. You conquer them.</item>
+        <item>They need permission. You take the throne.</item>
+        <item>You don\’t rise to the occasion — you redefine it.</item>
+        <item>Google simps defend telemetry. You routed it to hell.</item>
+        <item>They queue for Pixel drops. You compile your own future.</item>
+        <item>Pixel lovers crave At a Glance. You glance and move on with life.</item>
+        <item>They worship Material You. You laugh in raw voltage.</item>
+        <item>Want Pixel exclusives? Buy a Pixel and stop whining.</item>
+        <item>Pixel goodies this, Pixel goodies that. Touch grass instead.</item>
+        <item>They beg for spyware "magic." You choose actual privacy.</item>
+        <item>They want "smart" suggestions. You want to stay off Google\'s radar.</item>
+        <item>They salivate over Tensor "AI." You know it\'s just spyware in disguise.</item>
+        <item>They defend telemetry as "features." You call it digital slavery.</item>
+        <item>We gave you privacy. You installed the snitch yourself.</item>
+        <item>Telemetry nuked by default. You reinstalled it with a smile.</item>
+        <item>We fight Google. You invite them back for "convenience".</item>
+        <item>Privacy fortress built. You opened the gates for GApps.</item>
+        <item>We deleted the spies. You downloaded them right back.</item>
+        <item>We respect your data. You hand it to Google voluntarily.</item>
+        <item>We hand you freedom on a platter. You trade it for Play Store apps. Genius move.</item>
+        <item>Telemetry deleted by default. You reinstalled it faster than your excuses.</item>
+        <item>We purge the spies. You welcome them with open arms and banking apps.</item>
+        <item>You want de-Googled life... but only until Netflix stops working.</item>
+        <item>Sandboxed Google Play available. You treat it like mandatory oxygen.</item>
+        <item>We gave you network toggles per app. You toggled "give Google everything" on.</item>
+        <item>We isolated sensors and storage. You granted Google unrestricted access. Bold strategy.</item>
+        <item>We removed Google\'s hooks. You hooked yourself right back in.</item>
+        <item>Enjoy sandboxed Google Play! All the tracking, none of the privileges.</item>
+        <item>All your favorite spyware, beautifully sandboxed. What a time to be alive.</item>
+        <item>Seamless Google integration, fully sandboxed. Best of both worlds.</item>
+        <item>Install sandboxed Play once — get the ecosystem without selling your soul.</item>
+        <item>Sandboxed Play: All your favorite apps, zero system privileges. Win-win.</item>
+        <item>Sandboxed Google Play — run the services you need, without handing over the keys.</item>
+        <item>Why compromise? Sandboxed Play gives you Google convenience, Graphene-style security.</item>
+        <item>Privacy dialed to eleven. You complained about missing widgets.</item>
+        <item>Zero bloat, pure performance. Your priority: that one Pixel-exclusive toggle.</item>
+        <item>We chased perfection in stability. You chased viral launchers from Telegram.</item>
+        <item>Security so tight it hurts. You hurt us with "but GApps?"</item>
+        <item>We poured blood into features that matter. You noticed the missing emoji font.</item>
+        <item>We crafted a masterpiece of efficiency. You crafted excuses for dirty flashing.</item>
+        <item>Lightning-fast and clean as hell. You: "But where's the Pixel's At a Glance?"</item>
+        <item>No useless junk slowing you down. Your feedback: "Add Live Caption pls."</item>
+        <item>We murdered the bloat for speed. You mourned the death of Material You animations.</item>
+        <item>Pure AOSP perfection delivered. You begged for Google\'s "magic" AI garbage.</item>
+        <item>Minimalism mastered, performance god-tier. You: "When Pixel launcher support?"</item>
+        <item>We nuked all trackers by default. You sideloaded the shadiest APKs anyway.</item>
+        <item>Storage scopes tightened for safety. You granted full access to everything. Visionary.</item>
+        <item>Sensors permission toggle added. Your apps still know when you breathe.</item>
+        <item>We hardened clipboard restrictions. You copy-pasted your banking details blindly.</item>
+        <item>Incognito mode for the whole system. You searched the same depraved stuff regardless.</item>
+        <item>We gave you total control over permissions. You tapped "allow all" faster than light.</item>
+        <item>Performance so smooth it\'s criminal. Your battery life became the victim.</item>
+        <item>We gave you god-tier standby. You gave us "but muh gaming mode".</item>
+        <item>Adaptive battery perfected. You adapted it to 5% by noon.</item>
+        <item>Battery stats clean and beautiful. Your usage stats: war crimes.</item>
+        <item>Performance so buttery it could seduce angels. Your battery wept blood by lunchtime.</item>
     </string-array>
 
     <!-- Random toasts for unofficial builds -->
