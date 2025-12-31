@@ -25,11 +25,13 @@
         android:id="@+id/search_action_bar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:minHeight="68dp"
+        android:minHeight="48dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         android:focusedByDefault="true">
 
         <ImageView
