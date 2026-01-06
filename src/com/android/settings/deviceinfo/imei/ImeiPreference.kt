@@ -84,15 +84,10 @@ class ImeiPreference(
         if (activeModemCount <= 1) {
             getString(R.string.status_imei)
         } else {
-            try {
-                val titleId =
-                    if (imei == telephonyManager?.primaryImei) R.string.imei_multi_sim_primary
-                    else R.string.imei_multi_sim
-                getString(titleId, slotIndex + 1)
-            } catch (exception: Exception) {
-                Log.e(TAG, "PrimaryImei not available.", exception)
-                getString(R.string.imei_multi_sim, slotIndex + 1)
-            }
+            val isPrimary = imei == telephonyManager?.primaryImei
+            val titleId =
+                if (isPrimary) R.string.imei_multi_sim_primary else R.string.imei_multi_sim
+            getString(titleId, slotIndex + 1)
         }
 
     companion object {
