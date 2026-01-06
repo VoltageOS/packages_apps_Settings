@@ -24,7 +24,6 @@ import android.util.Log
 import com.android.settings.appfunctions.CatalystConfig
 import com.android.settings.appfunctions.DeviceStateAppFunctionType
 import com.android.settings.appfunctions.DeviceStateProviderExecutorResult
-import com.android.settings.deviceinfo.imei.ImeiPreference
 import com.android.settingslib.metadata.PersistentPreference
 import com.android.settingslib.metadata.PreferenceHierarchyNode
 import com.android.settingslib.metadata.PreferenceScreenMetadata
@@ -131,15 +130,14 @@ class CatalystStateProviderExecutor(
         preferencesHierarchy.forEach {
             val metadata = it.metadata
             val config = settingConfigMap[metadata.key]
+            // skip over explicitly disabled preferences
             val jsonValue =
-                when {
-                    // TODO(b/444419242): Handle IME redaction properly.
-                    isImePreference(metadata.key) -> "REDACTED"
-                    metadata is PersistentPreference<*> ->
+                when (metadata) {
+                    is PersistentPreference<*> ->
                         metadata
                             .storage(context)
                             .getValue(metadata.key, metadata.valueType as Class<Any>)
-                            ?.toString()
+                            .toString()
                     else -> metadata.getPreferenceSummary(context)?.toString()
                 }
             jsonValue?.let {
@@ -184,10 +182,6 @@ class CatalystStateProviderExecutor(
                 intentUri = launchingIntent?.toUri(Intent.URI_INTENT_SCHEME),
             )
         return states
-    }
-
-    private fun isImePreference(prefKey: String): Boolean {
-        return prefKey.startsWith(ImeiPreference.KEY_PREFIX)
     }
 
     companion object {
