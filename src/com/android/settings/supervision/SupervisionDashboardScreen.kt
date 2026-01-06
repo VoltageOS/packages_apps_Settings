@@ -87,8 +87,10 @@ open class SupervisionDashboardScreen : PreferenceScreenMixin, PreferenceLifecyc
     override val icon: Int
         get() = R.drawable.ic_account_child_invert
 
+    // TODO this screen is unavailable on GrapheneOS already, it's probably a bug that it's being
+    //  indexed and shown in search when `indexable` is `true`
     override val indexable
-        get() = true
+        get() = false
 
     override val keywords: Int
         get() = R.string.keywords_supervision_settings
