@@ -36,7 +36,6 @@ import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.deviceinfo.PhoneNumberSummaryPreference;
 import com.android.settings.deviceinfo.simstatus.SlotSimStatus;
-import com.android.settings.flags.Flags;
 
 /**
  * Controller that manages preference for single and multi sim devices.
@@ -100,10 +99,6 @@ public class ImeiInfoPreferenceController extends BasePreferenceController {
         int imeiPreferenceOrder = preference.getOrder();
         screen.removePreference(preference);
         preference.setVisible(false);
-
-        if (Flags.catalystMyDeviceInfoPrefScreen()) {
-            return;
-        }
 
         // Add additional preferences for each imei slot in the device
         for (int simSlotNumber = 0; simSlotNumber < mSlotSimStatus.size(); simSlotNumber++) {

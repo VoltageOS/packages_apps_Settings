@@ -18,7 +18,6 @@
 
 package com.android.settings.wifi.utils
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.location.LocationManager
 import android.net.ConnectivityManager
@@ -76,19 +75,6 @@ var Context.isWifiEnabled: Boolean
     set(value) {
         wifiManager?.isWifiEnabled = value
     }
-
-/**
- * Gets the {@link android.telephony.TelephonyManager} system service.
- *
- * Use application context to get system services to avoid memory leaks.
- */
-@get:SuppressLint("MissingPermission")
-val Context.telephonyManager: TelephonyManager?
-    get() = applicationContext.getSystemService(TelephonyManager::class.java)
-
-/** Returns the number of logical modems currently configured to be activated. */
-val Context.activeModemCount
-    get() = telephonyManager?.activeModemCount ?: 0
 
 /**
  * Gets the {@link android.telephony.TelephonyManager} system service for Subscription ID.

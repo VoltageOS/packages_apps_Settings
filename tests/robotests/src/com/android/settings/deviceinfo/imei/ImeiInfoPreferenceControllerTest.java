@@ -16,12 +16,9 @@
 
 package com.android.settings.deviceinfo.imei;
 
-import static android.platform.test.flag.junit.SetFlagsRule.DefaultInitValueType.DEVICE_DEFAULT;
 import static android.telephony.TelephonyManager.PHONE_TYPE_CDMA;
 import static android.telephony.TelephonyManager.PHONE_TYPE_GSM;
 import static android.telephony.TelephonyManager.PHONE_TYPE_NONE;
-
-import static com.android.settings.flags.Flags.FLAG_CATALYST_MY_DEVICE_INFO_PREF_SCREEN;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -37,7 +34,6 @@ import static org.mockito.Mockito.when;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.UserManager;
-import android.platform.test.flag.junit.SetFlagsRule;
 import android.telephony.TelephonyManager;
 
 import androidx.fragment.app.Fragment;
@@ -52,7 +48,6 @@ import com.android.settings.deviceinfo.simstatus.SlotSimStatus;
 
 import org.junit.Before;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
@@ -67,9 +62,6 @@ import org.robolectric.annotation.Config;
         com.android.settings.testutils.shadow.ShadowFragment.class,
 })
 public class ImeiInfoPreferenceControllerTest {
-
-    @Rule
-    public final SetFlagsRule mSetFlagsRule = new SetFlagsRule(DEVICE_DEFAULT);
 
     @Mock
     private Preference mPreference;
@@ -94,7 +86,6 @@ public class ImeiInfoPreferenceControllerTest {
 
     @Before
     public void setUp() {
-        mSetFlagsRule.disableFlags(FLAG_CATALYST_MY_DEVICE_INFO_PREF_SCREEN);
         MockitoAnnotations.initMocks(this);
         mContext = spy(RuntimeEnvironment.application);
 

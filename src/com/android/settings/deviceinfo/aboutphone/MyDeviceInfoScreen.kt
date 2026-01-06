@@ -25,12 +25,9 @@ import androidx.fragment.app.Fragment
 import com.android.settings.R
 import com.android.settings.Settings.MyDeviceInfoActivity
 import com.android.settings.core.PreferenceScreenMixin
-import com.android.settings.deviceinfo.imei.ImeiPreference
 import com.android.settings.deviceinfo.simstatus.SimEidPreference
 import com.android.settings.flags.Flags
 import com.android.settings.utils.makeLaunchIntent
-import com.android.settings.wifi.utils.activeModemCount
-import com.android.settingslib.metadata.PreferenceCategory
 import com.android.settingslib.metadata.PreferenceIconProvider
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
@@ -72,19 +69,7 @@ open class MyDeviceInfoScreen :
         makeLaunchIntent(context, MyDeviceInfoActivity::class.java, metadata?.key)
 
     override fun getPreferenceHierarchy(context: Context, coroutineScope: CoroutineScope) =
-        preferenceHierarchy(context) {
-            +PreferenceCategory(
-                "device_detail_category",
-                R.string.my_device_info_device_details_category_title,
-            ) +=
-                {
-                    +SimEidPreference(context) order 31
-                    val activeModemCount = context.activeModemCount
-                    for (i in 0 until activeModemCount) {
-                        +ImeiPreference(context, i, activeModemCount) order (i + 33)
-                    }
-                }
-        }
+        preferenceHierarchy(context) {}
 
     override fun hasCompleteHierarchy() = false
 
