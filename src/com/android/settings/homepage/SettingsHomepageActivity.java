@@ -262,7 +262,8 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         mIsTwoPane = ActivityEmbeddingUtils.isAlreadyEmbedded(this);
 
         initHomepageContainer();
-        mHomepageToastManager = new HomepageToastManager(this, findViewById(R.id.homepage_container));
+        ViewGroup contentParent = (ViewGroup) findViewById(R.id.suggestion_content).getParent();
+        mHomepageToastManager = new HomepageToastManager(this, contentParent);
         updateHomepageBackground();
         mLoadedListeners = new ArraySet<>();
 
