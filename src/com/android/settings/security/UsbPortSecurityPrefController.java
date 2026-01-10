@@ -50,7 +50,7 @@ public class UsbPortSecurityPrefController extends IntSettingPrefController {
         Resources res = mContext.getResources();
         entries.add(pogo ? R.string.usbc_port_and_pogo_pins_off_title : R.string.usbc_port_off_title,
                 pogo ? R.string.usbc_port_and_pogo_pins_off_summary : R.string.usbc_port_off_summary,
-                UsbPortSecurity.MODE_DISABLED);
+                UsbPortSecurity.MODE_ALL_PORTS_DISABLED);
         entries.add(R.string.usbc_port_charging_only_title,
                 pogo ? R.string.usbc_port_and_pogo_pins_charging_only_summary : R.string.usbc_port_charging_only_summary,
                 UsbPortSecurity.MODE_CHARGING_ONLY);
@@ -68,7 +68,7 @@ public class UsbPortSecurityPrefController extends IntSettingPrefController {
                 UsbPortSecurity.MODE_CHARGING_ONLY_WHEN_LOCKED_AFU);
 
         entries.add(R.string.usbc_port_on_title, R.string.usbc_port_on_summary,
-                UsbPortSecurity.MODE_ENABLED);
+                UsbPortSecurity.MODE_ALL_PORTS_ENABLED);
     }
 
     @Override
