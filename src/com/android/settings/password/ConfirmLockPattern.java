@@ -245,6 +245,7 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
 
             mLockPatternView.setInStealthMode(!mLockPatternUtils.isVisiblePatternEnabled(
                     mEffectiveUserId));
+            mLockPatternView.setLockPatternSize(mPatternSize);
             mLockPatternView.setOnPatternListener(mConfirmExistingLockPatternListener);
             mLockPatternView.setOnTouchListener((v, event) -> {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -253,8 +254,6 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                 return false;
             });
             mLockPatternView.setClickInputSupported(isPatternInputClickSupported());
-            mLockPatternView.setLockPatternSize(mPatternSize);
-
             updateStage(Stage.NeedToUnlock);
 
             if (savedInstanceState == null) {
@@ -628,7 +627,7 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                         + " for next button");
             }
             if (mInputMode == InputMode.Click && mInputPattern != null) {
-                verifyPattern(mInputPattern);
+                verifyPattern(mInputPattern, mPatternSize);
             }
         }
 
@@ -655,24 +654,24 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                     }
 
                     public void onPatternDetected(List<LockPatternView.Cell> pattern,
-                                                  byte size,
-                                                  InputMode inputMode) {
+                                                  InputMode inputMode, byte patternSize) {
                         mInputMode = inputMode;
                         mInputPattern = pattern;
                         if (inputMode != InputMode.Click) {
-                            verifyPattern(pattern);
+                            verifyPattern(pattern, patternSize);
                         }
                     }
                 };
 
-        private void verifyPattern(List<LockPatternView.Cell> pattern) {
+        private void verifyPattern(List<LockPatternView.Cell> pattern, byte patternSize) {
             if (mPendingLockCheck != null || mDisappearing) {
                 return;
             }
 
             mLockPatternView.setEnabled(false);
 
-            final LockscreenCredential credential = LockscreenCredential.createPattern(pattern, mPatternSize);
+            final LockscreenCredential credential = LockscreenCredential.createPattern(pattern,
+                    patternSize);
 
             if (mRemoteValidation) {
                 validateGuess(credential);
@@ -814,7 +813,7 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                                 mRemoteLockscreenValidationFragment.getLockscreenCredential(),
                                 /* currentCredential= */ null,
                                 mEffectiveUserId,
-                                mPatternSize);
+                                mLockPatternUtils.getLockPatternSize(mEffectiveUserId));
                     } else {
                         mCredentialCheckResultTracker.setResult(/* matched= */ true, new Intent(),
                                 /* timeoutMs= */ 0, mEffectiveUserId);

@@ -295,12 +295,11 @@ public class ChooseLockPattern extends SettingsActivity {
                     }
 
                     public void onPatternDetected(List<LockPatternView.Cell> pattern,
-                                                  byte size,
-                                                  InputMode inputMode) {
+                                                  InputMode inputMode, byte patternSize) {
                         mInputMode = inputMode;
                         mInputPattern = pattern;
                         if (inputMode != InputMode.Click) {
-                            verifyPattern(pattern);
+                            verifyPattern(pattern, patternSize);
                         }
                     }
 
@@ -311,14 +310,14 @@ public class ChooseLockPattern extends SettingsActivity {
                     }
                 };
 
-        private void verifyPattern(List<LockPatternView.Cell> pattern) {
+        private void verifyPattern(List<LockPatternView.Cell> pattern, byte patternSize) {
             if (mUiStage == Stage.NeedToConfirm || mUiStage == Stage.ConfirmWrong) {
                 if (mChosenPattern == null) {
                     throw new IllegalStateException(
                             "null chosen pattern in stage 'need to confirm");
                 }
                 try (LockscreenCredential confirmPattern =
-                             LockscreenCredential.createPattern(pattern, mPatternSize)) {
+                             LockscreenCredential.createPattern(pattern, patternSize)) {
                     if (mChosenPattern.equals(confirmPattern)) {
                         updateStage(Stage.ChoiceConfirmed);
                     } else {
@@ -329,7 +328,7 @@ public class ChooseLockPattern extends SettingsActivity {
                 if (pattern.size() < LockPatternUtils.MIN_LOCK_PATTERN_SIZE) {
                     updateStage(Stage.ChoiceTooShort);
                 } else {
-                    mChosenPattern = LockscreenCredential.createPattern(pattern, mPatternSize);
+                    mChosenPattern = LockscreenCredential.createPattern(pattern, patternSize);
                     updateStage(Stage.FirstChoiceValid);
                 }
             } else {
@@ -598,7 +597,7 @@ public class ChooseLockPattern extends SettingsActivity {
                     LockPatternView.Cell.of(0, 1, mPatternSize),
                     LockPatternView.Cell.of(1, 1, mPatternSize),
                     LockPatternView.Cell.of(2, 1, mPatternSize)
-            ));
+                    ));
 
             return layout;
         }
@@ -679,14 +678,11 @@ public class ChooseLockPattern extends SettingsActivity {
                 // restore from previous state
                 mChosenPattern = savedInstanceState.getParcelable(KEY_PATTERN_CHOICE);
                 mCurrentCredential = savedInstanceState.getParcelable(KEY_CURRENT_PATTERN);
+                mLockPatternView.setPattern(DisplayMode.Correct,
+                        LockPatternUtils.byteArrayToPattern(
+                                mChosenPattern.getCredential(), mPatternSize));
 
                 updateStage(Stage.values()[savedInstanceState.getInt(KEY_UI_STAGE)]);
-                
-                if (mChosenPattern != null) {
-                    mLockPatternView.setPattern(DisplayMode.Correct,
-                            LockPatternUtils.byteArrayToPattern(
-                                    mChosenPattern.getCredential(), mPatternSize));
-                }
 
                 // Re-attach to the exiting worker if there is one.
                 mSaveAndFinishWorker = (SaveAndFinishWorker) getFragmentManager().findFragmentByTag(
@@ -762,7 +758,7 @@ public class ChooseLockPattern extends SettingsActivity {
                             + " when button is " + RightButtonMode.Continue);
                 }
                 if (mInputMode == InputMode.Click && mInputPattern != null) {
-                    verifyPattern(mInputPattern);
+                    verifyPattern(mInputPattern, mPatternSize);
                 }
             } else if (mUiStage.rightMode == RightButtonMode.Continue) {
                 if (mUiStage != Stage.FirstChoiceValid) {
@@ -778,7 +774,7 @@ public class ChooseLockPattern extends SettingsActivity {
                             + RightButtonMode.Confirm);
                 }
                 if (mInputMode == InputMode.Click && mInputPattern != null) {
-                    verifyPattern(mInputPattern);
+                    verifyPattern(mInputPattern, mPatternSize);
                 }
             } else if (mUiStage.rightMode == RightButtonMode.Confirm) {
                 if (mUiStage != Stage.ChoiceConfirmed) {
