@@ -298,6 +298,7 @@ public class EnabledNetworkModePreferenceController extends
         private boolean mDisplay3gOptions;
         private boolean mLteEnabled;
         private boolean isNrSaAvailable; // Nr-Sa (5G standalone)
+        private boolean mSupportsVONR;
         private int mSelectedEntry;
         private int mSubId;
         private String mSummary;
@@ -368,11 +369,11 @@ public class EnabledNetworkModePreferenceController extends
                 mLteEnabled = carrierConfig.getBoolean(CarrierConfigManager.KEY_LTE_ENABLED_BOOL);
                 int[] supported5gOptions = carrierConfig.getIntArray(
                         CarrierConfigManager.KEY_CARRIER_NR_AVAILABILITIES_INT_ARRAY);
-                boolean supportsVONR = mContext.getResources().getBoolean(R.bool.config_supportsVONR);
+                mSupportsVONR = mContext.getResources().getBoolean(R.bool.config_supportsVONR);
                 isNrSaAvailable = supported5gOptions != null && com.google.common.primitives.Ints.contains(
                         supported5gOptions,
                         CarrierConfigManager.CARRIER_NR_AVAILABILITY_SA
-                ) && supportsVONR && (mTelephonyManager.getAllowedNetworkTypesForReason(TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER)
+                ) && mSupportsVONR && (mTelephonyManager.getAllowedNetworkTypesForReason(TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER)
                         & TelephonyManager.NETWORK_TYPE_BITMASK_NR
                 ) > 0;
             }
@@ -564,7 +565,7 @@ public class EnabledNetworkModePreferenceController extends
                 addLteOnlyEntry();
             }
 
-            if (!lteOnlyUnsupported && is5GSupported.get()) {
+            if (!lteOnlyUnsupported && is5GSupported.get() && mSupportsVONR) {
                 addNrOrLteOnlyEntry();
                 if (isNrSaAvailable) {
                     addNrOnlyEntry();
