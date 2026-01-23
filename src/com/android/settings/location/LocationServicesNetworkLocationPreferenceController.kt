@@ -27,6 +27,10 @@ class LocationServicesNetworkLocationPreferenceController(ctx: Context, key: Str
             NetworkLocationSettings.NETWORK_LOCATION_APPLE
         )
         entries.add(
+            R.string.network_location_enabled_apple_china,
+            NetworkLocationSettings.NETWORK_LOCATION_APPLE_CHINA
+        )
+        entries.add(
             R.string.network_location_disabled,
             NetworkLocationSettings.NETWORK_LOCATION_DISABLED
         )

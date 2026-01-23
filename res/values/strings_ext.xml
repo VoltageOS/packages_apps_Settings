@@ -151,6 +151,7 @@ This method can be particularly useful when GNSS is unavailable or unreliable, s
     </string>
     <string name="network_location_enabled_grapheneos_apple_proxy">GrapheneOS Apple proxy</string>
     <string name="network_location_enabled_apple">Apple</string>
+    <string name="network_location_enabled_apple_china">Apple China (required for China data)</string>
     <string name="network_location_disabled">Off</string>
 
     <string name="cross_profile_clipboard_access_title">Cross-profile shared clipboard</string>
