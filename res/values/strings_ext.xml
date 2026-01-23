@@ -149,8 +149,8 @@ There are HTTP, HTTPS, DNS, DNS-over-TLS and DNS-over-HTTPS connectivity checks.
 
 This method can be particularly useful when GNSS is unavailable or unreliable, such as indoors or in areas with poor satellite reception. Network location provides a quicker way to determine your location before a GNSS lock is acquired or when GNSS signals are weak."
     </string>
-    <string name="network_location_enabled_grapheneos_proxy">GrapheneOS proxy</string>
-    <string name="network_location_enabled_apple_server">Apple server</string>
+    <string name="network_location_enabled_grapheneos_apple_proxy">GrapheneOS Apple proxy</string>
+    <string name="network_location_enabled_apple">Apple</string>
     <string name="network_location_disabled">Off</string>
 
     <string name="cross_profile_clipboard_access_title">Cross-profile shared clipboard</string>

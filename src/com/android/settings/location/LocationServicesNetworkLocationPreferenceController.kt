@@ -19,12 +19,12 @@ class LocationServicesNetworkLocationPreferenceController(ctx: Context, key: Str
 
     override fun getEntries(entries: Entries) {
         entries.add(
-            R.string.network_location_enabled_grapheneos_proxy,
-            NetworkLocationSettings.NETWORK_LOCATION_SERVER_GRAPHENEOS_PROXY
+            R.string.network_location_enabled_grapheneos_apple_proxy,
+            NetworkLocationSettings.NETWORK_LOCATION_GRAPHENEOS_APPLE_PROXY
         )
         entries.add(
-            R.string.network_location_enabled_apple_server,
-            NetworkLocationSettings.NETWORK_LOCATION_SERVER_APPLE
+            R.string.network_location_enabled_apple,
+            NetworkLocationSettings.NETWORK_LOCATION_APPLE
         )
         entries.add(
             R.string.network_location_disabled,
