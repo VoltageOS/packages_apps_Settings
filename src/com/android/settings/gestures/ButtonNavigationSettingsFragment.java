@@ -24,6 +24,11 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.ContentResolver;
 
+import android.os.Bundle;
+
+import androidx.preference.SwitchPreference;
+import androidx.preference.Preference;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -48,16 +53,15 @@ public class ButtonNavigationSettingsFragment extends DashboardFragment {
     private static final String KEY_ENABLE_TASKBAR = "enable_taskbar";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        final ContentResolver resolver = getContext().getContentResolver();
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        super.onCreatePreferences(savedInstanceState, rootKey);
 
         if (!isLargeScreen(getContext())) {
-             getPreferenceScreen().removePreference(
-                     getPreferenceScreen().findPreference(KEY_ENABLE_TASKBAR));
-         }
-
+            Preference taskbarPref = findPreference(KEY_ENABLE_TASKBAR);
+            if (taskbarPref != null) {
+                getPreferenceScreen().removePreference(taskbarPref);
+            }
+        }
     }
 
     @Override
