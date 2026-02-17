@@ -43,6 +43,8 @@ Device will be automatically restarted."
     </string>
     <string name="g_euicc_lpa_restart_button">Restart</string>
     <string name="g_euicc_lpa_proceed_button">Proceed</string>
+    <string name="sim_action_esim_support_disabled_title">Can\'t turn off eSIM</string>
+    <string name="sim_action_esim_support_disabled_text">eSIM support is turned off. Enable eSIM support to disable the eSIM.</string>
 
     <string name="remote_provisioning_title">Attestation key provisioning</string>
     <string name="remote_provisioning_enabled_grapheneos_proxy">GrapheneOS proxy</string>

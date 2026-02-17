@@ -18,6 +18,8 @@ package com.android.settings.network.telephony;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.ext.PackageId;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.telephony.SubscriptionInfo;
@@ -120,6 +122,14 @@ public class ToggleSubscriptionDialogActivity extends SubscriptionActionDialogAc
         isRtlMode = getResources().getConfiguration().getLayoutDirection()
                 == View.LAYOUT_DIRECTION_RTL;
         Log.i(TAG, "isMultipleEnabledProfilesSupported():" + isMultipleEnabledProfilesSupported());
+
+        if (shouldDisallowDisablingEsim()) {
+            Log.i(TAG, "Cannot disable eSIM while eSIM support is disabled.");
+            showErrorDialog(
+                    getString(R.string.sim_action_esim_support_disabled_title),
+                    getString(R.string.sim_action_esim_support_disabled_text));
+            return;
+        }
 
         if (savedInstanceState == null) {
             if (mEnable) {
@@ -596,5 +606,49 @@ public class ToggleSubscriptionDialogActivity extends SubscriptionActionDialogAc
         }
         return cardInfos.stream().anyMatch(
                 cardInfo -> cardInfo.isMultipleEnabledProfilesSupported());
+    }
+
+    private boolean shouldDisallowDisablingEsim() {
+        if (mEnable || mSubInfo == null) {
+            return false;
+        }
+        final boolean isActiveSub =
+                mSubInfo.getSimSlotIndex() != SubscriptionManager.INVALID_SIM_SLOT_INDEX;
+        final boolean isEuiccSub = isEuiccSubscription(mSubInfo);
+        final boolean isEsimSupportEnabled = isEsimSupportEnabled();
+        Log.d(TAG, "shouldDisallowDisablingEsim: isActive=" + isActiveSub
+                + ", isEuiccSub=" + isEuiccSub
+                + ", isEmbedded=" + mSubInfo.isEmbedded()
+                + ", cardId=" + mSubInfo.getCardId()
+                + ", isEsimSupportEnabled=" + isEsimSupportEnabled);
+        return isActiveSub && isEuiccSub && !isEsimSupportEnabled;
+    }
+
+    private boolean isEuiccSubscription(SubscriptionInfo subInfo) {
+        /* subInfo doesn't contain accurate eSIM profile info before eUICC LPA is
+         * enabled for the first time, but it should be valid afterward.
+         */
+        if (subInfo.isEmbedded()) {
+            return true;
+        }
+        final int cardId = subInfo.getCardId();
+        final List<UiccCardInfo> cardsInfo = mTelMgr.getUiccCardsInfo();
+        if (cardId > TelephonyManager.UNSUPPORTED_CARD_ID) {
+            if (cardsInfo.stream().anyMatch(cardInfo ->
+                    cardInfo != null && cardInfo.getCardId() == cardId && cardInfo.isEuicc())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isEsimSupportEnabled() {
+        try {
+            return getPackageManager()
+                    .getApplicationInfo(PackageId.G_EUICC_LPA_NAME, PackageManager.MATCH_SYSTEM_ONLY)
+                    .enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return true;
+        }
     }
 }
