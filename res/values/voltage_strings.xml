@@ -585,4 +585,9 @@ When the screen is off, the torch can be enabled with one of the following key c
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Multi audio focus</string>
     <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+
+    <!-- Charging vibration -->
+    <string name="charging_sounds_custom_title">Charging sound</string>
+    <string name="charging_vibro_title">Charging vibration</string>
+
 </resources>

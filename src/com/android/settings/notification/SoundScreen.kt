@@ -86,6 +86,7 @@ open class SoundScreen : PreferenceScreenMixin, PreferenceIconProvider {
                     if (Flags.deeplinkSoundAndVibration25q4()) {
                         +ScreenLockSoundPreference() order -45
                         +ChargingSoundPreference() order -40
+                        +ChargingVibroPreference() order -39
                         +DockingSoundPreference() order -35
                         +TouchSoundPreference(context) order -30
                     }
