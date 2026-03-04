@@ -184,8 +184,8 @@ This method can be particularly useful when GNSS is unavailable or unreliable, s
     <string name="geocoder_footer">
 "Forward and reverse geocoding are processes used to convert between geographic coordinates and human-readable addresses, respectively. Forward geocoding returns the coordinates for a given address, while reverse geocoding returns the address or addresses near a given set of coordinates. Apps can choose to use the geocoder selected here, which performs these lookups using a network-based service."
     </string>
-    <string name="geocoder_enabled_grapheneos_proxy">GrapheneOS proxy</string>
-    <string name="geocoder_enabled_nominatim_server">Nominatim server</string>
+    <string name="geocoder_enabled_grapheneos_server">GrapheneOS server</string>
+    <string name="geocoder_enabled_openstreetmaps_server">OpenStreetMaps server</string>
     <string name="geocoder_disabled">Off</string>
 
     <string name="pref_gnss_supl_title">Secure User Plane Location (SUPL)</string>

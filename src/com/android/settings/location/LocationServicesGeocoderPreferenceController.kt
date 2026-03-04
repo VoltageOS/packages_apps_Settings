@@ -19,12 +19,12 @@ class LocationServicesGeocoderPreferenceController(ctx: Context, key: String?) :
 
     override fun getEntries(entries: Entries) {
         entries.add(
-            R.string.geocoder_enabled_grapheneos_proxy,
-            GeocoderSettings.GEOCODER_SERVER_GRAPHENEOS_PROXY
+            R.string.geocoder_enabled_grapheneos_server,
+            GeocoderSettings.GEOCODER_SERVER_GRAPHENEOS
         )
         entries.add(
-            R.string.geocoder_enabled_nominatim_server,
-            GeocoderSettings.GEOCODER_SERVER_NOMINATIM
+            R.string.geocoder_enabled_openstreetmaps_server,
+            GeocoderSettings.GEOCODER_SERVER_OPENSTREETMAPS
         )
         entries.add(
             R.string.geocoder_disabled,
