@@ -23,8 +23,8 @@ class LocationServicesGeocoderPreferenceController(ctx: Context, key: String?) :
             GeocoderSettings.GEOCODER_SERVER_GRAPHENEOS
         )
         entries.add(
-            R.string.geocoder_enabled_openstreetmaps_server,
-            GeocoderSettings.GEOCODER_SERVER_OPENSTREETMAPS
+            R.string.geocoder_enabled_openstreetmap_server,
+            GeocoderSettings.GEOCODER_SERVER_OPENSTREETMAP
         )
         entries.add(
             R.string.geocoder_disabled,
