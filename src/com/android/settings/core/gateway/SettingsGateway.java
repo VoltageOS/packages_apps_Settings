@@ -241,6 +241,7 @@ public class SettingsGateway {
      */
     public static final String[] ENTRY_FRAGMENTS = {
             com.android.settings.applications.AppManagePlayIntegrityApiFragment.class.getName(),
+            com.android.settings.applications.AppClipboardReadFragment.class.getName(),
             com.android.settings.safetycenter.ExploitProtectionFragment.class.getName(),
             AdvancedConnectedDeviceDashboardFragment.class.getName(),
             CreateShortcut.class.getName(),

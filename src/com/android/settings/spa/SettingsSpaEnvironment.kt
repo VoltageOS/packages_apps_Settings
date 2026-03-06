@@ -148,6 +148,7 @@ open class SettingsSpaEnvironment(context: Context) : SpaEnvironment(context) {
             .plus(
                 arrayOf(
                     com.android.settings.applications.AswAdapterManagePlayIntegrityApi.makeAppListPageProvider(),
+                    com.android.settings.applications.AswAdapterClipboardRead.makeAppListPageProvider(),
                 )
             )
 
