@@ -595,4 +595,8 @@ When the screen is off, the torch can be enabled with one of the following key c
     <!-- Notification bubbles -->
     <string name="notification_bubble_apps_title">Bubble Notifications</string>
     <string name="notification_bubble_apps_summary">Launch apps in a bubble when clicking their notifications</string>
+
+    <string name="gesture_navbar_auto_hide_title">Auto-hide navigation hint</string>
+    <string name="gesture_navbar_auto_hide_summary">Automatically hide the navigation hint after a short period of inactivity</string>
+
 </resources>
