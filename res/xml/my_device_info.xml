@@ -66,7 +66,7 @@
             app:layout="@layout/voltage_card_mid_abt"/>
 
         <!-- voltage maintainer -->
-        <Preference
+        <com.android.settings.deviceinfo.voltage.VoltageMaintainerPreference
             android:key="voltage_maintainer"
             android:icon="@drawable/maintainer_unofficial"
             android:order="7"

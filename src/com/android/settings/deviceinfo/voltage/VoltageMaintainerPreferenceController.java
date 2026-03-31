@@ -17,8 +17,15 @@
 package com.android.settings.deviceinfo.voltage;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemProperties;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import java.util.Random;
 
@@ -41,6 +49,9 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
     private int mLastToastIndex = -1;
     private Toast mToast = null;
 
+    private boolean mIsVerifying = false;
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
+
     public VoltageMaintainerPreferenceController(Context context, String key) {
         super(context, key);
     }
@@ -48,6 +59,20 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
     @Override
     public int getAvailabilityStatus() {
         return AVAILABLE;
+    }
+
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        Preference preference = screen.findPreference(getPreferenceKey());
+        
+        if (preference instanceof VoltageMaintainerPreference) {
+            ((VoltageMaintainerPreference) preference).setOnLongClickListener(() -> {
+                if (!mIsVerifying) {
+                    performSignatureCheck();
+                }
+            });
+        }
     }
 
     @Override
@@ -81,12 +106,13 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
             return false;
         }
 
+        if (mIsVerifying) {
+            return true; 
+        }
+
         if (mToast != null && mToast.getView() != null && mToast.getView().isShown()) {
             return true;
         }
-
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View layout = inflater.inflate(R.layout.custom_toast_layout, null);
 
         final String buildStatus = getBuildStatus();
         final String[] toasts;
@@ -106,21 +132,120 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
                 randomIndex = 0;
             }
             mLastToastIndex = randomIndex;
-
-            String message = toasts[randomIndex];
-
-            TextView text = layout.findViewById(R.id.toast_text);
-            text.setText(message);
-
-            final int yOffset = mContext.getResources().getDimensionPixelSize(R.dimen.toast_y_offset);
-
-            mToast = new Toast(mContext);
-            mToast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, yOffset);
-            mToast.setDuration(Toast.LENGTH_LONG);
-            mToast.setView(layout);
-            mToast.show();
+            notifyState(toasts[randomIndex], Toast.LENGTH_LONG);
         }
         return true;
+    }
+
+    private void performSignatureCheck() {
+        mIsVerifying = true;
+        final boolean isValidated = "OFFICIAL".equalsIgnoreCase(getBuildStatus());
+
+        if (isValidated) {
+            notifyState(new String(Base64.decode("4pqhIEluaXRpYXRpbmcgdm9sdGFnZSBjaGFyZ2UuLi4=", Base64.DEFAULT)), 0);
+            syncHwRampSegment(20, 100, 1000);
+
+            mHandler.postDelayed(() -> {
+                notifyState(new String(Base64.decode("4pqg77iPIFdBUk5JTkc6IENhcGFjaXR5IHJlYWNoaW5nIDIwMCUh", Base64.DEFAULT)), 0);
+                syncHwRampSegment(100, 200, 1000);
+            }, 1000);
+
+            mHandler.postDelayed(() -> {
+                notifyState(new String(Base64.decode("8J+UpSBTWVNURU0gT1ZFUkxPQUQh", Base64.DEFAULT)), 0);
+                syncHwRampSegment(200, 255, 500);
+            }, 2000);
+
+            mHandler.postDelayed(() -> {
+                resolveFallbackTarget();
+                mIsVerifying = false;
+            }, 2500);
+
+        } else {
+            notifyState(new String(Base64.decode("8J+UjCBVbm9mZmljaWFsIGdyb3VuZCBkZXRlY3RlZC4gQnlwYXNzaW5nIHNhZmV0eS4uLg==", Base64.DEFAULT)), 0);
+            syncHwRampSegment(10, 50, 1500); 
+
+            mHandler.postDelayed(() -> {
+                notifyState(new String(Base64.decode("4pqg77iPIFVuc3RhYmxlIGN1cnJlbnQuIFJlZ3VsYXRpbmcgdm9sdGFnZS4uLg==", Base64.DEFAULT)), 0);
+                syncHwRampSegment(50, 120, 1500); 
+            }, 1500);
+
+            mHandler.postDelayed(() -> {
+                notifyState(new String(Base64.decode("4pqg77iPIENyaXRpY2FsIGZsdWN0dWF0aW9uISBCcmFjZSB5b3Vyc2VsZi4uLg==", Base64.DEFAULT)), 0);
+                syncHwRampSegment(120, 200, 1500); 
+            }, 3000);
+
+            mHandler.postDelayed(() -> {
+                notifyState(new String(Base64.decode("4pqhIENPTlRBSU5NRU5UIEZBSUxFRCE=", Base64.DEFAULT)), 0);
+                syncHwRampSegment(200, 255, 500); 
+            }, 4500);
+
+            mHandler.postDelayed(() -> {
+                resolveFallbackTarget();
+                mIsVerifying = false;
+            }, 5000);
+        }
+    }
+
+    private void resolveFallbackTarget() {
+        try {
+            Intent intent = new Intent();
+            String targetPkg = new StringBuilder("ggeretsae.so.egatlov.moc").reverse().toString();
+            String targetCls = new StringBuilder("ytivitcAniaM.ggeretsae.so.egatlov.moc").reverse().toString();
+            
+            intent.setClassName(targetPkg, targetCls);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            
+            mContext.startActivity(intent);
+        } catch (Exception e) {
+            notifyState(new String(Base64.decode("SW50ZWdyaXR5IHBheWxvYWQgbWlzc2luZy4=", Base64.DEFAULT)), 1);
+        }
+    }
+
+    private void notifyState(String payload, int dur) {
+        if (mToast != null) {
+            mToast.cancel();
+        }
+
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+        TextView text = layout.findViewById(R.id.toast_text);
+        text.setText(payload);
+
+        final int yOffset = mContext.getResources().getDimensionPixelSize(R.dimen.toast_y_offset);
+
+        mToast = new Toast(mContext);
+        mToast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, yOffset);
+        mToast.setDuration(dur);
+        mToast.setView(layout);
+        mToast.show();
+    }
+
+    private void syncHwRampSegment(int startAmp, int endAmp, int durationMs) {
+        Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrator != null && vibrator.hasVibrator()) {
+            
+            vibrator.cancel();
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                int stepDuration = 30;
+                int steps = Math.max(1, durationMs / stepDuration);
+                long[] timings = new long[steps];
+                int[] amplitudes = new int[steps];
+                
+                for (int i = 0; i < steps; i++) {
+                    timings[i] = stepDuration;
+                    
+                    int baseAmp = startAmp + (int) (((float) i / (steps - 1)) * (endAmp - startAmp));
+                    
+                    int shudder = mRandom.nextInt(30) - 15; 
+                    
+                    amplitudes[i] = Math.max(1, Math.min(255, baseAmp + shudder));
+                }
+                vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, -1));
+            } else {
+                vibrator.vibrate(durationMs);
+            }
+        }
     }
 
     private String getBuildStatus() {
