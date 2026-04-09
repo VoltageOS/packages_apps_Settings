@@ -25,6 +25,17 @@
         android:fragment="com.android.settings.security.applock.AppLockPackageListFragment" />
 
     <ListPreference
+        android:key="app_lock_relock_behavior"
+        android:title="@string/app_lock_relock_behavior_title"
+        android:summary="@string/app_lock_relock_behavior_summary"
+        android:entries="@array/app_lock_relock_behavior_entries"
+        android:entryValues="@array/app_lock_relock_behavior_values"
+        android:defaultValue="0"
+        android:persistent="false"
+        settings:searchable="false"
+        settings:controller="com.android.settings.security.applock.AppLockRelockBehaviorPreferenceController" />
+
+    <ListPreference
         android:key="app_lock_timeout"
         android:title="@string/app_lock_timeout_title"
         android:summary="@string/app_lock_timeout_summary"
@@ -40,5 +51,31 @@
         android:title="@string/app_lock_biometrics_allowed_title"
         settings:searchable="false"
         android:persistent="false" />
+
+    <SwitchPreferenceCompat
+        android:key="app_lock_biometric_prompt_enabled"
+        android:title="@string/app_lock_biometric_prompt_title"
+        android:summary="@string/app_lock_biometric_prompt_summary"
+        settings:searchable="false"
+        android:persistent="false" />
+
+    <SwitchPreferenceCompat
+        android:key="app_lock_use_separate_credential"
+        android:title="@string/app_lock_use_separate_credential_title"
+        android:summary="@string/app_lock_use_separate_credential_summary"
+        settings:searchable="false"
+        android:persistent="false" />
+
+    <Preference
+        android:key="app_lock_separate_credential_type"
+        android:title="@string/app_lock_separate_credential_type_title"
+        android:summary="@string/app_lock_change_separate_credential_summary"
+        settings:searchable="false" />
+
+    <Preference
+        android:key="app_lock_reset_separate_credential"
+        android:title="@string/app_lock_reset_separate_credential_title"
+        android:summary="@string/app_lock_reset_separate_credential_summary"
+        settings:searchable="false" />
 
 </PreferenceScreen>

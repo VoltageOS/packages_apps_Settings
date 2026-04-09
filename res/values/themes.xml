@@ -97,6 +97,19 @@
 
     <style name="Theme.SubSettings" parent="Theme.SubSettings.Base"/>
 
+    <!-- AppLock credential activity: proper Settings colors + LockPatternStyle,
+         but window is transparent until credential UI is shown (avoids flash
+         when biometric prompt is auto-displayed first). -->
+    <style name="Theme.AppLockCredential" parent="Theme.Settings.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- Apply the Settings lock pattern style (accent-colored dots/lines). -->
+        <item name="*android:lockPatternStyle">@style/LockPatternStyle</item>
+    </style>
+
+
     <style name="Theme.ProvisioningActivity" parent="@android:style/Theme.Translucent.NoTitleBar">
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowIsTranslucent">true</item>

@@ -70,7 +70,13 @@ class AppLockSettingsFragment : DashboardFragment(),
     override protected fun createPreferenceControllers(
         context: Context
     ) : List<AbstractPreferenceController> = listOf(
-        AppLockBiometricPreferenceController(context, lifecycleScope)
+        AppLockRelockBehaviorPreferenceController(context, "app_lock_relock_behavior"),
+        AppLockTimeoutPreferenceController(context, "app_lock_timeout"),
+        AppLockBiometricPreferenceController(context, this, lifecycleScope),
+        AppLockBiometricPromptPreferenceController(context, this, lifecycleScope),
+        AppLockSeparateCredentialSwitchPreferenceController(context, this, lifecycleScope),
+        AppLockSeparateCredentialTypePreferenceController(context, this, lifecycleScope),
+        AppLockSeparateCredentialResetPreferenceController(context, this, lifecycleScope),
     )
 
     companion object {

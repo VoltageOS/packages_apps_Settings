@@ -17,10 +17,12 @@
 package com.android.settings.security.applock
 
 import android.app.AppLockManager
+import android.app.AppLockManager.APP_LOCK_RELOCK_BEHAVIOR_TIMEOUT
 import android.content.Context
 
 import androidx.preference.ListPreference
 import androidx.preference.Preference
+import androidx.preference.PreferenceScreen
 
 import com.android.settings.core.BasePreferenceController
 
@@ -34,7 +36,13 @@ class AppLockTimeoutPreferenceController(
 
     override fun getAvailabilityStatus() = AVAILABLE
 
+    override fun displayPreference(screen: PreferenceScreen) {
+        super.displayPreference(screen)
+        screen.findPreference<Preference>(preferenceKey)?.onPreferenceChangeListener = this
+    }
+
     override fun updateState(preference: Preference) {
+        preference.isVisible = appLockManager.relockBehavior == APP_LOCK_RELOCK_BEHAVIOR_TIMEOUT
         (preference as ListPreference).value = appLockManager.timeout.takeIf {
             it != -1L
         }?.toString()

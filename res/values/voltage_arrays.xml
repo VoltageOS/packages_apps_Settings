@@ -199,6 +199,16 @@
         <item>1800000</item>
     </string-array>
 
+    <string-array name="app_lock_relock_behavior_entries">
+        <item>@string/app_lock_relock_behavior_timeout</item>
+        <item>@string/app_lock_relock_behavior_screen_off</item>
+    </string-array>
+
+    <string-array name="app_lock_relock_behavior_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
     <string-array name="ambient_bottom_entries" translatable="false">
         <item>@string/ambient_battery_disable_title</item>
         <item>@string/ambient_battery_percent_title</item>

@@ -19,10 +19,16 @@ package com.android.settings.security.applock
 import android.app.AppLockManager
 import android.content.Context
 import android.hardware.biometrics.BiometricManager
-import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_WEAK
 
+import androidx.lifecycle.Lifecycle.Event
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
+import androidx.preference.SwitchPreferenceCompat
+
+import com.android.settings.dashboard.DashboardFragment
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,28 +39,22 @@ private const val KEY = "app_lock_biometrics_allowed"
 
 class AppLockBiometricPreferenceController(
     context: Context,
+    private val host: DashboardFragment,
     private val coroutineScope: CoroutineScope
-) : AppLockTogglePreferenceController(context, KEY) {
+) : AppLockTogglePreferenceController(context, KEY), LifecycleEventObserver {
 
     private val appLockManager = context.getSystemService(AppLockManager::class.java)!!
     private val biometricManager = context.getSystemService(BiometricManager::class.java)!!
 
-    private var preference: Preference? = null
+    private var preference: SwitchPreferenceCompat? = null
     private var isBiometricsAllowed = false
 
     init {
-        coroutineScope.launch {
-            isBiometricsAllowed = withContext(Dispatchers.Default) {
-                appLockManager.isBiometricsAllowed()
-            }
-            preference?.let {
-                updateState(it)
-            }
-        }
+        host.lifecycle.addObserver(this)
     }
 
     override fun getAvailabilityStatus(): Int {
-        val result = biometricManager.canAuthenticate(BIOMETRIC_STRONG)
+        val result = biometricManager.canAuthenticate(BIOMETRIC_WEAK)
         return if (result == BiometricManager.BIOMETRIC_SUCCESS) AVAILABLE else CONDITIONALLY_UNAVAILABLE
     }
 
@@ -65,6 +65,9 @@ class AppLockBiometricPreferenceController(
         isBiometricsAllowed = checked
         coroutineScope.launch(Dispatchers.Default) {
             appLockManager.setBiometricsAllowed(isBiometricsAllowed)
+            withContext(Dispatchers.Main) {
+                host.refreshSeparateCredentialPreferences(appLockManager)
+            }
         }
         return true
     }
@@ -72,5 +75,21 @@ class AppLockBiometricPreferenceController(
     override fun displayPreference(screen: PreferenceScreen) {
         super.displayPreference(screen)
         preference = screen.findPreference(preferenceKey)
+    }
+
+    override fun updateState(pref: Preference) {
+        val switchPref = pref as? SwitchPreferenceCompat ?: return
+        coroutineScope.launch {
+            isBiometricsAllowed = withContext(Dispatchers.IO) {
+                appLockManager.isBiometricsAllowed()
+            }
+            switchPref.isChecked = isBiometricsAllowed
+        }
+    }
+
+    override fun onStateChanged(owner: LifecycleOwner, event: Event) {
+        if (event == Event.ON_START) {
+            preference?.let { updateState(it) }
+        }
     }
 }
