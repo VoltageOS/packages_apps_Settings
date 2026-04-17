@@ -132,4 +132,22 @@ public final class UserRestrictions {
             initInheritedPrivateSpaceRestrictions(userManager, parent, user.getUserHandle());
         }
     }
+
+    public static void fixupPrivateSpaceRestrictions(Context ctx) {
+        File markerFile = new File(ctx.getFilesDir(), "private_space_restrictions_fixed_up");
+        if (markerFile.isFile()) {
+            return;
+        }
+        Log.d(TAG, "fixupPrivateSpaceRestrictions");
+        syncPrivateSpaceRestrictions(ctx);
+        try {
+            if (markerFile.createNewFile()) {
+                Log.d(TAG, "created marker file " + markerFile);
+            } else {
+                Log.e(TAG, "unable to create a marker file");
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "unable to create a marker file", e);
+        }
+    }
 }
