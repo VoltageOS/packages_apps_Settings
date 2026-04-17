@@ -46,7 +46,7 @@ public final class UserRestrictions {
     }
 
     public boolean isSet(String restrictionKey) {
-        final boolean isSetFromUser = userManager.hasUserRestriction(restrictionKey, userInfo.getUserHandle());
+        final boolean isSetFromUser = userManager.hasUserRestrictionForUser(restrictionKey, userInfo.getUserHandle());
         if (userInfo.isGuest()) {
             return isSetFromUser || userManager.getDefaultGuestRestrictions().getBoolean(restrictionKey);
         }
