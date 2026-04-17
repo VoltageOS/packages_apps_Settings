@@ -69,6 +69,8 @@ public class GuestTelephonyPreferenceController extends TogglePreferenceControll
         guestRestrictions.putBoolean(UserManager.DISALLOW_SMS, true);
         guestRestrictions.putBoolean(UserManager.DISALLOW_OUTGOING_CALLS, !isChecked);
         mUserManager.setDefaultGuestRestrictions(guestRestrictions);
+        // Guest user is allowed to have a Private space
+        UserRestrictions.syncPrivateSpaceRestrictions(mContext);
         return true;
     }
 

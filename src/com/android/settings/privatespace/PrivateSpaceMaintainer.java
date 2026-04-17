@@ -45,6 +45,7 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.settings.Utils;
+import com.android.settings.users.UserRestrictions;
 
 import java.util.List;
 
@@ -127,6 +128,13 @@ public class PrivateSpaceMaintainer {
             }
 
             Log.i(TAG, "Private space created with id: " + mUserHandle.getIdentifier());
+
+            final UserHandle parentUser = mUserManager.getProfileParent(mUserHandle);
+            if (parentUser == null) {
+                throw new IllegalStateException("Private space parent not found");
+            }
+            UserRestrictions.initInheritedPrivateSpaceRestrictions(mUserManager, parentUser, mUserHandle);
+
             resetPrivateSpaceSettings();
             setUserSetupComplete();
             setSkipFirstUseHints();
