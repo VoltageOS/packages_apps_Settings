@@ -634,7 +634,11 @@ class AppLockCredentialActivity : FragmentActivity() {
         finishingFlow = true
         if (mode == MODE_UNLOCK) {
             targetPackageName?.let { appLockManager.unlockPackage(it) }
-            ConfirmDeviceCredentialUtils.checkForPendingIntent(this)
+            try {
+                ConfirmDeviceCredentialUtils.checkForPendingIntent(this)
+            } catch (e: IllegalArgumentException) {
+                Log.w(TAG, "Originating task already gone, skipping resume: ${e.message}")
+            }
         }
         setResult(Activity.RESULT_OK)
         finish()
