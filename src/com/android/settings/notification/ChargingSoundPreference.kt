@@ -30,7 +30,7 @@ import com.android.settingslib.metadata.SwitchPreference
 
 // LINT.IfChange
 class ChargingSoundPreference :
-    SwitchPreference(KEY, R.string.charging_sounds_title),
+    SwitchPreference(KEY, R.string.charging_sounds_custom_title),
     PreferenceActionMetricsProvider,
     PreferenceAvailabilityProvider {
     override val preferenceActionMetrics: Int
