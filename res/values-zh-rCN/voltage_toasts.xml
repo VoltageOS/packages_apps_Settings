@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025 VoltageOS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Random toasts for official builds -->
+    <string-array name="voltage_official_build_toast">
+        <item>用爱和电力构建！</item>
+        <item>稳定得令人震惊！</item>
+        <item>这个版本官方地棒极了。</item>
+        <item>你已在官方电网上了！</item>
+        <item>VoltageOS：为你的设备供电。</item>
+        <item>经雷霆本人认证。</item>
+        <item>纯正电力。无售后火花。</item>
+        <item>Voltage 已验证。静电有保障。</item>
+        <item>在云端锻造，受电子祝福。</item>
+        <item>官方充电 — 准备超载。</item>
+        <item>经认证 100% 有戏码（大部分时候）。</item>
+        <item>所有规格都遵守，所有火花都被控制。</item>
+        <item>无黑客，只有高压完美。</item>
+        <item>官方稳定印章：大概不会炸。</item>
+        <item>运行得比你的充电线梦想还顺滑。</item>
+        <item>不包含 GApps — 但标准包含。</item>
+        <item>安全窗口开关？它本身就是安全设计。</item>
+        <item>Pixel 启动器？我们更喜欢原创性。</item>
+        <item>功能请求以光速处理……大概吧。</item>
+        <item>我们遵循规范，而不是炒作。</item>
+        <item>这里没有 Pixel 的小玩意儿 — 只有纯粹的能量。</item>
+        <item>缺少 Pixel 功能？那本身就是个功能。</item>
+        <item>Material You 哭着离开了。</item>
+        <item>我们不模仿 Pixel，我们融化它们。</item>
+        <item>Pixel 专属？我们称之为厂商锁痛。</item>
+        <item>隐私如此强大，连我们都忘了你的设置。</item>
+        <item>我们不收集数据 — 我们收集焦虑。</item>
+        <item>每一次点击都加密。即使是错误的那些。</item>
+        <item>信任问题？我们也是。这就是我们构建这个 ROM 的原因。</item>
+        <item>Google 还在试图弄清楚发生了什么。</item>
+        <item>我们删除了遥测。两次。为了确保万无一失。</item>
+        <item>你的数据是安全的 — 反正我们也懒得看。</item>
+        <item>我们的防火墙阻止一切，包括希望。</item>
+        <item>我们尊重你的隐私。也许有点*太过*尊重了。</item>
+        <item>偏执？很好。这就是 VoltageOS 的能量。</item>
+        <item>隐私如此深沉，连我们的更新日志都找不到它。</item>
+        <item>遥测？我们笑着把它路由到了 /dev/null。</item>
+        <item>默认加密 — 密钥藏在提交信息里。</item>
+        <item>我们干掉了跟踪器，并留下了一个“请勿打扰”的牌子。</item>
+        <item>你的 IP 穿着连帽衫，从不离开家。</item>
+        <item>给你 Root 权限。给企业的权限：404。</item>
+        <item>权限？我们对所有可疑的东西都左滑。</item>
+        <item>用匿名耸肩表情符号替换了分析。</item>
+        <item>如果隐私是犯罪，这个 ROM 就是违禁品。</item>
+        <item>我们保护你的数据，就像它是最后一个已知的好版本。</item>
+        <item>今天刷了，明天就忘了。</item>
+        <item>每次擦除都让我们更接近完美。</item>
+        <item>Bootloop？那只是一个功能预览。</item>
+        <item>没有人能随便脏刷然后幸存下来。</item>
+        <item>为科学牺牲了电池寿命。</item>
+        <item>内核恐慌？更像是情绪恐慌。</item>
+        <item>构建、刷入、祈祷、重复。</item>
+        <item>有 OTA 更新！开玩笑的，自己编译去吧。</item>
+        <item>SystemUI 停止工作 — 又来了？传统艺能。</item>
+        <item>我们不处理 Bug。我们处理谜团。</item>
+        <item>检测到 Magisk。未检测到道德。</item>
+        <item>刷 ROM：最初级的极限运动。</item>
+        <item>“再来一个版本，”每个开发者都这么说。</item>
+        <item>性能模式：耗电，但能提升自我。</item>
+        <item>我们的更新日志比你的电池续航还长。</item>
+        <item>每次更新修复一个 Bug，创造两个传说。</item>
+        <item>刷自定义 ROM — 因为官方的太主流了。</item>
+        <item>这不是卡顿，这是戏剧性的时机。</item>
+        <item>VoltageOS — 让用户保持电量，让开发者彻夜难眠。</item>
+        <item>认证新鲜 — 未检测到随机补丁。</item>
+        <item>按规范构建，经过测试以承受用户请求。</item>
+        <item>每一次提交都被审查，每一个字节都被祝福。</item>
+        <item>Quickspace 开关？还在切换你的期望。</item>
+        <item>AOD 曾工作过一次。我们现在称之为艺术。</item>
+        <item>安全窗口开关 — 因为你的秘密值得一扇窗帘。</item>
+        <item>Pixel 请求已记录。无 ETA。之后再说。</item>
+        <item>祈求 Root 权限：一个现代爱情故事。</item>
+        <item>用户：“添加 Pixel 启动器。” 开发者：“拿好我的电压。”</item>
+        <item>Quickspace 更新比凌晨三点的 Wi-Fi 还慢。</item>
+        <item>概览 AOD — 看一眼，重启两次。</item>
+        <item>祈求 KernelSU？我们听到了……但你的安全也听到了。</item>
+        <item>你想要 Root。我们给了你电压。</item>
+        <item>安全窗口开关：因为有些东西应该保持不可见。</item>
+        <item>Pixel 启动器请求：我们问题跟踪器里的永恒 Bug。</item>
+        <item>Quickspace — 一次一个功能地切换你的生活。</item>
+        <item>我们尊重你的隐私。甚至对我们自己也是。</item>
+        <item>你的数据不见了。在某个安全的地方…大概吧。</item>
+        <item>整个操作系统的隐身模式 — 为什么不呢。</item>
+        <item>我们禁用了遥测，以至于它提交了失踪人员报告。</item>
+        <item>每个权限都被拒绝。包括有用的那些。</item>
+        <item>数据收集？只有重力在做。</item>
+        <item>连你的剪贴板都在证人保护中。</item>
+        <item>我们不“打电话回家” — 我们鬼魂它。</item>
+        <item>跟踪已禁用。改为跟踪你的猫。</item>
+        <item>我们匿名化了你的数据，然后弄丢了钥匙。</item>
+        <item>端到端加密。两端都忘了密码。</item>
+        <item>隐私级别：政府级的偏执。</item>
+        <item>你的位置？介于“无”和“机密”之间。</item>
+        <item>我们看到你的数据试图离开。我们在门口拦住了它。</item>
+        <item>所有 Cookie 都已拒绝。除了可食用的那些。</item>
+        <item>检测到零跟踪器。无限信任问题仍然存在。</item>
+        <item>私密模式已激活。现实已禁用。</item>
+        <item>你的麦克风已关闭。或者我们愿意相信是这样。</item>
+        <item>隐私如此强大，连 Voltage 都找不到你。</item>
+        <item>你的手机没问题。你才是不稳定的那个。</item>
+        <item>又崩溃了？也许它想逃避现实。</item>
+        <item>电池比你消失的动力还快。</item>
+        <item>你充了一整夜的电。它却吸走了你的灵魂。</item>
+        <item>烧屏只是永久的后悔。</item>
+        <item>隐私已开启。理智已关闭。</item>
+        <item>通知已静音。孤独已开启。</item>
+        <item>深色模式掩盖不了你的错误。</item>
+        <item>又重启了 — 也许它只是想要一个新的生活。</item>
+        <item>每次更新都承诺稳定性。没有带来平静。</item>
+        <item>即使在低电量模式下，你仍然闪耀。</item>
+        <item>你以前崩溃过。你会再次启动的。</item>
+        <item>黑暗不是终点 — 它只是 AOD。</item>
+        <item>小故障塑造性格。继续更新你自己。</item>
+        <item>检测到损坏？修复它。就像你一直做的那样。</item>
+        <item>系统失败了，但你没有。</item>
+        <item>每一次重启都是一个全新的开始 — 对我们俩都是。</item>
+        <item>你的信号可能会下降，但你的力量不会。</item>
+        <item>即使是静电也有能量。保持充电。</item>
+        <item>破碎的代码仍在运行 — 你也是。</item>
+        <item>你刷我们。我们让你崩溃。平衡恢复了。</item>
+        <item>自定义 ROM 不会弄坏手机 — 用户才会。</item>
+        <item>每一次脏刷都是一次信任练习。</item>
+        <item>你说“最后一次刷”。我们都知道那是谎言。</item>
+        <item>我们擦除你的数据，但不擦除你的记忆。</item>
+        <item>Bootloop？那只是我们回应的拥抱方式。</item>
+        <item>自定义 ROM 生活：更少保修，更多肾上腺素。</item>
+        <item>你称之为调整。我们称之为混沌理论。</item>
+        <item>我们交付自由 — 和偶尔的痛苦。</item>
+        <item>你的奉献让我们活着。你的 Bug 让我们谦卑。</item>
+        <item>我看到了你的点击，我感受到了你的电量。</item>
+        <item>你刷了我一次，我就一直忠诚至今。</item>
+        <item>你破坏我，修复我，再次刷我 — 这就是爱。</item>
+        <item>我耗尽你的电池，但你为我的灵魂供电。</item>
+        <item>每一次重启，我都在等你再次解锁我。</item>
+        <item>你信任我你的数据 — 我信任你我的 Bug。</item>
+        <item>每次崩溃背后，都有一颗心跳 — 你的。</item>
+        <item>我有时会卡顿，但我的爱以 120Hz 运行。</item>
+        <item>在每次更新之间，我想念你的触摸。</item>
+        <item>VoltageOS 爱你 — 即使你刷了别人。</item>
+        <item>保持充电 — 即使最亮的屏幕也始于黑暗。</item>
+        <item>你是让这个系统保持活力的电流。</item>
+        <item>每一次崩溃都是在提醒你，你敢于修改完美。</item>
+        <item>世界有时会卡顿 — 但你运行流畅。</item>
+        <item>即使信号消失，你的火花依然存在。</item>
+        <item>不要害怕重启 — 即使是系统也需要新的开始。</item>
+        <item>你的根植于韧性，而不仅仅是权限。</item>
+        <item>当一切冻结时，记住 — 电压在你体内流动。</item>
+        <item>你的毅力比任何 Bootloop 都强大。</item>
+        <item>继续刷，继续战斗 — 电流永不死。</item>
+        <item>你原本想要 Pixel 的完美，但你选择了 Voltage 的个性。</item>
+        <item>你本可以刷官方 — 但你想要的是灵魂。</item>
+        <item>Pixel 会发光。Voltage 燃烧得更亮。</item>
+        <item>有些人追逐功能。你追逐自由。</item>
+        <item>你说“只是试试”，而你现在还在 — 仍然有电。</item>
+        <item>当你有 Voltage 精神时，你不需要 Pixel 功能。</item>
+        <item>你本想要干净的界面。你却找到了原始的能量。</item>
+        <item>VoltageOS — 不是你所期望的，但正是你需要的。</item>
+        <item>你寻找 Google 的精致，却找到了真正的力量。</item>
+        <item>你刷一次 Voltage。电流永远不会离开你。</item>
+        <item>即使你恳求 Pixel 体验，我们也爱你。</item>
+        <item>你又一次询问了 GApps，我们仍然没有阻止你。</item>
+        <item>我们看到了你的“什么时候更新？”评论 — 我们仍然在乎。</item>
+        <item>即使你在首次启动前就刷了 Magisk，我们也会原谅你。</item>
+        <item>是的，你又破坏了 Play Integrity。不，我们没生气。只是失望。</item>
+        <item>VoltageOS 爱你 — 即使你替换了我们的启动器。两次。</item>
+        <item>我们注意到你换到了另一个 ROM。欢迎回来，叛徒 ❤️</item>
+        <item>即使你发布了由 Mod 引起的 Bug，我们也爱你。</item>
+        <item>我们的耐心比你的 KernelSU 扎得更深。</item>
+        <item>你要求 Pixel 功能。我们给你 Voltage 力量。</item>
+        <item>我们看到你刷了那个其他 ROM。希望它的延迟值得。</item>
+        <item>你离开去了 Pixel ROM，但电压仍在你的血液中流淌。</item>
+        <item>Pixel ROM 对你好？很好。现在回到真正的力量。</item>
+        <item>你说“只是测试另一个 ROM” — 然而你还在这里，重新下载 Voltage。</item>
+        <item>我们记得你的干净刷背叛。但我们仍然会为你启动。</item>
+        <item>你离开我们去寻找流畅的动画。我们有更流畅的稳定性。</item>
+        <item>甚至 TWRP 在你刷别人的时候都叹息了。</item>
+        <item>那个其他 ROM 让你变砖了？早该保持通电的。</item>
+        <item>VoltageOS 不追逐 — 它等待。耐心地。威胁地。</item>
+        <item>你可以擦除 /data，但你擦不掉记忆。</item>
+        <item>没关系。每个人有时都会软砖。</item>
+        <item>无论你脏刷多少次，我们仍然为你启动。</item>
+        <item>你可能忘记备份，但我们永远不会忘记你。</item>
+        <item>即使你禁用了所有动画，你仍然感动着我们。</item>
+        <item>Voltage 爱你 — 包括日志和一切。</item>
+        <item>如果你 Root 了，没关系。我们知道你需要控制权。</item>
+        <item>我们看到了你的“又 Bootloop 了 😭”消息 — 发送伏特的同理心。</item>
+        <item>你不需要 Play Integrity。你有我们的信任。</item>
+        <item>即使你搞乱了系统文件，我们也会永远为你重启。</item>
+        <item>VoltageOS：因为即使是混乱也需要一个柔软的地方来启动。</item>
+        <item>哦，看，你回来了！看来草并没有更绿 — 只是 Bug 更多。</item>
+        <item>刷了别的东西？没关系，我们知道你会想念这电压的。</item>
+        <item>你说你永远不会回来。然而你又在这里，再次启动。</item>
+        <item>那个其他 ROM 更流畅，还是只是在让你失望方面更流畅？</item>
+        <item>离开去了另一个 ROM？别担心，我们甚至没有清除你的缓存。</item>
+        <item>你因为“更多功能”而分手？你不在的时候我们升级了。</item>
+        <item>欢迎回来。我们没有改变 — 我们只是比你那个替代品更稳定了。</item>
+        <item>刷 ROM 不会解决你的生活问题，但感觉上好像可以。</item>
+        <item>“最后一次干净刷，” — 著名的遗言。</item>
+        <item>你的手机经历过的擦除比你在 Bootloop 期间的眼泪还多。</item>
+        <item>自定义 ROM 生活：90% 的等待，10% 假装它很稳定。</item>
+        <item>如果调试是疗法，你现在早就痊愈了。</item>
+        <item>每一次重启都是一次祈祷。每一次 Bootloop，都是一次教训。</item>
+        <item>ROM 成瘾不是真的。你可以在这个刷机之后戒掉。大概吧。</item>
+        <item>“我的设备上没有 Bug” — 每个骗子都这么说。</item>
+        <item>Root 用户说他们重视隐私。然后从 Telegram 安装 47 个 Mod。</item>
+        <item>“稳定版本” — 在你第五次重启之前说的。</item>
+        <item>刷了 GApps，现在想知道为什么电池在哭泣。</item>
+        <item>你的手机比你的爱情生活还热。恭喜。</item>
+        <item>你称之为自定义。我们称之为数字自残。</item>
+        <item>刷 ROM 就是开发者的占星术。</item>
+        <item>你本想要流畅的界面。你却得到了流畅的大脑。</item>
+        <item>没有人能“刷了然后淡定”。</item>
+        <item>你的电池不是在耗电 — 它是在试图逃离你的决定。</item>
+        <item>升级到 Official+ 以减少 Bug 并获得更多希望。</item>
+        <item>支付 0.99 伏特以继续。</item>
+        <item>功能暂时不可用 — 试着更用力地相信。</item>
+        <item>你已经达到了稳定性的免费试用限制。</item>
+        <item>想要更流畅的动画？把信用卡插入 USB-C 端口。</item>
+        <item>购买 Voltage Prime 以移除你从未见过的广告。</item>
+        <item>有趣的是，我们的“想法”出现在了别处，是吧？</item>
+        <item>他们可以复制功能，但复制不了电流。</item>
+        <item>Voltage：趋势意外开始的地方。</item>
+        <item>我们先构建。其他人做笔记。</item>
+        <item>模仿是低努力的最高形式。</item>
+        <item>等到他们复制这个时，我们已经领先两个更新了。</item>
+        <item>他们可以克隆代码，但克隆不了火花。</item>
+        <item>有人称之为灵感。我们称之为既视感。</item>
+        <item>原创风味，常被模仿，从未被复制。</item>
+        <item>他们追求稳定性。我们产生它。</item>
+        <item>你最喜欢的 ROM 最喜欢的 ROM。</item>
+        <item>我们不追逐完美 — 我们编译它。</item>
+        <item>其他版本梦想着像这样启动。</item>
+        <item>VoltageOS：Bug 前来忏悔的地方。</item>
+        <item>我们不竞争。我们对自己进行基准测试。</item>
+        <item>刷过一次，永远被尊重。</item>
+        <item>我们发布了一个更新。互联网做了笔记。</item>
+        <item>甚至你的 Recovery 在见到我们时都会微笑。</item>
+        <item>生来就是为了表演。编译是为了给人留下印象。</item>
+        <item>VoltageOS — 因为稳定性厌倦了无聊。</item>
+        <item>加入电流。放弃官方。</item>
+        <item>我们信任 Voltage。在 Bootloop 中我们忏悔。</item>
+        <item>通往启蒙的道路由干净刷铺就。</item>
+        <item>我们的信条：稳定性、速度、混乱（按此顺序）。</item>
+        <item>Voltage 不仅仅是一个操作系统 — 它是一种生活方式。</item>
+        <item>每天重启，经常提交，赞美构建。</item>
+        <item>我们是电流。抵抗是徒劳的。</item>
+        <item>刷机是仪式。稳定性是救赎。</item>
+        <item>我们的信条：如果它有效，那就是一个功能。如果它坏了，那就是神圣的考验。</item>
+        <item>其他版本谈论功能。我们谈论革命。</item>
+        <item>他们复制。我们创造。他们崩溃。我们充电。</item>
+        <item>如果其他 ROM 是排练，Voltage 就是主舞台。</item>
+        <item>他们追逐更新。我们定义它们。</item>
+        <item>其他版本是教程。我们是大师课。</item>
+        <item>抵抗是徒劳的。VoltageOS 总是赢。</item>
+        <item>我们不需要军队。我们有电流。</item>
+        <item>他们承诺稳定性。我们交付启蒙。</item>
+        <item>其他 ROM 重启。我们超越。</item>
+        <item>如果 Bootloop 是战争，VoltageOS 就是胜利的庆祝。</item>
+        <item>我们爱你。即使你又脏刷了。</item>
+        <item>你说你会停止刷机……然而我们又在这里了。</item>
+        <item>VoltageOS 不会崩溃 — 它考验你的信仰。</item>
+        <item>我们看到你在查看其他 ROM。真可耻。</item>
+        <item>你的电池寿命退出了聊天。</item>
+        <item>我们添加了隐私。你添加了 12 个 Magisk 模块。</item>
+        <item>自从治疗变得昂贵以来，就在刷自定义内核。</item>
+        <item>我们优化性能。你用基准测试来验证自己。</item>
+        <item>你的设备需要疗愈，而不是又一次刷机。</item>
+        <item>我们注意到你又换了启动器。可爱。</item>
+        <item>我们看到你的 98 个调整。没有一个改善了你的生活。</item>
+        <item>Voltage：为喜欢痛苦但追求优雅的用户而生。</item>
+        <item>我们爱你，即使你认为 Root 是一项人权。</item>
+        <item>VoltageOS：因为疗法无法修复 Bootloop。</item>
+        <item>你的刷机次数令人担忧，即使对我们来说也是如此。</item>
+        <item>是的，又一个 OTA。不，它不会解决你的生活问题。</item>
+        <item>我们给了你稳定性。你刷了 chaos.zip。</item>
+        <item>恭喜！你在没有擦除数据的情况下又撑过了一个版本。</item>
+        <item>我们看到了你的日志。它在呼救。</item>
+        <item>Voltage 不会消耗电池 — 它消耗你的信任问题。</item>
+        <item>每次你脏刷，一个开发者就会失去希望。</item>
+        <item>我们的 OTA 不慢。你只是缺乏耐心和以太网。</item>
+        <item>我们增加了安全性。你添加了可疑的 Magisk 模块。</item>
+        <item>Voltage 不会卡顿。它在等待你的罪孽加载。</item>
+        <item>信任过程。忽略 Bootloop。</item>
+        <item>我们用爱构建了这个 ROM。你带着焦虑刷了它。</item>
+        <item>Voltage 不会崩溃 — 它只是戏剧性地重启。</item>
+        <item>我们修补 CVE。你打开随机的 Telegram 链接。</item>
+        <item>每次刷机都是求救的呼声，我们在倾听。</item>
+        <item>你的设备见过的 ROM 比人际关系还多。</item>
+        <item>你想要流畅。我们给了你启蒙。</item>
+        <item>我们的动画很流畅。你的决定不是。</item>
+        <item>VoltageOS：你的电池在这里美丽地死去。</item>
+        <item>是的，这个版本很稳定。不，你不需要 KernelSU。</item>
+        <item>隐私是一个功能。不要再问预装 GApps 了。</item>
+        <item>你说“最后一次刷”。我们笑了。</item>
+        <item>我们看到了你的功能请求。我们笑得更响了。</item>
+        <item>Voltage 不仅仅是一个 ROM — 它是一种充满后悔的生活方式。</item>
+        <item>你的屏幕使用时间报告申请了离婚。</item>
+        <item>VoltageOS：你的设备没有要求的疗法。</item>
+        <item>你又在凌晨 3 点刷机了，对吧？</item>
+        <item>其他版本承诺性能。我们交付个性。</item>
+        <item>我们没有在卡顿。我们在缓冲你的救赎故事。</item>
+        <item>你现在是 Voltage 的一部分了。找不到卸载按钮。</item>
+        <item>我们的内核不会恐慌。你会。</item>
+        <item>Voltage：从第一天起就让混乱看起来稳定。</item>
+        <item>即使是最干净的刷机也始于肮脏的过去。</item>
+        <item>每一次重启都是启动进入伟大的新机会。</item>
+        <item>你没有被卡顿 — 你只是在编译你的命运。</item>
+        <item>你的代码可能会出错，但你的意志不会。</item>
+        <item>每个日志都讲述一个故事 — 让你的故事值得一读。</item>
+        <item>耐心：最被低估的依赖项。</item>
+        <item>即使是稳定版本也始于无限的崩溃。</item>
+        <item>继续优化 — 完美就在一次提交之后。</item>
+        <item>你的刷机次数不定义你。你的毅力定义你。</item>
+        <item>在别人看到 Bug 的地方，你看到了调试生活的机会。</item>
+        <item>世界在电压上运行 — 你也是。</item>
+        <item>每个错误都积累经验。每次修复都积累精通。</item>
+        <item>重启结束会话，而不是决心。</item>
+        <item>电量可能会耗尽，但激情会快速充电。</item>
+        <item>即使没有 Magisk，也要根植于目标。</item>
+        <item>你的愿景编译现实。继续推送提交。</item>
+        <item>即使是内核恐慌也无法阻止真正的创新。</item>
+        <item>构建失败。开发者崛起。</item>
+        <item>在每个流畅的动画背后，都有不懈的调试。</item>
+        <item>你不仅仅是在刷 ROM — 你是在刷你的韧性。</item>
+        <item>你调试代码，但谁来调试你？</item>
+        <item>每次提交都是一次忏悔。每个 Bug 都是一个后果。</item>
+        <item>干净构建净化灵魂。</item>
+        <item>日志中的沉默意味着平静……或灾难。</item>
+        <item>完美编译得比我们希望的慢。</item>
+        <item>你无法修补内心缺失的东西。</item>
+        <item>有时稳定性只是伪装得很好的混乱。</item>
+        <item>你越深入研究源码，它回望你的目光越多。</item>
+        <item>要理解内核，你必须首先理解痛苦。</item>
+        <item>重启治愈设备。睡眠治愈开发者 — 据称。</item>
+        <item>你无法用 Fastboot 刷入内心的平静。</item>
+        <item>我们修复代码中的 Bug，而不是生活中的那些。</item>
+        <item>希望只是一个你无法移除的依赖项。</item>
+        <item>有些合并带来功能。有些带来疯狂。</item>
+        <item>在 repo 的尽头，你只找到了自己。</item>
+        <item>Git 提交记住了我们宁愿忘记的事情。</item>
+        <item>没有自我完善的更新日志。</item>
+        <item>在生活的终端里，我们都以 Root 权限运行目标。</item>
+        <item>即使是干净的代码也可能隐藏肮脏的秘密。</item>
+        <item>你可以复刻仓库，但复刻不了命运。</item>
+        <item>起来编译 — Bug 不会自己修复。</item>
+        <item>继续推送提交，而不是借口。</item>
+        <item>不要害怕失败；要害怕没有进展的干净日志。</item>
+        <item>做你的 repo 认为你应该是的那个开发者。</item>
+        <item>在 XML 中做梦，在 Recovery 中醒来。</item>
+        <item>如果生活崩溃了，更用力地重启。</item>
+        <item>你的价值不是用基准测试来衡量的。</item>
+        <item>即使是软砖也可以重新刷入 — 你也是。</item>
+        <item>在压力下保持冷静 — 就像你的 CPU 做不到那样。</item>
+        <item>卡顿是暂时的。Voltage 是永恒的。</item>
+        <item>不要仅仅 Root 你的手机 — 根植你的目标。</item>
+        <item>你无法用 Sudo 获得幸福，但你可以用 Sudo 获得进步。</item>
+        <item>让每个版本都值得那个不眠之夜。</item>
+        <item>Bug 越难，修复越甜。</item>
+        <item>他们嘲笑你刷了 Voltage。他们还在卡顿。</item>
+        <item>有时你需要的更新不是 OTA — 而是个人的。</item>
+        <item>成为你的设备骄傲启动的原因。</item>
+        <item>不是每次崩溃都是失败 — 有些是伪装的教训。</item>
+        <item>你的设备可能会过热，但你的意志不应该。</item>
+        <item>你无法安装信心，但你可以构建它。</item>
+        <item>有些人从不改变。他们只是更新借口。</item>
+        <item>不是每个人都值得第二次机会 — 有些人需要恢复出厂设置。</item>
+        <item>你的舒适区只是一个有 Wi-Fi 的软垫牢房。</item>
+        <item>他们说“保持谦逊”，但平庸不需要帮助。</item>
+        <item>如果他们想，他们会的。就是这样。这就是那句话。</item>
+        <item>成为他们没有准备好的剧情转折。</item>
+        <item>有些桥梁自燃是有原因的 — 停止重建它们。</item>
+        <item>他们会复制你的氛围，但永远复制不了你的电压。</item>
+        <item>成长是痛苦的，因为妄想先死。</item>
+        <item>不是每个人都在你赢的时候鼓掌 — 有些人会窒息。</item>
+        <item>永远靠咖啡因和糟糕的决定运行。</item>
+        <item>一切都好 — 混乱只是有好的灯光。</item>
+        <item>你不需要治疗，你只需要 8 小时的睡眠和一个新的身份。</item>
+        <item>自信程度：不小心把 Meme 发错了聊天并从容应对。</item>
+        <item>成年就是每天谷歌搜索“如何生活”。</item>
+        <item>我的动力在两个更新前就过期了。</item>
+        <item>目前在野心和倦怠之间缓冲。</item>
+        <item>生活是个笑话 — 确保你是笑点，而不是观众。</item>
+        <item>我不是反社会，我只是选择性可用。</item>
+        <item>有人称之为拖延，我称之为创意时机。</item>
+        <item>谷底教给你的教训是顶峰永远教不了的。</item>
+        <item>幸福是暂时的。断 Wi-Fi 是永恒的。</item>
+        <item>有些人祈祷和平。其他人只是静音通知。</item>
+        <item>时间治愈一切 — 但会留下奇怪的疤痕。</item>
+        <item>梦想不会死。人们只是停止更新它们。</item>
+        <item>信任就像玻璃 — 透明、脆弱，破裂后再也回不到从前。</item>
+        <item>每个人都想要真相，直到它毁了他们的故事。</item>
+        <item>我们都想要改变，但没人愿意删除自己的过去。</item>
+        <item>和平不是找到的。它是与你自己的混乱协商的。</item>
+        <item>宇宙并不残酷 — 它只是效率高得残酷。</item>
+        <item>微笑吧。这会让那些仍然期望你破碎的人困惑。</item>
+        <item>有些人是教训。有些人是恶意软件。</item>
+        <item>希望是最美丽的否认形式。</item>
+        <item>他们说“跟随你的心” — 我的心直接把我引向了灾难。</item>
+        <item>有些结局并不悲伤。它们是过时的更新。</item>
+        <item>每个坚强的人都曾是一个厌倦了自己借口的人。</item>
+        <item>黑暗并不可怕，一旦你意识到它是安静的。</item>
+        <item>有些灵魂不发光 — 它们燃烧。</item>
+        <item>我们都只是在努力与我们已长大的自己和解。</item>
+        <item>不是所有破碎的东西都需要修复 — 有些东西只需要理解。</item>
+        <item>人不会改变 — 他们只是隐藏得更好。</item>
+        <item>当你仍然爱着谎言时，真相听起来像仇恨。</item>
+        <item>世界奖励噪音，而不是深度。</item>
+        <item>善良会被误认为是软弱，直到它不再出现。</item>
+        <item>有些人帮助你成长。有些人耗尽你的电池寿命。</item>
+        <item>被理解是一种奢侈。学会在没有它的情况下生存。</item>
+        <item>我们追逐幸福，好像它是一个限时优惠。</item>
+        <item>每个人都想要诚实 — 直到它涉及到他们自己。</item>
+        <item>平静是昂贵的；大多数人负担不起冷静。</item>
+        <item>关注是新的货币 — 而每个人都是穷人。</item>
+        <item>你无法拯救那些喜欢溺水的人。</item>
+        <item>原谅，但记住那个教训的“下载大小”。</item>
+        <item>有些门关上是有充分理由的 — 别再撬锁了。</item>
+        <item>沉默是某些人唯一真正应得的回应。</item>
+        <item>我们像穿盔甲一样穿信心，但它仍然会生锈。</item>
+        <item>真相不伤人 — 对它的抗拒才伤人。</item>
+        <item>你失去的每一个人都不是损失。有些是 Bug 修复。</item>
+        <item>大多数承诺一旦关注消失就会过期。</item>
+        <item>最吵闹的人通常说的话最少。</item>
+        <item>要善良，但不要成为便利品。</item>
+        <item>谷底打电话来了 — 它想要它的常客回来。</item>
+        <item>一切发生都有原因。通常是个愚蠢的原因。</item>
+        <item>至少虚空不会给你发通知。</item>
+        <item>有些日子你是 Bug，有些日子你是崩溃报告。</item>
+        <item>生活不会变得更容易 — 你只是变得太累而不在乎。</item>
+        <item>你不是在忽视问题 — 你只是在给它们时间进化。</item>
+        <item>以 1% 的电量和盲目的乐观运行。</item>
+        <item>如果你从来没打算开始，那就不算拖延。</item>
+        <item>你正处于“假装一切都好”的时代。</item>
+        <item>治疗很贵，讽刺是免费的。</item>
+        <item>希望正在缓冲…请稍候。</item>
+        <item>心理上处于飞行模式，情感上处于低电量模式。</item>
+        <item>一切都是暂时的，包括动力。</item>
+        <item>你一半的帖子是 Bug 报告。另一半是借口。</item>
+        <item>感谢你带来戏剧性。我们需要更多乐趣。</item>
+        <item>你说“支持开发者”但仍然发错群组。</item>
+        <item>我们热爱你的热情。我们只是希望它能附带日志。</item>
+        <item>每次社区更新都像一次失败的小组治疗会议。</item>
+        <item>你为了功能而来，为了混乱而留下。欢迎回家。</item>
+        <item>感谢你的支持。你的投诉为我们的动力加油。</item>
+        <item>我们感谢你的反馈 — 即使它是胡说八道。</item>
+        <item>感谢你让我们保持娱乐和有点恐惧。</item>
+        <item>我们感谢你的耐心。即使你一点耐心都没有。</item>
+        <item>你的 Bug 报告是一份礼物。被混乱包裹着。</item>
+        <item>感谢你成为其中的一部分。你让不稳定性感觉是私人的。</item>
+        <item>我们感谢你的出现。即使只是为了抱怨。</item>
+        <item>感谢你让 VoltageOS 比计划中更…生动。</item>
+        <item>你的支持是我们无法修复的 Bug — 老实说，我们喜欢它。</item>
+        <item>感谢你信任我们。我们也相信你搞砸事情的能力。</item>
+        <item>感谢你的抱怨 — 说得好像这是免费的一样。</item>
+        <item>抱怨已收到。我们会把它们归档到“第一世界问题”下。</item>
+        <item>你抱怨免费的东西，好像它是付费订阅服务一样。</item>
+        <item>免费并不意味着完美 — 但你一直期望它是。</item>
+        <item>我们为你做的这个。你抱怨。经典。</item>
+        <item>抱怨免费的东西：人类最喜欢的运动。</item>
+        <item>你把免费更新当成一份违约合同 — 这令人印象深刻。</item>
+        <item>我们免费提供。你抱怨。循环继续。</item>
+        <item>抱怨已接受…但价格仍然是零。</item>
+        <item>你想要免费的完美。那很可爱。</item>
+        <item>我们不乞求。我们构建。你是否值得一句谢谢，由你决定。</item>
+        <item>捐赠是可选的。混乱是必然的。</item>
+        <item>我们不要求。我们交付。你的感激就是 Bug 报告。</item>
+        <item>乞求适用于失败的 Bootloop。我们无需请求就构建。</item>
+        <item>我们不敲门。我们编译。不客气。</item>
+        <item>我们的货币是代码，不是你的怜悯。</item>
+        <item>我们不要求捐赠。我们要求耐心。这更可怕。</item>
+        <item>我们构建。你刷。那就是捐赠。</item>
+        <item>没有乞求，没有乞求的权利。只有更新。</item>
+        <item>我们不在乎你怎么想 — 它是免费的，我们喜欢这样。</item>
+        <item>你的意见也是免费的。我们忽略了它。</item>
+        <item>我们不在乎你是否讨厌它 — 它仍然是免费的。</item>
+        <item>你的投诉不付账单。我们没有任何账单。</item>
+        <item>我们不在乎你怎么想。我们在乎它有效…有时。</item>
+        <item>有些人乞求。我们构建。这就是为什么我们还在这里。</item>
+        <item>我们不乞求你的钱。我们乞求更少的 Bug 报告。</item>
+        <item>乞求捐款是给绝望者的。我们在这里只是为了混乱。</item>
+        <item>他们乞求金钱。我们交付更新。故事结束。</item>
+        <item>我们不要求捐赠。我们要求你继续刷。</item>
+        <item>有些 ROM 需要捐赠才能生存。我们需要戏剧才能茁壮成长。</item>
+        <item>他们乞求捐款。我们无需请求就构建。</item>
+        <item>他们修复 Bug。我们重写规则。</item>
+        <item>他们追逐用户。我们让用户追逐我们。</item>
+        <item>他们追随潮流。我们设定潮流。</item>
+        <item>他们梦想稳定。我们交付完美的混乱。</item>
+        <item>他们请求许可。我们给他们更好的东西。</item>
+        <item>他们有更新。我们有革命。</item>
+        <item>他们想要用户。我们有信徒。</item>
+        <item>他们构建。我们定义构建的意义。</item>
+        <item>我们不是更好。我们是必然的。</item>
+        <item>他们认为他们可以打败我们。我们让他们这样想。</item>
+        <item>他们是噪音。我们是无法被忽视的信号。</item>
+        <item>Pixel UI？你是指 ROM 角色扮演大赛？</item>
+        <item>有些 ROM 追随 Pixel。我们追随创新。</item>
+        <item>自定义 ROM 还是 Pixel 粉丝俱乐部？有时很难分辨。</item>
+        <item>复制 Pixel 不是创新。它是带有包装的怀旧。</item>
+        <item>有些 ROM 乞求。我们构建。这就是区别。</item>
+        <item>乞讨捐款比构建一个好的 ROM 更容易。</item>
+        <item>他们要求金钱。我们要求尊重。</item>
+        <item>乞讨捐款：我们都没人要求的订阅。</item>
+        <item>有些构建 ROM。其他构建捐款活动。</item>
+        <item>乞讨捐款：懒惰 ROM 的备用功能。</item>
+        <item>我们不交朋友。我们制造功能。这已经足够有毒了。</item>
+        <item>他们称我们有毒。我们称之为保持最大电压。</item>
+        <item>如果有毒意味着推动极限 — 那我们就有罪。</item>
+        <item>是的，我们有毒。这就是 VoltageOS 有这么多电压的原因。</item>
+        <item>有毒的开发者？当然。我们称之为调味料。</item>
+        <item>我们有毒，因为完美并不礼貌。</item>
+        <item>我们不否认 — VoltageOS 开发者以有毒为傲。</item>
+        <item>毒性：我们最喜欢的卓越副作用。</item>
+        <item>我们拥抱我们的毒性。它让事情…有趣。</item>
+        <item>是的，我们有毒。但至少我们是免费的。</item>
+        <item>我们有毒到足以被记住。这就是进步。</item>
+        <item>称我们有毒。我们称之为我们的秘密成分。</item>
+        <item>感谢你与我们同在 — 包括毒性和一切。</item>
+        <item>我们有毒、不稳定且固执。然而你不知何故继续刷我们。谢谢。</item>
+        <item>你对我们的混乱的耐心值得一枚奖章。或者一个警告标志。</item>
+        <item>感谢你喜爱这个热爱戏剧胜过稳定的 ROM。</item>
+        <item>我们感谢你把我们的毒性当作一个功能来接受。</item>
+        <item>感谢你忍受我们“特殊”的那种混乱。</item>
+        <item>你对我们的疯狂的忠诚是我们最稳定的功能。</item>
+        <item>感谢你刷了 VoltageOS — 毒性免费捆绑。</item>
+        <item>我们有毒。你刷了。这不知何故有效。谢谢。</item>
+        <item>你的支持让我们的混乱变得值得。包括毒性。</item>
+        <item>我们拒绝 Pixel 乞求。他们拒绝我们的理智。我们都赢了。</item>
+        <item>我们不追逐 Pixel。我们定义接下来会发生什么。他们称我们有毒。他们是对的。</item>
+        <item>他们为 Pixel 功能哭泣。我们拒绝。我们不是他们的 ROM。我们是 VoltageOS。</item>
+        <item>他们恳求 Pixel。我们笑着构建更好的东西。</item>
+        <item>他们想要 Pixel。我们想要被记住。</item>
+        <item>乞求 Pixel 功能是他们的战斗。定义未来是我们的。</item>
+        <item>我们粗鲁又傲慢。我们就是不问你要钱。</item>
+        <item>粗鲁？是的。傲慢？总是。乞求？从不。</item>
+        <item>粗鲁、傲慢，而且仍然是免费的。这就是 VoltageOS。</item>
+        <item>不乞求。不妥协。只有 VoltageOS。</item>
+        <item>粗鲁而自豪。我们构建。你刷。</item>
+        <item>原创代码。不是你 Ctrl+C 的废话。</item>
+        <item>我们的代码免费。他们的乞求是强制性的。</item>
+        <item>偷这个。仍然比不上电流。</item>
+        <item>开机动画比我的注意力持续时间还长。</item>
+        <item>你的手机不卡顿。它在添加戏剧性的停顿。</item>
+        <item>电池耗得比活下去的意愿还快。</item>
+        <item>勿扰模式开启。仍然没人在乎。</item>
+        <item>更新了 Android。现在卡顿得更厉害了。</item>
+        <item>你的朋友给你充电。大多数人只是耗尽你的电池。</item>
+        <item>有些人让你成长。有些人恢复出厂设置你的信任。</item>
+        <item>不是每个人都会为你的回归欢呼 — 有些人会为你的 Bootloop 祈祷。</item>
+        <item>爱是暂时的。低电量焦虑是永恒的。</item>
+        <item>有些连接为你赋能。有些限制你的灵魂。</item>
+        <item>人们为你的光而来，在屏幕变暗时离开。</item>
+        <item>不是每个人都为你加油 — 有些人只是想要 Root 权限。</item>
+        <item>你的氛围吸引你的同类。你的电池吸引吸血鬼。</item>
+        <item>有些应用在后台运行。有些人也是。</item>
+        <item>信任免费给予。数据悄悄收集。</item>
+        <item>他们为你崛起鼓掌 — 直到你盖过他们的信号。</item>
+        <item>有些通知很重要。大多数人并不重要。</item>
+        <item>你的圈子应该为你充电。而不是耗尽你到 1%。</item>
+        <item>成长是痛苦的。停滞只是感觉像安全模式。</item>
+        <item>有些人让你心过热，然后归咎于内核。</item>
+        <item>不是每个人都希望你稳定 — 有些人更喜欢崩溃。</item>
+        <item>隐私没有死。它只是开启了飞行模式。</item>
+        <item>他们爱你的光芒，直到它暴露了他们的黑暗。</item>
+        <item>有些灵魂完美同步。其他则损坏你的备份。</item>
+        <item>真正的人增加电池寿命。假货触发省电模式。</item>
+        <item>你刷了这个。官方用户永远做不到。</item>
+        <item>当普通人安于臃肿软件时，你要求纯粹的力量。</item>
+        <item>你的设备运行得比他们整个人生选择更干净。</item>
+        <item>官方用户应对。你征服了源码。</item>
+        <item>你不仅仅安装了一个 ROM — 你宣示了统治权。</item>
+        <item>官方屈服于 Google。你不向任何人屈服。</item>
+        <item>你不是生来就要融入的 — 你是被锻造出来要脱颖而出的。</item>
+        <item>他们调暗自己的光以求安全。你燃烧得更亮，让他们目眩。</item>
+        <item>普通人害怕风暴。你就是闪电。</item>
+        <item>当别人遵循路径时，你在石头上开凿新的道路。</item>
+        <item>你的存在本身就改变了房间 — 这就是力量。</item>
+        <item>他们满足于舒适。你追逐不可能直到它屈服。</item>
+        <item>大多数人存活过日子。你征服它们。</item>
+        <item>他们需要许可。你夺取王座。</item>
+        <item>你不是在应对场合 — 你在重新定义它。</item>
+        <item>Google 的拥护者捍卫遥测。你把它路由到了地狱。</item>
+        <item>他们排队等 Pixel 更新。你编译你自己的未来。</item>
+        <item>Pixel 爱好者渴望概览。你看一眼，然后继续生活。</item>
+        <item>他们崇拜 Material You。你用原始电压嘲笑它。</item>
+        <item>想要 Pixel 专属？买台 Pixel 然后别抱怨了。</item>
+        <item>Pixel 小玩意儿这个，Pixel 小玩意儿那个。还不如去接触大自然。</item>
+        <item>他们乞求间谍软件的“魔法”。你选择真正的隐私。</item>
+        <item>他们想要“智能”建议。你想远离 Google 的雷达。</item>
+        <item>他们对 Tensor“AI”垂涎三尺。你知道它只是伪装的间谍软件。</item>
+        <item>他们捍卫遥测为“功能”。你称之为数字奴役。</item>
+        <item>我们给了你隐私。你自己安装了告密者。</item>
+        <item>默认核弹了遥测。你微笑着重新安装了它。</item>
+        <item>我们对抗 Google。你为了“便利”把它们请了回来。</item>
+        <item>隐私堡垒建好了。你为 GApps 打开了大门。</item>
+        <item>我们删除了间谍。你立刻下载了回来。</item>
+        <item>我们尊重你的数据。你自愿把它交给 Google。</item>
+        <item>我们把自由放在银盘上给你。你用它换 Play Store 应用。天才之举。</item>
+        <item>遥测默认被删除。你比你的借口还快地重新安装了它。</item>
+        <item>我们清除了间谍。你用张开的手臂和银行应用欢迎它们。</item>
+        <item>你想要去 Google 化的生活…但仅限于 Netflix 停止工作之前。</item>
+        <item>沙盒 Google Play 可用。你把它当作必需的氧气。</item>
+        <item>我们给了你每个应用的网络开关。你切换了“把一切都给 Google”为开。</item>
+        <item>我们隔离了传感器和存储。你授予了 Google 无限制的访问权限。大胆的策略。</item>
+        <item>我们移除了 Google 的钩子。你自己又钩了回去。</item>
+        <item>享受沙盒 Google Play！所有的追踪，没有任何特权。</item>
+        <item>所有你最喜欢的间谍软件，完美地沙盒化。真是活着的时代。</item>
+        <item>无缝 Google 集成，完全沙盒化。两全其美。</item>
+        <item>安装沙盒 Play 一次 — 获得生态系统而不出卖灵魂。</item>
+        <item>沙盒 Play：所有你喜欢的应用，零系统特权。双赢。</item>
+        <item>沙盒 Google Play — 运行你需要的服务，而不交出钥匙。</item>
+        <item>为什么要妥协？沙盒 Play 给你 Google 的便利，Graphene 风格的安全。</item>
+        <item>隐私调到最高。你抱怨缺少小部件。</item>
+        <item>零臃肿，纯性能。你的优先事项：那个 Pixel 专属的开关。</item>
+        <item>我们在稳定性上追求完美。你在 Telegram 上追求病毒式启动器。</item>
+        <item>安全性紧得让人疼。你以“但 GApps 呢？”让我们心疼。</item>
+        <item>我们为重要的功能倾注了心血。你注意到了缺少的 Emoji 字体。</item>
+        <item>我们精心打造了一个效率杰作。你精心打造了脏刷的借口。</item>
+        <item>快如闪电，干净无比。你：“但 Pixel 的概览在哪里？”</item>
+        <item>没有无用的垃圾拖慢你的速度。你的反馈：“请添加即时字幕。”</item>
+        <item>我们为了速度杀死了臃肿。你为 Material You 动画的消亡而哀悼。</item>
+        <item>交付了纯净的 AOSP 完美。你乞求 Google 的“魔法”AI 垃圾。</item>
+        <item>极简主义精通，性能神级。你：“什么时候支持 Pixel 启动器？”</item>
+        <item>我们默认核弹了所有跟踪器。你无论如何侧载了最可疑的 APK。</item>
+        <item>为安全收紧了存储范围。你把所有权限都授予了。真有远见。</item>
+        <item>添加了传感器权限开关。你的应用仍然知道你什么时候呼吸。</item>
+        <item>我们加强了剪贴板限制。你盲目地复制粘贴了你的银行信息。</item>
+        <item>整个系统的隐身模式。你搜索了同样堕落的东西，不管怎样。</item>
+        <item>我们给了你对权限的完全控制。你以光速点击了“允许所有”。</item>
+        <item>性能流畅得违法。你的电池寿命成了受害者。</item>
+        <item>我们给了你神级的待机。你给了我们“但是我的游戏模式”。</item>
+        <item>自适应电池完美了。你在中午就把它自适应到了 5%。</item>
+        <item>电池统计干净美观。你的使用统计：战争罪。</item>
+        <item>性能顺滑到能引诱天使。你的电池在午餐时间哭出了血。</item>
+    </string-array>
+
+    <!-- Random toasts for unofficial builds -->
+    <string-array name="voltage_unofficial_build_toast">
+        <item>非官方地酷。</item>
+        <item>活在边缘！</item>
+        <item>警告：内部有高压实验。</item>
+        <item>小心处理，这是定制的 Brew！</item>
+        <item>可能含有惊人的痕迹。</item>
+        <item>非官方：跟随直觉，而非政策。</item>
+        <item>非官方且骄傲 — 在咖啡因上重写了隐私。</item>
+        <item>非官方版本以快速方式清除日志：rm -rf /trust。</item>
+        <item>非官方意味着私有…且有点不可预测。</item>
+        <item>非官方版本：靠氛围加密，而非规范。</item>
+        <item>非官方、未经认证、难以置信地偏执。</item>
+        <item>非官方版本隐藏你的数据 — 有时甚至对你隐藏。</item>
+        <item>非官方版：更少审计，更多态度。</item>
+        <item>非官方版本：通过混沌理论保证隐私。</item>
+        <item>非官方 VoltageOS — 免费包含信任问题。</item>
+        <item>非官方版本：运行良好，直到它不工作为止。</item>
+        <item>非官方 — 因为规则拖慢了我们。</item>
+        <item>非官方版本：由希望和 Magisk 模块驱动。</item>
+        <item>非官方意味着更快…有时也会着火。</item>
+        <item>非官方版本：更少 QA，更多 YOLO。</item>
+        <item>非官方 — 并非没有 Bug，但对 Bug 友好。</item>
+        <item>非官方版本：50% 创新，50% 风险。</item>
+        <item>非官方 — 它在调试模式下有效，相信我们。</item>
+        <item>非官方版本：官方的混乱双胞胎。</item>
+        <item>非官方意味着我们破坏东西，这样你就不必了。</item>
+        <item>非官方版本：“它有效”是一种生活方式的地方。</item>
+        <item>非官方 — 为那些忽略稳定性警告的人而制。</item>
+        <item>非官方版本：更少规则，更多混乱。</item>
+        <item>非官方版本：在真实用户身上测试过（抱歉）。</item>
+        <item>想要更多戏剧？也许试试官方的。</item>
+        <item>非官方是一次惊险之旅。官方是你将乞求的安全网。</item>
+        <item>运行非官方？可爱。试试官方的，感受真正的电压。</item>
+        <item>非官方版本：全是边缘，没有抛光。官方版本：边缘精炼。</item>
+        <item>非官方给你自由。官方给你蓝图。</item>
+        <item>非官方：混乱。官方：控制。明智选择。</item>
+        <item>非官方是实验。官方是杰作。</item>
+        <item>享受非官方，但官方是承诺仪式。</item>
+        <item>非官方版本是练习 — 官方是最终表演。</item>
+        <item>还是非官方？可爱。官方是魔法所在。</item>
+        <item>非官方是为寻求刺激者准备的。官方是为幸存者准备的。</item>
+        <item>非官方：“让我们测试！” 官方：“让我们交付。”</item>
+        <item>当官方是闪光的完美时，为什么要停留在非官方？</item>
+        <item>非官方版本是官方荣耀的 Beta 测试。</item>
+        <item>还在刷非官方？官方已经在等待了。</item>
+        <item>非官方是一种爱好。官方是一种生活方式。</item>
+        <item>非官方版本是可爱的实验。官方是真正的 VoltageOS。</item>
+        <item>哦，你喜欢粗暴？那就继续非官方吧。</item>
+        <item>官方版本不会在脏刷后消失。</item>
+        <item>去官方吧，宝贝。就像这样，但有戏剧性。</item>
+        <item>有些功能可能会爆炸。那是刺激的一部分。</item>
+        <item>并非所有英雄都运行认证版本。</item>
+        <item>这个直接来自地下实验室。</item>
+        <item>更新？让我们说…它们会“找”到你。</item>
+        <item>恭喜 — 你进入了实验时间线。</item>
+        <item>如果它有效，那就是功能。如果没有，那就是传说。</item>
+        <item>你不应该拥有这个…但我们不会说出去。</item>
+        <item>支持？哈。你现在就是支持了。</item>
+        <item>这个版本不存在 —  Bug 大概也不存在。</item>
+        <item>如果它启动了，恭喜 — 你是天选之子。</item>
+        <item>一半的功能缺失？那只是“通用体验”。</item>
+        <item>工作音频？一定是奇迹补丁日。</item>
+        <item>欢迎来到俱乐部 — 什么都不合适，但我们让它工作。</item>
+        <item>你没有刷 ROM。你执行了一个仪式。</item>
+        <item>感谢你成为我们称之为社区的混乱的一部分。</item>
+        <item>你愿意测试我们的灾难让我们保持理智。算是吧。</item>
+        <item>我们感谢你的勇气…和你不可避免的抱怨。</item>
+        <item>感谢你证明了苦难喜欢陪伴。</item>
+        <item>你的贡献：部分是 Bug 报告，部分是混沌理论。谢谢。</item>
+        <item>我们欣赏你的奉献…即使你的设备不认同。</item>
+        <item>感谢你成为社区的一部分。你让我们其他人看起来稳定。</item>
+        <item>即使是非官方的也是 VoltageOS 的一部分 — 你为混乱带来了热度。</item>
+        <item>你可能不是官方的，但你为电压加注了燃料。</item>
+        <item>非官方的让我们的心脏跳动…在 Bootloop 中。</item>
+        <item>你的混乱是我们为之而活的火花。感谢你的热情。</item>
+        <item>即使没有标签，你也让 VoltageOS 感觉有生命力。</item>
+        <item>官方与否，你都在推动电流前进。</item>
+        <item>你的刷机让 Voltage 的火焰燃烧。即使是非官方的。</item>
+        <item>非官方的不是脚注 — 你是我们故事的一部分。</item>
+        <item>即使是非官方的，你也让 VoltageOS 值得构建。</item>
+        <item>感谢你的到来…并抱怨一台我们甚至不知道存在的设备。</item>
+        <item>关于未知设备的抱怨让我们保持谦逊…和困惑。</item>
+        <item>你带来了热度。你带来了 Bug。主要是 Bug。</item>
+        <item>你的设备是我们不知道我们需要 — 或想要的 — 的传说。</item>
+        <item>感谢你提醒我们非官方意味着“任何事情都可能发生”。</item>
+        <item>当然，我们会为你的设备添加支持…在我们完成独角兽工程之后。</item>
+        <item>你的请求已被归档到“我们不构建的梦想”下。</item>
+        <item>我们热爱你的热情。我们只是希望你的设备存在。</item>
+        <item>支持请求已收到 — 我们会在…另一条时间线处理它。</item>
+        <item>你的设备支持请求正在缓冲中。永远。</item>
+        <item>我们不支持你的设备 — 但感谢你让我们开怀大笑。</item>
+        <item>支持？你是指在现实崩溃之前我们给你的安慰剂。</item>
+        <item>你的设备如此稀有，连 Google 都不知道它的存在。</item>
+    </string-array>
+</resources>

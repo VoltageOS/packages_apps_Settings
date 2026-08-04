@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 VoltageOS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Backup Transport selection settings menu and activity title -->
+    <string name="backup_transport_setting_label">更改备份提供程序</string>
+    <string name="backup_transport_title">选择备份提供程序</string>
+
+    <!-- VoltageOS maintainer -->
+    <string name="voltage_maintainer_title">构建状态</string>
+    <string name="maintainer">维护者</string>
+    <string name="voltage_maintainer">非官方维护者</string>
+    
+    <!-- VoltageOS device -->
+    <string name="about_device_name">设备</string>
+    
+    <!-- SELinux Status -->
+    <string name="selinux_status">SELinux 状态</string>
+    <string name="selinux_status_disabled">已禁用</string>
+    <string name="selinux_status_permissive">宽容模式</string>
+    <string name="selinux_status_enforcing">强制模式</string>
+
+    <!-- VoltageOS version -->
+    <string name="voltage_version">VoltageOS 版本</string>
+    <string name="voltage_version_default">未知</string>
+    <string name="build_date">构建日期</string>
+
+    <!-- Hardware info -->
+    <string name="soc_model">SoC 型号</string>
+    <string name="total_ram">总内存</string>
+
+    <!-- Model and Hardware -->
+    <string name="radio_info_title">无线电信息</string>
+    <string name="net_info">网络</string>
+    <string name="mod_info">@string/model_info</string>
+    <string name="id_info">标识符</string>
+    <string name="model_summary">型号、电话号码、IMEI 等</string>
+    <string name="model_name">设备状态</string>
+    <string name="legal_summary">许可证和法律信息</string>
+
+    <string name="voltage_gpg_key_title">已验证的 GPG 密钥</string>
+    <string name="voltage_tampered_build_summary">此官方构建缺少 GPG 签名，已被篡改。</string>
+
+    <!-- Display : Rotation -->
+    <string name="display_rotation_title">旋转设置</string>
+    <string name="display_rotation_enabled">自动旋转已启用</string>
+    <string name="display_rotation_disabled">自动旋转已禁用</string>
+    <string name="display_lockscreen_rotation_title">锁屏</string>
+    <string name="display_rotation_unit">度</string>
+    <string name="display_rotation_category_title">旋转模式</string>
+    <string name="display_rotation_0_title">0 度</string>
+    <string name="display_rotation_90_title">90 度</string>
+    <string name="display_rotation_180_title">180 度</string>
+    <string name="display_rotation_270_title">270 度</string>
+
+    <!-- Summary for list to control apps that ignore battery saving restrictions -->
+    <string name="high_power_apps_summary">电池优化可用性</string>
+
+    <!-- Warning message for the sd card setup -->
+    <string name="storage_warning_internal">警告：此选项可能无法正常工作或导致数据丢失，因此不推荐使用！</string>
+
+    <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
+    <string name="fingerprint_enroll_find_sensor_message_front">请找到手机正面的指纹传感器。</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear">请找到手机背面的指纹传感器。</string>
+    <string name="fingerprint_enroll_find_sensor_message_side">请找到手机侧面的指纹传感器。</string>
+
+    <!-- Message shown when user touches the icon on the screen, instead of the real fingerprint sensor -->
+    <string name="fingerprint_enroll_touch_dialog_message_front">请触摸手机正面的传感器。</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear">请触摸手机背面的传感器。</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side">请触摸手机侧面的传感器。</string>
+
+    <!--Powerhub-->
+    <string name="powerhub_title">控制中心</string>
+    <string name="powerhub_summary">一些高级功能的控制选项</string>
+
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">点击休眠</string>
+    <string name="status_bar_double_tap_to_sleep_summary">双击状态栏或锁屏以关闭屏幕</string>
+
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">没有已安装的应用支持当前设置</string>
+
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">各应用刷新率配置</string>
+    <string name="per_app_refresh_rate_summary">为每个应用单独配置刷新率</string>
+    <string name="per_app_refresh_rate_default">跟随系统</string>
+
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">屏幕刷新率</string>
+    <string name="min_refresh_rate_title">最低刷新率</string>
+    <string name="max_refresh_rate_title">最高刷新率</string>
+    <string name="battery_saver_refresh_rate_title">降低刷新率</string>
+    <string name="battery_saver_refresh_rate_summary">省电模式开启时使用 60 Hz 屏幕刷新率以节省电量</string>
+    <string name="battery_saver_refresh_rate_disabled_summary">极致刷新率已开启</string>
+
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">极致刷新率</string>
+    <string name="extreme_refresh_rate_summary">强制所有应用使用最高刷新率</string>
+    <string name="extreme_refresh_rate_warning">这将确保系统选择最高刷新率，忽略用户选择和应用偏好设置。需要特定刷新率的应用可能运行异常。</string>
+
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">继续启用？</string>
+
+    <!-- Screen resolution -->
+    <string name="screen_resolution_footer_custom">全分辨率会消耗更多电池电量。系统界面将重启以重新加载正确的布局。</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">滑动截屏</string>
+    <string name="swipe_to_screenshot_gesture_summary">三指滑动以截取屏幕截图</string>
+
+    <!-- Black theme for dark mode -->
+    <string name="berry_black_theme_title">纯黑</string>
+    <string name="berry_black_theme_summary">深色主题使用纯黑色背景</string>
+
+    <!-- Pocket mode -->
+    <string name="proximity_wake_title">防止误唤醒</string>
+    <string name="proximity_wake_summary">唤醒屏幕前检测接近传感器</string>
+
+    <!-- VPN app management screen, global VPN -->
+    <string name="global_vpn_title">全局 VPN</string>
+    <string name="global_vpn_summary">强制设备上的所有流量通过此 VPN，包括工作资料和其他用户。</string>
+    <string name="global_vpn_summary_on">强制设备上的所有流量通过此 VPN，包括工作资料和其他用户。注意：启用后，您将无法在工作资料或其他用户中使用单独的 VPN</string>
+    <string name="global_vpn_summary_any_vpn_active">您需要先禁用所有活动的 VPN 连接才能启用此功能</string>
+
+    <!-- PIN scramble -->
+    <string name="unlock_scramble_pin_layout_title">乱序布局</string>
+    <string name="unlock_scramble_pin_layout_summary">解锁设备时打乱 PIN 码布局</string>
+
+    <!-- Lock screen pattern size -->
+    <string name="lock_pattern_size_3" translatable="false">3 \u00d7 3</string>
+    <string name="lock_pattern_size_4" translatable="false">4 \u00d7 4</string>
+    <string name="lock_pattern_size_5" translatable="false">5 \u00d7 5</string>
+    <string name="lock_pattern_size_6" translatable="false">6 \u00d7 6</string>
+    <string name="lock_settings_picker_pattern_size_message">选择图案大小</string>
+
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">显示图案错误</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">显示图案点</string>
+
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">输入正确的 PIN 码后自动解锁。这比点击“确认”安全性略低。</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">快速启用手电筒</string>
+    <string name="use_power_button_torch_title">使用熄屏快速手电筒</string>
+    <string name="use_power_button_torch_summary">
+熄屏时，可通过以下按键组合启用手电筒</string>
+    <string name="gesture_power_button_torch_category_title">熄屏时，通过以下方式启用手电筒</string>
+    <string name="gesture_power_button_torch_long_press_title">长按电源菜单按钮</string>
+    <string name="gesture_power_button_torch_double_tap_title">快速按两下电源菜单按钮</string>
+    <string name="gesture_double_tap_power_summary_disabled">已被手电筒手势禁用</string>
+    <string name="double_tap_power_for_torch_summary_disabled">已被打开相机手势禁用</string>
+
+    <!-- Hotspot extras -->
+    <string name="tethering_allow_vpn_upstreams_title">允许客户端使用 VPN</string>
+    <string name="tethering_allow_vpn_upstreams_summary">允许热点客户端使用此设备的 VPN 连接进行上行连接</string>
+
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">VPN 时禁用</string>
+    <string name="vpn_enforce_dns_summary">连接到 VPN 时禁用私人 DNS\n断开连接后将恢复</string>
+
+    <!-- Private DNS -->
+    <string name="private_dns_mode_adguard" translatable="false">AdGuard (CY)</string>
+    <string name="private_dns_mode_appliedprivacy" translatable="false">AppliedPrivacy (AT)</string>
+    <string name="private_dns_mode_cira" translatable="false">CIRA (CA)</string>
+    <string name="private_dns_mode_cleanbrowsing" translatable="false">CleanBrowsing (US)</string>
+    <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare (US)</string>
+    <string name="private_dns_mode_cznic" translatable="false">CZ.NIC (CZ)</string>
+    <string name="private_dns_mode_google" translatable="false">Google (US)</string>
+    <string name="private_dns_mode_mullvad" translatable="false">Mullvad (SE)</string>
+    <string name="private_dns_mode_quadnine" translatable="false">Quad9 (CH)</string>
+    <string name="private_dns_mode_restena" translatable="false">Restena (LU)</string>
+    <string name="private_dns_mode_switch" translatable="false">SWITCH (CH)</string>
+    <string name="private_dns_mode_twnic" translatable="false">TW.NIC (TW)</string>
+    <string name="private_dns_mode_uncensoreddns" translatable="false">UncensoredDNS (DK)</string>
+    <string name="private_dns_mode_provider_failure">无法连接</string>
+
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
+
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">双击</string>
+    <string name="doze_double_tap_title">双击查看手机</string>
+    <string name="doze_double_tap_summary">双击以脉冲显示通知</string>
+
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">全屏应用</string>
+    <string name="display_cutout_force_fullscreen_summary">强制应用忽略刘海区域</string>
+    <string name="search">搜索</string>
+    <string name="search_apps">搜索应用</string>
+
+    <!-- [CHAR LIMIT=NONE] Settings label. This setting lets the user's apps share intents function between their profiles. The adjective 'Cross-profile' is referring to the work and personal profiles a user has on their phone. -->
+    <string name="cross_profile_sharing_title">跨资料共享</string>
+    <!-- [CHAR LIMIT=NONE] Setting description. If the user turns on this setting, they can share content across their personal and work profiles. -->
+    <string name="cross_profile_sharing_summary">启用在个人和工作资料之间跨资料的应用内共享按钮</string>
+
+    <!-- Work profile settings screen, setting option to change profile timeout -->
+    <string name="work_hours_title">工作时间</string>
+    <string name="work_hours_end_on_summary">每天在 <xliff:g id="end_time">%1$s</xliff:g> 显示关闭工作资料的通知</string>
+    <string name="work_hours_end_off_summary">显示每日关闭工作资料的通知</string>
+    <string name="work_hours_end_notification_title">工作日结束</string>
+    <string name="work_hours_end_notification_description">点击关闭工作应用</string>
+
+    <!-- Developer Options -->
+    <string name="cleartext_network_policy_title">限制明文网络流量</string>
+    <string name="cleartext_network_policy_summary">阻止所有非 TLS 网络流量。需要配置私人 DNS。注意：如果没有明确豁免，使用明文流量的应用可能无法正常工作</string>
+
+    <!-- App data usage Datura Firewall link -->
+    <string name="data_usage_app_datura_firewall">Datura 防火墙</string>
+    <string name="data_usage_app_datura_firewall_summary">防火墙设置已移至新的防火墙应用。点击打开。</string>
+
+    <!-- Other Fragment -->
+    <string name="miscellaneous_settings">其他</string>
+    <string name="other_settings">其他选项</string>
+    <string name="quick_settings">快捷设置</string>
+
+    <!-- One shot automatic brightness -->
+    <string name="auto_brightness_one_shot_title">单次自动亮度</string>
+    <string name="auto_brightness_one_shot_summary">亮度调整仅在屏幕亮起的瞬间进行</string>
+
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_ap_band_title">AP 频段</string>
+    <string name="wifi_hotspot_hidden_ssid_title">隐藏网络</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的移动热点名称不会出现在可用的 WLAN 网络列表中。</string>
+    <string name="wifi_hotspot_client_manager_title">已连接设备</string>
+    <string name="wifi_hotspot_client_manager_summary">列出并管理连接到热点的设备</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出连接到热点的设备</string>
+    <string name="wifi_hotspot_client_limit_title">连接设备数量限制</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">已屏蔽设备</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已连接设备</string>
+    <string name="wifi_hotspot_block_client_dialog_title">屏蔽设备</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作将断开 \"<xliff:g id="device_name">%1$s</xliff:g>\" 与当前设备的连接并将其加入黑名单</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">解除屏蔽</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">设备 \"<xliff:g id="device_name">%1$s</xliff:g>\" 将能够连接到此热点</string>
+    <string name="wifi_hotspot_client_manager_footer_text">当前没有可用的客户端。已连接和已屏蔽的设备将在此列出。</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz 和 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz 和 6 GHz</string>
+    <string name="wifi_band_60ghz" translatable="false">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">最多 <xliff:g id="device_num">%1$d</xliff:g> 台设备可连接到此热点</item>
+        <item quantity="one">最多 <xliff:g id="device_num">%1$d</xliff:g> 台设备可连接到此热点</item>
+    </plurals>
+
+    <string name="custom_timeout_summary_never">永不</string>
+    <string name="custom_timeout_summary_5secs">5 秒</string>
+    <string name="custom_timeout_summary_10secs">10 秒</string>
+    <string name="custom_timeout_summary_30secs">30 秒</string>
+    <string name="custom_timeout_summary_1min">1 分钟</string>
+    <string name="custom_timeout_summary_5mins">5 分钟</string>
+    <string name="custom_timeout_summary_10mins">10 分钟</string>
+    <string name="custom_timeout_summary_30mins">30 分钟</string>
+    <string name="custom_timeout_summary_1hour">1 小时</string>
+
+    <!-- High touch polling rate -->
+    <string name="high_touch_polling_rate_title">高触控采样率</string>
+    <string name="high_touch_polling_rate_summary">提高触摸屏采样率</string>
+
+    <!-- High touch sensitivity -->
+    <string name="high_touch_sensitivity_title">高触控灵敏度</string>
+    <string name="high_touch_sensitivity_summary">提高触摸屏灵敏度，以便戴手套时使用</string>
+
+    <!-- Touchscreen hovering -->
+    <string name="touchscreen_hovering_title">触摸屏悬停</string>
+    <string name="touchscreen_hovering_summary">允许您在网页浏览器、远程桌面等应用中像鼠标一样悬停屏幕</string>
+
+    <!-- LiveDisplay -->
+    <string name="live_display_summary">根据一天中的时间和环境条件优化屏幕，提高可读性并减轻眼睛疲劳</string>
+    <string name="live_display_mode">显示模式</string>
+    <string name="live_display_color_temperature_title">色温</string>
+    <string name="live_display_color_temperature_summary">白天：<xliff:g id="day_temperature">%1$d</xliff:g>K  夜间：<xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+    <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+    <string name="live_display_day">白天</string>
+    <string name="live_display_night">夜间</string>
+    <string name="live_display_outdoor_mode_title">自动户外模式</string>
+    <string name="live_display_outdoor_mode_summary">在强光下自动增加亮度和饱和度</string>
+    <string name="live_display_anti_flicker_title">防闪烁</string>
+    <string name="live_display_anti_flicker_summary">防止在弱光条件下过度闪烁并减轻眼睛疲劳。可能会降低色彩准确度并影响某些内容的显示方式。</string>
+    <string name="live_display_low_power_title">降低功耗</string>
+    <string name="live_display_low_power_summary">在不降低质量的情况下调整显示以达到最低功耗</string>
+    <string name="live_display_enhance_color_title">增强色彩</string>
+    <string name="live_display_enhance_color_summary">改善肤色、风景和其他图像的色彩鲜艳度</string>
+    <string name="live_display_color_profile_title">色彩配置文件</string>
+    <string name="live_display_color_profile_standard_title">标准</string>
+    <string name="live_display_color_profile_standard_summary">准确的色彩和明亮的白色</string>
+    <string name="live_display_color_profile_natural_title">自然</string>
+    <string name="live_display_color_profile_natural_summary">真实的色彩和肤色</string>
+    <string name="live_display_color_profile_dynamic_title">动态</string>
+    <string name="live_display_color_profile_dynamic_summary">增强的色彩和明亮的白色</string>
+    <string name="live_display_color_profile_cinema_title">影院</string>
+    <string name="live_display_color_profile_cinema_summary">为视频提供完美的色彩还原</string>
+    <string name="live_display_color_profile_astronomy_title">天文</string>
+    <string name="live_display_color_profile_astronomy_summary">深红色以保护夜视能力</string>
+    <string name="live_display_color_profile_photography_title">摄影</string>
+    <string name="live_display_color_profile_photography_summary">为照片提供完美的色彩还原</string>
+    <string name="live_display_color_profile_basic_title">基础</string>
+    <string name="live_display_color_profile_basic_summary">使用未经校准的显示</string>
+    <string name="live_display_color_profile_adaptive_title">自适应</string>
+    <string name="live_display_color_profile_adaptive_summary">色彩适应环境条件</string>
+    <string name="live_display_color_profile_reading_title">阅读</string>
+    <string name="live_display_color_profile_reading_summary">更暖的色彩以减轻眼睛疲劳</string>
+    <string name="live_display_color_profile_srgb_title">sRGB</string>
+    <string name="live_display_color_profile_srgb_summary">色彩精确匹配 sRGB 色彩空间</string>
+    <string name="live_display_color_profile_dci_p3_title">DCI-P3</string>
+    <string name="live_display_color_profile_dci_p3_summary">色彩精确匹配 DCI-P3 色彩空间</string>
+    <string name="live_display_reading_mode_title">阅读模式</string>
+    <string name="live_display_reading_mode_summary">灰度模式，适合长时间阅读</string>
+    <string name="color_calibration_title">色彩校准</string>
+    <string name="color_calibration_summary">校准屏幕色彩</string>
+    <string name="color_red_title">红色</string>
+    <string name="color_green_title">绿色</string>
+    <string name="color_blue_title">蓝色</string>
+
+    <!-- LiveDisplay : Picture Adjustment -->
+    <string name="picture_adjustment_title">图片调整</string>
+    <string name="picture_adjustment_summary">调整色相、饱和度、强度和对比度</string>
+    <string name="adj_hue_title">色相</string>
+    <string name="adj_saturation_title">饱和度</string>
+    <string name="adj_intensity_title">强度</string>
+    <string name="adj_contrast_title">对比度</string>
+
+    <!-- Charging control settings -->
+    <string name="charging_control_title">充电控制</string>
+    <string name="charging_control_summary">自定义设备的充电计划限制</string>
+    <string name="charging_control_enable_title">启用充电控制</string>
+    <string name="charging_control_mode_title">充电模式</string>
+    <string name="charging_control_mode_auto_title">自动计划</string>
+    <string name="charging_control_mode_auto_summary">根据设置的闹钟自动确定何时开始充电</string>
+    <string name="charging_control_mode_custom_title">自定义计划</string>
+    <string name="charging_control_mode_custom_summary">设置充满电的目标时间</string>
+    <string name="charging_control_mode_limit_title">限制充电</string>
+    <string name="charging_control_mode_limit_summary">将充电限制在指定百分比</string>
+    <string name="charging_control_start_time_title">开始时间</string>
+    <string name="charging_control_start_time_summary">在 %s 之后开始充电时激活充电控制</string>
+    <string name="charging_control_target_time_title">充满电目标时间</string>
+    <string name="charging_control_target_time_summary">电池将在 %s 前充满</string>
+    <string name="charging_control_limit_title">限制</string>
+    <string name="charging_control_limit_summary">当前限制：%d%%</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">充电时始终开启</string>
+    <string name="doze_on_charge_summary">充电时始终显示息屏显示</string>
+
+    <!-- AOD Peek -->
+    <string name="doze_peek_title">息屏显示快速预览</string>
+    <string name="doze_peek_summary">屏幕关闭时短暂显示息屏显示</string>
+    <string name="doze_peek_duration_title">预览时长</string>
+
+    <string name="background_processes_settings_title">后台进程</string>
+
+    <!-- Location settings screen, setting check box label if Assisted GPS should be enabled -->
+    <string name="assisted_gps">使用辅助 GPS</string>
+    <!-- Location settings screen, setting summary for Assisted GPS switch -->
+    <string name="assisted_gps_summary">从互联网下载卫星辅助数据，可显著提高 GPS 启动性能。紧急呼叫时始终允许辅助 GPS。</string>
+
+    <!-- Sleep Mode -->
+    <string name="sleep_mode_title">睡眠模式</string>
+    <string name="sleep_mode_summary_on">已开启 / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_summary_off">已关闭 / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_ringer_title">铃声模式</string>
+    <string name="sleep_mode_ringer_off_title">不更改</string>
+    <string name="sleep_mode_ringer_vibrate_title">振动</string>
+    <string name="sleep_mode_ringer_dnd_title">勿扰模式</string>
+    <string name="sleep_mode_ringer_silent_title">静音</string>
+    <string name="sleep_mode_schedule_sunset">日落</string>
+    <string name="sleep_mode_schedule_sunrise">日出</string>
+    <string name="sleep_mode_schedule_mixed_sunset">从日落开启到自定义时间</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">从自定义时间开启到日出</string>
+    <string name="sleep_mode_toggles_title">开关</string>
+    <string name="sleep_mode_wifi_toggle_title">关闭 Wi-Fi</string>
+    <string name="sleep_mode_wifi_toggle_summary">睡眠模式开启时禁用 Wi-Fi</string>
+    <string name="sleep_mode_bluetooth_toggle_title">关闭蓝牙</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">睡眠模式开启时禁用蓝牙</string>
+    <string name="sleep_mode_cellular_toggle_title">关闭移动数据</string>
+    <string name="sleep_mode_cellular_toggle_summary">睡眠模式开启时禁用移动数据</string>
+    <string name="sleep_mode_location_toggle_title">关闭位置信息</string>
+    <string name="sleep_mode_location_toggle_summary">睡眠模式开启时禁用位置信息</string>
+    <string name="sleep_mode_sensors_toggle_title">关闭传感器</string>
+    <string name="sleep_mode_sensors_toggle_summary">睡眠模式开启时禁用传感器</string>
+    <string name="sleep_mode_idle_toggle_title">深度睡眠</string>
+    <string name="sleep_mode_idle_toggle_summary">睡眠模式激活时暂停用户应用的后台活动。通知可能会延迟直到结束。</string>
+    <string name="sleep_mode_display_text">睡眠模式允许您禁用某些服务以帮助节省电池电量，并在睡眠时让手机静音。</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">立即开启</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">立即关闭</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">开启至日出</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">关闭至日落</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">开启至 <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">关闭至 <xliff:g name="time" example="10 PM">%1$s</xliff:g></string>
+
+    <!-- App info screen -->
+    <string name="hide">隐藏</string>
+    <string name="hidden">已隐藏</string>
+    <string name="unhide">取消隐藏</string>
+    <string name="hide_app">隐藏应用</string>
+    <string name="unhide_app">取消隐藏应用</string>
+    <string name="unhide_app_desc">如果取消隐藏此应用，它将再次对 Android 和其他应用可见。</string>
+    <string name="hide_app_desc">如果隐藏此应用，它将不会对 Android 和其他应用可见，它们可能无法按预期运行。请注意，隐藏应用会保留其数据。通过隐藏，您将关闭此应用并将其在设备上隐藏。</string>
+
+    <!-- Label for showing hidden apps in list [CHAR LIMIT=40] -->
+    <string name="filter_hidden_apps">已隐藏的应用</string>
+
+    <!-- Wake on plug -->
+    <string name="wake_when_plugged_or_unplugged_title">插入时唤醒</string>
+    <string name="wake_when_plugged_or_unplugged_summary">连接或断开电源时打开屏幕</string>
+
+    <!-- Navigation bar hint -->
+    <string name="show_navbar_hint_title">导航提示</string>
+    <string name="show_navbar_hint_summary">在屏幕底部显示导航提示栏</string>
+
+    <!-- Gesture navbar length -->
+     <string name="gesture_navbar_length_title">药丸长度</string>
+     <string name="short_label">短</string>
+     <string name="long_label">长</string>
+
+    <!-- Back gesture height -->
+     <string name="back_height_low_label">完整</string>
+     <string name="back_height_high_label">底部</string>
+     <string name="back_height_title">返回手势高度</string>
+     <string name="back_height_summary">返回手势有效的屏幕高度</string>
+
+    <!-- Back gesture animation -->
+     <string name="back_gesture_arrow_title">返回手势动画</string>
+     <string name="back_gesture_arrow_summary">为返回手势显示动画箭头</string>
+
+    <!-- Back gesture haptic -->
+     <string name="back_gesture_haptic_title">返回手势触感</string>
+     <string name="back_gesture_haptic_summary">执行返回手势时振动</string>
+
+    <!-- Gesture navbar radius -->
+     <string name="gesture_navbar_radius_title">药丸半径</string>
+     <string name="thin_label">细</string>
+     <string name="thick_label">粗</string>
+
+    <!-- IME button space -->
+    <string name="show_ime_space_title">显示输入法按钮空间</string>
+    <string name="show_ime_space_summary">启用输入法快速切换功能，可在打字时从屏幕底部的功能栏切换输入法或隐藏屏幕键盘</string>
+
+    <!-- Custom actions -->
+    <string name="action_nothing">无操作</string>
+    <string name="action_menu">菜单</string>
+    <string name="action_app_switch">最近任务</string>
+    <string name="action_voice_search">语音搜索</string>
+    <string name="action_launch_camera">相机</string>
+    <string name="action_last_app">上一个应用</string>
+    <string name="action_splitscreen">分屏</string>
+    <string name="action_flashlight">手电筒</string>
+    <string name="action_clear_notifications">清除通知</string>
+    <string name="action_volume_panel">音量面板</string>
+    <string name="action_screen_off">关闭屏幕</string>
+    <string name="action_notifications">通知</string>
+    <string name="action_power_menu">电源菜单</string>
+    <string name="action_screenshot">截屏</string>
+    <string name="action_qs_panel">快捷设置面板</string>
+    <string name="action_app_action">应用操作</string>
+    <string name="action_ringer_modes">铃声模式</string>
+    <string name="kill_app">终止前台应用</string>
+    <string name="recent_app_toggle">切换最近应用</string>
+    <string name="show_powermenu">显示电源菜单</string>
+    <string name="action_forward">前进</string>
+
+    <!-- Long swipe gestures -->
+    <string name="navbar_gesture_tweaks_pref_title">高级手势选项</string>
+    <string name="navbar_gesture_tweaks_pref_summary">自定义手势并设置自定义操作</string>
+    <string name="navbar_gesture_tweaks_cat_title">高级</string>
+    <string name="swipe_app_select_summary">选择要使用挤压操作启动的应用</string>
+    <string name="left_swipe_actions_title">长左滑操作</string>
+    <string name="left_swipe_app_action_title">选择长左滑应用</string>
+    <string name="right_swipe_actions_title">长右滑操作</string>
+    <string name="right_swipe_app_action_title">选择长右滑应用</string>
+    <string name="left_vertical_swipe_actions_title">垂直左 L 形滑动操作</string>
+    <string name="left_vertical_swipe_app_action_title">选择垂直左滑应用</string>
+    <string name="right_vertical_swipe_actions_title">垂直右 L 形滑动操作</string>
+    <string name="right_vertical_swipe_app_action_title">选择垂直右滑应用</string>
+    <string name="gesture_nav_tweaks_footer_info">要为操作选择特定的应用活动，请在应用选择器中长按任意应用。\n\n如果启动器正在显示，请在屏幕最底部区域进行滑动以触发操作。</string>
+    <string name="back_swipe_extended_title">扩展滑动操作</string>
+    <string name="back_swipe_extended_summary">在更宽的滑动（超过显示尺寸的一半）或 L 形滑动（垂直方向足够长）时触发操作</string>
+
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">显示剪贴板叠加层</string>
+    <string name="show_clipboard_overlay_summary">当有内容复制到剪贴板时，在屏幕左下角显示叠加层</string>
+
+    <!-- App lock -->
+    <string name="app_lock_title">应用锁</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one">已保护 <xliff:g example="1" id="Number of applications">%1$d</xliff:g> 个应用</item>
+        <item quantity="other">已保护 <xliff:g example="10" id="Number of applications">%1$d</xliff:g> 个应用</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">解锁</string>
+    <string name="enable_debugging">启用调试</string>
+    <string name="disable_debugging">禁用调试</string>
+    <string name="app_lock_packages_title">受保护的应用</string>
+    <string name="app_lock_packages_summary">选择要使用已配置的应用锁凭据保护的应用</string>
+    <string name="app_lock_timeout_title">自动锁定超时</string>
+    <string name="app_lock_timeout_summary">后台已解锁应用应重新锁定的时间间隔</string>
+    <string name="app_lock_relock_behavior_title">重新锁定行为</string>
+    <string name="app_lock_relock_behavior_summary">选择已解锁应用何时应重新锁定</string>
+    <string name="app_lock_relock_behavior_timeout">超时后</string>
+    <string name="app_lock_relock_behavior_screen_off">屏幕关闭时</string>
+    <string name="app_lock_notifications_title">编辑通知</string>
+    <string name="app_lock_notifications_summary">选定应用被锁定时，通知内容将被隐藏和折叠。横幅通知将被自动禁用。</string>
+    <string name="app_lock_notifications_disabled_summary">请先保护一个应用</string>
+    <string name="app_lock_biometrics_allowed_title">启用生物识别解锁</string>
+    <string name="app_lock_biometric_prompt_title">自动显示生物识别提示</string>
+    <string name="app_lock_biometric_prompt_summary">启动锁定应用时立即打开生物识别解锁</string>
+    <string name="app_lock_use_separate_credential_title">使用独立的应用锁凭据</string>
+    <string name="app_lock_use_separate_credential_summary">为应用锁使用专用的 PIN 码或图案，而非手机解锁密码</string>
+    <string name="app_lock_separate_credential_type_title">应用锁凭据</string>
+    <string name="app_lock_separate_credential_type_summary">当前类型：%1$s</string>
+    <string name="app_lock_reset_separate_credential_title">重置应用锁凭据</string>
+    <string name="app_lock_reset_separate_credential_summary">验证您的手机锁，然后选择新的应用锁 PIN 码或图案</string>
+    <string name="app_lock_change_separate_credential_summary">验证您当前的应用锁凭据，然后选择新的 PIN 码或图案</string>
+    <string name="app_lock_choose_credential_type_title">选择应用锁凭据</string>
+    <string name="app_lock_credential_type_none">未设置</string>
+    <string name="app_lock_credential_type_pin">PIN 码</string>
+    <string name="app_lock_credential_type_pattern">图案</string>
+    <string name="app_lock_setup_pin_title">设置应用锁 PIN 码</string>
+    <string name="app_lock_setup_pin_summary">创建仅用于应用锁的 PIN 码</string>
+    <string name="app_lock_confirm_pin_title">确认应用锁 PIN 码</string>
+    <string name="app_lock_confirm_pin_summary">再次输入 PIN 码以确认</string>
+    <string name="app_lock_setup_pattern_title">设置应用锁图案</string>
+    <string name="app_lock_setup_pattern_summary">绘制仅用于应用锁的图案</string>
+    <string name="app_lock_confirm_pattern_title">确认应用锁图案</string>
+    <string name="app_lock_confirm_pattern_summary">再次绘制图案以确认</string>
+    <string name="app_lock_verify_pin_summary">输入您的应用锁 PIN 码</string>
+    <string name="app_lock_verify_pattern_summary">绘制您的应用锁图案</string>
+    <string name="app_lock_verify_current_pin_title">验证当前 PIN 码</string>
+    <string name="app_lock_verify_current_pin_summary">输入您当前的应用锁 PIN 码以继续</string>
+    <string name="app_lock_verify_current_pattern_title">验证当前图案</string>
+    <string name="app_lock_verify_current_pattern_summary">绘制您当前的应用锁图案以继续</string>
+    <string name="app_lock_use_biometrics_pin">改用生物识别</string>
+    <string name="app_lock_use_biometrics_pattern">改用生物识别</string>
+    <string name="app_lock_biometric_negative_pin">使用 PIN 码</string>
+    <string name="app_lock_biometric_negative_pattern">使用图案</string>
+    <string name="app_lock_continue">继续</string>
+    <string name="app_lock_save">保存</string>
+    <string name="app_lock_unlock">解锁</string>
+    <string name="app_lock_pin_too_short">PIN 码至少需要 4 位数字</string>
+    <string name="app_lock_pin_digits_only">PIN 码只能使用数字</string>
+    <string name="app_lock_pattern_too_short">图案必须至少连接 4 个点</string>
+    <string name="app_lock_pin_mismatch">PIN 码不匹配</string>
+    <string name="app_lock_pattern_mismatch">图案不匹配</string>
+    <string name="app_lock_wrong_credential">应用锁凭据不正确</string>
+    <string name="app_lock_try_again_later">尝试次数过多。请在 %1$d 秒后重试</string>
+    <string name="app_lock_footer_text">气泡将在超时后自动关闭</string>
+    <string name="enable_protection">启用保护</string>
+    <string name="hide_from_launcher_title">从启动器中隐藏</string>
+    <string name="hide_from_launcher_summary">阻止此应用在任何启动器中显示。更改需要重启启动器才能生效。</string>
+
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca_title">LTE 载波聚合</string>
+    <string name="force_lte_ca_summary">通过聚合支持的频段增强 LTE 带宽</string>
+
+    <!-- Battery Info: Technology -->
+    <string name="battery_technology">技术</string>
+    <string name="battery_technology_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <!-- Battery Info: Health -->
+    <string name="battery_health">健康状况</string>
+    <string name="battery_health_good">良好</string>
+    <string name="battery_health_overheat">过热</string>
+    <string name="battery_health_dead">已失效</string>
+    <string name="battery_health_over_voltage">过压</string>
+    <string name="battery_health_unspecified_failure">未指定故障</string>
+    <string name="battery_health_cold">过冷</string>
+    <string name="battery_health_unknown">未知</string>
+
+    <!-- Battery Info: Temperature -->
+    <string name="battery_temperature">温度</string>
+    <string name="battery_temperature_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <!-- Battery Info: Voltage -->
+    <string name="battery_voltage">电压</string>
+    <string name="battery_voltage_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <!-- Battery Info: Charge Counter -->
+    <string name="battery_charge_counter_summary">%1$d mAh</string>
+
+    <!-- Battery Info: Design Capacity -->
+    <string name="battery_design_capacity">设计容量</string>
+    <string name="battery_design_capacity_summary">%1$d mAh</string>
+    <string name="battery_design_capacity_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <!-- Battery Info: Maximum Capacity -->
+    <string name="battery_maximum_capacity">最大容量</string>
+    <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
+    <string name="battery_maximum_capacity_not_available" translatable="false">@string/battery_cycle_count_not_available</string>
+
+    <string name="ambient_bottom_title">息屏显示底部</string>
+    <string name="ambient_battery_disable_title">已禁用</string>
+    <string name="ambient_battery_percent_title">电池电量</string> 
+    <string name="ambient_battery_both_title">电池（电量与温度）</string>
+    <string name="ambient_battery_cpu_battery_temperature_title">电池电量、温度（电池和 CPU）</string>
+    <string name="display_icon_title">图标</string>
+    <string name="display_icon_summary">连同电量和温度一起显示图标</string>
+
+    <!-- Per-app rotation -->
+    <string name="per_app_rotation_title">各应用旋转</string>
+    <string name="per_app_rotation_summary">为每个应用单独控制旋转</string>
+    <string name="per_app_rotation_entry_default">默认</string>
+    <string name="per_app_rotation_entry_portrait">竖屏</string>
+    <string name="per_app_rotation_entry_landscape">横屏</string>
+    <string name="per_app_rotation_entry_auto_180">自动（180°）</string>
+    <string name="search_menu">搜索应用</string>
+    <string name="show_system_apps">显示系统应用</string>
+    <string name="per_app_rotation_global_switch_title">强制应用旋转控制</string>
+    <string name="per_app_rotation_global_switch_summary">强制此设备遵守各应用旋转设置。平板电脑和大屏设备需要启用。</string>
+
+    <!-- Navigation bar taskbar -->
+    <string name="navigation_bar_enable_taskbar_title">任务栏</string>
+    <string name="navigation_bar_enable_taskbar_summary">在所选导航模式下显示任务栏</string>
+
+     <!-- navbar layout -->
+     <string name="navbar_layout_title">布局</string>
+     <string name="navbar_layout_normal">常规</string>
+     <string name="navbar_layout_compact">紧凑</string>
+     <string name="navbar_layout_expanded">展开</string>
+     <string name="navbar_layout_leftleaning">左倾</string>
+     <string name="navbar_layout_rightleaning">右倾</string>
+
+    <!-- Per-app volume control -->
+    <string name="app_volume">应用音量</string>
+    <string name="app_volume_title">各应用音量控制</string>
+    <string name="app_volume_summary">允许为每个应用设置不同的音量级别</string>
+
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">多音频焦点</string>
+    <string name="multi_audio_focus_summary">允许多个应用同时播放音频</string>
+
+    <!-- Charging vibration -->
+    <string name="charging_sounds_custom_title">充电提示音</string>
+    <string name="charging_vibro_title">充电振动</string>
+
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">显示息屏显示</string>
+    <string name="doze_gesture_ambient_summary">显示息屏显示而不是完全唤醒屏幕</string>
+    <string name="gesture_wake_ambient">显示息屏显示</string>
+    <string name="gesture_wake">完全唤醒</string>
+
+    <!-- Notification bubbles -->
+    <string name="notification_bubble_apps_title">气泡通知</string>
+    <string name="notification_bubble_apps_summary">点击通知时在气泡中启动应用</string>
+
+    <string name="gesture_navbar_auto_hide_title">自动隐藏导航提示</string>
+    <string name="gesture_navbar_auto_hide_summary">短时间无操作后自动隐藏导航提示</string>
+
+    <!-- battery stats -->
+    <string name="detailed_battery_stats_title">详细电池统计</string>
+    <string name="detailed_battery_stats_summary">屏幕、睡眠、唤醒和挂起统计</string>
+    <string name="battery_stats_screen_on">屏幕开启</string>
+    <string name="battery_stats_screen_off">屏幕关闭</string>
+    <string name="battery_stats_duration">时长</string>
+    <string name="battery_stats_battery_drained">电池消耗</string>
+    <string name="battery_stats_active_drain">使用中消耗</string>
+    <string name="battery_stats_idle_drain">待机消耗</string>
+    <string name="battery_stats_deep_sleep">深度睡眠</string>
+    <string name="battery_stats_awake">唤醒</string>
+    <string name="battery_stats_components_estimated_power">组件估算功耗</string>
+    <string name="battery_stats_kernel_wakeups">内核唤醒源</string>
+    <string name="battery_stats_raw_since_last_charge">上次充电后的原始统计</string>
+    <string name="battery_stats_learned_capacity">上次学习到的电池容量</string>
+    <string name="battery_stats_estimated_capacity">估算电池容量</string>
+    <string name="battery_stats_time_on_battery">电池使用时间</string>
+    <string name="battery_stats_uptime">运行时间</string>
+    <string name="battery_stats_suspend_stats">系统挂起统计</string>
+    <string name="battery_stats_suspend_attempts">挂起尝试</string>
+    <string name="battery_stats_suspend_time">挂起时间</string>
+    <string name="battery_stats_suspend_overhead">挂起开销</string>
+    <string name="battery_stats_sleep_time">睡眠等待时间</string>
+    <string name="battery_stats_unavailable">不可用</string>
+    <string name="battery_stats_no_data">无报告数据</string>
+    <string name="battery_stats_percent"><xliff:g id="percent" example="65">%1$d</xliff:g>%%</string>
+    <string name="battery_stats_time_percent"><xliff:g id="duration" example="12 hr 38 min">%1$s</xliff:g>（<xliff:g id="percent" example="85.6%">%2$s</xliff:g>）</string>
+    <string name="battery_stats_drain_rate"><xliff:g id="rate" example="1.49">%1$.2f</xliff:g>%%/小时</string>
+    <string name="battery_stats_capacity_mah"><xliff:g id="capacity" example="5000">%1$d</xliff:g> mAh</string>
+    <string name="battery_stats_power_mah"><xliff:g id="power" example="42.1">%1$.1f</xliff:g> mAh</string>
+    <string name="battery_stats_count_time"><xliff:g id="count" example="42">%1$d</xliff:g> 次，<xliff:g id="duration" example="3 min 2 sec">%2$s</xliff:g></string>
+    <string name="battery_stats_suspend_summary"><xliff:g id="attempts" example="120">%1$d</xliff:g> 次尝试，<xliff:g id="failed" example="3">%2$d</xliff:g> 次失败，<xliff:g id="short" example="8">%3$d</xliff:g> 次过短</string>
+    <string name="battery_stats_userspace_wakelocks">用户空间唤醒锁</string>
+    <string name="battery_stats_alarm_wakeups_title">闹钟唤醒</string>
+    <string name="battery_stats_wakeup_reasons">唤醒原因</string>
+    <string name="battery_stats_wakelock_summary"><xliff:g id="duration" example="3 min 2 sec">%1$s</xliff:g> 持有，<xliff:g id="count" example="42">%2$d</xliff:g> 次获取</string>
+    <string name="battery_stats_alarm_wakeups"><xliff:g id="count" example="17">%1$d</xliff:g> 次唤醒</string>
+    <string name="battery_stats_tap_expand">点击展开</string>
+    <string name="battery_stats_tap_collapse">点击收起</string>
+    <string name="battery_stats_header_summary"><xliff:g id="total">%1$s</xliff:g> · <xliff:g id="hint">%2$s</xliff:g></string>
+    <string name="battery_stats_components_total"><xliff:g id="mah">%1$.1f</xliff:g> mAh 总计</string>
+    <string name="battery_stats_kernel_total"><xliff:g id="count">%1$d</xliff:g> 次唤醒，<xliff:g id="time">%2$s</xliff:g></string>
+    <string name="battery_stats_wakelocks_total"><xliff:g id="count">%1$d</xliff:g> 个唤醒锁，持有 <xliff:g id="time">%2$s</xliff:g></string>
+    <string name="battery_stats_alarms_total"><xliff:g id="count">%1$d</xliff:g> 个闹钟，<xliff:g id="wakeups">%2$d</xliff:g> 次唤醒</string>
+    <string name="battery_stats_reasons_total"><xliff:g id="count">%1$d</xliff:g> 个原因，<xliff:g id="wakeups">%2$d</xliff:g> 次唤醒</string>
+    <string name="battery_stats_raw_total"><xliff:g id="mah">%1$d</xliff:g> mAh 估算容量</string>
+    <string name="battery_stats_reset">重置统计</string>
+    <string name="battery_stats_reset_confirm">清除所有已收集的电池和唤醒统计？此操作不可撤销。</string>
+    <string name="battery_stats_prev_session">上一会话</string>
+    <string name="battery_stats_prev_session_none">重置统计以记录会话快照</string>
+    <string name="battery_stats_prev_screen_on">屏幕开启</string>
+    <string name="battery_stats_prev_screen_off">屏幕关闭</string>
+    <string name="battery_stats_prev_recorded_at">记录于</string>
+    <string name="battery_stats_session_row"><xliff:g id="duration" example="4 hr 12 min">%1$s</xliff:g>，<xliff:g id="drain" example="32%% (1 420 mAh)">%2$s</xliff:g></string>
+    <string name="battery_stats_drain_pct_mah"><xliff:g id="pct" example="32">%1$d</xliff:g>%%（<xliff:g id="mah" example="1420">%2$d</xliff:g> mAh）</string>
+
+    <string name="battery_info_notif_setting_title">电池统计通知</string>
+    <string name="battery_info_notif_setting_summary">显示包含实时电流、温度以及屏幕开启/关闭放电统计的持续通知</string>
+
+    <string name="battery_info_monitor_enable">启用电池监控通知</string>
+    <string name="battery_info_monitor_disable">禁用电池监控通知</string>
+
+    <!-- backup -->
+    <string name="local_app_backup_restore_title">本地应用备份和恢复</string>
+    <string name="local_app_backup_restore_summary">将 APK 和应用数据以常规 tar 存档格式保存在内部存储中</string>
+
+    <!-- voltage_tp_view -->
+    <string name="voltage_tp_check_updates">检查更新 ➔</string>
+
+</resources>

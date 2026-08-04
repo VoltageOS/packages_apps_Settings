@@ -69,7 +69,7 @@
                     android:textSize="15sp"
                     android:paddingBottom="5dp"
                     android:textColor="@android:color/system_accent1_200"
-                    android:text="Check for updates ➔" />
+                    android:text="@string/voltage_tp_check_updates" />
                 
             </LinearLayout>          
         </FrameLayout>
