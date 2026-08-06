@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="auto_off_never">永不</string>
+
+    <string name="bool_setting_enable">启用</string>
+    <string name="bool_setting_enabled">已启用</string>
+    <string name="bool_setting_disabled">已禁用</string>
+
+    <string name="exploit_protection_settings">漏洞利用保护</string>
+
+    <string name="app_exploit_protection_category">应用漏洞利用保护</string>
+
+    <string name="sandboxed_google_play">沙盒 Google Play</string>
+    <string name="sandboxed_google_play_work_profile">沙盒 Google Play（工作资料）</string>
+
+    <string name="user_settings_send_censored_notifications_to_current">将通知发送给当前用户</string>
+    <string name="user_settings_send_censored_notifications_to_current_summary">如果您在后台处于活动状态，您的锁屏通知将被转发给当前用户。只会显示用户名、应用名称和接收时间。</string>
+
+    <string name="auto_grant_OTHER_SENSORS_permission_title">默认允许应用使用传感器权限</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_on">传感器是非标准权限，拒绝后应用可能无法正常工作。</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_off">当应用尝试访问传感器时将显示权限提示。请注意，某些应用在允许传感器权限后可能需要手动重启。</string>
+
+    <string name="auto_reboot_title">自动重启</string>
+    <string name="auto_reboot_footer">如果在所选时间内设备未被解锁，则自动重启设备。</string>
+
+    <string name="screenshot_timestamp_exif_title">将截屏时间保存到 EXIF</string>
+    <string name="screenshot_timestamp_exif_summary">启用将时间戳添加到截屏 EXIF 元数据</string>
+
+    <string name="g_euicc_lpa_title">eSIM 支持</string>
+    <string name="g_euicc_lpa_enable_dialog_msg">需要重启设备才能启用此设置。</string>
+    <string name="g_euicc_lpa_disable_dialog_title">警告</string>
+    <string name="g_euicc_lpa_disable_dialog_msg">
+关闭 eSIM 支持将破坏以下功能：
+
+• 添加新 eSIM
+• 开启或关闭现有 eSIM
+• 移除 eSIM，包括从锁屏移除（例如 eSIM 因遗忘 PIN 被锁定时）
+• 恢复出厂设置时擦除 eSIM
+
+设备将自动重启。
+    </string>
+    <string name="g_euicc_lpa_restart_button">重启</string>
+    <string name="g_euicc_lpa_proceed_button">继续</string>
+    <string name="sim_action_esim_support_disabled_title">无法关闭 eSIM</string>
+    <string name="sim_action_esim_support_disabled_text">eSIM 支持已关闭。请启用 eSIM 支持以禁用该 eSIM。</string>
+
+    <string name="remote_provisioning_title">认证密钥配置</string>
+    <string name="remote_provisioning_enabled_grapheneos_proxy">GrapheneOS 代理</string>
+    <string name="remote_provisioning_enabled_google_server">Google 服务器</string>
+    <string name="remote_provisioning_disabled">关闭</string>
+
+    <string name="contact_scopes">联系人范围</string>
+
+    <string name="storage_scopes">存储范围</string>
+
+    <string name="conn_checks_grapheneos_server">GrapheneOS 服务器</string>
+    <string name="conn_checks_google_server">标准（Google）服务器</string>
+    <string name="conn_checks_disabled">关闭</string>
+
+    <string name="conn_checks_title">互联网连接检查</string>
+    <string name="conn_checks_footer">
+连接检查是一种特殊的空服务器请求，用于判断当前网络是否有互联网连接。
+包括 HTTP、HTTPS、DNS、DNS-over-TLS 和 DNS-over-HTTPS 连接检查。
+    </string>
+
+    <string name="wifi_auto_off_title">自动关闭 Wi-Fi</string>
+    <string name="wifi_auto_off_footer">如果 Wi-Fi 断开连接，将在所选超时后自动关闭。</string>
+
+    <string name="bluetooth_auto_off_title">自动关闭蓝牙</string>
+    <string name="bluetooth_auto_off_footer">
+如果没有已连接的设备，蓝牙将在所选超时后自动关闭。
+    </string>
+
+    <string name="widevine_provisioning_title">Widevine 配置</string>
+    <string name="widevine_provisioning_enabled_grapheneos_proxy">GrapheneOS 代理</string>
+    <string name="widevine_provisioning_enabled_google_server">Google 服务器</string>
+    <string name="widevine_provisioning_footer">配置的证书将用于访问受 DRM 保护的内容。</string>
+
+    <!-- Title of preference to enable app installs and updates [CHAR LIMIT=40] -->
+    <string name="user_app_install">应用安装和更新</string>
+    <!-- Options for setting app install and updates per user -->
+    <string name="user_app_install_enabled">已启用</string>
+    <string name="user_app_install_enabled_first_party_sources">仅限第一方来源</string>
+    <string name="user_app_install_disabled">已禁用</string>
+    <!-- Description for options for setting app installs and updates per user -->
+    <string name="user_app_install_enabled_desc">启用应用安装和更新</string>
+    <string name="user_app_install_enabled_first_party_sources_desc">仅限来自第一方来源的应用安装和更新</string>
+    <string name="user_app_install_disabled_desc">禁用应用安装和更新</string>
+    <!-- Title of preference to enable running in background [CHAR LIMIT=40] -->
+    <string name="user_run_in_background">允许后台运行</string>
+
+    <string name="app_exploit_protection_default_value_warning">警告：启用此设置可能导致某些应用无法正常工作。</string>
+
+    <string name="allow_access_to_obb_directory_title">允许访问 Android/obb 目录</string>
+    <string name="allow_access_to_obb_directory_summary">安装使用 OBB 扩展文件的大型应用（主要是游戏）时需要</string>
+
+    <string name="show_system_process_crash_notifs_title">通知系统进程崩溃</string>
+    <string name="show_system_process_crash_notifs_summary">此类崩溃可能表明存在漏洞利用尝试</string>
+
+    <string name="view_logs">查看日志</string>
+
+    <string name="usbc_port_title">USB-C 端口</string>
+    <string name="usbc_port_off_title">关闭</string>
+    <string name="usbc_port_off_summary">关闭 USB-C 端口。不影响独立充电模式（通过关闭设备并插入充电器激活）。</string>
+    <string name="usbc_port_charging_only_title">仅充电</string>
+    <string name="usbc_port_charging_only_summary">关闭所有非充电功能的 USB-C 端口功能。</string>
+    <string name="usbc_port_charging_only_when_locked_title">锁定时仅充电</string>
+    <string name="usbc_port_charging_only_when_locked_summary">设备锁定时启用仅充电模式，解锁时禁用。如果在设备锁定前端口已插入，则仅充电模式的激活将延迟到端口断开后。</string>
+    <string name="usbc_port_charging_only_when_locked_afu_title">锁定时仅充电（首次解锁前除外）</string>
+    <string name="usbc_port_charging_only_when_locked_afu_summary">此模式与“%1$s”模式行为相同，但首次解锁前的连接不受限制。</string>
+    <string name="usbc_port_on_title">开启</string>
+    <string name="usbc_port_on_summary">不添加任何限制。</string>
+
+    <string name="usbc_port_and_pogo_pins_title">USB-C 端口和 pogo pin</string>
+    <string name="usbc_port_and_pogo_pins_off_title">USB-C 端口关闭，pogo pin 仅用于充电</string>
+    <string name="usbc_port_and_pogo_pins_off_summary">关闭 USB-C 端口，并关闭所有非充电功能的 pogo pin 功能。不影响独立充电模式（通过关闭设备并插入充电器激活）。</string>
+    <string name="usbc_port_and_pogo_pins_charging_only_summary">关闭所有非充电功能的 USB-C 端口和 pogo pin 功能。</string>
+    <string name="usbc_port_and_pogo_pins_charging_only_when_locked_summary">设备锁定时启用仅充电模式，解锁时禁用。如果在设备锁定前端口已插入，则仅充电模式的激活将延迟到端口断开后。pogo pin 同样适用此行为。</string>
+
+    <string name="app_play_integrity_api">Play Integrity API</string>
+    <string name="app_play_integrity_top_intro">Play Integrity API 使服务能够通过其应用验证设备属性。许多服务强制执行设备或强完整性要求，这通常要求使用未经修改的原厂操作系统并获得官方 Google 移动服务授权。但并非所有使用此 API 的应用都会基于替代操作系统限制使用。某些自定义操作系统配置可以通过基本完整性级别，而许可、Play Protect 认证和其他兼容性验证的标准检查也能按预期工作。遇到限制的用户可以考虑向应用开发者提供反馈，敦促他们避免惩罚符合基线完整性标准的安全操作环境。如需更细粒度的验证，应用可以使用 Android 的硬件认证 API 独立于操作系统实现来验证设备硬件、操作系统和应用二进制文件的真实性。</string>
+    <string name="app_play_integrity_contact_app_developer">联系应用开发者</string>
+    <string name="app_play_integrity_show_usage_notifications">显示使用通知</string>
+    <string name="app_play_integrity_block_usage_attempts">阻止使用尝试</string>
+    <string name="app_play_integrity_block_usage_attempts_summary_on">Play Integrity API 使用尝试将失败并返回“API 不可用”错误代码</string>
+    <string name="app_play_integrity_api_blocked">已阻止</string>
+    <string name="app_play_integrity_api_not_blocked">未阻止</string>
+    <string name="app_play_integrity_see_all_apps">显示使用过 Play Integrity API 的应用</string>
+
+    <string name="network_location_title">网络定位</string>
+    <string name="network_location_footer">
+网络定位是一种通过使用各种附近信号（如 Wi-Fi 网络、蓝牙设备和基站）来确定设备位置的方法。您的设备会扫描这些信号并将其标识符发送到服务器，服务器返回定位数据，设备据此估算位置。目前使用 Wi-Fi 网络和基站。
+
+当 GNSS 不可用或不可靠时（例如在室内或卫星信号接收较差的区域），此方法特别有用。网络定位在 GNSS 锁定之前或 GNSS 信号较弱时提供了更快的定位方式。
+    </string>
+    <string name="network_location_enabled_grapheneos_apple_proxy">GrapheneOS Apple 代理</string>
+    <string name="network_location_enabled_apple">Apple</string>
+    <string name="network_location_enabled_apple_china">Apple 中国（中国数据必需）</string>
+    <string name="network_location_disabled">关闭</string>
+
+    <string name="cross_profile_clipboard_access_title">跨资料共享剪贴板</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_title">遵循默认设置</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_summary">允许系统默认设置在主用户及其其他子资料之间共享剪贴板。</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_title">遵循导入默认设置</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_summary">允许系统默认设置从主用户及其其他子资料导入剪贴板。</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_title">遵循导出默认设置</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_summary">允许系统默认设置向主用户及其其他子资料导出剪贴板。</string>
+    <string name="cross_profile_clipboard_access_disallow_title">不允许</string>
+    <string name="cross_profile_clipboard_access_disallow_summary">禁止在主用户及其其他子资料之间共享剪贴板。</string>
+    <string name="cross_profile_clipboard_access_footer">此设置为用户提供允许或禁止在同一主用户的不同资料（包括自身）之间共享剪贴板的选项。
+一旦禁止，未来同一主用户的不同资料（如私人空间资料与主用户之间，或私人空间资料与工作资料之间）之间的剪贴板内容更新将无法访问。在切换到更严格的选项之前已与其他资料共享的剪贴板内容，在剪贴板内容更新之前仍然可访问。
+    </string>
+
+    <string name="ps_disallow_delayed_locking_title">锁定时立即结束会话</string>
+    <string name="ps_disallow_delayed_locking_description">
+禁止在停止或锁定当前私人资料时延迟锁定存储。这使得锁定行为类似于完整二级用户的结束会话，需要强身份验证才能解锁存储。
+    </string>
+
+    <string name="geocoder_title">地理编码器</string>
+    <string name="geocoder_footer">
+正向地理编码和反向地理编码是分别用于在地理坐标和人类可读地址之间转换的过程。正向地理编码返回给定地址的坐标，而反向地理编码返回给定坐标附近的一个或多个地址。应用可以选择使用此处选择的地理编码器，该编码器通过网络服务执行这些查询。
+    </string>
+    <string name="geocoder_enabled_grapheneos_server">GrapheneOS 服务器</string>
+    <string name="geocoder_enabled_openstreetmap_server">OpenStreetMap 服务器</string>
+    <string name="geocoder_disabled">关闭</string>
+
+    <string name="pref_gnss_supl_title">安全用户面定位 (SUPL)</string>
+    <string name="pref_gnss_supl_footer">基于附近基站的 A-GNSS（辅助卫星地理定位）。</string>
+
+    <string name="supl_enabled_grapheneos_proxy">GrapheneOS 代理</string>
+    <string name="supl_enabled_standard_server">标准服务器</string>
+    <string name="supl_disabled">关闭</string>
+    <string name="supl_disabled_summary">获取位置锁定将显著变慢，尤其是同时关闭 PSDS 时</string>
+
+    <string name="pref_gnss_psds_title">预测卫星数据服务 (PSDS)</string>
+    <string name="gnss_psds_footer">
+如果启用 PSDS，将定期下载静态 PSDS 信息文件以提高定位速度和精度。
+不会向服务器发送任何查询或数据。这些文件包含卫星轨道和状态、地球环境数据和时间调整信息。
+</string>
+    <string name="psds_enabled_grapheneos_server">GrapheneOS 服务器</string>
+    <string name="psds_enabled_standard_server">标准服务器</string>
+    <string name="psds_disabled">关闭</string>
+    <string name="psds_disabled_summary">获取位置锁定将显著变慢，尤其是同时关闭 SUPL 时</string>
+
+</resources>

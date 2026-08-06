@@ -718,4 +718,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="local_app_backup_restore_title">Local app backup and restore</string>
     <string name="local_app_backup_restore_summary">Save APKs and app data as normal tar archives in internal storage</string>
 
+    <!-- voltage_tp_view -->
+    <string name="voltage_tp_check_updates">Check for updates ➔</string>
+
 </resources>
