@@ -88,7 +88,17 @@ public class PanelFeatureProviderImpl implements PanelFeatureProvider {
                     }
                 }
             case Settings.Panel.ACTION_APP_VOLUME:
-                return AppVolumePanel.create(context);
+                if (FeatureFlagUtils.isEnabled(context,
+                        FeatureFlagUtils.SETTINGS_VOLUME_PANEL_IN_SYSTEMUI)) {
+                    // Redirect to the volume panel in SystemUI.
+                    Intent appVolumeIntent = new Intent(Settings.Panel.ACTION_APP_VOLUME);
+                    appVolumeIntent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND).setPackage(
+                            Utils.SYSTEMUI_PACKAGE_NAME);
+                    context.sendBroadcast(appVolumeIntent);
+                    return null;
+                } else {
+                    return AppVolumePanel.create(context);
+                }
         }
 
         throw new IllegalStateException("No matching panel for: " + panelType);
