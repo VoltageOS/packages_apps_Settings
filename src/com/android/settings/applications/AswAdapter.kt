@@ -38,6 +38,7 @@ abstract class AswAdapter<T : AppSwitch> {
 
     open fun getNotificationToggleTitle(ctx: Context): CharSequence? = null
     open fun getNotificationToggleSummary(ctx: Context): CharSequence? = null
+    open fun isNotificationToggleEnabled(appSwitchState: Boolean) = appSwitchState
 
     abstract fun getAswTitle(ctx: Context): CharSequence
 
