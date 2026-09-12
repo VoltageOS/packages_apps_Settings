@@ -16,9 +16,17 @@
 
 package com.android.settings.deviceinfo.voltage
 
+import android.app.ActivityManager
+import android.content.ActivityNotFoundException
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.graphics.drawable.Animatable
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemProperties
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -26,8 +34,11 @@ import android.text.TextUtils
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.TypedValue
+import android.view.HapticFeedbackConstants
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import com.android.settings.R
@@ -66,7 +77,7 @@ class VoltageMaintainerPreference :
         if (!buildStatus.equals("OFFICIAL", ignoreCase = true)) {
             statusPreference?.setStatusIcon(0, animate = false)
             preference.summary = maintainerLine
-            preference.isCopyingEnabled = true
+            preference.isCopyingEnabled = false
             return
         }
 
@@ -76,7 +87,7 @@ class VoltageMaintainerPreference :
         if (!TextUtils.isEmpty(gpgKey) && !TextUtils.isEmpty(gpgUid)) {
             statusPreference?.setStatusIcon(R.drawable.ic_gpg_verified_anim, animate = true)
             preference.summary = buildMergedSummary(preference, maintainerLine, gpgKey, gpgUid)
-            preference.isCopyingEnabled = true
+            preference.isCopyingEnabled = false
         } else {
             statusPreference?.setStatusIcon(R.drawable.ic_gpg_tampered_anim, animate = true)
             preference.summary =
@@ -156,6 +167,30 @@ class VoltageMaintainerPreference :
         private var statusIconRes: Int = 0
         private var animateIcon: Boolean = false
 
+        private val holdHandler = Handler(Looper.getMainLooper())
+        private var holdFired = false
+        private var longPressed = false
+        private var boundRow: View? = null
+        private val launchEgg = Runnable {
+            holdFired = true
+            val ctx = context
+            if (ActivityManager.isUserAMonkey()) return@Runnable
+            boundRow?.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+            val intent = Intent(Intent.ACTION_MAIN)
+                .setComponent(
+                    ComponentName(
+                        EASTER_EGG_PACKAGE,
+                        EASTER_EGG_PACKAGE + ".MainActivity",
+                    ),
+                )
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            try {
+                ctx.startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(ctx, R.string.voltage_crimson_missing, Toast.LENGTH_SHORT).show()
+            }
+        }
+
         init {
             widgetLayoutResource = R.layout.voltage_gpg_widget
         }
@@ -170,6 +205,27 @@ class VoltageMaintainerPreference :
 
         override fun onBindViewHolder(holder: PreferenceViewHolder) {
             super.onBindViewHolder(holder)
+            val row = holder.itemView
+            boundRow = row
+            holdHandler.removeCallbacks(launchEgg)
+            holdFired = false
+            longPressed = false
+            row.setOnLongClickListener {
+                longPressed = true
+                it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                holdHandler.postDelayed(launchEgg, HOLD_TO_LAUNCH_MS)
+                true
+            }
+            row.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_UP ||
+                    event.action == MotionEvent.ACTION_CANCEL
+                ) {
+                    holdHandler.removeCallbacks(launchEgg)
+                    if (!holdFired && longPressed) copySummary()
+                    longPressed = false
+                }
+                false
+            }
             val icon = holder.findViewById(R.id.gpg_status_icon)
             if (icon !is ImageView) {
                 return
@@ -186,11 +242,24 @@ class VoltageMaintainerPreference :
                 drawable.start()
             }
         }
+
+        private fun copySummary() {
+            val text = summary?.toString().orEmpty()
+            if (text.isEmpty()) return
+            val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
+                ?: return
+            cm.setPrimaryClip(ClipData.newPlainText("build_status", text))
+            Toast.makeText(context, context.getString(android.R.string.copy), Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
     companion object {
         const val BUILD_STATUS_PROPERTY: String = "ro.voltage.build.status"
         const val GPG_KEY_PROPERTY: String = "ro.voltage.maintainer.gpg_key"
         const val GPG_UID_PROPERTY: String = "ro.voltage.maintainer.gpg_uid"
+
+        private const val HOLD_TO_LAUNCH_MS = 5000L
+        private const val EASTER_EGG_PACKAGE = "com.voltage.os.easteregg"
     }
 }

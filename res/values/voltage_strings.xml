@@ -18,6 +18,9 @@
     <string name="voltage_gpg_key_title">Verified GPG Key</string>
     <string name="voltage_tampered_build_summary">This official build is missing its GPG signature and has been tampered.</string>
 
+    <!-- Voltage Crimson easter egg: hold Build status for 5 s -->
+    <string name="voltage_crimson_missing">Voltage Crimson is not installed</string>
+
     <!-- VoltageOS device -->
     <string name="about_device_name">Device</string>
 
