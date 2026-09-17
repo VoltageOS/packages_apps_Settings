@@ -54,4 +54,8 @@
     <!-- HAL-owned face preview size, must match a supported camera size -->
     <integer name="face_preview_width">1080</integer>
     <integer name="face_preview_height">1080</integer>
+
+    <!-- Whether the display size preference should allow separate DPI settings for each display
+         on foldables by having the display size slider only affect the default display. -->
+    <bool name="config_independent_display_dpi_setting">false</bool>
 </resources>
