@@ -81,6 +81,11 @@ class PerAppRotationSettings: Fragment(R.layout.per_app_rotation_layout) {
         refreshList()
     }
 
+    override fun onDestroy() {
+        rotationController.close()
+        super.onDestroy()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.per_app_rotation_menu, menu)
         optionsMenu = menu
