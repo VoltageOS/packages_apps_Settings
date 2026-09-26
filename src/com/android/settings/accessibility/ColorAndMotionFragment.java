@@ -18,15 +18,25 @@ package com.android.settings.accessibility;
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.view.CrossWindowBlurListeners;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.android.settings.R;
+import com.android.settings.accessibility.colorandmotion.ui.BlurSwitchPreference;
 import com.android.settings.accessibility.colorandmotion.ui.ColorAndMotionScreen;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
+import com.android.settingslib.search.SearchIndexableRaw;
+
+import java.util.Collections;
+import java.util.List;
 
 // TODO(b/445978289): Use CatalystFragment
 /** Accessibility settings for color and motion. */
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ColorAndMotionFragment extends DashboardFragment {
 
     private static final String TAG = "ColorAndMotionFragment";
@@ -51,4 +61,24 @@ public class ColorAndMotionFragment extends DashboardFragment {
     public String getPreferenceScreenBindingKey(@NonNull Context context) {
         return ColorAndMotionScreen.KEY;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableRaw> getRawDataToIndex(Context context, boolean enabled) {
+                    if (!CrossWindowBlurListeners.CROSS_WINDOW_BLUR_SUPPORTED) {
+                        return Collections.emptyList();
+                    }
+
+                    SearchIndexableRaw raw = new SearchIndexableRaw(context);
+                    raw.key = BlurSwitchPreference.KEY;
+                    raw.title = context.getString(R.string.blur_switch);
+                    raw.summaryOn = context.getString(R.string.blur_switch_summary);
+                    raw.summaryOff = raw.summaryOn;
+                    raw.screenTitle =
+                            context.getString(R.string.accessibility_color_and_motion_title);
+                    raw.keywords = context.getString(R.string.keywords_blur_switch);
+                    return Collections.singletonList(raw);
+                }
+            };
 }

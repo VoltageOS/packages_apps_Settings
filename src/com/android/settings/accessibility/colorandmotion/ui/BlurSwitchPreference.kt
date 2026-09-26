@@ -57,6 +57,9 @@ class BlurSwitchPreference :
     override val keywords: Int
         get() = R.string.keywords_blur_switch
 
+    override val indexable
+        get() = true
+
     override fun storage(context: Context): KeyValueStore =
         SettingsGlobalStore.get(context).apply { setDefaultValue(KEY, false) }
 
