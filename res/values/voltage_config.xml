@@ -44,4 +44,7 @@
     <!-- Indicates whether device has a side mounted fingerprint sensor,
          but a dedicated one, i.e. not embedded in the power button. -->
     <bool name="config_is_side_fps" translatable="false">false</bool>
+
+    <!-- Whether the face HAL supports the require attention feature -->
+    <bool name="config_face_attention_supported">true</bool>
 </resources>
