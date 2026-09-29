@@ -455,6 +455,7 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="kill_app">Kill foreground app</string>
     <string name="recent_app_toggle">Switch recent app</string>
     <string name="show_powermenu">Show Power menu</string>
+    <string name="action_pie">Pie menu</string>
     <string name="action_forward">Go forward</string>
 
     <!-- Long swipe gestures -->
@@ -473,6 +474,19 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="gesture_nav_tweaks_footer_info">To choose a specific app activity for the action, long press on any app in the apps picker.\n\nIf launcher is showing, do the swipe at the very bottom area of the screen to trigger the action.</string>
     <string name="back_swipe_extended_title">Extended swipe action</string>
     <string name="back_swipe_extended_summary">Trigger action on wider swipe (more than half of display size), or a L swipe (vertically longer enough)</string>
+    <string name="pie_menu_haptic_title">Pie haptic feedback</string>
+    <string name="pie_menu_configure_title">Configure pie items</string>
+    <string name="pie_menu_configure_left_title">Configure left pie</string>
+    <string name="pie_menu_configure_right_title">Configure right pie</string>
+    <string name="pie_menu_configure_left_vertical_title">Configure left L pie</string>
+    <string name="pie_menu_configure_right_vertical_title">Configure right L pie</string>
+    <string name="pie_menu_empty_warning">No items configured pie does nothing</string>
+    <string name="pie_menu_add_app">Add app</string>
+    <string name="pie_menu_add_action">Add action</string>
+    <string name="pie_menu_remove">Remove</string>
+    <string name="pie_menu_move_up">Move up</string>
+    <string name="pie_menu_move_down">Move down</string>
+    <string name="pie_menu_hint">Slide to an icon and release to launch</string>
 
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="fingerprint_enroll_find_sensor_message_front" product="tablet">Locate the fingerprint sensor on the front of your tablet.</string>

@@ -89,6 +89,43 @@
             android:targetClass="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp" />
     </Preference>
 
+    <com.voltage.support.preferences.SystemSettingSwitchPreference
+        android:key="back_swipe_pie_haptic"
+        android:title="@string/pie_menu_haptic_title"
+        android:defaultValue="true" />
+
+    <Preference
+        android:key="left_pie_items"
+        android:title="@string/pie_menu_configure_left_title"
+        android:summary="@string/pie_menu_configure_title"
+        android:fragment="com.android.settings.gestures.PieMenuConfigFragment">
+        <extra android:name="pie_key" android:value="left_long_back_swipe_pie_items" />
+    </Preference>
+
+    <Preference
+        android:key="right_pie_items"
+        android:title="@string/pie_menu_configure_right_title"
+        android:summary="@string/pie_menu_configure_title"
+        android:fragment="com.android.settings.gestures.PieMenuConfigFragment">
+        <extra android:name="pie_key" android:value="right_long_back_swipe_pie_items" />
+    </Preference>
+
+    <Preference
+        android:key="left_vertical_pie_items"
+        android:title="@string/pie_menu_configure_left_vertical_title"
+        android:summary="@string/pie_menu_configure_title"
+        android:fragment="com.android.settings.gestures.PieMenuConfigFragment">
+        <extra android:name="pie_key" android:value="left_vertical_back_swipe_pie_items" />
+    </Preference>
+
+    <Preference
+        android:key="right_vertical_pie_items"
+        android:title="@string/pie_menu_configure_right_vertical_title"
+        android:summary="@string/pie_menu_configure_title"
+        android:fragment="com.android.settings.gestures.PieMenuConfigFragment">
+        <extra android:name="pie_key" android:value="right_vertical_back_swipe_pie_items" />
+    </Preference>
+
     <com.android.settingslib.widget.FooterPreference
         android:title="@string/gesture_nav_tweaks_footer_info" />
 </PreferenceScreen>
