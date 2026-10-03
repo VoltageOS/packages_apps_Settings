@@ -187,6 +187,18 @@
         <item>@string/action_forward</item>
         <item>@string/action_menu</item>
         <item>@string/action_pie</item>
+        <item>@string/action_open_sidebar</item>
+        <item>@string/action_freeform</item>
+        <item>@string/action_nirvana_toggle</item>
+        <item>@string/action_region_screenshot</item>
+        <item>@string/action_close_freeform</item>
+        <item>@string/action_last_freeform</item>
+        <item>@string/action_sleep_toggle</item>
+        <item>@string/action_assist</item>
+        <item>@string/action_lock</item>
+        <item>@string/action_clear_collapse</item>
+        <item>@string/action_dnd_toggle</item>
+        <item>@string/action_bubble</item>
     </string-array>
 
     <string-array name="swipe_actions_values" translatable="false">
@@ -209,6 +221,18 @@
         <item>16</item>
         <item>17</item>
         <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
     </string-array>
 
     <string-array name="ambient_bottom_entries" translatable="false">

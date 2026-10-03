@@ -457,6 +457,18 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="show_powermenu">Show Power menu</string>
     <string name="action_pie">Pie menu</string>
     <string name="action_forward">Go forward</string>
+    <string name="action_open_sidebar">Open sidebar</string>
+    <string name="action_freeform">Move to freeform</string>
+    <string name="action_nirvana_toggle">Nirvana toggle</string>
+    <string name="action_region_screenshot">Region screenshot</string>
+    <string name="action_close_freeform">Close freeform</string>
+    <string name="action_last_freeform">Last app in freeform</string>
+    <string name="action_sleep_toggle">Sleep toggle</string>
+    <string name="action_assist">Assist</string>
+    <string name="action_lock">Lock now</string>
+    <string name="action_clear_collapse">Clear + collapse</string>
+    <string name="action_dnd_toggle">DND toggle</string>
+    <string name="action_bubble">Open in bubble</string>
 
     <!-- Long swipe gestures -->
     <string name="navbar_gesture_tweaks_pref_title">Advanced gestures options</string>
