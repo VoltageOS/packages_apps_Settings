@@ -712,9 +712,6 @@ When the screen is off, the torch can be enabled with one of the following key c
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
-    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
-
     <!-- navbar auto-hide -->
     <string name="gesture_navbar_auto_hide_title">Auto-hide navigation hint</string>
     <string name="gesture_navbar_auto_hide_summary">Automatically hide the navigation hint after a short period of inactivity</string>
